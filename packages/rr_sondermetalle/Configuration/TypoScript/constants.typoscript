@@ -1,0 +1,60 @@
+######################
+#### DEPENDENCIES ####
+######################
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:bootstrap_package/Configuration/TypoScript/constants.typoscript">
+
+
+############
+### PAGE ###
+############
+page {
+    logo {
+        file = EXT:rr_sondermetalle/Resources/Public/Images/logo.svg
+        fileInverted = EXT:rr_sondermetalle/Resources/Public/Images/logo-inverted.svg
+        height = 52
+        width = 192
+        alt = rr-sondermetalle
+        linktitle = rr-sondermetalle
+    }
+    favicon {
+        file = EXT:rr_sondermetalle/Resources/Public/Icons/favicon.ico
+    }
+    fluidtemplate {
+        layoutRootPath = EXT:rr_sondermetalle/Resources/Private/Layouts/Page/
+        partialRootPath = EXT:rr_sondermetalle/Resources/Private/Partials/Page/
+        templateRootPath = EXT:rr_sondermetalle/Resources/Private/Templates/Page/
+    }
+}
+
+
+##################
+### EXTENSIONS ###
+##################
+plugin.bootstrap_package {
+    view {
+        layoutRootPath = EXT:rr_sondermetalle/Resources/Private/Layouts/
+        partialRootPath = EXT:rr_sondermetalle/Resources/Private/Partials/
+        templateRootPath = EXT:rr_sondermetalle/Resources/Private/Templates/
+    }
+}
+
+
+########################
+### CONTENT ELEMENTS ###
+########################
+plugin.bootstrap_package_contentelements {
+    view {
+        layoutRootPath = EXT:rr_sondermetalle/Resources/Private/Layouts/ContentElements/
+        partialRootPath = EXT:rr_sondermetalle/Resources/Private/Partials/ContentElements/
+        templateRootPath = EXT:rr_sondermetalle/Resources/Private/Templates/ContentElements/
+    }
+}
+
+
+################################
+### BOOTSTRAP SCSS CONSTANTS ###
+################################
+plugin.bootstrap_package.settings.scss {
+    primary = #eb3e4a
+    secondary = #013859
+}
