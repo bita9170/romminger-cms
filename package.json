@@ -1,0 +1,17 @@
+{
+  "name": "rr_sondermetalle",
+  "version": "1.0.0",
+  "description": "This is a guide for installing the TYPO3 project and importing the database using DDEV.",
+  "scripts": {
+    "css:dev": "npx tailwindcss -i ./packages/rr_sondermetalle/Resources/Public/Scss/main.scss -o ./packages/rr_sondermetalle/Resources/Public/Css/main.css --watch",
+    "dev": "npm run css:dev"
+  },
+  "author": "Bita Sadeghi",
+  "license": "ISC",
+  "devDependencies": {
+    "tailwindcss": "^3.3.2"
+  },
+  "dependencies": {
+    "jqwidgets-scripts": "^19.2.0"
+  }
+}

@@ -9,6 +9,7 @@
 ##############
 page {
     includeCSS {
+        customstyle = EXT:rr_sondermetalle/Resources/Public/Css/main.css
         theme = EXT:rr_sondermetalle/Resources/Public/Scss/Theme/theme.scss
     }
 
