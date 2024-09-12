@@ -1,0 +1,22 @@
+.navbar-default {
+  @apply !bg-primary-500;
+
+  .navbar-nav {
+    @apply justify-center;
+  }
+
+  .nav-link-text {
+    @apply text-white text-xl;
+  }
+
+  .nav-link-indicator {
+    @apply !text-white;
+  }
+
+  .dropdown-nav {
+    @apply text-black;
+  }
+  .auth-buttons {
+    @apply flex space-x-4 ml-auto;
+  }
+}
