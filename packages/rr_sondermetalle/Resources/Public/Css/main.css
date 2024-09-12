@@ -607,11 +607,6 @@ video {
   margin-right: auto;
 }
 
-.mx-44 {
-  margin-left: 11rem;
-  margin-right: 11rem;
-}
-
 .mx-3 {
   margin-left: 0.75rem;
   margin-right: 0.75rem;
@@ -673,16 +668,8 @@ video {
   height: 2.5rem;
 }
 
-.h-5 {
-  height: 1.25rem;
-}
-
 .h-full {
   height: 100%;
-}
-
-.w-5 {
-  width: 1.25rem;
 }
 
 .w-auto {
@@ -715,6 +702,10 @@ video {
 
 .gap-8 {
   gap: 2rem;
+}
+
+.gap-4 {
+  gap: 1rem;
 }
 
 .space-x-4 > :not([hidden]) ~ :not([hidden]) {
@@ -953,16 +944,6 @@ video {
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
-.text-primary-500 {
-  --tw-text-opacity: 1;
-  color: rgb(23 37 84 / var(--tw-text-opacity));
-}
-
-.text-primary-800 {
-  --tw-text-opacity: 1;
-  color: rgb(20 28 51 / var(--tw-text-opacity));
-}
-
 .transition {
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
@@ -1044,11 +1025,6 @@ video {
 .focus\:ring-gray-100:focus {
   --tw-ring-opacity: 1;
   --tw-ring-color: rgb(243 244 246 / var(--tw-ring-opacity));
-}
-
-.focus\:ring-primary-300:focus {
-  --tw-ring-opacity: 1;
-  --tw-ring-color: rgb(168 185 216 / var(--tw-ring-opacity));
 }
 
 .active\:bg-primary-600:active {
@@ -1181,10 +1157,5 @@ video {
   .dark\:focus\:ring-gray-800:focus {
     --tw-ring-opacity: 1;
     --tw-ring-color: rgb(31 41 55 / var(--tw-ring-opacity));
-  }
-
-  .dark\:focus\:ring-primary-900:focus {
-    --tw-ring-opacity: 1;
-    --tw-ring-color: rgb(14 23 40 / var(--tw-ring-opacity));
   }
 }
