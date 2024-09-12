@@ -14,6 +14,7 @@
     "sort-packages": true
   },
   "require": {
+    "contentblocks/content-blocks": "^0.7.16",
     "romminger/rr-sondermetalle": "^1.0",
     "typo3/cms-backend": "^12.4.0",
     "typo3/cms-belog": "^12.4.0",
@@ -32,8 +33,8 @@
     "typo3/cms-info": "^12.4.0",
     "typo3/cms-install": "^12.4.0",
     "typo3/cms-lowlevel": "^12.4",
-    "typo3/cms-recycler": "^12.4",
     "typo3/cms-reactions": "^12.4.0",
+    "typo3/cms-recycler": "^12.4",
     "typo3/cms-rte-ckeditor": "^12.4.0",
     "typo3/cms-seo": "^12.4.0",
     "typo3/cms-setup": "^12.4.0",

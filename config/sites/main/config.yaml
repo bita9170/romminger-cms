@@ -10,17 +10,5 @@ languages:
     flag: de
     hreflang: ''
     websiteTitle: ''
-  -
-    title: English
-    enabled: true
-    locale: en_US
-    hreflang: en-Us
-    base: /En/
-    websiteTitle: RR-Sondermetalle
-    navigationTitle: English
-    fallbackType: strict
-    fallbacks: ''
-    flag: us
-    languageId: 1
 rootPageId: 1
 websiteTitle: RR-Sondermetalle
