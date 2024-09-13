@@ -1,4 +1,26 @@
 <cb:asset.css identifier="content-block-css-romminger-romminger/services" file="Frontend.css"/>
 <cb:asset.script identifier="content-block-js-romminger-romminger/services" file="Frontend.js"/>
-Frontend template for Content Block: romminger/services<br>
-Header: {data.header}
+
+<section class="overview-Section mt-10 mx-36">
+    <div class="container mx-10 px-4">
+      <h2 class="text-3xl font-bold text-left text-primary-900">
+        {data.header}
+      </h2>
+    </div>
+  
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 m-10">
+        <f:for each="{data.col_items}" as="item">
+            <div
+        class="rounded-lg text-center p-6 border-2 border-primary-500 flex flex-col items-center justify-center"
+      >
+      <f:image image="{item.item_icon.0}" alt="alt text" class="h-10 w-auto mb-2" />
+
+        <h5 class="mb-2 text-xl text-primary-700 font-bold leading-tight">
+          {item.item_title}
+        </h5>
+        <p class="mb-4 text-base">
+            {item.item_description}
+        </p>
+      </div>
+        </f:for>
+  </section>
