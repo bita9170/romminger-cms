@@ -1,0 +1,16 @@
+name: romminger/product
+table: tx_romminger_product
+prefixFields: false
+labelField: title
+security:
+  ignorePageTypeRestriction: true
+fields:
+  -
+    identifier: title
+    type: Text
+    label: Title
+  -
+    identifier: description
+    type: Textarea
+    enableRichtext: true
+    label: Description
