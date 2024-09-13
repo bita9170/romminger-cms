@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+	<file datatype="plaintext" original="Labels.xlf" source-language="en" date="2024-09-13T08:40:16+00:00" product-name="romminger/services">
+		<header/>
+		<body>
+			<trans-unit id="title" resname="title">
+				<source>Services</source>
+			</trans-unit>
+			<trans-unit id="description" resname="description">
+				<source>Description for Content Element romminger/services</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

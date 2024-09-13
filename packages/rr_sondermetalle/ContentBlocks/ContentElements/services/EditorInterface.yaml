@@ -1,0 +1,27 @@
+name: romminger/services
+typeName: romminger_services
+group: common
+prefixFields: true
+prefixType: full
+fields:
+  - identifier: header
+    useExistingField: true
+  - identifier: col_items
+    type: Collection
+    label: "Service Items"
+    fields:
+      - identifier: item_icon
+        type: File
+        label: "Item Icon"
+        minitems: 1
+        maxitems: 1
+        allowed: common-image-types
+      - identifier: item_title
+        type: Text
+        label: "Item Title"
+      - identifier: item_description
+        type: Textarea
+        label: "Item Description"      
+      - identifier: item_link
+        type: Link
+        label: "Item Link"
