@@ -8,9 +8,60 @@ fields:
   -
     identifier: title
     type: Text
-    label: Title
+    label: Productsname
   -
-    identifier: description
+    identifier: longtext
     type: Textarea
     enableRichtext: true
-    label: Description
+    lable: Long Text
+
+  -
+    identifier: shorttext
+    type: Textarea
+    Lable: Short Text
+  -
+    identifier: product_category
+    type: Select
+    renderType: selectSingle
+    label: Product Category
+    minitems: 1
+    maxitems: 1    
+    foreign_table: 'tx_romminger_productcategory'  
+  -
+    identifier: slug
+    type: Slug
+    eval: unique
+    generatorOptions:
+      fields:
+        -
+          - header
+          - fallbackField
+        - date 
+  -
+    identifier: currency
+    type: Number 
+    format: decimal
+    label: Currency
+  - 
+    identifier: productsname
+    type: Text
+    Lable: Productsname
+  -
+    identifier: price
+    type: Number
+    format: decimal 
+    Lable: Price
+  -
+    identifier: discount 
+    type: Number
+    format: integer
+    range: 
+      lower:1
+      upper:100
+    lable: Discount
+  -
+    identifier: product_images
+    type: File
+    label: "Product Images"
+    allowed: common-image-types
+    maxitems: 10

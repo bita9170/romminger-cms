@@ -1,0 +1,11 @@
+name: romminger/product-category
+table: tx_romminger_productcategory
+prefixFields: false
+labelField: title
+security:
+  ignorePageTypeRestriction: true
+fields:
+  -
+    identifier: title
+    type: Text
+    label: Title
