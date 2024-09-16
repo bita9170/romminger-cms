@@ -10,5 +10,8 @@ nbproject
 /public/typo3conf/*
 !/public/typo3conf/LocalConfiguration.php
 !/public/typo3conf/AdditionalConfiguration.php
+!/public/fileadmin
+/public/fileadmin/*
+!/public/fileadmin/user_upload
 
 node_modules
