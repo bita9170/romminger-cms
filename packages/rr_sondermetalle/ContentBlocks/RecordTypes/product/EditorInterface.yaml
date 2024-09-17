@@ -34,7 +34,7 @@ fields:
     generatorOptions:
       fields:
         -
-          - header
+          - title
           - fallbackField
         - date 
   -
