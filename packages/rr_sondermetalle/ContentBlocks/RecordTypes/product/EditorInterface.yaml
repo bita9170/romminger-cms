@@ -50,7 +50,7 @@ fields:
     identifier: price
     type: Number
     format: decimal 
-    Lable: Price
+    Lable: Price_Euro 
   -
     identifier: discount 
     type: Number
