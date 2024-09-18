@@ -17,7 +17,7 @@
     navbar-fixed-{theme.navigation.type}')}</f:variable
   >
 
-  <header id="page-header" class="{headerClass}">
+ <header id="page-header" class="{headerClass} fixed top-0 left-0 w-full z-50 bg-white">
     <div class="container container-mainnavigation">
       <f:render partial="Header/Logo" arguments="{_all}" />
       <f:if condition="{mainnavigation}">
@@ -33,36 +33,29 @@
           <f:render partial="DropIn/Navigation/MainAfter" arguments="{_all}" />
         </nav>
 
-        <svg class="h-10 w-auto fill-white" viewBox="0 0 576 512">
-          <path
-            d="M96 0C107.5 0 117.4 8.19 119.6 19.51L121.1 32H541.8C562.1 32 578.3 52.25 572.6 72.66L518.6 264.7C514.7 278.5 502.1 288 487.8 288H170.7L179.9 336H488C501.3 336 512 346.7 512 360C512 373.3 501.3 384 488 384H159.1C148.5 384 138.6 375.8 136.4 364.5L76.14 48H24C10.75 48 0 37.25 0 24C0 10.75 10.75 0 24 0H96zM128 464C128 437.5 149.5 416 176 416C202.5 416 224 437.5 224 464C224 490.5 202.5 512 176 512C149.5 512 128 490.5 128 464zM512 464C512 490.5 490.5 512 464 512C437.5 512 416 490.5 416 464C416 437.5 437.5 416 464 416C490.5 416 512 437.5 512 464z"
-          ></path>
-        </svg>
+        <div class="flex items-center space-x-4">
+          <!-- languages icon -->
+          <a href="#">
+            <img
+              src="https://assets.api.uizard.io/api/cdn/stream/dfdccc75-04ae-4972-b5a8-a6511d1cb179.png"
+              alt="rr-sondermetalle"
+              class="h-16 w-16 object-contain"
+            />
+          </a>
 
-        <!-- languages icon -->
-        <div class="header-language text-white">
-          <img
-            src="https://assets.api.uizard.io/api/cdn/stream/dfdccc75-04ae-4972-b5a8-a6511d1cb179.png',"
-            alt="rr-sondermetalle"
-            class="h-10 w-auto"
-          />
+          <!-- online shop icon-->
+          <a href="#">
+            <svg class="h-6 w-6 fill-current text-white" viewBox="0 0 576 512">
+              <path
+                d="M96 0C107.5 0 117.4 8.19 119.6 19.51L121.1 32H541.8C562.1 32 578.3 52.25 572.6 72.66L518.6 264.7C514.7 278.5 502.1 288 487.8 288H170.7L179.9 336H488C501.3 336 512 346.7 512 360C512 373.3 501.3 384 488 384H159.1C148.5 384 138.6 375.8 136.4 364.5L76.14 48H24C10.75 48 0 37.25 0 24C0 10.75 10.75 0 24 0H96zM128 464C128 437.5 149.5 416 176 416C202.5 416 224 437.5 224 464C224 490.5 202.5 512 176 512C149.5 512 128 490.5 128 464zM512 464C512 490.5 490.5 512 464 512C437.5 512 416 490.5 416 464C416 437.5 437.5 416 464 416C490.5 416 512 437.5 512 464z"
+              ></path>
+            </svg>
+          </a>
+        </div>
+
+        <!-- <div class="header-language text-white">
           <f:render partial="Navigation/Language" arguments="{_all}" />
-        </div>
-
-        <div
-          class="auth-buttons flex justify-center items-center space-x-4 ml-auto"
-        >
-          <a
-            href="/login"
-            class="py-2 px-4 text-[#172554] bg-secondary-500 rounded-md text-sm font-semibold hover:bg-secondary-100"
-            >Login</a
-          >
-          <a
-            href="/register"
-            class="py-2 px-4 text-[#172554] bg-tertiary-500 rounded-md text-sm font-semibold hover:bg-tertiary-600"
-            >Register</a
-          >
-        </div>
+        </div> -->
       </f:if>
     </div>
   </header>

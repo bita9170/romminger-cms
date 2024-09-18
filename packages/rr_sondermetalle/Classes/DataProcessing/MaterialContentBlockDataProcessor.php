@@ -39,7 +39,7 @@ class MaterialContentBlockDataProcessor implements DataProcessorInterface
         $processedData['products'] = $result->fetchAllAssociative();
         $processedData['count'] = count($processedData['products']);
 
-        debug($processedData);
+        // debug($processedData);
 
         return $processedData;
     }

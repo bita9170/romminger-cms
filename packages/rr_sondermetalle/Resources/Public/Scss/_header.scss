@@ -7,6 +7,9 @@
 
   .nav-link-text {
     @apply text-white text-xl;
+    &.dropdown-link {
+      @apply !text-primary-700 bold;
+    }
   }
 
   .nav-link-indicator {
@@ -14,9 +17,14 @@
   }
 
   .dropdown-nav {
-    @apply text-black;
+    @apply !text-primary-700 bold;
   }
-  .auth-buttons {
-    @apply flex space-x-4 ml-auto;
+}
+
+.nav-link {
+  &.nav-link-togglen {
+    &:before {
+      @apply !border-l-orange-400;
+    }
   }
 }
