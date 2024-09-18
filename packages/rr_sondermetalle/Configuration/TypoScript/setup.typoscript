@@ -3,6 +3,7 @@
 ######################
 <INCLUDE_TYPOSCRIPT: source="FILE:EXT:bootstrap_package/Configuration/TypoScript/setup.typoscript">
 
+@import 'EXT:rr_sondermetalle/Configuration/TypoScript/Setup/*.typoscript'
 
 ##############
 #### PAGE ####

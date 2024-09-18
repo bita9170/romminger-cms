@@ -1,0 +1,8 @@
+# DataProcessor for single content block
+tt_content {    
+    romminger_materials {
+        dataProcessing {    
+            20 = Romminger\RrSondermetalle\DataProcessing\MaterialContentBlockDataProcessor
+        }
+    }
+}
