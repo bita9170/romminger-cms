@@ -7,3 +7,9 @@ fields:
   -
     identifier: header
     useExistingField: true
+  - 
+    identifier: products
+    type: Select
+    renderType: selectMultipleSideBySide
+    label: Products
+    foreign_table: 'tx_romminger_product'
