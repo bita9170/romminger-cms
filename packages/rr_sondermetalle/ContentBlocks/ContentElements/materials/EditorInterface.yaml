@@ -6,4 +6,24 @@ prefixType: full
 fields:
   -
     identifier: header
-    useExistingField: true
+    useExistingField: true 
+  -
+    identifier: col_items
+    type: Collection
+    label: "Service Items"
+  - 
+     identifier: item_title
+    type: Text
+    label: "Item Title"
+  - 
+    identifier: item_description
+    type: Textarea
+    label: "Item Description"      
+  - 
+    identifier: item_link
+    type: Link
+    label: "Item Link"
+  -
+    identifier: item_price
+    type: Float
+    lable: "Price in Euro (€) "
