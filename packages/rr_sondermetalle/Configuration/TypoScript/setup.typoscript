@@ -29,4 +29,10 @@ page {
     includeJSFooter {
         rr_sondermetalle_scripts = EXT:rr_sondermetalle/Resources/Public/JavaScript/Dist/scripts.js
     }
+    tt_content.metal_calculator = FLUIDTEMPLATE
+    tt_content.metal_calculator {
+    templateName = MetalCalculator
+    templateRootPaths.0 = EXT:my_custom_elements/Resources/Private/Fluid/ContentElements/
+}
+
 }
