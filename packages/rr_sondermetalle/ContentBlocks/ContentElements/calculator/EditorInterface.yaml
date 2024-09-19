@@ -1,0 +1,9 @@
+name: calculator/calculator
+typeName: calculator_calculator
+group: common
+prefixFields: true
+prefixType: full
+fields:
+  -
+    identifier: header
+    useExistingField: true
