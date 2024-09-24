@@ -4,8 +4,8 @@
 mod {
     web_layout {
         BackendLayouts {
-            example {
-                title = LLL:EXT:rr_sondermetalle/Resources/Private/Language/locallang_be.xlf:backend_layout.example
+            account {
+                title = LLL:EXT:rr_sondermetalle/Resources/Private/Language/locallang_be.xlf:backend_layout.account
                 config {
                     backend_layout {
                         colCount = 1
@@ -22,7 +22,7 @@ mod {
                         }
                     }
                 }
-                icon = EXT:rr_sondermetalle/Resources/Public/Icons/BackendLayouts/example.svg
+                icon = EXT:rr_sondermetalle/Resources/Public/Icons/BackendLayouts/account.svg
             }
         }
     }
