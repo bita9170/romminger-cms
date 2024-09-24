@@ -28,3 +28,9 @@
     }
   }
 }
+.auth-container {
+  @apply flex items-center justify-center flex-grow  mb-10;
+  .auth-icon {
+    @apply absolute w-4 h-4 top-8 left-[340px] lg:left-[376px] text-gray-500;
+  }
+}
