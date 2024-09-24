@@ -1,9 +1,8 @@
-name: register/register
-typeName: register_register
+name: romminger/register
+typeName: romminger_register
 group: common
 prefixFields: true
 prefixType: full
 fields:
-  -
-    identifier: header
+  - identifier: header
     useExistingField: true

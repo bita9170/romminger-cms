@@ -5,4 +5,10 @@ tt_content {
             20 = Romminger\RrSondermetalle\DataProcessing\MaterialContentBlockDataProcessor
         }
     }
+
+    romminger_register {
+        dataProcessing {    
+            20 = Romminger\RrSondermetalle\DataProcessing\RegisterContentBlockDataProcessor
+        }
+    }
 }
