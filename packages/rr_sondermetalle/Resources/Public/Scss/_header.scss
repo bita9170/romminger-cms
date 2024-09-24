@@ -8,7 +8,7 @@
   .nav-link-text {
     @apply text-white text-xl;
     &.dropdown-link {
-      @apply !text-primary-700 bold;
+      @apply !text-primary-700 font-bold;
     }
   }
 
@@ -17,7 +17,7 @@
   }
 
   .dropdown-nav {
-    @apply !text-primary-700 bold;
+    @apply !text-primary-700 font-bold;
   }
 }
 
