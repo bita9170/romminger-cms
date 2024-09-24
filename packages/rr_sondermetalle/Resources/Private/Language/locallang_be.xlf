@@ -6,8 +6,8 @@
             <authorEmail>bita.s9170@gmail.com</authorEmail>
         </header>
         <body>
-            <trans-unit id="backend_layout.example">
-                <source>Example</source>
+            <trans-unit id="backend_layout.account">
+                <source>Account</source>
             </trans-unit>
             <trans-unit id="backend_layout.column.normal">
                 <source>Normal</source>
