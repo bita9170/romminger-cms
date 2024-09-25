@@ -17,7 +17,10 @@
     navbar-fixed-{theme.navigation.type}')}</f:variable
   >
 
- <header id="page-header" class="{headerClass} fixed top-0 left-0 w-full z-50 bg-white">
+  <header
+    id="page-header"
+    class="{headerClass} top-0 left-0 w-full z-50 bg-white"
+  >
     <div class="container container-mainnavigation">
       <f:render partial="Header/Logo" arguments="{_all}" />
       <f:if condition="{mainnavigation}">
