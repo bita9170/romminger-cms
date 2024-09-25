@@ -28,3 +28,8 @@
     }
   }
 }
+.auth-container {
+  .auth-icon {
+    @apply absolute w-4 h-4 top-8 left-[340px] lg:left-[376px] text-gray-500;
+  }
+}
