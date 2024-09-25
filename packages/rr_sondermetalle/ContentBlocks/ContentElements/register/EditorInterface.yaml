@@ -1,8 +1,0 @@
-name: romminger/register
-typeName: romminger_register
-group: common
-prefixFields: true
-prefixType: full
-fields:
-  - identifier: header
-    useExistingField: true
