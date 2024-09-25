@@ -5,11 +5,15 @@
   <f:layout name="LoggedOut" />
 
   <f:section name="Main">
+    <p class="text-2xl lg:text-3xl mb-2 text-center">
+      Register
+      <p class="text-sm font-semibold text-center mb-6">Get started today!</p>
+    </p>
     <f:form
       action="preview"
       name="user"
       id="sfrForm"
-      class="px-3"
+      class=""
       object="{user}"
       enctype="multipart/form-data"
     >
@@ -34,8 +38,8 @@
       </div>
     </f:form>
 
-    <div class="mandatory">
+    <!-- <div class="mandatory">
       <f:format.raw><f:translate id="info_mandatory_fields" /></f:format.raw>
-    </div>
+    </div> -->
   </f:section>
 </html>
