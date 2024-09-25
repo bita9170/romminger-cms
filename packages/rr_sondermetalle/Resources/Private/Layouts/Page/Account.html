@@ -9,18 +9,16 @@
     <f:render partial="DropIn/Page/PageBefore" arguments="{_all}" />
     <f:render partial="Structure/CookieConsent" arguments="{_all}" />
 
-    <div
-      class="flex flex-col lg:flex-row w-full flex-grow bg-secondary-300 lg:bg-white"
-    >
-      <div class="hidden lg:block lg:w-1/2 h-screen">
+    <div class="flex flex-col lg:flex-row w-full bg-secondary-300 lg:bg-white">
+      <div class="hidden lg:block lg:w-1/2 flex-col h-full">
         <img
           src="https://assets.api.uizard.io/api/cdn/stream/c4ddf918-6e76-4818-bde6-39fb9ef194e3.png"
           alt="Authentication Image"
-          class="object-cover w-full h-full"
+          class="object-cover w-full h-full flex-grow"
         />
       </div>
 
-      <div class="flex flex-col w-full lg:w-1/2 min-h-screen">
+      <div class="flex flex-col w-full lg:w-1/2 min-h-screen lg:min-h-0">
         <!--Mobile header -->
         <header class="bg-primary-500 text-white p-4 block lg:hidden">
           <div class="flex justify-start">
@@ -40,13 +38,13 @@
           class="hidden lg:flex items-center justify-between bg-white p-4 text-black"
         >
           <a href="#">
-            <img
-              src="https://assets.api.uizard.io/api/cdn/stream/a7667589-d804-484a-b691-f1cf6030c617.png"
-              alt="Icon"
-              class="h-8 w-auto fill-black"
-            />
+            <svg class="h-8 w-auto" viewBox="0 0 24 24">
+              <path fill="none" d="M0 0h24v24H0z"></path>
+              <path
+                d="m9 19 1.41-1.41L5.83 13H22v-2H5.83l4.59-4.59L9 5l-7 7 7 7z"
+              ></path>
+            </svg>
           </a>
-
           <f:link.page
             pageUid="{rootPage}"
             class="navbar-brand"
@@ -58,16 +56,12 @@
                   d="M128 32C145.7 32 160 46.33 160 64V215.4L316.6 131C332.6 122.4 352 134 352 152.2V215.4L508.6 131C524.6 122.4 544 134 544 152.2V432C544 458.5 522.5 480 496 480H80C53.49 480 32 458.5 32 432V64C32 46.33 46.33 32 64 32H128z"
                 ></path>
               </svg>
-              <span class="text-xl font-bold text-black">
-                RR-Sondermetalle
-              </span>
+              <span class="text-xl font-bold text-black">RR-Sondermetalle</span>
             </div>
           </f:link.page>
         </header>
 
-        <div
-          class="auth-container flex-grow flex items-center justify-center mb-10"
-        >
+        <div class="auth-container flex-grow flex items-center justify-center">
           <main
             id="auth-content"
             class="auth-content bp-page-content main-section w-full max-w-md"
@@ -77,18 +71,15 @@
             <!--TYPO3SEARCH_end-->
           </main>
         </div>
-
-        <footer id="page-footer" class="text-black w-full">
-          <f:render
-            partial="DropIn/Structure/FooterBefore"
-            arguments="{_all}"
-          />
-          <f:render section="Footer" optional="true" />
-          <f:render partial="Structure/FooterMeta" arguments="{_all}" />
-          <f:render partial="DropIn/Structure/FooterAfter" arguments="{_all}" />
-        </footer>
       </div>
     </div>
+
+    <footer id="page-footer" class="w-full bg-white">
+      <f:render partial="DropIn/Structure/FooterBefore" arguments="{_all}" />
+      <f:render section="Footer" optional="true" />
+      <f:render partial="Structure/FooterMeta" arguments="{_all}" />
+      <f:render partial="DropIn/Structure/FooterAfter" arguments="{_all}" />
+    </footer>
 
     <f:render partial="Structure/ScrollTop" arguments="{_all}" />
     <f:render partial="DropIn/Page/PageAfter" arguments="{_all}" />
