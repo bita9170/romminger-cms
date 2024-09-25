@@ -48,6 +48,15 @@ plugin.tx_sfregister {
         templateRootPath = EXT:rr_sondermetalle/Resources/Private/Templates/sf_register/
     }
 }
+
+plugin.tx_felogin_login {
+    view {
+        templateRootPath = EXT:rr_sondermetalle/Resources/Private/Templates/
+        layoutRootPath = EXT:rr_sondermetalle/Resources/Private/Layouts/
+        partialRootPath = EXT:rr_sondermetalle/Resources/Private/Partials/
+    }
+}
+
 ########################
 ### CONTENT ELEMENTS ###
 ########################
