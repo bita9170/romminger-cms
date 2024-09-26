@@ -592,14 +592,6 @@ video {
   position: static;
 }
 
-.fixed {
-  position: fixed;
-}
-
-.absolute {
-  position: absolute;
-}
-
 .relative {
   position: relative;
 }
@@ -610,14 +602,6 @@ video {
 
 .top-0 {
   top: 0px;
-}
-
-.left-3 {
-  left: 0.75rem;
-}
-
-.top-2 {
-  top: 0.5rem;
 }
 
 .z-40 {
@@ -702,10 +686,6 @@ video {
 
 .mt-2 {
   margin-top: 0.5rem;
-}
-
-.mt-24 {
-  margin-top: 6rem;
 }
 
 .mt-4 {
@@ -941,8 +921,24 @@ video {
   background-image: url('https://assets.api.uizard.io/api/cdn/stream/09614dbe-b047-41c4-966a-92526bb54118.png');
 }
 
+.bg-\[url\(\'\{data\.romminger_hero_background_image\.0\.publicUrl\}\'\)\] {
+  background-image: url('{data.romminger_hero_background_image.0.publicUrl}');
+}
+
+.bg-\[url\(\'\{data\.romminger_hero_background_image\.0\.publicUrl\'\)\] {
+  background-image: url('{data.romminger_hero_background_image.0.publicUrl');
+}
+
+.bg-\[url\(\'data\.romminger_hero_background_image\.0\.publicUrl\'\)\] {
+  background-image: url('data.romminger_hero_background_image.0.publicUrl');
+}
+
 .bg-cover {
   background-size: cover;
+}
+
+.bg-fixed {
+  background-attachment: fixed;
 }
 
 .bg-center {
@@ -985,11 +981,6 @@ video {
 
 .p-6 {
   padding: 1.5rem;
-}
-
-.px-3 {
-  padding-left: 0.75rem;
-  padding-right: 0.75rem;
 }
 
 .px-4 {
@@ -1255,6 +1246,11 @@ video {
   background-color: rgb(243 244 246 / var(--tw-bg-opacity));
 }
 
+.hover\:bg-primary-700:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(26 33 62 / var(--tw-bg-opacity));
+}
+
 .hover\:bg-primary-800:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(20 28 51 / var(--tw-bg-opacity));
@@ -1263,6 +1259,11 @@ video {
 .hover\:bg-secondary-100:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(245 247 249 / var(--tw-bg-opacity));
+}
+
+.hover\:text-white:hover {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
 .focus\:outline-none:focus {

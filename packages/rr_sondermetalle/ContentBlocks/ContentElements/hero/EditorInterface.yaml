@@ -15,4 +15,20 @@ fields:
     label: "Hero Image"
     allowed: common-image-types
 
+  - identifier: viewProductsText
+    type: Text
+    label: "View Products Button Text"
+    defaultValue: "View Products"
 
+  - identifier: viewProductsLink
+    type: Link
+    label: "View Products Button Link"
+
+  - identifier: startShoppingText
+    type: Text
+    label: "Start Shopping Button Text"
+    defaultValue: "Start Shopping"
+
+  - identifier: startShoppingLink
+    type: Link
+    label: "Start Shopping Button Link"
