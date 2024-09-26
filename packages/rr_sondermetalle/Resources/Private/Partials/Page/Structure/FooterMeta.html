@@ -38,33 +38,18 @@
                   </div>
                 </f:if>
                 <f:if
-                  condition="{theme.meta.enable} || {theme.language.enable} || {theme.copyright.enable} || {theme.socialmedia.enable}"
+                  condition="{theme.language.enable} || {theme.socialmedia.enable}"
                 >
                   <div class="footer-info-section">
-                    <f:if condition="{theme.meta.enable}">
-                      <div class="footer-meta">
-                        <f:render
-                          partial="Navigation/Meta"
-                          arguments="{_all}"
-                        />
-                      </div>
-                    </f:if>
-                    <f:if condition="{theme.language.enable}">
+                    <!-- <f:if condition="{theme.language.enable}">
                       <div class="footer-language">
                         <f:render
                           partial="Navigation/Language"
                           arguments="{_all}"
                         />
                       </div>
-                    </f:if>
-                    <f:if condition="{theme.copyright.enable}">
-                      <div class="footer-copyright">
-                        <f:render
-                          partial="Structure/Copyright"
-                          arguments="{_all}"
-                        />
-                      </div>
-                    </f:if>
+                    </f:if> -->
+
                     <f:if condition="{theme.socialmedia.enable}">
                       <div class="footer-sociallinks">
                         <f:render

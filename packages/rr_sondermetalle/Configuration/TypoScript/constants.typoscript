@@ -24,9 +24,32 @@ page {
         partialRootPath = EXT:rr_sondermetalle/Resources/Private/Partials/Page/
         templateRootPath = EXT:rr_sondermetalle/Resources/Private/Templates/Page/
     }
+<<<<<<< HEAD
 
     # cat=Romminger//; type=string; label=Storage User PID
     storageUserPID = 33
+=======
+    theme {
+        contact {
+            enable = 1
+            data {
+                title = RR-Sondermetalle 
+                addressLine1 = Gottlob-Bauknecht-Straße 26
+                addressLine2 = 75365 Calw Germany
+                addressLine3 =
+                country = 
+                phone = +49(0) 7051 8059030
+                fax =
+                email = info@rr-sondermetalle.com
+                www =
+            }
+        }
+        copyright {
+            enable = 1
+            text = Copyright © 2024-All right reserved
+        }        
+    }
+>>>>>>> main
 }
 
 
