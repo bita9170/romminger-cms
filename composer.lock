@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "8dbf0328ac7fc7ebc200b5263e143dca",
+    "content-hash": "d54580deb9a79da99638497a79524565",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -1043,6 +1043,78 @@
             "time": "2024-02-22T17:51:05+00:00"
         },
         {
+            "name": "evoweb/sf-register",
+            "version": "12.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/evoWeb/sf_register.git",
+                "reference": "5383034555c121db4b9788f6bff70a7ee69b88b6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/evoWeb/sf_register/zipball/5383034555c121db4b9788f6bff70a7ee69b88b6",
+                "reference": "5383034555c121db4b9788f6bff70a7ee69b88b6",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^8.1",
+                "typo3/cms-backend": "^12.4 || dev-main",
+                "typo3/cms-core": "^12.4",
+                "typo3/cms-extbase": "^12.4 || dev-main",
+                "typo3/cms-fluid": "^12.4 || dev-main",
+                "typo3/cms-frontend": "^12.4 || dev-main"
+            },
+            "require-dev": {
+                "typo3/testing-framework": "^8.0.6"
+            },
+            "suggest": {
+                "evoweb/recaptcha": "^12.0",
+                "sjbr/static-info-tables": "dev-master"
+            },
+            "type": "typo3-cms-extension",
+            "extra": {
+                "typo3/cms": {
+                    "extension-key": "sf_register"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Evoweb\\SfRegister\\": "Classes/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "description": "Frontend User Registration: Offers the possibility to maintain the fe_user data in frontend.",
+            "homepage": "https://www.evoweb.de",
+            "keywords": [
+                "Double-optin",
+                "Edit user data",
+                "Resend optin mail",
+                "TYPO3 CMS",
+                "delete account",
+                "frontend",
+                "user registration"
+            ],
+            "support": {
+                "docs": "https://docs.typo3.org/p/evoweb/sf-register/main/en-us/",
+                "issues": "https://github.com/evoWeb/sf_register/issues",
+                "source": "https://github.com/evoWeb/sf_register"
+            },
+            "funding": [
+                {
+                    "url": "https://www.paypal.me/garbast",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/garbast",
+                    "type": "github"
+                }
+            ],
+            "time": "2024-02-07T20:02:58+00:00"
+        },
+        {
             "name": "firebase/php-jwt",
             "version": "v6.10.1",
             "source": {
@@ -1429,6 +1501,226 @@
                 }
             ],
             "time": "2024-07-18T11:15:46+00:00"
+        },
+        {
+            "name": "helhum/config-loader",
+            "version": "v0.12.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/helhum/config-loader.git",
+                "reference": "f761ab3fcf888b9d17d679d94b14aca24fe6bfab"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/helhum/config-loader/zipball/f761ab3fcf888b9d17d679d94b14aca24fe6bfab",
+                "reference": "f761ab3fcf888b9d17d679d94b14aca24fe6bfab",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.2"
+            },
+            "require-dev": {
+                "php-parallel-lint/php-parallel-lint": "^1.2",
+                "phpunit/phpunit": "^8.5",
+                "symfony/yaml": "^2.8 || ^3.3 || ^4.0 || ^5.0"
+            },
+            "suggest": {
+                "ext-yaml": "For improved performance when parsing yaml files you should use the PECL YAML Parser php extension",
+                "symfony/yaml": "To be able to parse yaml files, you will need symfony/yaml"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-main": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Helhum\\ConfigLoader\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "description": "Generic config loader with context and environment support.",
+            "support": {
+                "issues": "https://github.com/helhum/config-loader/issues",
+                "source": "https://github.com/helhum/config-loader/tree/v0.12.5"
+            },
+            "funding": [
+                {
+                    "url": "https://www.paypal.me/helhum/19.99",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/helhum",
+                    "type": "github"
+                }
+            ],
+            "time": "2022-02-21T15:32:39+00:00"
+        },
+        {
+            "name": "helhum/php-error-reporting",
+            "version": "v1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/helhum/php-error-reporting.git",
+                "reference": "c9f1a0b6fedf7e641bce23b65eeeea946a6f7eb9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/helhum/php-error-reporting/zipball/c9f1a0b6fedf7e641bce23b65eeeea946a6f7eb9",
+                "reference": "c9f1a0b6fedf7e641bce23b65eeeea946a6f7eb9",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.4.1"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^3.2",
+                "phpstan/phpstan": "^1.0",
+                "phpstan/phpstan-deprecation-rules": "^1.0",
+                "phpstan/phpstan-doctrine": "^1.0",
+                "phpstan/phpstan-phpunit": "^1.0",
+                "phpstan/phpstan-strict-rules": "^1.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "ErrorReporting\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Helmut Hummel",
+                    "email": "typo3@helhum.io"
+                }
+            ],
+            "description": "Create ErrorException with clean trace from PHP error handler errors, inspired by Sentry PHP SDK",
+            "homepage": "https://helhum.io",
+            "keywords": [
+                "error reporting",
+                "sentry"
+            ],
+            "support": {
+                "issues": "https://github.com/helhum/php-error-reporting",
+                "source": "https://github.com/helhum/php-error-reporting/tree/v1.0.1"
+            },
+            "time": "2023-01-12T14:49:10+00:00"
+        },
+        {
+            "name": "helhum/typo3-console",
+            "version": "v8.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/TYPO3-Console/TYPO3-Console.git",
+                "reference": "7916d393fe18b441d0e339fde6c9247fd49a5a58"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/TYPO3-Console/TYPO3-Console/zipball/7916d393fe18b441d0e339fde6c9247fd49a5a58",
+                "reference": "7916d393fe18b441d0e339fde6c9247fd49a5a58",
+                "shasum": ""
+            },
+            "require": {
+                "composer-runtime-api": "^2.1",
+                "helhum/config-loader": ">=0.9 <0.13",
+                "helhum/php-error-reporting": "^1.0",
+                "php": ">=8.1",
+                "symfony/console": "^5.4 || ^6.4 || ^7.0",
+                "symfony/process": "^5.4 || ^6.4 || ^7.0",
+                "typo3/cms-backend": "^11.5.26 || ^12.4 || dev-main",
+                "typo3/cms-composer-installers": "^4.0@rc || >=5.0",
+                "typo3/cms-core": "^11.5.26 || ^12.4 || dev-main",
+                "typo3/cms-extbase": "^11.5.26 || ^12.4 || dev-main",
+                "typo3/cms-extensionmanager": "^11.5.26 || ^12.4 || dev-main",
+                "typo3/cms-fluid": "^11.5.26 || ^12.4 || dev-main",
+                "typo3/cms-frontend": "^11.5.26 || ^12.4 || dev-main",
+                "typo3/cms-install": "^11.5.26 || ^12.4 || dev-main"
+            },
+            "replace": {
+                "typo3-ter/typo3-console": "self.version"
+            },
+            "require-dev": {
+                "dg/bypass-finals": "^1.4",
+                "friendsofphp/php-cs-fixer": "^3.2",
+                "php-parallel-lint/php-parallel-lint": "^1.2",
+                "phpspec/prophecy": "^1.15",
+                "phpspec/prophecy-phpunit": "^2.0",
+                "phpunit/phpunit": "^9.5.25",
+                "symfony/expression-language": "^5.4 || ^6.4 || ^7.0",
+                "symfony/filesystem": "^5.4 || ^6.4 || ^7.0",
+                "typo3-console/create-reference-command": "^1.0",
+                "typo3-console/sql-command": "^1.0",
+                "typo3/cms-filemetadata": "^11.5.26 || ^12.4 || dev-main",
+                "typo3/cms-recordlist": "^11.5.26 || ^12.4 || dev-main",
+                "typo3/cms-reports": "^11.5.26 || ^12.4 || dev-main"
+            },
+            "type": "typo3-cms-extension",
+            "extra": {
+                "branch-alias": {
+                    "dev-main": "8.1.x-dev"
+                },
+                "typo3/cms": {
+                    "Package": {
+                        "serviceProvider": "Helhum\\Typo3Console\\ServiceProvider",
+                        "protected": true,
+                        "partOfMinimalUsableSystem": true
+                    },
+                    "extension-key": "typo3_console",
+                    "ignore-as-root": false
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Helhum\\Typo3Console\\": [
+                        "Classes/Console/",
+                        "Classes/Compatibility/"
+                    ]
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Helmut Hummel",
+                    "email": "info@helhum.io",
+                    "homepage": "https://helhum.io",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A reliable and powerful command line interface for TYPO3 CMS",
+            "homepage": "https://insight.helhum.io/post/104528981610/about-the-beauty-and-power-of-typo3-console",
+            "keywords": [
+                "cli",
+                "command",
+                "commandline",
+                "console",
+                "typo3"
+            ],
+            "support": {
+                "docs": "https://docs.typo3.org/p/helhum/typo3-console/main/en-us/",
+                "issues": "https://github.com/TYPO3-Console/TYPO3-Console/issues",
+                "source": "https://github.com/TYPO3-Console/TYPO3-Console"
+            },
+            "funding": [
+                {
+                    "url": "https://www.paypal.me/helhum/19.99",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/helhum",
+                    "type": "github"
+                }
+            ],
+            "time": "2024-02-06T17:48:27+00:00"
         },
         {
             "name": "lolli42/finediff",
@@ -4530,6 +4822,67 @@
                 }
             ],
             "time": "2024-05-31T15:07:36+00:00"
+        },
+        {
+            "name": "symfony/process",
+            "version": "v6.4.12",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/process.git",
+                "reference": "3f94e5f13ff58df371a7ead461b6e8068900fbb3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/process/zipball/3f94e5f13ff58df371a7ead461b6e8068900fbb3",
+                "reference": "3f94e5f13ff58df371a7ead461b6e8068900fbb3",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=8.1"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Component\\Process\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Executes commands in sub-processes",
+            "homepage": "https://symfony.com",
+            "support": {
+                "source": "https://github.com/symfony/process/tree/v6.4.12"
+            },
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2024-09-17T12:47:12+00:00"
         },
         {
             "name": "symfony/property-access",

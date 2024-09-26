@@ -1,7 +1,7 @@
 <?php
 return [
     'BE' => [
-        'debug' => false,
+        'debug' => true,
         'installToolPassword' => '$argon2i$v=19$m=65536,t=16,p=1$MnVkN2taZFBNN0h3dG51ZQ$3wITEBuTjr4Lm/iGIyiXMyTNl+cHdNDVlpOuuE9pzGQ',
         'passwordHashing' => [
             'className' => 'TYPO3\\CMS\\Core\\Crypto\\PasswordHashing\\Argon2iPasswordHash',
