@@ -1,6 +1,10 @@
 <html
   xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
   data-namespace-typo3-fluid="true"
+></html>
+<html
+  xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+  data-namespace-typo3-fluid="true"
 >
   <div id="top"></div>
   <div
@@ -24,7 +28,15 @@
 
     <f:render partial="Navigation/Main" arguments="{_all}" />
     <f:render section="Border" optional="true" />
-
+    <div class="container flex justify-end">
+      <f:link.typolink
+        parameter="{rootPage }&logintype=logout"
+        class="btn btn-primary my-2"
+      >
+        <i class="fa fa-sign-out" aria-hidden="true"></i>
+        Abmelden
+      </f:link.typolink>
+    </div>
     <main id="page-content" class="bp-page-content main-section page-default">
       <!--TYPO3SEARCH_begin-->
       <f:render section="Main" />
