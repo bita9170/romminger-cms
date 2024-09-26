@@ -17,7 +17,7 @@ fields:
 
   - identifier: viewProductsText
     type: Text
-    label: "View Products Button Text"
+    label: "Products Button Text"
     defaultValue: "View Products"
 
   - identifier: viewProductsLink
@@ -26,7 +26,7 @@ fields:
 
   - identifier: startShoppingText
     type: Text
-    label: "Start Shopping Button Text"
+    label: "Shopping Button Text"
     defaultValue: "Start Shopping"
 
   - identifier: startShoppingLink
