@@ -24,6 +24,11 @@ page {
         partialRootPath = EXT:rr_sondermetalle/Resources/Private/Partials/Page/
         templateRootPath = EXT:rr_sondermetalle/Resources/Private/Templates/Page/
     }
+<<<<<<< HEAD
+
+    # cat=Romminger//; type=string; label=Storage User PID
+    storageUserPID = 33
+=======
     theme {
         contact {
             enable = 1
@@ -44,6 +49,7 @@ page {
             text = Copyright © 2024-All right reserved
         }        
     }
+>>>>>>> main
 }
 
 
@@ -58,6 +64,13 @@ plugin.bootstrap_package {
     }
 }
 
+plugin.tx_sfregister {
+    view {
+        layoutRootPath = EXT:rr_sondermetalle/Resources/Private/Layouts/sf_register/
+        partialRootPath = EXT:rr_sondermetalle/Resources/Private/Partials/sf_register/
+        templateRootPath = EXT:rr_sondermetalle/Resources/Private/Templates/sf_register/
+    }
+}
 
 plugin.tx_felogin_login {
     view {
