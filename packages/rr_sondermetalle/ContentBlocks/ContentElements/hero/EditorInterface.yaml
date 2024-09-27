@@ -15,20 +15,27 @@ fields:
     label: "Hero Image"
     allowed: common-image-types
 
-  - identifier: viewProductsText
+  - identifier: text
     type: Text
-    label: "Products Button Text"
-    defaultValue: "View Products"
+    label: "Button1 text"
 
-  - identifier: viewProductsLink
+  - identifier: link
     type: Link
-    label: "View Products Button Link"
+    label: "Button1 link"
 
-  - identifier: startShoppingText
+  - identifier: button2_text
     type: Text
-    label: "Shopping Button Text"
-    defaultValue: "Start Shopping"
+    label: "Button2 text"
 
-  - identifier: startShoppingLink
+  - identifier: button2_link
     type: Link
-    label: "Start Shopping Button Link"
+    label: "Button2 link"
+
+  - identifier: hero_template
+    type: Select
+    renderType: selectSingle
+    items:
+      - label: "Primary Hero Section"
+        value: layout-1
+      - label: "Secondary Hero Section"
+        value: layout-2

@@ -6,81 +6,76 @@
   identifier="content-block-js-romminger-romminger/hero"
   file="Frontend.js"
 />
-<!-- bg-image dynamic???????????????????????-->
-<section
-  class="bg-[url('data.romminger_hero_background_image.0.publicUrl')] bg-cover bg-center bg-no-repeat relative z-40;"
->
 
-  <div class="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-24 lg:px-12">
-    <h1
-      class="mb-4 text-4xl font-extrabold tracking-tight leading-none text-black md:text-5xl lg:text-6xl"
-    >
-      {data.header}
-    </h1>
-    <p
-      class="mb-8 text-lg font-normal text-black lg:text-xl sm:px-16 xl:px-48 dark:text-gray-400"
-    >
-      {data.subheader}
-    </p>
+<f:if condition="{data.hero_template} == 'layout-1'">
+  <section class="relative z-40 min-h-[70vh] flex items-center justify-center">
+    <f:image
+      image="{data.hero_image.0}"
+      alt="alt text"
+      class="absolute inset-0 w-full h-full object-cover z-10"
+    />
+    <div class="absolute inset-0 bg-black opacity-30 z-20"></div>
 
     <div
-      class="flex flex-col mb-8 lg:mb-16 space-y-4 sm:flex-row sm:justify-center sm:space-y-0 sm:space-x-4"
+      class="relative py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-24 lg:px-12 z-30"
     >
-      <a
-        href="{data.romminger_hero_viewProductsLink}"
-        class="inline-flex justify-center items-center py-2 px-4 text-base font-bold text-center text-primary-900 rounded-lg bg-secondary-500 hover:bg-secondary-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800"
-      >
-        {data.viewProductsText}
-      </a>
-      <a
-        href="{data.romminger_hero_startShoppingLink}"
-        class="inline-flex justify-center items-center py-2 px-4 text-base font-bold text-center text-primary-900 rounded-lg bg-secondary-500 hover:bg-secondary-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800"
-      >
-        {data.startShoppingText}
-      </a>
-    </div>
-  </div>
-</section>
-
-<!-- <section class="bg-white dark:bg-gray-900 hero {data.hero_template}">
-  <div
-    class="grid max-w-screen-xl px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12"
-  >
-    <div class="mr-auto place-self-center lg:col-span-7">
       <h1
-        class="max-w-2xl mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl dark:text-white"
+        class="mb-4 text-4xl font-extrabold tracking-tight leading-none text-white md:text-5xl lg:text-6xl"
       >
-        Begin Your Metal Journey with RR-Sondermetalle
+        {data.header}
       </h1>
       <p
-        class="max-w-2xl mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400"
+        class="mb-8 text-lg font-normal text-white lg:text-xl sm:px-16 xl:px-48 dark:text-gray-400"
       >
-        Optimize Your Metal Processes Today.
+        {data.subheader}
       </p>
-      <a
-        href="#"
-        class="inline-flex items-center justify-center px-5 py-3 mr-3 text-base font-medium text-center text-white rounded-lg bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-900"
+
+      <div
+        class="flex flex-col mb-8 lg:mb-16 space-y-4 sm:flex-row sm:justify-center sm:space-y-0 sm:space-x-4"
       >
-        Get started
-        <svg
-          class="w-5 h-5 ml-2 -mr-1"
-          fill="currentColor"
-          viewBox="0 0 20 20"
-          xmlns="http://www.w3.org/2000/svg"
+        <a
+          href="{data.romminger_hero_viewProductsLink}"
+          class="inline-flex justify-center items-center py-2.5 px-4 text-base font-bold text-center text-primary-800 rounded-lg bg-secondary-500 hover:bg-secondary-100"
         >
-          <path
-            fill-rule="evenodd"
-            d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
-            clip-rule="evenodd"
-          ></path>
-        </svg>
-      </a>
+          {data.text}
+        </a>
+        <a
+          href="{data.romminger_hero_startShoppingLink}"
+          class="inline-flex justify-center items-center py-2 px-4 text-base font-bold text-center text-primary-800 rounded-lg bg-secondary-500 hover:bg-secondary-100"
+        >
+          {data.button2_text}
+        </a>
+      </div>
     </div>
-    <div class="hidden lg:mt-0 lg:col-span-5 lg:flex">
-      <img
-        src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/hero/phone-mockup.png"
-        alt="mockup"
-      />
+  </section>
+</f:if>
+
+<f:if condition="{data.hero_template} == 'layout-2'">
+  <section class="bg-white dark:bg-gray-900 hero">
+    <div
+      class="grid max-w-screen-xl px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12"
+    >
+      <div class="mr-auto place-self-center lg:col-span-7">
+        <h1
+          class="max-w-2xl mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl dark:text-white"
+        >
+          {data.header}
+        </h1>
+        <p
+          class="max-w-2xl mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400"
+        >
+          {data.subheader}
+        </p>
+        <a
+          href="#"
+          class="inline-flex items-center justify-center px-5 py-3 mr-3 text-base font-medium text-center text-white rounded-lg bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-900"
+        >
+          {data.text}
+        </a>
+      </div>
+      <div class="hidden lg:mt-0 lg:col-span-5 lg:flex">
+        <img src="{data.hero_image.0.publicUrl}" alt="mockup" />
+      </div>
     </div>
-  </div>
-</section> -->
+  </section>
+</f:if>
