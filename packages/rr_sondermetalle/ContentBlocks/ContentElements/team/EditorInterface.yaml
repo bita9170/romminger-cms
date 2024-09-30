@@ -1,0 +1,45 @@
+name: romminger/team
+typeName: romminger_team
+group: common
+prefixFields: true
+prefixType: full
+fields:
+  - identifier: header
+    useExistingField: true
+  - identifier: subheader
+    useExistingField: true
+  - identifier: team_items
+    type: Collection
+    label: "Team Items"
+    fields:
+      - identifier: fullname
+        type: Text
+        label: "Full name"
+      - identifier: position
+        type: Text
+        label: "Position"
+      - identifier: description
+        type: Textarea
+        label: "Description"
+      - identifier: avatar
+        type: File
+        label: "Avatar"
+        minitems: 1
+        maxitems: 1
+        allowed: common-image-types
+      - identifier: social_items
+        type: Collection
+        label: "Social Items"
+        fields:
+          - identifier: social_name
+            type: Text
+            label: "Social Name"
+          - identifier: social_link
+            type: Link
+            label: "Social Link"
+          - identifier: social_icon
+            type: File
+            label: "Social icon"
+            minitems: 1
+            maxitems: 1
+            allowed: common-image-types
