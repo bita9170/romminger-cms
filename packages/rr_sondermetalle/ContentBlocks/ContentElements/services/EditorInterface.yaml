@@ -6,6 +6,8 @@ prefixType: full
 fields:
   - identifier: header
     useExistingField: true
+  - identifier: subheader
+    useExistingField: true
   - identifier: col_items
     type: Collection
     label: "Service Items"
@@ -21,7 +23,7 @@ fields:
         label: "Item Title"
       - identifier: item_description
         type: Textarea
-        label: "Item Description"      
+        label: "Item Description"
       - identifier: item_link
         type: Link
         label: "Item Link"
