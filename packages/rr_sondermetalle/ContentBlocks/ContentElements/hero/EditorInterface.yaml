@@ -17,19 +17,19 @@ fields:
 
   - identifier: text
     type: Text
-    label: "Button1 text"
+    label: "Button primary"
 
   - identifier: link
     type: Link
-    label: "Button1 link"
+    label: "Button primary link"
 
   - identifier: button2_text
     type: Text
-    label: "Button2 text"
+    label: "Button secondary"
 
   - identifier: button2_link
     type: Link
-    label: "Button2 link"
+    label: "Button secondary link"
 
   - identifier: hero_template
     type: Select

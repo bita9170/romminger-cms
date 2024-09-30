@@ -1,0 +1,14 @@
+.btn {
+  @apply inline-block px-4 py-2.5;
+
+  &.btn-primary {
+    @apply bg-primary-500 text-white hover:bg-primary-500/80 border-none;
+  }
+  &.btn-secondary {
+    @apply bg-secondary-500 text-primary-800 font-bold text-center items-center  hover:bg-secondary-500/80 border-none;
+  }
+}
+
+h1 {
+  @apply text-4xl font-extrabold mb-4 tracking-tight leading-none text-white md:text-5xl lg:text-6xl;
+}
