@@ -4,15 +4,71 @@ group: common
 prefixFields: true
 prefixType: full
 fields:
+  - identifier: hero_template
+    type: Select
+    label: Template
+    renderType: selectSingle
+    items:
+      - label: "Primary"
+        value: layout-1
+      - label: "Secondary"
+        value: layout-2
   - identifier: header
     useExistingField: true
-
   - identifier: subheader
     useExistingField: true
-
   - identifier: hero_image
     type: File
     label: "Hero Image"
     allowed: common-image-types
+  - identifier: hero_cta_primary
+    type: Palette
+    label: "Button Primary"
+    fields:
+      - identifier: btn_primary_text
+        type: Text
+        label: "Text"
+      - identifier: btn_primary_link
+        type: Link
+        label: "Link"
+  - identifier: hero_cta_secondary
+    type: Palette
+    label: "Button Secondary"
+    fields:
+      - identifier: btn_secondary_text
+        type: Text
+        label: "Text"
+      - identifier: btn_secondary_link
+        type: Link
+        label: "Link"
+      - type: Linebreak
 
-
+  # Appearance Tab
+  - identifier: appearance
+    type: Tab
+    label: "Appearance"
+  - identifier: content_element_layout
+    type: Palette
+    label: Content Element Layout
+    fields:
+      - identifier: layout
+        useExistingField: true
+      - identifier: frame_class
+        useExistingField: true
+      - identifier: space_before_class
+        useExistingField: true
+      - identifier: space_after_class
+        useExistingField: true
+      - type: Linebreak
+      - identifier: frame_layout
+        useExistingField: true
+      - identifier: frame_options
+        useExistingField: true
+      - type: Linebreak
+      - identifier: background_color_class
+        useExistingField: true
+      - type: Linebreak
+      - identifier: background_image
+        useExistingField: true
+      - identifier: background_image_options
+        useExistingField: true
