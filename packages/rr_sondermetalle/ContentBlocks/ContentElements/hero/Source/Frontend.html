@@ -1,67 +1,63 @@
-<cb:asset.css
-  identifier="content-block-css-romminger-romminger/hero"
-  file="Frontend.css"
-/>
-<cb:asset.script
-  identifier="content-block-js-romminger-romminger/hero"
-  file="Frontend.js"
-/>
-
-<section
-  class="relative z-40 min-h-[50vh] flex items-center justify-center bg-gray-200"
+<html
+  xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+  xmlns:bk2k="http://typo3.org/ns/BK2K/BootstrapPackage/ViewHelpers"
+  data-namespace-typo3-fluid="true"
 >
-  <f:if condition="{data.hero_template} == 'layout-2'">
-    <div
-      class="relative py-4 px-4 mx-auto max-w-screen-xl text-center lg:py-12 lg:px-12 z-30 shadow-xl bg-white mb-12 mt-12 rounded-lg"
-    >
-      <div
-        class="grid max-w-screen-xl px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-8 lg:grid-cols-12"
-      >
-        <div class="mr-auto place-self-center lg:col-span-7 text-left">
-          <h2 class="text-black pr-6">{data.header}</h2>
-          <p
-            class="max-w-2xl mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl"
-          >
-            {data.subheader}
-          </p>
-          <a href="#" class="btn btn-primary">{data.text}</a>
+  <cb:asset.css
+    identifier="content-block-css-romminger-romminger/hero"
+    file="Frontend.css"
+  />
+  <cb:asset.script
+    identifier="content-block-js-romminger-romminger/hero"
+    file="Frontend.js"
+  />
+  <bk2k:frame
+    id="c{data.uid}"
+    type="{data.CType}"
+    size="default"
+    layout="{data.frame_layout}"
+    frameClass="{data.frame_class}"
+    frameAttributes="{frameAttributes}"
+    spaceBefore="{data.space_before_class}"
+    spaceAfter="{data.space_after_class}"
+    options="{data.frame_options}"
+    variants="{variants}"
+    backgroundColor="{data.background_color_class}"
+    backgroundImage="{backgroundImage.0}"
+    backgroundImageOptions="{data.background_image_options}"
+  >
+    <div class="hero {data.hero_template}">
+      <section class="hero-container">
+        <div class="hero-inner">
+          <div class="hero-content">
+            <h1>{data.header}</h1>
+            <p class="">{data.subheader}</p>
+
+            <div class="button-section">
+              <if
+                condition="{data.btn_primary_text} && {data.btn_primary_link}"
+              >
+                <a href="{data.btn_primary_link}" class="btn btn-primary"
+                  >{data.btn_primary_text}</a
+                >
+              </if>
+
+              <if
+                condition="{data.btn_secondary_text} && {data.btn_secondary_link}"
+              >
+                <a href="{data.btn_secondary_link}" class="btn btn-secondary"
+                  >{data.btn_secondary_text}</a
+                >
+              </if>
+            </div>
+          </div>
+
+          <div class="hero-image">
+            <f:image image="{data.hero_image.0}" alt="{data.header}" />
+            <div class="bg-overlay"></div>
+          </div>
         </div>
-        <div class="hidden lg:mt-0 lg:col-span-5 lg:flex">
-          <img
-            src="{data.hero_image.0.publicUrl}"
-            alt="mockup"
-            class="object-cover h-full w-full"
-          />
-        </div>
-      </div>
+      </section>
     </div>
-  </f:if>
-  <f:if condition="{data.hero_template} == 'layout-1'">
-    <f:image
-      image="{data.hero_image.0}"
-      alt="alt text"
-      class="absolute inset-0 w-full h-full object-cover z-10"
-    />
-    <div class="absolute inset-0 bg-black opacity-30 z-20"></div>
-    <div
-      class="relative py-4 px-4 mx-auto max-w-screen-xl text-center lg:py-24 lg:px-12 z-30"
-    >
-      <h1>{data.header}</h1>
-      <p
-        class="mb-8 text-lg font-normal text-white lg:text-xl sm:px-16 xl:px-48"
-      >
-        {data.subheader}
-      </p>
-      <div
-        class="flex flex-col mb-8 lg:mb-16 space-y-4 sm:flex-row sm:justify-center sm:space-y-0 sm:space-x-4"
-      >
-        <a href="#" class="btn btn-secondary sm:px-4 lg:px-6">{data.text}</a>
-        <f:if condition="{data.button2_text}">
-          <a href="#" class="btn btn-secondary sm:px-4 lg:px-6"
-            >{data.button2_text}</a
-          >
-        </f:if>
-      </div>
-    </div>
-  </f:if>
-</section>
+  </bk2k:frame>
+</html>
