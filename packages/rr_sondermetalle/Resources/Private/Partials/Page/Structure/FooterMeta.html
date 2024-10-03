@@ -41,15 +41,16 @@
                   condition="{theme.language.enable} || {theme.socialmedia.enable}"
                 >
                   <div class="footer-info-section">
-                    <!-- <f:if condition="{theme.language.enable}">
-                      <div class="footer-language">
-                        <f:render
-                          partial="Navigation/Language"
-                          arguments="{_all}"
-                        />
-                      </div>
-                    </f:if> -->
-
+                    <f:comment
+                      ><f:if condition="{theme.language.enable}">
+                        <div class="footer-language">
+                          <f:render
+                            partial="Navigation/Language"
+                            arguments="{_all}"
+                          />
+                        </div>
+                      </f:if>
+                    </f:comment>
                     <f:if condition="{theme.socialmedia.enable}">
                       <div class="footer-sociallinks">
                         <f:render

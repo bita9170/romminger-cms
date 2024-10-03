@@ -1,35 +1,21 @@
-.navbar-default {
-  @apply !bg-primary-500;
-
-  .navbar-nav {
-    @apply justify-center;
-  }
-
-  .nav-link-text {
-    @apply text-white text-xl;
-    &.dropdown-link {
-      @apply !text-primary-700 font-bold;
-    }
-  }
-
-  .nav-link-indicator {
-    @apply !text-white;
-  }
-
-  .dropdown-nav {
-    @apply !text-primary-700 font-bold;
-  }
-}
-
-.nav-link {
-  &.nav-link-togglen {
-    &:before {
-      @apply !border-l-orange-400;
+header {
+  nav {
+    .main-navigation {
+      > li {
+        a {
+          &.active {
+            @apply bg-primary-500 text-white md:bg-white md:text-gray-900;
+          }
+        }
+      }
     }
   }
 }
-.auth-container {
-  .auth-icon {
-    @apply absolute w-4 h-4 top-8 left-[340px] lg:left-[376px] text-gray-500;
+.language-active,
+.langauge-switch {
+  img {
+    height: 1.25rem;
+    width: 1.25rem;
+    clip-path: circle(40%);
   }
 }

@@ -10,6 +10,7 @@
 ##############
 page {
     includeCSS {
+        flowbite = https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.css
         customstyle = EXT:rr_sondermetalle/Resources/Public/Css/main.css
         theme = EXT:rr_sondermetalle/Resources/Public/Scss/Theme/theme.scss
     }
@@ -27,6 +28,7 @@ page {
     }
 
     includeJSFooter {
-        rr_sondermetalle_scripts = EXT:rr_sondermetalle/Resources/Public/JavaScript/Dist/scripts.js
+        flowbitejs = https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js
+        rr_sondermetalle_scripts = EXT:rr_sondermetalle/Resources/Public/JavaScript/Src/main.js
     }
 }

@@ -4,6 +4,7 @@ module.exports = {
     "./packages/*/Resources/Private/**/*.html",
     "./packages/*/ContentBlocks/**/*.html",
   ],
+  darkMode: "class",
   theme: {
     extend: {
       aria: {
