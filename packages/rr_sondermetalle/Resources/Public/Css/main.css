@@ -1039,6 +1039,11 @@ video {
   padding: 1.5rem;
 }
 
+.\!px-2 {
+  padding-left: 0.5rem !important;
+  padding-right: 0.5rem !important;
+}
+
 .px-2 {
   padding-left: 0.5rem;
   padding-right: 0.5rem;
@@ -1064,14 +1069,14 @@ video {
   padding-bottom: 0.75rem;
 }
 
+.py-6 {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+
 .py-8 {
   padding-top: 2rem;
   padding-bottom: 2rem;
-}
-
-.\!px-2 {
-  padding-left: 0.5rem !important;
-  padding-right: 0.5rem !important;
 }
 
 .pb-2 {
@@ -1359,17 +1364,21 @@ header {
       > li {
         a {
           &.active {
-            --tw-bg-opacity: 1;
-            background-color: rgb(23 37 84 / var(--tw-bg-opacity));
+            font-weight: 700;
           }
           &.active {
             --tw-text-opacity: 1;
-            color: rgb(255 255 255 / var(--tw-text-opacity));
+            color: rgb(23 37 84 / var(--tw-text-opacity));
           }
           @media (min-width: 768px) {
             &.active {
               --tw-bg-opacity: 1;
               background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+            }
+          }
+          @media (min-width: 768px) {
+            &.active {
+              font-weight: 500;
             }
           }
           @media (min-width: 768px) {
@@ -1594,6 +1603,11 @@ header {
   }
 }
 
+.hover\:\!bg-gray-300:hover {
+  --tw-bg-opacity: 1 !important;
+  background-color: rgb(209 213 219 / var(--tw-bg-opacity)) !important;
+}
+
 .hover\:bg-gray-100:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(243 244 246 / var(--tw-bg-opacity));
@@ -1607,30 +1621,6 @@ header {
 .hover\:bg-white:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
-}
-
-.hover\:bg-gray-300:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(209 213 219 / var(--tw-bg-opacity));
-}
-
-.hover\:bg-gray-200:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(229 231 235 / var(--tw-bg-opacity));
-}
-
-.hover\:\!bg-gray-200:hover {
-  --tw-bg-opacity: 1 !important;
-  background-color: rgb(229 231 235 / var(--tw-bg-opacity)) !important;
-}
-
-.hover\:\!bg-gray-300:hover {
-  --tw-bg-opacity: 1 !important;
-  background-color: rgb(209 213 219 / var(--tw-bg-opacity)) !important;
-}
-
-.hover\:font-bold:hover {
-  font-weight: 700;
 }
 
 .hover\:\!text-gray-700:hover {
@@ -1739,6 +1729,11 @@ header {
 
   .md\:p-0 {
     padding: 0px;
+  }
+
+  .md\:px-4 {
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 
   .md\:text-2xl {

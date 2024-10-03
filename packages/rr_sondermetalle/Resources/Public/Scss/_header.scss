@@ -4,7 +4,7 @@ header {
       > li {
         a {
           &.active {
-            @apply bg-primary-500 text-white md:bg-white md:text-gray-900;
+            @apply text-primary-500 font-bold md:font-medium md:bg-white md:text-gray-900;
           }
         }
       }
