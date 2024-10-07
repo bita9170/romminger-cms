@@ -20,6 +20,13 @@ fields:
     enableRichtext: true
     label: Product Description
 
+  - identifier: btn_primary_text
+    type: Text
+    label: "Text"
+  - identifier: btn_primary_link
+    type: Link
+    label: "Link"
+
   - identifier: productImages
     type: File
     label: "Product Images"

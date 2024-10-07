@@ -7,63 +7,59 @@
   file="Frontend.js"
 />
 
-<!-- <section class="material-Section bg-secondary-500">
-  <div class="container mx-20 px-4">
-    <h2 class="text-3xl font-bold text-left text-primary-900">{data.header}</h2>
+<bk2k:frame
+  id="c{data.uid}"
+  type="{data.CType}"
+  size="default"
+  layout="{data.frame_layout}"
+  frameClass="{data.frame_class}"
+  frameAttributes="{frameAttributes}"
+  spaceBefore="{data.space_before_class}"
+  spaceAfter="{data.space_after_class}"
+  options="{data.frame_options}"
+  variants="{variants}"
+  backgroundColor="{data.background_color_class}"
+  backgroundImage="{backgroundImage.0}"
+  backgroundImageOptions="{data.background_image_options}"
+>
+  <div class="mx-auto max-w-screen-sm text-center mb-8 lg:mb-16">
+    <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900">
+      {data.header}
+    </h2>
+    <p class="font-light text-gray-500 lg:mb-16 sm:text-xl">{data.subheader}</p>
   </div>
   <div
-    class="Card-Container grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mx-36 mt-10 ml-36"
+    class="grid grid-cols-1 md:grid-cols-{data.products_view_count} gap-4 mt-8"
   >
-    <div class="card bg-white mb-10 shadow-md shadow-black p-4">
-      <a href="#">
-        <img
-          src="https://assets.api.uizard.io/api/cdn/stream/f5059f6b-4737-4188-b790-0cccbe815052.png"
-          alt="Molybdän"
-          class="rounded-lg w-[300px] h-[100px]"
-        />
-      </a>
-      <h5 class="text-xl font-semibold mt-4">Title</h5>
-      <p class="text-gray-600 mt-2">Description</p>
-      <p class="text-lg font-bold mt-2">$Price</p>
-      <a
-        href="#"
-        class="inline-block w-full rounded bg-primary-500 pb-2 pt-2.5 font-medium text-white text-center"
-        >Details</a
-      >
-    </div>
-    <div class="card bg-white mb-10 shadow-md shadow-black p-6">
-      <a href="#">
-        <img
-          src="https://assets.api.uizard.io/api/cdn/stream/f5059f6b-4737-4188-b790-0cccbe815052.png"
-          alt="Molybdän"
-          class="rounded-lg w-full"
-        />
-      </a>
-      <h5 class="text-xl font-semibold mt-4">Title</h5>
-      <p class="text-gray-600 mt-2">Description</p>
-      <p class="text-lg font-bold mt-2">$Price</p>
-      <a
-        href="#"
-        class="inline-block w-full rounded bg-primary-500 pb-2 pt-2.5 font-medium text-white text-center"
-        >Details</a
-      >
-    </div>
-    <div class="card bg-white mb-10 shadow-md shadow-black p-6">
-      <a href="#">
-        <img
-          src="https://assets.api.uizard.io/api/cdn/stream/f5059f6b-4737-4188-b790-0cccbe815052.png"
-          alt="Molybdän"
-          class="rounded-lg w-full"
-        />
-      </a>
-      <h5 class="text-xl font-semibold mt-4">Title</h5>
-      <p class="text-gray-600 mt-2">Description</p>
-      <p class="text-lg font-bold mt-2">$Price</p>
-      <a
-        href="#"
-        class="inline-block w-full rounded bg-primary-500 pb-2 pt-2.5 font-medium text-white text-center"
-        >Details</a
-      >
-    </div>
+    <f:for each="{data.products}" as="product">
+      <div class="Card bg-white shadow-md rounded-lg">
+        <div class="Card-Image p-4 pb-0">
+          <f:image
+            image="{product.productImages.0}"
+            alt="{product.title}"
+            class="rounded-lg w-full"
+          />
+        </div>
+        <div class="Card-Content p-4">
+          <h3 class="text-xl font-semibold text-primary-900">
+            {product.title}
+          </h3>
+          <p class="mt-2 text-sm text-gray-500">
+            <f:format.html>{product.productDescription}</f:format.html>
+          </p>
+
+          <span class="text-lg font-semibold text-primary-900 mt-2 block">
+            {product.unitPrice}
+          </span>
+          <div class="button-section">
+            <a
+              href="{product.btn_primary_link}"
+              class="btn btn-primary w-full mt-2"
+              >{product.btn_primary_text}</a
+            >
+          </div>
+        </div>
+      </div>
+    </f:for>
   </div>
-</section> -->
+</bk2k:frame>
