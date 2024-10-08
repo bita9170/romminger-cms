@@ -26,7 +26,6 @@
     <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900">
       {data.header}
     </h2>
-    <p class="font-light text-gray-500 lg:mb-16 sm:text-xl">{data.subheader}</p>
   </div>
   <div
     class="grid grid-cols-1 md:grid-cols-{data.products_view_count} gap-4 mt-8"
@@ -48,13 +47,16 @@
             <f:format.html>{product.productDescription}</f:format.html>
           </p>
 
-          <span class="text-lg font-semibold text-primary-900 mt-2 block">
-            {product.unitPrice}
-          </span>
+          <f:if condition="{product.unitPrice}">
+            <span class="text-lg font-semibold text-primary-900 mt-2 block">
+              {product.unitPrice}
+            </span>
+          </f:if>
+
           <div class="button-section">
             <a
               href="{product.btn_primary_link}"
-              class="btn btn-primary w-full mt-2"
+              class="btn btn-primary w-full mt-4"
               >{product.btn_primary_text}</a
             >
           </div>
