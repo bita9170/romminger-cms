@@ -1,0 +1,24 @@
+name: romminger/materials
+table: tx_romminger_materials
+prefixFields: false
+labelField: name
+security:
+  ignorePageTypeRestriction: true
+fields:
+  - identifier: id
+    type: Uuid
+    size: 50
+    version: 7
+    enableCopyToClipboard: true
+
+  - identifier: name
+    type: Text
+
+  - identifier: description
+    type: Textarea
+    enableRichtext: true
+
+  - identifier: images
+    type: File
+    allowed: common-image-types
+    maxitems: 5

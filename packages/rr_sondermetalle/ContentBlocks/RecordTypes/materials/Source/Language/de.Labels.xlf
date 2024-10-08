@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+	<file datatype="plaintext" original="Labels.xlf" source-language="en" date="2024-10-08T17:41:20+00:00" product-name="romminger/materials">
+		<header/>
+		<body>
+			<trans-unit id="title" resname="title">
+				<target>Werkstoff</target>
+			</trans-unit>
+            <trans-unit id="id.label" resname="id.label">
+				<target>Werkstoff-ID</target>
+			</trans-unit>
+			<trans-unit id="name.label" resname="name.label">
+				<target>Name</target>
+			</trans-unit>
+            <trans-unit id="images.label" resname="images.label">
+				<target>Bilder</target>
+			</trans-unit>
+            <trans-unit id="description.label" resname="description.label">
+				<target>Beschreibung</target>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>
