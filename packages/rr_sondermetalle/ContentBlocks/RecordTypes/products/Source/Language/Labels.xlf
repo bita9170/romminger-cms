@@ -13,10 +13,10 @@
 				<source>Name</source>
 			</trans-unit>
             <trans-unit id="images.label" resname="images.label">
-				<source>Bilder</source>
+				<source>Images</source>
 			</trans-unit>
             <trans-unit id="description.label" resname="description.label">
-				<source>Beschreibung</source>
+				<source>Description</source>
 			</trans-unit>
 		</body>
 	</file>

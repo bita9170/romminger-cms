@@ -15,6 +15,9 @@
             <trans-unit id="backend_layout.column.normal">
                 <source>Normal</source>
             </trans-unit>
+            <trans-unit id="backend_layout.column.above-header">
+                <source>Above Header</source>
+            </trans-unit>
         </body>
     </file>
 </xliff>
