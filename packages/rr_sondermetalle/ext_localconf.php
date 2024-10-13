@@ -1,4 +1,7 @@
 <?php
+
+use Romminger\RrSondermetalle\Controller\MaterialController;
+
 defined('TYPO3') or die('Access denied.');
 /***************
  * Add default RTE configuration
@@ -9,3 +12,12 @@ $GLOBALS['TYPO3_CONF_VARS']['RTE']['Presets']['rr_sondermetalle'] = 'EXT:rr_sond
  * PageTS
  */
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPageTSConfig('<INCLUDE_TYPOSCRIPT: source="FILE:EXT:rr_sondermetalle/Configuration/TsConfig/Page/All.tsconfig">');
+
+
+\TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
+    'RrSondermetalle',
+    'Material',
+    [
+        MaterialController::class => 'list, show',
+    ]
+);

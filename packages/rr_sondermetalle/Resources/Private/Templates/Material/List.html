@@ -1,0 +1,12 @@
+<f:debug>{_all}</f:debug>
+<f:for each="{materials}" as="material">
+  <div>
+    <f:link.action
+      controller="Material"
+      action="show"
+      arguments="{material : material}"
+    >
+      {material.name}</f:link.action
+    >
+  </div>
+</f:for>

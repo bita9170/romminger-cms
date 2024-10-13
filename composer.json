@@ -49,10 +49,17 @@
   "require-dev": {
     "typo3/cms-adminpanel": "^12.4"
   },
-  "repositories": [
-    {
+  "repositories": {
+    "0": {
+      "type": "composer",
+      "url": "https://composer.typo3.org/"
+    },
+    "1": {
       "type": "path",
-      "url": "packages/*"
+      "url": "packages/*",
+      "options": {
+        "symlink": true
+      }
     }
-  ]
+  }
 }
