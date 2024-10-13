@@ -1,19 +1,34 @@
 base: /
 errorHandling:
-  -
-    errorCode: 403
+  - errorCode: 403
     errorHandler: Page
-    errorContentSource: 't3://page?uid=1'
+    errorContentSource: "t3://page?uid=1"
 languages:
-  -
-    title: German
+  - title: German
     enabled: true
     languageId: 0
     base: /
     locale: de_DE.UTF-8
     navigationTitle: Deutsch
     flag: de
-    hreflang: ''
-    websiteTitle: ''
+    hreflang: ""
+    websiteTitle: ""
 rootPageId: 1
 websiteTitle: RR-Sondermetalle
+routeEnhancers:
+  MaterialPlugin:
+    type: Extbase
+    extension: RrSondermetalle
+    plugin: Material
+    routes:
+      - {
+          routePath: "/{material_name}",
+          _controller: "Material::show",
+          _arguments: { "material_name": "material" },
+        }
+    defaultController: "Material::list"
+    aspects:
+      material_name:
+        type: PersistedAliasMapper
+        tableName: "tx_romminger_materials"
+        routeFieldName: "name"
