@@ -32,3 +32,20 @@ routeEnhancers:
         type: PersistedAliasMapper
         tableName: "tx_romminger_materials"
         routeFieldName: "name"
+  ProductPlugin:
+    type: Extbase
+    extension: RrSondermetalle
+    plugin: Product
+    routes:
+      - { routePath: "/products", _controller: "Product::list" }
+      - {
+          routePath: "/{product_name}",
+          _controller: "Product::show",
+          _arguments: { "product_name": "product" },
+        }
+    defaultController: "product::list"
+    aspects:
+      product_name:
+        type: PersistedAliasMapper
+        tableName: "tx_romminger_products"
+        routeFieldName: "name"

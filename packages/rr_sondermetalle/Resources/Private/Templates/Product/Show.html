@@ -1,0 +1,12 @@
+<h1>{product.name}</h1>
+<h3>{product.id}</h3>
+<h3>{product.description}</h3>
+<div class="grid md:grid-cols-2 lg:grid-cols-3">
+  <f:for each="{product.images}" as="image">
+    <f:image
+      image="{image}"
+      alt="{product.name}"
+      class="object-cover rounded w-full h-[250px]"
+    />
+  </f:for>
+</div>

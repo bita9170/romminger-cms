@@ -25,6 +25,9 @@ page {
         templateRootPath = EXT:rr_sondermetalle/Resources/Private/Templates/Page/
     }
     theme {
+        breadcrumb {
+            enableLevel = 1
+        }
         contact {
             enable = 1
             data {

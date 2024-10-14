@@ -6,4 +6,8 @@ return [
     \Romminger\RrSondermetalle\Domain\Model\Material::class => [
         'tableName' => 'tx_romminger_materials',
     ],
+
+    \Romminger\RrSondermetalle\Domain\Model\Product::class => [
+        'tableName' => 'tx_romminger_products',
+    ],
 ];

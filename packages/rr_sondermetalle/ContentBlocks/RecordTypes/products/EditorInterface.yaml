@@ -36,7 +36,8 @@ fields:
     items:
       - ["Per Piece", "piece"]
       - ["By Weight", "weight"]
-      - ["By Meter", "meters"]
+      - ["By Meter", "meter"]
+
   - identifier: unitPrice
     type: Number
     format: decimal
@@ -64,6 +65,24 @@ fields:
     format: decimal
     label: Price Based on Weight (per g/kg)
     displayCond: "FIELD:salesUnitType:=:weight"
+
+  - identifier: length
+    type: Number
+    format: decimal
+    label: Product Length (m)
+    displayCond: "FIELD:salesUnitType:=:meter"
+
+  - identifier: minOrderLength
+    type: Number
+    format: decimal
+    label: Minimum Order Length (m)
+    displayCond: "FIELD:salesUnitType:=:meter"
+
+  - identifier: priceBasedOnLength
+    type: Number
+    format: decimal
+    label: Price Based on Length (per m)
+    displayCond: "FIELD:salesUnitType:=:meter"
 
   - identifier: material
     type: Select

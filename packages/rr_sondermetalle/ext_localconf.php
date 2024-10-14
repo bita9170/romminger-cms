@@ -1,5 +1,6 @@
 <?php
 
+use Romminger\RrSondermetalle\Controller\ProductController;
 use Romminger\RrSondermetalle\Controller\MaterialController;
 
 defined('TYPO3') or die('Access denied.');
@@ -19,5 +20,14 @@ $GLOBALS['TYPO3_CONF_VARS']['RTE']['Presets']['rr_sondermetalle'] = 'EXT:rr_sond
     'Material',
     [
         MaterialController::class => 'list, show',
+    ]
+);
+
+
+\TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
+    'RrSondermetalle',
+    'Product',
+    [
+        ProductController::class => 'list, show',
     ]
 );
