@@ -1,0 +1,11 @@
+<f:for each="{products}" as="product">
+  <div>
+    <f:link.action
+      controller="Product"
+      action="show"
+      arguments="{product : product}"
+    >
+      {product.name}</f:link.action
+    >
+  </div>
+</f:for>

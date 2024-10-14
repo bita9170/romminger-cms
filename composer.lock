@@ -233,12 +233,12 @@
             "version": "0.7.17",
             "source": {
                 "type": "git",
-                "url": "https://github.com/nhovratov/content-blocks.git",
+                "url": "https://github.com/FriendsOfTYPO3/content-blocks.git",
                 "reference": "266f2d9de81103888f7d011ac2f56c6092101ebd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nhovratov/content-blocks/zipball/266f2d9de81103888f7d011ac2f56c6092101ebd",
+                "url": "https://api.github.com/repos/FriendsOfTYPO3/content-blocks/zipball/266f2d9de81103888f7d011ac2f56c6092101ebd",
                 "reference": "266f2d9de81103888f7d011ac2f56c6092101ebd",
                 "shasum": ""
             },
@@ -311,6 +311,7 @@
                 "issues": "https://forge.typo3.org",
                 "source": "https://github.com/typo3/typo3"
             },
+            "abandoned": "friendsoftypo3/content-blocks",
             "time": "2024-09-10T16:41:45+00:00"
         },
         {

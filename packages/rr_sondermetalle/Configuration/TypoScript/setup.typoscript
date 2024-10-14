@@ -36,7 +36,7 @@ page {
 
 plugin.tx_rrsondermetalle {
     persistence {
-        storagePid = 41
+        storagePid = 41, 32
     }
     view {
         templateRootPaths.0 = EXT:rr_sondermetalle/Resources/Private/Templates/
