@@ -15,6 +15,9 @@ fields:
     type: Text
     label: Name
 
+  - identifier: abstract
+    type: Textarea
+
   - identifier: description
     type: Textarea
     enableRichtext: true

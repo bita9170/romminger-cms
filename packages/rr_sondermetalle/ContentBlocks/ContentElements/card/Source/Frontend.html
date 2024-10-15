@@ -55,9 +55,7 @@
             <!-- Card Content -->
             <div class="card-body">
               <h3 class="card-title text-primary-500">{item.name}</h3>
-              <p class="mt-2 text-sm text-gray-500">
-                <f:format.html>{item.description}</f:format.html>
-              </p>
+              <p class="mt-2 text-gray-500">{item.abstract}</p>
               <f:if condition="{data.show_price}">
                 <span class="text-primary-500 block">{item.unitPrice}</span>
               </f:if>
