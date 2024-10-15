@@ -5,7 +5,7 @@
     @apply bg-primary-500 text-white hover:bg-primary-500/80 border-none;
   }
   &.btn-secondary {
-    @apply bg-secondary-500 text-primary-800 font-bold text-center items-center  hover:bg-secondary-500/80 border-none;
+    @apply bg-secondary-500 text-primary-800 font-bold text-center items-center hover:bg-secondary-500/80 border-none;
   }
 }
 
@@ -27,5 +27,11 @@ h3 {
       max-width: 1536px;
       padding-inline: 1.5rem;
     }
+  }
+}
+
+.frame-type-list {
+  .frame-container {
+    padding-inline: 1.5rem;
   }
 }

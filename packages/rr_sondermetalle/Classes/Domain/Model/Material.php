@@ -11,6 +11,7 @@ class Material extends AbstractEntity
 {
     protected string $id = '';
     protected string $name = '';
+    protected string $abstract = '';
     protected string $description = '';
 
     /**
@@ -43,6 +44,16 @@ class Material extends AbstractEntity
     public function setName(string $name): void
     {
         $this->name = $name;
+    }
+
+    public function getAbstract(): string
+    {
+        return $this->abstract;
+    }
+
+    public function setAbstract(string $abstract): void
+    {
+        $this->abstract = $abstract;
     }
 
     public function getDescription(): string

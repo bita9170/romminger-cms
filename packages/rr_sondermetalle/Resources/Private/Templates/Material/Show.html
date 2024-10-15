@@ -1,12 +1,17 @@
-<h1>{material.name}</h1>
-<h3>{material.id}</h3>
-<h3>{material.description}</h3>
-<div class="grid md:grid-cols-2 lg:grid-cols-3">
-  <f:for each="{material.images}" as="image">
-    <f:image
-      image="{image}"
-      alt="{material.name}"
-      class="object-cover rounded w-full h-[250px]"
-    />
-  </f:for>
-</div>
+<html>
+  <div class="flex gap-4 flex-col md:flex-row">
+    <div class="md:w-1/4">
+      <f:for each="{material.images}" as="image">
+        <f:image
+          image="{image}"
+          alt="{material.name}"
+          class="object-cover rounded-md w-full h-full"
+        />
+      </f:for>
+    </div>
+    <div class="flex-1">
+      <h3>{material.name}</h3>
+      <f:format.html>{material.description}</f:format.html>
+    </div>
+  </div>
+</html>

@@ -6,6 +6,9 @@
             <authorEmail>bita.s9170@gmail.com</authorEmail>
         </header>
         <body>
+         <trans-unit id="frontend.material">
+                <source>Material</source>
+            </trans-unit>
         </body>
     </file>
 </xliff>

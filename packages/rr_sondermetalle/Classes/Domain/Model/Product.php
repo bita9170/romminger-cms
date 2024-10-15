@@ -22,6 +22,11 @@ class Product extends AbstractEntity
     /**
      * @var string
      */
+    protected $abstract;
+
+    /**
+     * @var string
+     */
     protected $description;
 
     /**
@@ -104,6 +109,16 @@ class Product extends AbstractEntity
     public function setName(string $name): void
     {
         $this->name = $name;
+    }
+
+    public function getAbstract(): string
+    {
+        return $this->abstract;
+    }
+
+    public function setAbstract(string $abstract): void
+    {
+        $this->abstract = $abstract;
     }
 
     public function getDescription(): string
