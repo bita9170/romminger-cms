@@ -26,6 +26,7 @@ page {
     }
     theme {
         breadcrumb {
+            enable = 0
             enableLevel = 1
         }
         contact {
