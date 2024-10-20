@@ -1,0 +1,59 @@
+<cb:asset.css
+  identifier="content-block-css-rr-sondermetalle-rr-sondermetalle/topbar"
+  file="Frontend.css"
+/>
+<cb:asset.script
+  identifier="content-block-js-rr-sondermetalle-rr-sondermetalle/topbar"
+  file="Frontend.js"
+/>
+
+<cb:asset.script
+  identifier="content-block-js-rr-sondermetalle-rr-sondermetalle/topbar"
+  file="main.js"
+/>
+
+<bk2k:frame
+  id="c{data.uid}"
+  type="{data.CType}"
+  size="default"
+  layout="{data.frame_layout}"
+  frameClass="{data.frame_class}"
+  frameAttributes="{frameAttributes}"
+  spaceBefore="{data.space_before_class}"
+  spaceAfter="{data.space_after_class}"
+  options="{data.frame_options}"
+  variants="{variants}"
+  backgroundColor="{data.background_color_class}"
+  backgroundImage="{backgroundImage.0}"
+  backgroundImageOptions="{data.background_image_options}"
+>
+  <div class="topbar-container h-0 flex items-center justify-between">
+    <div>
+      <p>{data.header}</p>
+      <p class="">{data.subheader}</p>
+    </div>
+
+    <div class="flex items-center">
+      <f:if condition="{data.image.0}">
+        <f:image image="{data.image.0}" alt="{data.title}" class="mr-2" />
+      </f:if>
+      <h5 class="font-bold">{data.title}</h5>
+      <p class="ml-2">
+        <a href="{data.primary_link}"> {data.primary_text} </a>
+      </p>
+    </div>
+
+    <div class="flex item center">
+      <svg
+        id="closeTopbar"
+        viewBox="0 0 24 24"
+        class="w-6 h-6 ml-6 text-gray-500 cursor-pointer hover:text-gray-700"
+      >
+        <path d="M0 0h24v24H0z" fill="none"></path>
+        <path
+          d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+        ></path>
+      </svg>
+    </div>
+  </div>
+</bk2k:frame>

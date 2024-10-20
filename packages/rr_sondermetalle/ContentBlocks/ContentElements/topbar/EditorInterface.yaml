@@ -1,0 +1,57 @@
+name: rr-sondermetalle/topbar
+typeName: rrsondermetalle_topbar
+group: common
+prefixFields: true
+prefixType: full
+fields:
+
+
+  - identifier: header
+    useExistingField: true
+  - identifier: subheader
+    useExistingField: true
+  - identifier: image
+    type: File
+    label: "Image"
+    allowed: common-image-types
+
+  - identifier: title
+    type: Text
+    label: "Title"
+
+  - identifier: primary_text
+    type: Text
+    label: "Text"
+  - identifier: primary_link
+    type: Link
+    label: "Link"
+
+  # Appearance Tab
+  - identifier: appearance
+    type: Tab
+    label: "Appearance"
+  - identifier: content_element_layout
+    type: Palette
+    label: Content Element Layout
+    fields:
+      - identifier: layout
+        useExistingField: true
+      - identifier: frame_class
+        useExistingField: true
+      - identifier: space_before_class
+        useExistingField: true
+      - identifier: space_after_class
+        useExistingField: true
+      - type: Linebreak
+      - identifier: frame_layout
+        useExistingField: true
+      - identifier: frame_options
+        useExistingField: true
+      - type: Linebreak
+      - identifier: background_color_class
+        useExistingField: true
+      - type: Linebreak
+      - identifier: background_image
+        useExistingField: true
+      - identifier: background_image_options
+        useExistingField: true
