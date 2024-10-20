@@ -4,7 +4,7 @@
 		<header/>
 		<body>
 			<trans-unit id="title" resname="title">
-				<source>related-products</source>
+				<source>Related Products</source>
 			</trans-unit>
 			<trans-unit id="description" resname="description">
 				<source>Description for Content Element romminger/related-products</source>
