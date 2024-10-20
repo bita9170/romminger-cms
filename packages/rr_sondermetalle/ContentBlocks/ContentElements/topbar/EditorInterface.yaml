@@ -4,12 +4,6 @@ group: common
 prefixFields: true
 prefixType: full
 fields:
-
-
-  - identifier: header
-    useExistingField: true
-  - identifier: subheader
-    useExistingField: true
   - identifier: image
     type: File
     label: "Image"
@@ -25,6 +19,13 @@ fields:
   - identifier: primary_link
     type: Link
     label: "Link"
+
+  - identifier: secondary_text
+    type: Text
+    label: "Secondary Text"
+  - identifier: secondary_link
+    type: Link
+    label: "Secondary Link"
 
   # Appearance Tab
   - identifier: appearance
