@@ -4,14 +4,24 @@
   "description": "This is a guide for installing the TYPO3 project and importing the database using DDEV.",
   "scripts": {
     "css:dev": "npx tailwindcss -i ./packages/rr_sondermetalle/Resources/Public/Scss/main.scss -o ./packages/rr_sondermetalle/Resources/Public/Css/main.css --watch",
-    "dev": "npm run css:dev"
+    "dev": "npm run css:dev",
+    "react:dev": "npx webpack --config webpack.config.js --watch",
+    "react": "npm run react:dev"
   },
   "author": "Bita Sadeghi",
   "license": "ISC",
   "devDependencies": {
-    "tailwindcss": "^3.3.2"
+    "@babel/core": "^7.25.8",
+    "@babel/preset-env": "^7.25.8",
+    "@babel/preset-react": "^7.25.7",
+    "babel-loader": "^9.2.1",
+    "tailwindcss": "^3.3.2",
+    "webpack": "^5.95.0",
+    "webpack-cli": "^5.1.4"
   },
   "dependencies": {
-    "jqwidgets-scripts": "^19.2.0"
+    "jqwidgets-scripts": "^19.2.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
   }
 }

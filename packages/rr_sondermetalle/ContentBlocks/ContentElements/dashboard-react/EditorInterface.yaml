@@ -1,0 +1,6 @@
+name: romminger/dashboard-react
+typeName: romminger_dashboardreact
+group: common
+prefixFields: true
+prefixType: full
+fields:
