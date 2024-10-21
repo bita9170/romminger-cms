@@ -1,0 +1,49 @@
+<cb:asset.css
+  identifier="content-block-css-rr-sonedermetalle-rr-sonedermetalle/error"
+  file="Frontend.css"
+/>
+<cb:asset.script
+  identifier="content-block-js-rr-sonedermetalle-rr-sonedermetalle/error"
+  file="Frontend.js"
+/>
+
+<bk2k:frame
+  id="c{data.uid}"
+  type="{data.CType}"
+  size="default"
+  layout="{data.frame_layout}"
+  frameClass="{data.frame_class}"
+  frameAttributes="{frameAttributes}"
+  spaceBefore="{data.space_before_class}"
+  spaceAfter="{data.space_after_class}"
+  options="{data.frame_options}"
+  variants="{variants}"
+  backgroundColor="{data.background_color_class}"
+  backgroundImage="{backgroundImage.0}"
+  backgroundImageOptions="{data.background_image_options}"
+>
+  <div class="error grid grid-cols-1 md:grid-cols-2 md:gap-4 items-center">
+    <div class="error__content text-center md:text-left md:order-1">
+      <h1 class="error__title">{data.header}</h1>
+      <p class="error__text">{data.subheader}</p>
+
+      <div class="button-section mt-8">
+        <if condition="{data.btn_primary_text} && {data.btn_primary_link}">
+          <a href="{data.btn_primary_link}" class="btn btn-primary m-2"
+            >{data.btn_primary_text}</a
+          >
+        </if>
+
+        <if condition="{data.btn_secondary_text} && {data.btn_secondary_link}">
+          <a href="{data.btn_secondary_link}" class="btn btn-secondary m-2"
+            >{data.btn_secondary_text}</a
+          >
+        </if>
+      </div>
+    </div>
+
+    <div class="error__image md:order-2 md:text-right">
+      <f:image image="{data.error_image.0}" alt="{data.header}" />
+    </div>
+  </div>
+</bk2k:frame>
