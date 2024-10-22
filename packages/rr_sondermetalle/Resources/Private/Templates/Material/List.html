@@ -1,11 +1,40 @@
-<f:for each="{materials}" as="material">
-  <div>
-    <f:link.action
-      controller="Material"
-      action="show"
-      arguments="{material : material}"
-    >
-      {material.name}</f:link.action
-    >
+<h2>Werkstoffe</h2>
+<f:for each="{materials}" as="material" key="index">
+  <div class="container col-xxl-8 px-4 py-5">
+    <f:if condition="{index} % 2 == 0">
+      <f:then>
+        <f:variable name="class"></f:variable>
+      </f:then>
+      <f:else>
+        <f:variable name="class">-reverse</f:variable>
+      </f:else>
+    </f:if>
+    <div class="row flex-lg-row align-items-center g-5 py-5 border shadow-lg">
+      <div class="col-10 col-sm-8 col-lg-6">
+        <f:image
+          image="{material.images.0}"
+          alt="{material.name}"
+          class="d-block mx-lg-auto img-fluid"
+          width="500"
+          height="300"
+          loading="lazy"
+        />
+      </div>
+      <div class="col-lg-6">
+        <h2>{material.name}</h2>
+        <p class="lead">{material.abstract}</p>
+        <div class="d-grid gap-2 d-md-flex justify-content-md-start mt-4">
+          <f:link.action
+            controller="Material"
+            action="show"
+            arguments="{material : material}"
+            type="button"
+            class="btn btn-primary btn-lg px-4 me-md-2"
+          >
+            Mehr Erfahren
+          </f:link.action>
+        </div>
+      </div>
+    </div>
   </div>
 </f:for>

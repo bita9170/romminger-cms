@@ -22,33 +22,6 @@ class CardContentBlockDataProcessor implements DataProcessorInterface
             return $processedData;
         }
 
-
-        $yamlFile = ExtensionManagementUtility::extPath('rr_sondermetalle') . 'Configuration/Yaml/interface.yaml';
-
-
-        if (file_exists($yamlFile)) {
-
-            $yamlData = Yaml::parseFile($yamlFile);
-
-
-            $viewCounts = [];
-            $itemType = null;
-
-            foreach ($yamlData as $section) {
-                if ($section['identifier'] === 'view_count') {
-                    $viewCounts = $section['items'];
-                }
-
-                if ($section['identifier'] === 'item_type') {
-                    $itemType = $section['default'];
-                }
-            }
-
-
-            $processedData['viewCounts'] = $viewCounts;
-            $processedData['itemType'] = $itemType;
-        }
-
         return $processedData;
     }
 }
