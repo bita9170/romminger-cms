@@ -1,0 +1,20 @@
+<cb:asset.css identifier="content-block-css-content-service-content-service/content-service" file="Frontend.css"/>
+<cb:asset.script identifier="content-block-js-content-service-content-service/content-service" file="Frontend.js"/>
+
+<!-- Frontend template for Content Block: content-service/content-service -->
+<div class="contact-service">
+    <h2>Contact Us</h2>
+    <p>If you have any questions, feel free to contact us!</p>
+    
+    <!-- Header information -->
+    <p>Header: {data.header}</p>
+    
+    <!-- Check if phone_number is available and create a clickable phone link -->
+    <f:if condition="{data.phone_number}">
+        <p>
+            <a href="tel:{data.phone_number}">
+                Call us: {data.phone_number}
+            </a>
+        </p>
+    </f:if>
+</div>

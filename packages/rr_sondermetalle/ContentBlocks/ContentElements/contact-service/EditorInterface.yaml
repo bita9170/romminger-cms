@@ -1,0 +1,88 @@
+name: romminger/contact-service
+typeName: romminger_contactservice
+group: common
+prefixFields: true
+prefixType: full
+fields:
+  -
+    identifier: header
+    useExistingField: true
+  -
+    identifier: number
+    type: Number
+    label: 'WhatsApp Number'
+    placeholder: '+49 123 456789'
+    validation: '[\+\d{1,3}\s?\d{1,4}[\s\d]*]'
+  -
+    identifier: message
+    type: Textarea
+    label: 'Message'
+    placeholder: 'Enter your message here...'
+    maxLength: 500
+  -
+    identifier: message_history
+    type: Textarea
+    label: 'Message History'
+    placeholder: 'No messages yet.'
+    readOnly: true
+  -
+     identifier: send_button
+     type: Checkbox
+     label: 'Send Message'
+
+  -
+    identifier: user_name
+    type: Text
+    label: 'Your Name'
+    placeholder: 'Enter your name'
+  -
+     identifier: status
+     type: Select
+     lable: 'Message Status'
+     renderType: selectSingle
+     items:
+     - label: 'Unread'
+       value: 'unread'
+     - label: 'Read'
+       value: 'read'
+  -
+     
+    identifier: message_date
+    type: DateTime
+    label: 'Date of Message'
+
+  - 
+    identifier: email
+    type: Email
+    label: 'Email'
+    placeholder: 'example@example.com'
+    validation: '[\w.%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}'
+ # Appearance Tab
+  - identifier: appearance
+    type: Tab
+    label: "Appearance"
+  - identifier: content_element_layout
+    type: Palette
+    label: Content Element Layout
+    fields:
+      - identifier: layout
+        useExistingField: true
+      - identifier: frame_class
+        useExistingField: true
+      - identifier: space_before_class
+        useExistingField: true
+      - identifier: space_after_class
+        useExistingField: true
+      - type: Linebreak
+      - identifier: frame_layout
+        useExistingField: true
+      - identifier: frame_options
+        useExistingField: true
+      - type: Linebreak
+      - identifier: background_color_class
+        useExistingField: true
+      - type: Linebreak
+      - identifier: background_image
+        useExistingField: true
+      - identifier: background_image_options
+        useExistingField: true

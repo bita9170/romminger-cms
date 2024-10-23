@@ -11,4 +11,14 @@ tt_content {
             20 = Romminger\RrSondermetalle\DataProcessing\RelatedProductsDataProcessor
         }
     }
+
+     romminger_contactservice {
+        dataProcessing {
+            20 = Romminger\RrSondermetalle\DataProcessing\ContactServiceDataProcessor
+            20 {
+                phoneNumber = +49 123 456789
+            }
+        }
+    }
 }
+   
