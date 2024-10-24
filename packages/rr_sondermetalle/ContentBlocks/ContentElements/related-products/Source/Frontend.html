@@ -1,0 +1,77 @@
+<cb:asset.css
+  identifier="content-block-css-romminger-romminger/related-products"
+  file="Frontend.css"
+/>
+<cb:asset.script
+  identifier="content-block-js-romminger-romminger/related-products"
+  file="Frontend.js"
+/>
+
+<f:if condition="{relatedProducts}">
+  <bk2k:frame
+    id="c{data.uid}"
+    type="{data.CType}"
+    size="default"
+    layout="{data.frame_layout}"
+    frameClass="{data.frame_class}"
+    frameAttributes="{frameAttributes}"
+    spaceBefore="{data.space_before_class}"
+    spaceAfter="{data.space_after_class}"
+    options="{data.frame_options}"
+    variants="{variants}"
+    backgroundColor="{data.background_color_class}"
+    backgroundImage="{backgroundImage.0}"
+    backgroundImageOptions="{data.background_image_options}"
+  >
+    <div class="px-4 md:px-0">
+      <div class="mx-auto max-w-screen-sm text-center mb-8 lg:mb-16">
+        <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900">
+          {data.header}
+        </h2>
+        <p class="font-medium text-gray-500 lg:mb-10 sm:text-xl">
+          {data.subheader}
+        </p>
+      </div>
+
+      <div
+        class="row row-cols-1 row-cols-lg-{data.view_count} row-cols-md-2 g-4"
+      >
+        <f:for each="{relatedProducts}" as="item">
+          <div class="col">
+            <div class="card bg-white shadow-md h-full">
+              <!-- Card Image -->
+              <div class="p-3">
+                <f:image
+                  image="{item.images.0}"
+                  alt="{item.name}"
+                  class="object-cover rounded w-full h-[250px]"
+                />
+              </div>
+              <!-- Card Content -->
+              <div class="card-body">
+                <h3 class="card-title text-primary-500">{item.name}</h3>
+                <p class="mt-2 text-gray-500">{item.abstract}</p>
+                <f:if condition="{data.show_price}">
+                  <span class="text-primary-500 block">{item.unitPrice}</span>
+                </f:if>
+              </div>
+              <!-- Card Footer with Button -->
+              <div class="card-footer bg-white">
+                <f:variable name="itemName"
+                  ><f:format.case mode="lower"
+                    >{item.name}</f:format.case
+                  ></f:variable
+                >
+                <a
+                  href="/shop/product/{item.name}"
+                  class="btn btn-primary w-full"
+                  >Details</a
+                >
+              </div>
+            </div>
+          </div>
+        </f:for>
+      </div>
+    </div>
+  </bk2k:frame>
+</f:if>
