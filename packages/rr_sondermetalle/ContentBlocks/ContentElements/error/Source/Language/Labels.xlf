@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+	<file datatype="plaintext" original="Labels.xlf" source-language="en" date="2024-10-21T07:37:02+00:00" product-name="rr-sonedermetalle/error">
+		<header/>
+		<body>
+			<trans-unit id="title" resname="title">
+				<source>Error</source>
+			</trans-unit>
+			<trans-unit id="description" resname="description">
+				<source>Description for Content Element rr-sonedermetalle/error</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

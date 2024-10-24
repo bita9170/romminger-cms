@@ -92,6 +92,11 @@ fields:
     renderType: selectSingle
     label: Material
     foreign_table: "tx_romminger_materials"
+  - identifier: category
+    type: Select
+    renderType: selectSingle
+    label: Category
+    foreign_table: "tx_romminger_categories"
 
   - identifier: Status
     type: Select
