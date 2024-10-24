@@ -29,14 +29,18 @@
 
       <div class="button-section mt-8">
         <if condition="{data.btn_primary_text} && {data.btn_primary_link}">
-          <a href="{data.btn_primary_link}" class="btn btn-primary m-2"
-            >{data.btn_primary_text}</a
+          <f:link.typolink
+            parameter="{data.btn_primary_link}"
+            class="btn btn-primary m-2"
+            >{data.btn_primary_text}</f:link.typolink
           >
         </if>
 
         <if condition="{data.btn_secondary_text} && {data.btn_secondary_link}">
-          <a href="{data.btn_secondary_link}" class="btn btn-secondary m-2"
-            >{data.btn_secondary_text}</a
+          <f:link.typolink
+            parameter="{data.btn_secondary_link}"
+            class="btn btn-secondary m-2"
+            >{data.btn_secondary_text}</f:link.typolink
           >
         </if>
       </div>
