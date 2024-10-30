@@ -393,3 +393,7 @@ FileETag None
 
 
 # Add your own rules here.
+
+# Put this directly after the "RewriteEngine On" command
+RewriteCond %{HTTP:Authorization} ^(.*)
+RewriteRule .* - [e=HTTP_AUTHORIZATION:%1]
