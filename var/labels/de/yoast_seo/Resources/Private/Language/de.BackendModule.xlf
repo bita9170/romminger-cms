@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<xliff version="1.0">
+  <file source-language="en" datatype="plaintext" original="EXT:yoast_seo/Resources/Private/Language/BackendModule.xlf" date="2014-05-02T12:00:00Z" product-name="yoastseo" target-language="de">
+    <header/>
+    <body>
+      <trans-unit id="mlang_labels_tabdescr" resname="mlang_labels_tabdescr" approved="yes">
+        <source>The first true all-in-one SEO solution for TYPO3, including on-page content analysis</source>
+        <target state="final">Die erste, echte all-in-one Lösung mit integrierter OnPage-Analyse für Typo3</target>
+      </trans-unit>
+      <trans-unit id="seoDescription" resname="seoDescription" approved="yes">
+        <source>SEO Description</source>
+        <target state="final">SEO Beschreibungstext</target>
+      </trans-unit>
+      <trans-unit id="og" resname="og" approved="yes">
+        <source>Open Graph</source>
+        <target state="final">Open Graph</target>
+      </trans-unit>
+      <trans-unit id="facebook.image.delete" resname="facebook.image.delete" approved="yes">
+        <source>Remove current image</source>
+        <target state="final">Entferne Bild</target>
+      </trans-unit>
+      <trans-unit id="facebook.image.deleteDescription" resname="facebook.image.deleteDescription" approved="yes">
+        <source>Remove the current image</source>
+        <target state="final">Entferne der gewählte Bild</target>
+      </trans-unit>
+      <trans-unit id="twitter.image.delete" resname="twitter.image.delete" approved="yes">
+        <source>Remove current image</source>
+        <target state="final">Entferne Bild</target>
+      </trans-unit>
+      <trans-unit id="twitter.image.deleteDescription" resname="twitter.image.deleteDescription" approved="yes">
+        <source>Remove the current image</source>
+        <target state="final">Entferne der gewählte Bild</target>
+      </trans-unit>
+      <trans-unit id="cornerstoneContent" resname="cornerstoneContent" approved="yes">
+        <source>This page is cornerstone content</source>
+        <target state="final">Diese Seite enthält Cornerstone Content</target>
+      </trans-unit>
+      <trans-unit id="robotInstructions" resname="robotInstructions" approved="yes">
+        <source>Robot instructions</source>
+        <target state="final">Suchmaschinenanweisungen (Robot)</target>
+      </trans-unit>
+      <trans-unit id="noIndex" resname="noIndex" approved="yes">
+        <source>No index</source>
+        <target state="final">Nicht in den Suchindex aufnehmen</target>
+      </trans-unit>
+      <trans-unit id="noFollow" resname="noFollow" approved="yes">
+        <source>No follow</source>
+        <target state="final">Links auf dieser Seite nicht folgen</target>
+      </trans-unit>
+      <trans-unit id="analysis" resname="analysis" approved="yes">
+        <source>Analysis</source>
+        <target state="final">Ergebnisse der Analyse</target>
+      </trans-unit>
+      <trans-unit id="seoRelatedKeywords" resname="seoRelatedKeywords" approved="yes">
+        <source>Related keyphrases</source>
+        <target state="final">Verwandte Schlüsselworte</target>
+      </trans-unit>
+      <trans-unit id="failed.imageExtensions.description" resname="failed.imageExtensions.description" approved="yes">
+        <source>The uploaded image is not in a proper format. Please upload a file with one of the following extensions: %s</source>
+        <target state="final">Das hochgeladene Bild hat nicht das richtige Format. Bitte laden Sie eine Datei hoch die eine der folgenden Erweiterungen hat: %s</target>
+      </trans-unit>
+      <trans-unit id="data.needUpdate" resname="data.needUpdate" approved="yes">
+        <source>The data needs to be updated! Click to convert your data</source>
+        <target state="final">Die Daten müssen aktualisiert werden! Bitte klicken Sie hier um die Daten zu konvertieren</target>
+      </trans-unit>
+      <trans-unit id="action.update" resname="action.update" approved="yes">
+        <source>Update</source>
+        <target state="final">Aktualisieren</target>
+      </trans-unit>
+      <trans-unit id="dashboard.intro" resname="dashboard.intro" approved="yes">
+        <source>This plugin integrates text analysis and assessment from YoastSEO.js. Content analysis can generate interesting metrics about a text and give you an assessment which can be used to improve the text.</source>
+        <target state="final">Das Plugin integriert die Textanalyse und -bewertung von YoastSEO.js in Typo3. Die inhaltliche Analyse erzeugt informative Metriken über einen Text und die Beurteilung kann verwendet werden um den Text zu verbessern.</target>
+      </trans-unit>
+      <trans-unit id="dashboard.learnMore" resname="dashboard.learnMore" approved="yes">
+        <source>Want to learn more about SEO?</source>
+        <target state="final">Möchten Sie mehr über SEO wissen?</target>
+      </trans-unit>
+      <trans-unit id="dashboard.learnMore.description" resname="dashboard.learnMore.description" approved="yes">
+        <source>Check out these training courses on Yoast Academy to get up to speed on the SEO basics or dive deep into specific subjects.</source>
+        <target state="final">Nutzen Sie unsere  Trainingsangebote in der Yoast Academy um mehr über SEO-Grundlagen zu erfahren.</target>
+      </trans-unit>
+      <trans-unit id="dashboard.credits.description" resname="dashboard.credits.description" approved="yes">
+        <source>This plugin is mainly maintained by Yoast and MaxServ. Besides these contributors, also several other developers helped with enhancing the plugin.</source>
+        <target state="final">Diese Erweiterung wird hauptsächlich von Yoast und MaxServ gepflegt. Darüber hinaus waren weitere Entwickler an der Verbesserung dieser Erweiterung beteiligt.</target>
+      </trans-unit>
+      <trans-unit id="dashboard.help.description" resname="dashboard.help.description" approved="yes">
+        <source>If you need any support on using or configuring this plugin, please contact us by %s in the channel %s</source>
+        <target state="final">Wenn Sie bei der Konfiguration des Plugins Hilfe benötigen, können Sie uns über %s im Kanal %s erreichen</target>
+      </trans-unit>
+      <trans-unit id="update" resname="update" approved="yes">
+        <source>Update</source>
+        <target state="final">Aktualisieren</target>
+      </trans-unit>
+      <trans-unit id="update.data" resname="update.data" approved="yes">
+        <source>Convert data</source>
+        <target state="final">Konvertiere Daten</target>
+      </trans-unit>
+      <trans-unit id="update.data.intro" resname="update.data.intro" approved="yes">
+        <source>Some updates of the Yoast SEO for TYPO3 extension may require updates in the datastructure. Most of the times this doesn't need an update of the data itself, but sometimes we can't prevent that. If the data needs an update, you see a button below to update your data.</source>
+        <target state="final">Einige Aktualisierungen der "Yoast SEO für Typo3" Extension benötigen Updates der Datenstruktur. Meistens ist dafür keine Aktualisierung der Daten selbst notwendig. Dies lässt sich aber nicht immer vermeiden. Falls die Daten doch aktualisiert werden müssen, wird unten ein Button für deren Aktualisierung eingeblendet.</target>
+      </trans-unit>
+      <trans-unit id="update.data.updateData" resname="update.data.updateData" approved="yes">
+        <source>Update data</source>
+        <target state="final">Daten aktualisieren</target>
+      </trans-unit>
+      <trans-unit id="update.data.convert.success" resname="update.data.convert.success" approved="yes">
+        <source>Convert succesful</source>
+        <target state="final">Konvertierung erfolgreich</target>
+      </trans-unit>
+      <trans-unit id="settings.intro" resname="settings.intro" approved="yes">
+        <source>The following settings are fallback settings. If you don't specify specific settings on a page, this information will be used as a default.</source>
+        <target state="final">Die folgenden Einstellungen sind Grundeinstellungen.  Sollten Sie keine weiteren Einstellungen vornehmen, dann werden diese standardmäßig benutzt.</target>
+      </trans-unit>
+      <trans-unit id="hideYoastInFrontend" resname="hideYoastInFrontend" approved="yes">
+        <source>Don't render metatags in frontend by Yoast SEO for this page</source>
+        <target state="final">Auf dieser Seite keine Metatags von Yoast SEO im Frontend ausgeben</target>
+      </trans-unit>
+      <trans-unit id="hideSnippetPreview" resname="hideSnippetPreview" approved="yes">
+        <source>Hide Yoast SEO snippet preview in page module for this page</source>
+        <target state="final">Verberge die Yoast SEO Treffervorschau auf dieser Seite</target>
+      </trans-unit>
+      <trans-unit id="pages.palettes.og" resname="pages.palettes.og" approved="yes">
+        <source>Open Graph (Facebook)</source>
+        <target state="final">Open Graph (Facebook)</target>
+      </trans-unit>
+      <trans-unit id="pages.palettes.twitter" resname="pages.palettes.twitter" approved="yes">
+        <source>Twitter Cards</source>
+        <target state="final">Twitter Cards</target>
+      </trans-unit>
+      <trans-unit id="pages.palettes.focusRelatedKeyphrases" resname="pages.palettes.focusRelatedKeyphrases" approved="yes">
+        <source>Related keyphrases</source>
+        <target state="final">Verwandte Schlüsselsätze</target>
+      </trans-unit>
+      <trans-unit id="pages.palettes.robot" resname="pages.palettes.robot" approved="yes">
+        <source>Robot instructions</source>
+        <target state="final">Suchmaschinenanweisungen (Robot)</target>
+      </trans-unit>
+      <trans-unit id="pages.palettes.readability" resname="pages.palettes.readability" approved="yes">
+        <source>Readability analysis</source>
+        <target state="final">Lesbarkeitsanalyse</target>
+      </trans-unit>
+      <trans-unit id="pages.palettes.advanced" resname="pages.palettes.advanced" approved="yes">
+        <source>Advanced settings</source>
+        <target state="final">Erweiterte Einstellungen</target>
+      </trans-unit>
+      <trans-unit id="snippetPreview" resname="snippetPreview" approved="yes">
+        <source>Yoast SEO Snippet preview</source>
+        <target state="final">Yoast SEO Treffervorschau</target>
+      </trans-unit>
+      <trans-unit id="analysis" resname="analysis" approved="yes">
+        <source>Analysis results</source>
+        <target state="final">Ergebnisse der Analyse</target>
+      </trans-unit>
+      <trans-unit id="wrongDoktype.title" resname="wrongDoktype.title" approved="yes">
+        <source>No analysis available</source>
+        <target state="final">Keine Analyse vorhanden</target>
+      </trans-unit>
+      <trans-unit id="wrongDoktype.description" resname="wrongDoktype.description" approved="yes">
+        <source>The Yoast SEO analysis is not available for this type of page. Please change the type of page, or make sure your administrator adds the pagetype to the allowed pagetypes for Yoast SEO.</source>
+        <target state="final">Die Yoast SEO Analyse ist auf diesem Seitentyp nicht verfügbar. Bitte ändern Sie den Seitentyp oder bitten Sie Ihren Administrator diesen Seitentyp zu der Liste der erlaubten Seitentypen für die Yoast SEO Analyse hinzuzufügen.</target>
+      </trans-unit>
+      <trans-unit id="labelBad" resname="labelBad" approved="yes">
+        <source>Needs improvement</source>
+        <target state="final">Verbesserungsbedürftig</target>
+      </trans-unit>
+      <trans-unit id="academy.basic_seo" resname="academy.basic_seo" approved="yes">
+        <source>Basic SEO training</source>
+        <target state="final">SEO Grundlagentraining</target>
+      </trans-unit>
+      <trans-unit id="academy.seo-copywriting" resname="academy.seo-copywriting" approved="yes">
+        <source>SEO copywriting training</source>
+        <target state="final">SEO Werbetexte-Training</target>
+      </trans-unit>
+      <trans-unit id="academy.multilingual" resname="academy.multilingual" approved="yes">
+        <source>Multilingual SEO training</source>
+        <target state="final">SEO Mehrsprachigkeit-Training</target>
+      </trans-unit>
+      <trans-unit id="academy.site-structure" resname="academy.site-structure" approved="yes">
+        <source>Site structure training</source>
+        <target state="final">Seitenstrukturen Training</target>
+      </trans-unit>
+      <trans-unit id="academy.structured-data" resname="academy.structured-data" approved="yes">
+        <source>Structured data training</source>
+        <target state="final">Training für strukturierte Daten</target>
+      </trans-unit>
+      <trans-unit id="dashboard.seoTips" resname="dashboard.seoTips" approved="yes">
+        <source>Get free SEO tips!</source>
+        <target state="final">Hier finden Sie kostenlose SEO Tips</target>
+      </trans-unit>
+      <trans-unit id="dashboard.seoTips.1" resname="dashboard.seoTips.1" approved="yes">
+        <source>Get weekly tips on how to optimize your website's SEO, usability and conversion</source>
+        <target state="final">Erhalte wöchentliche Empfehlungen, wie sie die SEO, Bedienbarkeit und Conversions ihrer Seite optimieren können.</target>
+      </trans-unit>
+      <trans-unit id="dashboard.seoTips.2" resname="dashboard.seoTips.2" approved="yes">
+        <source>Be the first to know about new features and other cool (free) plugins.</source>
+        <target state="final">Als erster über neue Funktionen und andere neue (kostenfreie) Erweiterungen informiert werden.</target>
+      </trans-unit>
+      <trans-unit id="dashboard.seoTips.3" resname="dashboard.seoTips.3" approved="yes">
+        <source>Get our free 50-page SEO guide right away to help you become an SEO genius.</source>
+        <target state="final">Erhalte unseren kostenfreien 50-seitigen SEO-Guide und werde eine SEO Experte.</target>
+      </trans-unit>
+      <trans-unit id="dashboard.seoTips.submit" resname="dashboard.seoTips.submit" approved="yes">
+        <source>Yes, give me your free tips</source>
+        <target state="final">Ja, ich will die kostenfreien Tipps</target>
+      </trans-unit>
+      <trans-unit id="dashboard.seoTips.email" resname="dashboard.seoTips.email" approved="yes">
+        <source>Enter your email address...</source>
+        <target state="final">Geben Sie Ihre E-Mail-Adresse ein...</target>
+      </trans-unit>
+      <trans-unit id="dashboard.seoTips.name" resname="dashboard.seoTips.name" approved="yes">
+        <source>Enter your name...</source>
+        <target state="final">Geben Sie ihren Namen ein...</target>
+      </trans-unit>
+      <trans-unit id="thisPageIsCornerstoneContent" resname="thisPageIsCornerstoneContent" approved="yes">
+        <source><![CDATA[This page is <a href="%s" target="_blank">cornerstone content</a>]]></source>
+        <target state="final"><![CDATA[Diese Seite enthält <a href="%s" target="_blank">Cornerstone Content</a>]]></target>
+      </trans-unit>
+      <trans-unit id="dashboard.seoCourses" resname="dashboard.seoCourses" approved="yes">
+        <source>SEO Courses</source>
+        <target state="final">SEO Kurse</target>
+      </trans-unit>
+      <trans-unit id="goPremium" resname="goPremium" approved="yes">
+        <source>Go Premium</source>
+        <target state="final">Updaten Sie auf Premium</target>
+      </trans-unit>
+      <trans-unit id="tx_yoast_seo_premium_focus_keywords.title" resname="tx_yoast_seo_premium_focus_keywords.title" approved="yes">
+        <source>Yoast SEO keyphrase</source>
+        <target state="final">Yoast SEO Keyphrase</target>
+      </trans-unit>
+      <trans-unit id="tx_yoast_seo_premium_focus_keywords.fields.keyword" resname="tx_yoast_seo_premium_focus_keywords.fields.keyword" approved="yes">
+        <source>Keyphrase</source>
+        <target state="final">Keyphrase</target>
+      </trans-unit>
+      <trans-unit id="tx_yoast_seo_premium_focus_keywords.fields.analysis" resname="tx_yoast_seo_premium_focus_keywords.fields.analysis" approved="yes">
+        <source>Analysis results</source>
+        <target state="final">Ergebnis der Analyse</target>
+      </trans-unit>
+      <trans-unit id="pages.fields.tx_yoastseo_insights" resname="pages.fields.tx_yoastseo_insights" approved="yes">
+        <source>Most relevant words</source>
+        <target state="final">Relevanteste Wörter</target>
+      </trans-unit>
+      <trans-unit id="pages.fields.tx_yoastseo_insights.intro" resname="pages.fields.tx_yoastseo_insights.intro" approved="yes">
+        <source>The following words and word combinations occur the most in the content. These give an indication of what your content focuses on. If the words differ a lot from your topic, you might want to rewrite your content accordingly.</source>
+        <target state="final">Die folgenden Wörter und Wortkombinationen tauchen im Inhalt am häufigsten auf. Diese geben einen Anhaltspunkt darüber wovon der Inhalt handelt. Falls sich die Wörter stark vom Thema entfernen, sollten Sie den Text ggf. entsprechend neu verfassen.</target>
+      </trans-unit>
+      <trans-unit id="pages.fields.tx_yoastseo_insights.more_information" resname="pages.fields.tx_yoastseo_insights.more_information" approved="yes">
+        <source><![CDATA[Read our <a href="%s" target="_blank">ultimate guide to keyword research</a> to learn more about keyword research and keyword strategy.]]></source>
+        <target state="final"><![CDATA[Lies unseren &lt;a href="%s" target="_blank"&gt;ultimate guide to keyword research&lt;/a&gt; Um mehr über Schlüsselworte und deren Verwendung zur erfahren.]]></target>
+      </trans-unit>
+      <trans-unit id="tx_yoastseo_linking_suggestions" resname="tx_yoastseo_linking_suggestions" approved="yes">
+        <source>Internal linking suggestions</source>
+        <target state="final">Vorschläge für interne Links</target>
+      </trans-unit>
+      <trans-unit id="tx_yoastseo_linking_suggestions.intro" resname="tx_yoastseo_linking_suggestions.intro" approved="yes">
+        <source>We found some opportunities for you to create internal links. In the list below, you will find the words we found in this text that might be linked to the given pages. Pages highlighted with a * are cornerstone pages and are therefor the most important pages on your website. Especially those are interesting to link to.</source>
+        <target state="final">Wir haben einige Möglichkeiten für das Anlegen von internen Links gefunden. In der Liste finden Sie die Wörter, die wir im Text gefunden haben, welche mit den Seiten verlinkt werden sollten. Seiten mit einem * sind corner stone Seiten und sind deswegen sehr wichtig für die Webseite, deswegen sollten gerade diese verlinkt werden!</target>
+      </trans-unit>
+      <trans-unit id="pages.no_index_formlabel" resname="pages.no_index_formlabel" approved="yes">
+        <source>Do not index this page in search engines</source>
+        <target state="final">Seite nicht in Suchmaschinen aufnehmen.</target>
+      </trans-unit>
+      <trans-unit id="pages.no_follow_formlabel" resname="pages.no_follow_formlabel" approved="yes">
+        <source>Do not follow links on this page</source>
+        <target state="final">Links auf dieser Seite nicht folgen</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

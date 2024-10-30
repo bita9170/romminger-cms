@@ -46,7 +46,8 @@
     "typo3/cms-t3editor": "^12.4.0",
     "typo3/cms-tstemplate": "^12.4.0",
     "typo3/cms-viewpage": "^12.4.0",
-    "typo3/cms-webhooks": "^12.4.0"
+    "typo3/cms-webhooks": "^12.4.0",
+    "yoast-seo-for-typo3/yoast_seo": "^10.0"
   },
   "require-dev": {
     "typo3/cms-adminpanel": "^12.4"
