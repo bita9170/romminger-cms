@@ -14,9 +14,11 @@
     "sort-packages": true
   },
   "require": {
-    "contentblocks/content-blocks": "^0.7.16",
     "evoweb/sf-register": "^12.0",
+    "friendsoftypo3/content-blocks": "^0.7.18",
     "helhum/typo3-console": "^8.1",
+    "nng/nnrestapi": "^2.0",
+    "romminger/restapi": "^1.0",
     "romminger/rr-sondermetalle": "^1.0",
     "typo3/cms-backend": "^12.4.0",
     "typo3/cms-belog": "^12.4.0",
@@ -44,7 +46,8 @@
     "typo3/cms-t3editor": "^12.4.0",
     "typo3/cms-tstemplate": "^12.4.0",
     "typo3/cms-viewpage": "^12.4.0",
-    "typo3/cms-webhooks": "^12.4.0"
+    "typo3/cms-webhooks": "^12.4.0",
+    "yoast-seo-for-typo3/yoast_seo": "^10.0"
   },
   "require-dev": {
     "typo3/cms-adminpanel": "^12.4"

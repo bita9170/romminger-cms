@@ -1,0 +1,27 @@
+
+plugin.tx_nnrestapi {
+	settings {
+		
+		# where to upload new files. Use @Api\Upload("config[restapi]")
+		fileUploads {
+			restapi {
+				defaultStoragePath = 1:/restapi/
+			}		
+		}
+		
+		# Default values for new entries
+		insertDefaultValues {
+			Romminger\Restapi\Domain\Model\Entry {
+				pid = 4
+			}
+		}
+
+		# Reduce JSON in response to certain fields
+		globalDistillers {
+			Romminger\Restapi\Domain\Model\Entry {
+				#include = uid, title, files
+				flattenFileReferences = 1
+			}
+		}
+	}
+}

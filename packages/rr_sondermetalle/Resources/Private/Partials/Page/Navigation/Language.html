@@ -23,20 +23,18 @@
   >
     <ul class="langauge-switch py-2 font-medium" role="none">
       <f:for each="{languagenavigation}" as="item">
-        <f:if condition="{item.active} == 0">
-          <li>
-            <a
-              href="{item.link}"
-              class="block !px-2 text-base text-gray-700 hover:bg-gray-100"
-              role="menuitem"
-            >
-              <div class="inline-flex items-center space-x-1">
-                <core:icon identifier="{item.flag}" />
-                <span>{item.navigationTitle}</span>
-              </div>
-            </a>
-          </li>
-        </f:if>
+        <li>
+          <a
+            href="{item.link}"
+            class="block !px-2 text-base text-gray-700 hover:bg-gray-100"
+            role="menuitem"
+          >
+            <div class="inline-flex items-center space-x-1">
+              <core:icon identifier="{item.flag}" />
+              <span>{item.navigationTitle}</span>
+            </div>
+          </a>
+        </li>
       </f:for>
     </ul>
   </div>

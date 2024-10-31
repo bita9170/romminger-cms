@@ -16,39 +16,50 @@ languages:
     flag: de
     hreflang: ""
     websiteTitle: ""
+  - title: English
+    enabled: true
+    locale: en_US
+    hreflang: ""
+    base: /en/
+    websiteTitle: ""
+    navigationTitle: English
+    fallbackType: strict
+    fallbacks: ""
+    flag: gb
+    languageId: 1
 rootPageId: 1
-websiteTitle: RR-Sondermetalle
 routeEnhancers:
   MaterialPlugin:
     type: Extbase
     extension: RrSondermetalle
     plugin: Material
     routes:
-      - {
-          routePath: "/{material_name}",
-          _controller: "Material::show",
-          _arguments: { "material_name": "material" },
-        }
+      - routePath: "/{material_name}"
+        _controller: "Material::show"
+        _arguments:
+          material_name: material
     defaultController: "Material::list"
     aspects:
       material_name:
         type: PersistedAliasMapper
-        tableName: "tx_romminger_materials"
-        routeFieldName: "name"
+        tableName: tx_romminger_materials
+        routeFieldName: name
   ProductPlugin:
     type: Extbase
     extension: RrSondermetalle
     plugin: Product
     routes:
-      - { routePath: "/products", _controller: "Product::list" }
-      - {
-          routePath: "/{product_name}",
-          _controller: "Product::show",
-          _arguments: { "product_name": "product" },
-        }
+      - routePath: "/{product_name}"
+        _controller: "Product::show"
+        _arguments:
+          product_name: product
     defaultController: "product::list"
     aspects:
       product_name:
         type: PersistedAliasMapper
-        tableName: "tx_romminger_products"
-        routeFieldName: "name"
+        tableName: tx_romminger_products
+        routeFieldName: name
+websiteTitle: RR-Sondermetalle
+
+imports:
+  - { resource: "EXT:nnrestapi/Configuration/Yaml/default.yaml" }
