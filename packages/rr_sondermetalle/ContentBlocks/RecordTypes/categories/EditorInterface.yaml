@@ -17,3 +17,4 @@ fields:
     foreign_table: "tx_romminger_categories"
     items:
       - value: "0"
+        label: "-"

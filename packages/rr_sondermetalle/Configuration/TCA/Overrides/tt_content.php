@@ -6,4 +6,5 @@ defined('TYPO3') or die('Access denied.');
 call_user_func(function () {
     ExtensionUtility::registerPlugin('RrSondermetalle', 'Material', 'Material');
     ExtensionUtility::registerPlugin('RrSondermetalle', 'Product', 'Product');
+    ExtensionUtility::registerPlugin('RrSondermetalle', 'Category', 'Category');
 });
