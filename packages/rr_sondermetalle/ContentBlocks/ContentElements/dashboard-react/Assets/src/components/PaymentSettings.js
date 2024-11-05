@@ -5,7 +5,6 @@ const PaymentSetting = () => {
   return (
     <div className="payment-setting flex flex-col md:flex-row gap-6 p-6 bg-gray-50 min-h-screen">
       <div className="main-content w-full md:w-3/4 space-y-6">
-        {/* Shipping Address Section */}
         <section className="shipping-address bg-white p-6 rounded shadow">
           <h2 className="text-xl font-semibold mb-4">Shipping Address</h2>
           <form className="grid gap-4">
@@ -44,7 +43,6 @@ const PaymentSetting = () => {
           </form>
         </section>
 
-        {/* Payment Method */}
         <section className="payment-method bg-white p-6 rounded shadow">
           <h2 className="text-xl font-semibold mb-4">Payment Method</h2>
           <div className="space-y-2">
@@ -78,7 +76,6 @@ const PaymentSetting = () => {
           </div>
         </section>
 
-        {/* Cart Overview Section */}
         <section className="cart-overview bg-white p-6 rounded shadow">
           <h2 className="text-xl font-semibold mb-4">Warenkorb</h2>
           <p className="mb-2">
@@ -87,8 +84,8 @@ const PaymentSetting = () => {
           <p className="mb-2">Delivery: 6-8 days</p>
           <p className="mb-2">Seller: AUCOOR GmbH</p>
           <p className="font-semibold mb-4">Total Price: €38.99</p>
-          <button className="bg-green-500 text-white py-2 px-4 rounded hover:bg-green-600">
-            Place Order at Specified Price
+          <button className="bg-green-500 text-white py-2 px-4 rounded">
+            Jetzt zum genannten Preis bestellen
           </button>
         </section>
       </div>
