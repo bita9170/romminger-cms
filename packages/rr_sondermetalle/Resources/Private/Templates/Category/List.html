@@ -1,82 +1,66 @@
-<div class="container">
+<div class="container shop-page px-0">
   <div class="row">
-    <div class="col-4 bg-light py-4">
-      <ul class="list-group level-0">
-        <f:for each="{categories}" as="category">
-          <f:render
-            partial="Category/TreeCategory"
-            arguments="{category: category, activeCategory: activeCategory, level: 1}"
-          />
-        </f:for>
-      </ul>
+    <div class="col-md-3">
+      <div class="bg-light py-2">
+        <ul class="list-group level-0">
+          <f:for each="{categories}" as="category">
+            <f:render
+              partial="Category/TreeCategory"
+              arguments="{category: category, activeCategory: activeCategory, level: 1}"
+            />
+          </f:for>
+        </ul>
+      </div>
     </div>
-    <div class="col-8">col-8</div>
+    <div class="col-md-9">
+      <f:if condition="{activeCategory} && {activeCategory.parentCategory}">
+        <f:then>Col-9</f:then>
+        <f:else>
+          <h3>Home</h3>
+          <p>
+            Explore our range of high-quality metal products designed for
+            various industrial applications. We offer custom fabrication
+            services and technical support to meet your specific needs.
+          </p>
+          <div class="row g-4 mt-2">
+            <f:for each="{categories}" as="category">
+              <f:if
+                condition="{category.subCategories -> f:count()} && {!activeCategory.parentCategory}"
+              >
+                <f:for each="{category.subCategories}" as="subCategory">
+                  <div class="col-md-6">
+                    <div class="card p-1" style="height: 100%">
+                      <div class="h3 font-bold px-2 py-3 bg-light">
+                        <f:link.action
+                          action="list"
+                          arguments="{activeCategoryId: subCategory.uid}"
+                        >
+                          {subCategory.name}
+                        </f:link.action>
+                      </div>
+                      <div class="row g-0">
+                        <div class="col">
+                          <f:image
+                            image="{subCategory.images.0}"
+                            alt="{subCategory.name}"
+                            class="img-fluid rounded"
+                            loading="lazy"
+                          />
+                        </div>
+                        <div class="col">
+                          <div class="card-body">
+                            <p class="card-text">{subCategory.description}</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </f:for>
+              </f:if>
+            </f:for>
+          </div>
+        </f:else>
+      </f:if>
+    </div>
   </div>
 </div>
-
-<style>
-  .list-group-item {
-    border: none;
-    background-color: transparent;
-
-    .level-root-header {
-      background-color: #172554;
-      text-align: center;
-      padding-block: 10px;
-      font-size: 20px;
-
-      a {
-        color: #fff;
-
-        &:hover {
-          color: rgba(255, 255, 255, 0.9);
-        }
-      }
-    }
-
-    &.active-category {
-      & > a {
-        font-weight: bold;
-      }
-    }
-  }
-
-  .nested {
-    display: none;
-  }
-
-  .caret-icon {
-    cursor: pointer;
-    user-select: none;
-    display: inline-block;
-    margin-right: 2px;
-  }
-
-  .caret {
-    content: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgZmlsbD0iY3VycmVudENvbG9yIiBjbGFzcz0iYmkgYmktY2hldnJvbi1yaWdodCIgdmlld0JveD0iMCAwIDE2IDE2Ij4KICA8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik00LjY0NiAxLjY0NmEuNS41IDAgMCAxIC43MDggMGw2IDZhLjUuNSAwIDAgMSAwIC43MDhsLTYgNmEuNS41IDAgMCAxLS43MDgtLjcwOEwxMC4yOTMgOCA0LjY0NiAyLjM1NGEuNS41IDAgMCAxIDAtLjcwOCI+PC9wYXRoPgo8L3N2Zz4=");
-    transform: rotate(0deg);
-    transition: transform 0.3s;
-    position: relative;
-    top: 2px;
-  }
-
-  .caret-down {
-    transform: rotate(90deg);
-  }
-</style>
-
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const togglers = document.querySelectorAll(".caret-icon");
-    togglers.forEach(function (toggle) {
-      toggle.addEventListener("click", function (event) {
-        event.stopPropagation();
-        const nestedList = this.parentElement.querySelector(".nested");
-        if (nestedList) {
-          nestedList.classList.toggle("d-block");
-          this.classList.toggle("caret-down");
-        }
-      });
-    });
-  });
-</script>
