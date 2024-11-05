@@ -10,7 +10,7 @@ function App() {
     <Router>
       <div className="flex flex-col md:flex-row">
         <UserMenu />
-        <div className="flex-grow p-4">
+        <div className="flex-grow p-4 ml-64">
           <Routes>
             <Route path="/profile" element={<ProfileSettings />} />
             <Route path="/orders" element={<OrderHistory />} />
