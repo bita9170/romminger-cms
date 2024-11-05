@@ -3,6 +3,7 @@
 namespace Romminger\RrSondermetalle\Domain\Model;
 
 use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
+use TYPO3\CMS\Extbase\Domain\Model\FileReference;
 use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 
 class Category extends AbstractEntity
@@ -21,10 +22,17 @@ class Category extends AbstractEntity
      */
     protected $subCategories;
 
+    /**
+     * @var ObjectStorage<FileReference>
+     * @TYPO3\CMS\Extbase\Annotation\ORM\Cascade("remove")
+     */
+    protected ObjectStorage $images;
+
 
     public function __construct()
     {
         $this->subCategories = new ObjectStorage();
+        $this->images = new ObjectStorage();
     }
 
     // Getters and setters
@@ -71,5 +79,21 @@ class Category extends AbstractEntity
     public function removeSubCategory(Category $category): void
     {
         $this->subCategories->detach($category);
+    }
+
+    /**
+     * @return ObjectStorage<FileReference>
+     */
+    public function getImages(): ObjectStorage
+    {
+        return $this->images;
+    }
+
+    /**
+     * @param ObjectStorage<FileReference> $images
+     */
+    public function setImages(ObjectStorage $images): void
+    {
+        $this->images = $images;
     }
 }

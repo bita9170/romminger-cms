@@ -7,3 +7,17 @@ window.addEventListener("scroll", function () {
     header.classList.remove("fixed");
   }
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+  const togglers = document.querySelectorAll(".caret-icon");
+  togglers.forEach(function (toggle) {
+    toggle.addEventListener("click", function (event) {
+      event.stopPropagation();
+      const nestedList = this.parentElement.querySelector(".nested");
+      if (nestedList) {
+        nestedList.classList.toggle("d-block");
+        this.classList.toggle("caret-down");
+      }
+    });
+  });
+});

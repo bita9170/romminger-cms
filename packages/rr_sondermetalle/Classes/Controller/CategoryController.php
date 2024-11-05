@@ -8,9 +8,6 @@ use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
 use Romminger\RrSondermetalle\Domain\Repository\ProductRepository;
 use Romminger\RrSondermetalle\Domain\Repository\CategoryRepository;
 
-
-
-
 class CategoryController extends ActionController
 {
     /**
@@ -47,15 +44,15 @@ class CategoryController extends ActionController
                 $products = $this->productRepository->findByCategories($subCategories);
             }
         } else {
-            $products = $this->productRepository->findAll();
+            // $products = $this->productRepository->findAll();
         }
-
 
         $this->view->assignMultiple([
             'categories' => $categories,
             'activeCategory' => $activeCategory,
             'products' => $products,
         ]);
+
         return $this->htmlResponse();
     }
 
