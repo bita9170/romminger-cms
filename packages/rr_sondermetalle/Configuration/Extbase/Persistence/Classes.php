@@ -10,4 +10,8 @@ return [
     \Romminger\RrSondermetalle\Domain\Model\Product::class => [
         'tableName' => 'tx_romminger_products',
     ],
+
+    \Romminger\RrSondermetalle\Domain\Model\Category::class => [
+        'tableName' => 'tx_romminger_categories',
+    ],
 ];
