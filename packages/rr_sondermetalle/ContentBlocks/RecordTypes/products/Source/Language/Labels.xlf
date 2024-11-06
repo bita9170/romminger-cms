@@ -12,11 +12,47 @@
 			<trans-unit id="name.label" resname="name.label">
 				<source>Name</source>
 			</trans-unit>
-            <trans-unit id="images.label" resname="images.label">
-				<source>Images</source>
+			<trans-unit id="abstract.label" resname="abstract.label">
+				<source>Abstract</source>
 			</trans-unit>
             <trans-unit id="description.label" resname="description.label">
 				<source>Description</source>
+			</trans-unit>
+            <trans-unit id="images.label" resname="images.label">
+				<source>Images</source>
+			</trans-unit>
+			<trans-unit id="material.label" resname="material.label">
+				<source>Material</source>
+			</trans-unit>
+			<trans-unit id="category.label" resname="category.label">
+				<source>Category</source>
+			</trans-unit>
+			<trans-unit id="salesUnitType.label" resname="salesUnitType.label">
+				<source>Sales Unit Type</source>
+			</trans-unit>
+			<trans-unit id="unitPrice.label" resname="unitPrice.label">
+				<source>Unit Price</source>
+			</trans-unit>
+			<trans-unit id="thickness.label" resname="thickness.label">
+				<source>Thickness (mm)</source>
+			</trans-unit>
+			<trans-unit id="width.label" resname="width.label">
+				<source>Width (mm)</source>
+			</trans-unit>
+			<trans-unit id="diameter.label" resname="diameter.label">
+				<source>Diameter (mm)</source>
+			</trans-unit>
+			<trans-unit id="outerDiameter.label" resname="outerDiameter.label">
+				<source>Outer Diameter (mm)</source>
+			</trans-unit>
+			<trans-unit id="wallThickness.label" resname="wallThickness.label">
+				<source>Wall Thickness (mm)</source>
+			</trans-unit>
+			<trans-unit id="length.label" resname="length.label">
+				<source>Length (mm)</source>
+			</trans-unit>
+			<trans-unit id="status.label" resname="status.label">
+				<source>Product Status</source>
 			</trans-unit>
 		</body>
 	</file>

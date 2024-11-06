@@ -101,3 +101,7 @@ plugin.bootstrap_package.settings.scss {
     primary = #172554
     secondary = #d7dde4
 }
+
+config {
+    headerComment = 
+}
