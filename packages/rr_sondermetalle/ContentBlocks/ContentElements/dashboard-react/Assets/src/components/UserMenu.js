@@ -1,4 +1,4 @@
-import React, { useState, memo } from "react";
+import React, { useState, useEffect, memo } from "react";
 import MenuItems from "./MenuItems";
 
 const UserInfo = memo(() => (
@@ -19,6 +19,16 @@ const UserMenu = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => setIsOpen(!isOpen);
+
+  useEffect(async () => {
+    await fetch("./api/user")
+      .then((response) => response.json())
+      .then((json) => console.log(json));
+
+    await fetch("./api/material/all")
+      .then((response) => response.json())
+      .then((json) => console.log(json));
+  });
 
   return (
     <div className="bg-gray-200 shadow-md p-4 rounded-lg md:h-screen md:w-64 md:sticky md:top-0 flex flex-col justify-between">
