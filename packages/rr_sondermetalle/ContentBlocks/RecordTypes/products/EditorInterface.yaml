@@ -29,13 +29,23 @@ fields:
     allowed: common-image-types
     maxitems: 5
 
+  - identifier: material
+    type: Select
+    renderType: selectSingle
+    foreign_table: "tx_romminger_materials"
+
+  - identifier: category
+    type: Select
+    renderType: selectSingle
+    foreign_table: "tx_romminger_categories"
+    foreign_table_where: "AND {#tx_romminger_categories}.{#parent_category} > 0 ORDER BY uid"
+    onChange: reload
+
   - identifier: salesUnitType
     type: Select
     renderType: selectSingle
-    label: Sales Unit Type
     onChange: reload
     minitems: 1
-    maxitems: 1
     items:
       - ["Per Piece", "piece"]
       - ["By Weight", "weight"]
@@ -44,18 +54,43 @@ fields:
   - identifier: unitPrice
     type: Number
     format: decimal
-    label: Unit Price
 
-  - identifier: stockQuantity
-    type: Number
-    format: integer
-    label: Stock Quantity
-
-  - identifier: weight
+  - identifier: thickness
     type: Number
     format: decimal
-    label: Product Weight (g)
-    displayCond: "FIELD:salesUnitType:=:weight"
+    displayCond: "FIELD:category:IN:1,2,5" # Foile(1), Blech(2), Coil(5)
+
+  - identifier: width
+    type: Number
+    format: decimal
+    displayCond: "FIELD:category:IN:1,2,5" # Foile(1), Blech(2), Coil(5)
+
+  - identifier: diameter
+    type: Number
+    format: decimal
+    label: Diameter (mm)
+    displayCond: "FIELD:category:IN:3,6" # Draht(3), Rundstab(6)
+
+  - identifier: outerDiameter
+    type: Number
+    format: decimal
+    label: Outer Diameter (mm)
+    displayCond: "FIELD:category:=:4" # Rohr(4)
+
+  - identifier: wallThickness
+    type: Number
+    format: decimal
+    label: Wall Thickness (mm)
+    displayCond: "FIELD:category:=:4" # Rohr(4)
+
+  - identifier: length
+    type: Number
+    format: decimal
+    label: Length (mm)
+    displayCond:
+      OR:
+        - "FIELD:salesUnitType:=:meter"
+        - "FIELD:category:IN:1,2,3,4,5,6" # Foile(1), Blech(2), Draht(3), Rohr(4), Coil(5), Rundstab(6)
 
   - identifier: minOrderQuantity
     type: Number
@@ -69,12 +104,6 @@ fields:
     label: Price Based on Weight (per g/kg)
     displayCond: "FIELD:salesUnitType:=:weight"
 
-  - identifier: length
-    type: Number
-    format: decimal
-    label: Product Length (m)
-    displayCond: "FIELD:salesUnitType:=:meter"
-
   - identifier: minOrderLength
     type: Number
     format: decimal
@@ -87,18 +116,7 @@ fields:
     label: Price Based on Length (per m)
     displayCond: "FIELD:salesUnitType:=:meter"
 
-  - identifier: material
-    type: Select
-    renderType: selectSingle
-    label: Material
-    foreign_table: "tx_romminger_materials"
-  - identifier: category
-    type: Select
-    renderType: selectSingle
-    label: Category
-    foreign_table: "tx_romminger_categories"
-
-  - identifier: Status
+  - identifier: status
     type: Select
     renderType: selectSingle
     label: Product Status
