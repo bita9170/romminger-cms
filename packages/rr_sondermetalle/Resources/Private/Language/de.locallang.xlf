@@ -3,13 +3,13 @@
     <file source-language="en" datatype="plaintext" original="messages" date="2024-08-29UTC10:40:330">
         <body>
             <trans-unit id="frontend.materials">
-                <source>Material</source>
+                <target>Werkstoffe</target>
             </trans-unit>
             <trans-unit id="frontend.material">
-                <source>Material</source>
+                <target>Werkstoff</target>
             </trans-unit>
             <trans-unit id="frontend.apply_filters">
-                <source>Apply Filters</source>
+                <target>Filter anwenden</target>
             </trans-unit>
         </body>
     </file>
