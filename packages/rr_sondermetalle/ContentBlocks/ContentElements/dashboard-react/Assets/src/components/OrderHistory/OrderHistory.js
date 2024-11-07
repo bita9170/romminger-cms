@@ -1,33 +1,41 @@
 import React, { useState, useEffect } from "react";
+import { fetchOrders } from "./OrderApi";
 
 const OrderHistory = () => {
   const [orders, setOrders] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
-    // example data
-    const mockOrders = [
-      { id: 12345, status: "Shipped", date: "2023-08-30" },
-      { id: 12346, status: "Delivered", date: "2023-08-30" },
-      { id: 12347, status: "Processing", date: "2023-08-10" },
-    ];
-    setOrders(mockOrders);
-// Api call
+    setLoading(true);
+    fetchOrders()
+      .then((data) => {
+        setOrders(data);
+        setLoading(false);
+      })
+      .catch((error) => {
+        setError(error.message);
+        setLoading(false);
+      });
   }, []);
+
+  if (loading) return <div>Loading...</div>;
+  if (error) return <div>Error: {error}</div>;
 
   return (
     <div className="order-history bg-gray-50 min-h-screen p-6">
       <h2 className="text-2xl font-semibold mb-6">Order History</h2>
 
       <div className="space-y-4">
-        {orders.map((order) => (
+        {orders.map((order, index) => (
           <div
-            key={order.id}
+            key={index} // Using index as a temporary key
             className="bg-white p-6 rounded shadow flex justify-between items-center"
           >
             <div>
-              <p className="text-lg font-semibold">Order #{order.id}</p>
-              <p>Status: {order.status}</p>
-              <p>Date: {order.date}</p>
+              <p className="text-lg font-semibold">Order #{index + 1}</p>{" "}
+              <p>Status: {order.status || "Completed"}</p>
+              <p>Date: {order.date || "2024-01-01"}</p>
             </div>
             <div className="flex space-x-2">
               <button className="bg-primary-500 text-white py-2 px-4 rounded hover:bg-primary-400">

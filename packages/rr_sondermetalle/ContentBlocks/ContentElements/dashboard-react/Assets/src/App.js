@@ -7,7 +7,7 @@ import {
 } from "react-router-dom";
 import UserMenu from "./components/LeftNavigation/UserMenu";
 import ProfileSettings from "./components/ProfileSettings/ProfileSettings";
-import OrderHistory from "./components/OrderHistory";
+import OrderHistory from "./components/OrderHistory/OrderHistory";
 import PaymentSettings from "./components/PaymentSettings";
 
 function WelcomeDashboard() {
