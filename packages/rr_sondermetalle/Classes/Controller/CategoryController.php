@@ -16,7 +16,7 @@ class CategoryController extends ActionController
     protected $categoryRepository;
 
     /**
-     * @var CategoryRepository
+     * @var ProductRepository
      */
     protected $productRepository;
 
@@ -30,27 +30,34 @@ class CategoryController extends ActionController
         $this->productRepository = $productRepository;
     }
 
-    public function listAction(?int $activeCategoryId = null): ResponseInterface
+    public function listAction(array $filter = []): ResponseInterface
     {
         $categories = $this->categoryRepository->findRootCategoriesWithSubCategories();
 
         $activeCategory = null;
-        $products = [];
 
-        if ($activeCategoryId !== null) {
-            $activeCategory = $this->categoryRepository->findByUid($activeCategoryId);
+        if (!empty($filter['activeCategoryId'])) {
+            $activeCategory = $this->categoryRepository->findByUid($filter['activeCategoryId']);
             if ($activeCategory) {
                 $subCategories = $this->categoryRepository->findSubCategoriesRecursive($activeCategory);
-                $products = $this->productRepository->findByCategories($subCategories);
+                $filter['categories'] = $subCategories;
             }
-        } else {
-            // $products = $this->productRepository->findAll();
         }
+
+        $result = $this->productRepository->findByFilters($filter);
 
         $this->view->assignMultiple([
             'categories' => $categories,
             'activeCategory' => $activeCategory,
-            'products' => $products,
+            'products' => $result['products'],
+            'materials' => $result['materials'],
+            'thicknesses' => $result['thicknesses'],
+            'widths' => $result['widths'],
+            'diameters' => $result['diameters'],
+            'outerDiameters' => $result['outerDiameters'],
+            'wallThicknesses' => $result['wallThicknesses'],
+            'lengths' => $result['lengths'],
+            'filter' => $filter
         ]);
 
         return $this->htmlResponse();

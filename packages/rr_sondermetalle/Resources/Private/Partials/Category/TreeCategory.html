@@ -12,7 +12,10 @@
       <span class="caret-icon">
         <i class="caret"></i>
       </span>
-      <f:link.action action="list" arguments="{activeCategoryId: category.uid}">
+      <f:link.action
+        action="list"
+        arguments="{filter: {activeCategoryId: category.uid}}"
+      >
         {category.name}
       </f:link.action>
       <f:if condition="{category.subCategories -> f:count()}">
@@ -33,7 +36,7 @@
       <div class="level-root-header">
         <f:link.action
           action="list"
-          arguments="{activeCategoryId: category.uid}"
+          arguments="{filter: {activeCategoryId: category.uid}}"
         >
           {category.name}
         </f:link.action>

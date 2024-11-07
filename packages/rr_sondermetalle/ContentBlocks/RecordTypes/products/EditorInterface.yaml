@@ -41,7 +41,7 @@ fields:
     foreign_table_where: "AND {#tx_romminger_categories}.{#parent_category} > 0 ORDER BY uid"
     onChange: reload
 
-  - identifier: salesUnitType
+  - identifier: sales_unit_type
     type: Select
     renderType: selectSingle
     onChange: reload
@@ -51,7 +51,7 @@ fields:
       - ["By Weight", "weight"]
       - ["By Meter", "meter"]
 
-  - identifier: unitPrice
+  - identifier: unit_price
     type: Number
     format: decimal
 
@@ -71,13 +71,13 @@ fields:
     label: Diameter (mm)
     displayCond: "FIELD:category:IN:3,6" # Draht(3), Rundstab(6)
 
-  - identifier: outerDiameter
+  - identifier: outer_diameter
     type: Number
     format: decimal
     label: Outer Diameter (mm)
     displayCond: "FIELD:category:=:4" # Rohr(4)
 
-  - identifier: wallThickness
+  - identifier: wall_thickness
     type: Number
     format: decimal
     label: Wall Thickness (mm)
@@ -89,32 +89,32 @@ fields:
     label: Length (mm)
     displayCond:
       OR:
-        - "FIELD:salesUnitType:=:meter"
+        - "FIELD:sales_unit_type:=:meter"
         - "FIELD:category:IN:1,2,3,4,5,6" # Foile(1), Blech(2), Draht(3), Rohr(4), Coil(5), Rundstab(6)
 
-  - identifier: minOrderQuantity
+  - identifier: min_order_quantity
     type: Number
     format: integer
     label: Minimum Order Quantity (g)
-    displayCond: "FIELD:salesUnitType:=:weight"
+    displayCond: "FIELD:sales_unit_type:=:weight"
 
-  - identifier: priceBasedOnWeight
+  - identifier: price_based_on_weight
     type: Number
     format: decimal
     label: Price Based on Weight (per g/kg)
-    displayCond: "FIELD:salesUnitType:=:weight"
+    displayCond: "FIELD:sales_unit_type:=:weight"
 
-  - identifier: minOrderLength
+  - identifier: min_order_length
     type: Number
     format: decimal
     label: Minimum Order Length (m)
-    displayCond: "FIELD:salesUnitType:=:meter"
+    displayCond: "FIELD:sales_unit_type:=:meter"
 
-  - identifier: priceBasedOnLength
+  - identifier: price_based_on_length
     type: Number
     format: decimal
     label: Price Based on Length (per m)
-    displayCond: "FIELD:salesUnitType:=:meter"
+    displayCond: "FIELD:sales_unit_type:=:meter"
 
   - identifier: status
     type: Select

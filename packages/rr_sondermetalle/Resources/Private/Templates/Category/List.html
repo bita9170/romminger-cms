@@ -13,8 +13,10 @@
       </div>
     </div>
     <div class="col-md-9">
-      <f:if condition="{activeCategory} && {activeCategory.parentCategory}">
-        <f:then>Col-9</f:then>
+      <f:if condition="{activeCategory.parentCategory}">
+        <f:then>
+          <f:render partial="Category/ProductFilter" arguments="{_all}" />
+        </f:then>
         <f:else>
           <h3>Home</h3>
           <p>
@@ -22,39 +24,17 @@
             various industrial applications. We offer custom fabrication
             services and technical support to meet your specific needs.
           </p>
+
           <div class="row g-4 mt-2">
             <f:for each="{categories}" as="category">
               <f:if
                 condition="{category.subCategories -> f:count()} && {!activeCategory.parentCategory}"
               >
                 <f:for each="{category.subCategories}" as="subCategory">
-                  <div class="col-md-6">
-                    <div class="card p-1" style="height: 100%">
-                      <div class="h3 font-bold px-2 py-3 bg-light">
-                        <f:link.action
-                          action="list"
-                          arguments="{activeCategoryId: subCategory.uid}"
-                        >
-                          {subCategory.name}
-                        </f:link.action>
-                      </div>
-                      <div class="row g-0">
-                        <div class="col">
-                          <f:image
-                            image="{subCategory.images.0}"
-                            alt="{subCategory.name}"
-                            class="img-fluid rounded"
-                            loading="lazy"
-                          />
-                        </div>
-                        <div class="col">
-                          <div class="card-body">
-                            <p class="card-text">{subCategory.description}</p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                  <f:render
+                    partial="Category/CardProduct"
+                    arguments="{subCategory: subCategory}"
+                  />
                 </f:for>
               </f:if>
             </f:for>

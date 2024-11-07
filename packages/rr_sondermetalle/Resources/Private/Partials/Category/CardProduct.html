@@ -1,0 +1,27 @@
+<div class="col-md-6">
+  <div class="card p-1" style="height: 100%">
+    <div class="h3 font-bold px-2 py-3 bg-light">
+      <f:link.action
+        action="list"
+        arguments="{filter: {activeCategoryId: subCategory.uid}}"
+      >
+        {subCategory.name}
+      </f:link.action>
+    </div>
+    <div class="row g-0">
+      <div class="col">
+        <f:image
+          image="{subCategory.images.0}"
+          alt="{subCategory.name}"
+          class="img-fluid rounded"
+          loading="lazy"
+        />
+      </div>
+      <div class="col">
+        <div class="card-body">
+          <p class="card-text">{subCategory.description}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
