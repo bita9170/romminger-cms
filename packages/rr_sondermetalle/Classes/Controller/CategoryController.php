@@ -3,10 +3,11 @@
 namespace Romminger\RrSondermetalle\Controller;
 
 use Psr\Http\Message\ResponseInterface;
-use Nng\Nnhelpers\Domain\Model\Category;
+use Romminger\RrSondermetalle\Domain\Model\Category;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
 use Romminger\RrSondermetalle\Domain\Repository\ProductRepository;
 use Romminger\RrSondermetalle\Domain\Repository\CategoryRepository;
+use Romminger\RrSondermetalle\Domain\Repository\MaterialRepository;
 
 class CategoryController extends ActionController
 {
@@ -20,6 +21,11 @@ class CategoryController extends ActionController
      */
     protected $productRepository;
 
+    /**
+     * @var MaterialRepository
+     */
+    protected $materialRepository;
+
     public function injectCategoryRepository(CategoryRepository $categoryRepository): void
     {
         $this->categoryRepository = $categoryRepository;
@@ -28,6 +34,11 @@ class CategoryController extends ActionController
     public function injectProductRepository(ProductRepository $productRepository): void
     {
         $this->productRepository = $productRepository;
+    }
+
+    public function injectMaterialRepository(MaterialRepository $materialRepository): void
+    {
+        $this->materialRepository = $materialRepository;
     }
 
     public function listAction(array $filter = []): ResponseInterface
@@ -44,7 +55,13 @@ class CategoryController extends ActionController
             }
         }
 
+        if (!empty($filter['materialIds'])) {
+            $materialObjects = $this->materialRepository->findByUids($filter['materialIds']);
+            $filter['materials'] = $materialObjects;
+        }
+
         $result = $this->productRepository->findByFilters($filter);
+        $allMaterials = $this->materialRepository->findAll();
 
         $this->view->assignMultiple([
             'categories' => $categories,
@@ -57,7 +74,8 @@ class CategoryController extends ActionController
             'outerDiameters' => $result['outerDiameters'],
             'wallThicknesses' => $result['wallThicknesses'],
             'lengths' => $result['lengths'],
-            'filter' => $filter
+            'filter' => $filter,
+            'allMaterials' => $allMaterials
         ]);
 
         return $this->htmlResponse();

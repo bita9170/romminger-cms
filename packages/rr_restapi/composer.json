@@ -1,5 +1,5 @@
 {
-  "name": "romminger/restapi",
+  "name": "romminger/rr-restapi",
   "type": "typo3-cms-extension",
   "description": "Example Rest-Api Extension for EXT:nnrestapi",
   "version": "1.0.0",

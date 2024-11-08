@@ -13,4 +13,19 @@ class MaterialRepository extends Repository
     protected $defaultOrderings = [
         'sorting' => QueryInterface::ORDER_ASCENDING,
     ];
+
+    /**
+     * Find materials by their UIDs
+     *
+     * @param array $uids
+     * @return array
+     */
+    public function findByUids(array $uids)
+    {
+        $query = $this->createQuery();
+        $query->matching(
+            $query->in('uid', $uids)
+        );
+        return $query->execute();
+    }
 }

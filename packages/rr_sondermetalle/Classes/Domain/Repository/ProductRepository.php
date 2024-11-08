@@ -25,53 +25,42 @@ class ProductRepository extends Repository
     public function findByFilters(array $filter)
     {
         $query = $this->createQuery();
+        $constraints = [];
 
         if (!empty($filter['categories'])) {
-            $query->matching(
-                $query->in('category', $filter['categories'])
-            );
+            $constraints[] = $query->in('category', $filter['categories']);
         }
 
-        if (!empty($filter['material'])) {
-            $query->matching(
-                $query->equals('material', $filter['material'])
-            );
+        if (!empty($filter['materials'])) {
+            $constraints[] = $query->in('material', $filter['materials']);
         }
 
         if (!empty($filter['thickness'])) {
-            $query->matching(
-                $query->equals('thickness', $filter['thickness'])
-            );
+            $constraints[] = $query->equals('thickness', $filter['thickness']);
         }
 
         if (!empty($filter['width'])) {
-            $query->matching(
-                $query->equals('width', $filter['width'])
-            );
+            $constraints[] = $query->equals('width', $filter['width']);
         }
 
         if (!empty($filter['diameter'])) {
-            $query->matching(
-                $query->equals('diameter', $filter['diameter'])
-            );
+            $constraints[] = $query->equals('diameter', $filter['diameter']);
         }
 
         if (!empty($filter['outerDiameter'])) {
-            $query->matching(
-                $query->equals('outerDiameter', $filter['outerDiameter'])
-            );
+            $constraints[] = $query->equals('outerDiameter', $filter['outerDiameter']);
         }
 
         if (!empty($filter['wallThickness'])) {
-            $query->matching(
-                $query->equals('wallThickness', $filter['wallThickness'])
-            );
+            $constraints[] = $query->equals('wallThickness', $filter['wallThickness']);
         }
 
         if (!empty($filter['length'])) {
-            $query->matching(
-                $query->equals('length', $filter['length'])
-            );
+            $constraints[] = $query->equals('length', $filter['length']);
+        }
+
+        if (!empty($constraints)) {
+            $query->matching($query->logicalAnd(...$constraints));
         }
 
         /** @var QueryResultInterface|Product[] $products */

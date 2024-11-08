@@ -1,0 +1,40 @@
+<table class="table table-borderless table-striped">
+  <tbody>
+    <f:for each="{products}" as="product">
+      <tr>
+        <td scope="row" style="width: 10%">
+          <f:image
+            image="{product.images.0}"
+            alt="{product.name}"
+            class="img-thumbnail rounded"
+            loading="lazy"
+            style="width: 100px; height: 100px; object-fit: cover"
+          />
+        </td>
+        <td style="width: 40%">
+          <div>{product.name}</div>
+          <span class="fs-6 font-bold">Artikel-Nr.: {product.id}</span>
+        </td>
+        <td class="text-end">125,64 €</td>
+        <td class="text-end">
+          <input type="number" value="25" min="0" max="1000" />
+          (m)
+        </td>
+        <td>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            fill="currentColor"
+            class="bi bi-cart align-middle"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2"
+            />
+          </svg>
+        </td>
+      </tr>
+    </f:for>
+  </tbody>
+</table>

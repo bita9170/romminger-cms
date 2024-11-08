@@ -1,7 +1,7 @@
 <div class="container shop-page px-0">
   <div class="row">
     <div class="col-md-3">
-      <div class="bg-light py-2">
+      <div class="bg-light py-2 h-100">
         <ul class="list-group level-0">
           <f:for each="{categories}" as="category">
             <f:render
@@ -16,6 +16,15 @@
       <f:if condition="{activeCategory.parentCategory}">
         <f:then>
           <f:render partial="Category/ProductFilter" arguments="{_all}" />
+
+          <div class="number-of-product font-bold mt-4 mb-2">
+            <span
+              ><f:translate key="frontend.number_of_product" />:
+              <f:count subject="{products}"
+            /></span>
+          </div>
+
+          <f:render partial="Category/ProductList" arguments="{_all}" />
         </f:then>
         <f:else>
           <h3>Home</h3>
