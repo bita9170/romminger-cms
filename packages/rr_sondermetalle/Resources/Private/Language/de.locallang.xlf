@@ -11,6 +11,9 @@
             <trans-unit id="frontend.apply_filters">
                 <target>Filter anwenden</target>
             </trans-unit>
+            <trans-unit id="frontend.number_of_product">
+                <target>Anzahl Produkte</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>

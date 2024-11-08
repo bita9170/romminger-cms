@@ -11,6 +11,9 @@
             <trans-unit id="frontend.apply_filters">
                 <source>Apply Filters</source>
             </trans-unit>
+            <trans-unit id="frontend.number_of_product">
+                <source>Number of products</source>
+            </trans-unit>
         </body>
     </file>
 </xliff>

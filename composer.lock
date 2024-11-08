@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ce32170784ba782f90fa02e14524ada0",
+    "content-hash": "6039b733443fc41a7721a69461243bd5",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -7705,88 +7705,6 @@
                 "source": "https://github.com/webmozarts/assert/tree/1.11.0"
             },
             "time": "2022-06-03T18:03:27+00:00"
-        },
-        {
-            "name": "yoast-seo-for-typo3/yoast_seo",
-            "version": "10.0.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/Yoast/Yoast-SEO-for-TYPO3.git",
-                "reference": "66d1fa9fd579707281e27b0d951976582ac092c6"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/Yoast/Yoast-SEO-for-TYPO3/zipball/66d1fa9fd579707281e27b0d951976582ac092c6",
-                "reference": "66d1fa9fd579707281e27b0d951976582ac092c6",
-                "shasum": ""
-            },
-            "require": {
-                "ext-curl": "*",
-                "ext-json": "*",
-                "php": "^8.0",
-                "typo3/cms-backend": "^11.5 || ^12.4 || ^13.4",
-                "typo3/cms-core": "^11.5 || ^12.4 || ^13.4",
-                "typo3/cms-extbase": "^11.5 || ^12.4 || ^13.4",
-                "typo3/cms-fluid": "^11.5 || ^12.4 || ^13.4",
-                "typo3/cms-frontend": "^11.5 || ^12.4 || ^13.4",
-                "typo3/cms-install": "^11.5 || ^12.4 || ^13.4",
-                "typo3/cms-seo": "^11.5 || ^12.4 || ^13.4"
-            },
-            "replace": {
-                "typo3-ter/yoast-seo": "self.version"
-            },
-            "require-dev": {
-                "friendsofphp/php-cs-fixer": "^3.0",
-                "overtrue/phplint": ">=5.5 <10.0",
-                "phpstan/extension-installer": "^1.0",
-                "phpstan/phpstan": "^1.9",
-                "saschaegerer/phpstan-typo3": "^1.8",
-                "typo3/tailor": "^1.1"
-            },
-            "suggest": {
-                "typo3/cms-dashboard": "Display Yoast SEO widgets within the Dashboard of TYPO3"
-            },
-            "type": "typo3-cms-extension",
-            "extra": {
-                "typo3/cms": {
-                    "extension-key": "yoast_seo"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "YoastSeoForTypo3\\YoastSeo\\": "Classes/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "GPL-3.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "Team Yoast",
-                    "email": "support@yoast.com",
-                    "homepage": "https://yoast.com"
-                },
-                {
-                    "name": "Team MaxServ",
-                    "email": "support@maxserv.com",
-                    "homepage": "https://maxserv.com"
-                }
-            ],
-            "description": "Yoast SEO for TYPO3",
-            "homepage": "https://yoast.com",
-            "keywords": [
-                "MaxServ",
-                "TYPO3 CMS",
-                "seo",
-                "yoast"
-            ],
-            "support": {
-                "docs": "https://docs.typo3.org/p/yoast-seo-for-typo3/yoast_seo/main/en-us/",
-                "issues": "https://github.com/Yoast/Yoast-SEO-for-TYPO3/issues",
-                "source": "https://github.com/Yoast/Yoast-SEO-for-TYPO3"
-            },
-            "time": "2024-10-15T17:20:06+00:00"
         }
     ],
     "packages-dev": [
@@ -7944,11 +7862,11 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {},
     "prefer-stable": false,
     "prefer-lowest": false,
-    "platform": [],
-    "platform-dev": [],
+    "platform": {},
+    "platform-dev": {},
     "platform-overrides": {
         "php": "8.1.1"
     },
