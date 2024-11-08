@@ -8,7 +8,7 @@ import {
 import UserMenu from "./components/LeftNavigation/UserMenu";
 import ProfileSettings from "./components/ProfileSettings/ProfileSettings";
 import OrderHistory from "./components/OrderHistory/OrderHistory";
-import PaymentSettings from "./components/PaymentSettings";
+import PaymentSettings from "./components/PaymentSettings/PaymentSettings";
 
 function WelcomeDashboard() {
   return (
