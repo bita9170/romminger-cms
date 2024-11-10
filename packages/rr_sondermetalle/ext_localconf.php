@@ -38,5 +38,8 @@ $GLOBALS['TYPO3_CONF_VARS']['RTE']['Presets']['rr_sondermetalle'] = 'EXT:rr_sond
     'Category',
     [
         CategoryController::class => 'list, show',
-    ]
+    ],
+    [
+        CategoryController::class => 'list',
+    ],
 );
