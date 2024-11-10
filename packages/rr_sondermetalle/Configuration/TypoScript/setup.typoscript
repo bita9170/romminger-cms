@@ -56,5 +56,8 @@ plugin.tx_rrsondermetalle {
         partialRootPaths.0 = EXT:rr_sondermetalle/Resources/Private/Partials/
         layoutRootPaths.0 = EXT:rr_sondermetalle/Resources/Private/Layouts/
     }
+    settings {
+        no_cache = 1
+    }
 }
 

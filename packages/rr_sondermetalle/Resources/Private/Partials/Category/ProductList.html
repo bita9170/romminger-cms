@@ -2,6 +2,62 @@
   <tbody>
     <f:for each="{products}" as="product">
       <tr>
+        <td class="row">
+          <div class="col-3 col-md-1 p-0">
+            <f:image
+              image="{product.images.0}"
+              alt="{product.name}"
+              class="img-thumbnail rounded"
+              loading="lazy"
+              style="width: 80px; height: 80px; object-fit: cover"
+            />
+          </div>
+
+          <div class="col-9 d-flex flex-column justify-content-center">
+            <div class="w-100">{product.name}</div>
+            <div class="fs-6 font-bold w-100">Artikel-Nr.: {product.id}</div>
+          </div>
+          <div
+            class="col-12 col-md-2 mt-4 mt-md-0 d-flex p-0 p-md-2 gap-2 align-items-center justify-content-end"
+          >
+            <div class="input-group input-group-sm mb-3">
+              <input
+                type="number"
+                class="form-control"
+                value="0"
+                aria-label="mange"
+                aria-describedby="basic-addon2"
+              />
+              <span class="input-group-text" id="basic-addon2">(m)</span>
+              <button
+                class="btn btn-outline-primary"
+                type="button"
+                id="button-addon2"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  fill="currentColor"
+                  class="bi bi-cart align-middle d-inline-block"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2"
+                  />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </td>
+      </tr>
+    </f:for>
+  </tbody>
+</table>
+<!-- <table class="table table-borderless table-striped">
+  <tbody>
+    <f:for each="{products}" as="product">
+      <tr>
         <td scope="row" style="width: 10%">
           <f:image
             image="{product.images.0}"
@@ -37,4 +93,4 @@
       </tr>
     </f:for>
   </tbody>
-</table>
+</table> -->

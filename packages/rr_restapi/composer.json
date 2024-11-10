@@ -21,7 +21,7 @@
   },
   "extra": {
     "typo3/cms": {
-      "extension-key": "restapi"
+      "extension-key": "rr_restapi"
     }
   }
 }

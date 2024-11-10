@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "6039b733443fc41a7721a69461243bd5",
+    "content-hash": "83d2a779e357fea759171de38964ae13",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -2782,12 +2782,12 @@
             "time": "2019-03-08T08:55:37+00:00"
         },
         {
-            "name": "romminger/restapi",
+            "name": "romminger/rr-restapi",
             "version": "1.0.0",
             "dist": {
                 "type": "path",
                 "url": "packages/rr_restapi",
-                "reference": "3781a8d44c8469217c4fdcaf89d093aca5ecf1fb"
+                "reference": "08dd6554ab87c12382f0d8f652d1b330b8813e25"
             },
             "require": {
                 "nng/nnhelpers": "^2.0",
@@ -2797,7 +2797,7 @@
             "type": "typo3-cms-extension",
             "extra": {
                 "typo3/cms": {
-                    "extension-key": "restapi"
+                    "extension-key": "rr_restapi"
                 }
             },
             "autoload": {
@@ -7862,11 +7862,11 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {},
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
-    "platform": {},
-    "platform-dev": {},
+    "platform": [],
+    "platform-dev": [],
     "platform-overrides": {
         "php": "8.1.1"
     },
