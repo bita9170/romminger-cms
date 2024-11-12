@@ -1,0 +1,27 @@
+name: romminger/orders-products
+table: tx_romminger_ordersproducts
+prefixFields: false
+labelField: product
+security:
+  ignorePageTypeRestriction: true
+fields:
+  - identifier: order
+    type: Select
+    renderType: selectSingle
+    minitems: 1
+    maxitems: 1
+    foreign_table: tx_romminger_orders
+  - identifier: product
+    type: Select
+    renderType: selectSingle
+    minitems: 1
+    maxitems: 1
+    foreign_table: tx_romminger_products
+  - identifier: quantity
+    type: Number
+  - identifier: price
+    type: Number
+    format: decimal
+  - identifier: total_price
+    type: Number
+    format: decimal

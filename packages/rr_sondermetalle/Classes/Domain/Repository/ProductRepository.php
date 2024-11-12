@@ -16,6 +16,13 @@ class ProductRepository extends Repository
         'sorting' => QueryInterface::ORDER_ASCENDING,
     ];
 
+    public function getAll()
+    {
+        $query = $this->createQuery();
+        $query->getQuerySettings()->setRespectStoragePage(false);
+        return $query->execute();
+    }
+
     /**
      * Filter products based on given conditions
      *

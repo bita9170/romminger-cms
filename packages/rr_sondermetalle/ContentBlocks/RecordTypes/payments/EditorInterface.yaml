@@ -1,0 +1,37 @@
+name: romminger/payments
+table: tx_romminger_payments
+prefixFields: false
+labelField: transaction_id
+security:
+  ignorePageTypeRestriction: true
+fields:
+  - identifier: order
+    type: Select
+    renderType: selectSingle
+    minitems: 1
+    maxitems: 1
+    foreign_table: tx_romminger_orders
+  - identifier: date
+    type: DateTime
+    format: datetime
+    dbType: datetime
+  - identifier: amount
+    type: Number
+    format: decimal
+  - identifier: method
+    type: Select
+    renderType: selectSingle
+    minitems: 1
+    items:
+      - ["Available", "available"]
+      - ["Out of Stock", "out_of_stock"]
+  - identifier: status
+    type: Select
+    renderType: selectSingle
+    minitems: 1
+    items:
+      - ["Available", "available"]
+      - ["Out of Stock", "out_of_stock"]
+  - identifier: transaction_id
+    type: Text
+    readOnly: false
