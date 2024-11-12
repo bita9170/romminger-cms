@@ -6,3 +6,7 @@ services:
 
   Romminger\RrSondermetalle\:
     resource: "../Classes/*"
+
+  Romminger\RrSondermetalle\Controller\AdminModuleController\OrderBackendModuleController:
+    arguments:
+      $productRepository: '@Romminger\RrSondermetalle\Domain\Repository\ProductRepository'
