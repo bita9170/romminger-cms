@@ -1,12 +1,47 @@
 <a
   href="{shopLink}"
-  class="bg-orange-400 text-primary-500 font-bold rounded-lg shadow px-4 py-2 text-lg mr-2 uppercase space-x-2 items-center hidden md:flex hover:bg-orange-400/85"
+  data-popover-target="popover-cart"
+  type="button"
+  class="relative bg-orange-400 text-primary-500 font-bold rounded-lg shadow px-4 py-2 text-lg mr-2 uppercase space-x-2 items-center hidden md:flex hover:bg-orange-400/85"
 >
-  <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
-    <path d="M0 0h24v24H0V0z" fill="none"></path>
-    <path
-      d="m18.36 9 .6 3H5.04l.6-3h12.72M20 4H4v2h16V4zm0 3H4l-1 5v2h1v6h10v-6h4v6h2v-6h1v-2l-1-5zM6 18v-4h6v4H6z"
-    ></path>
+  <svg
+    class="w-6 h-6 fill-current"
+    enable-background="new 0 0 611.736 611.736"
+    viewBox="0 0 611.736 611.736"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <g>
+      <path
+        d="m576.59 369.25 33.872-203.788c6.991-41.593-21.06-80.979-62.653-87.97-4.183-.703-8.417-1.056-12.659-1.056h-406.618c-4.361-28.191-24.106-51.583-51.164-60.616l-43.697-14.516c-13.355-4.432-27.774 2.801-32.206 16.156s2.802 27.774 16.156 32.206l43.607 14.48c9.927 3.31 16.84 12.329 17.458 22.775l20.624 350.545c1.459 25.392 15.478 48.386 37.381 61.315-20.137 37.129-6.363 83.552 30.766 103.689s83.552 6.363 103.689-30.766c10.363-19.108 12.106-41.722 4.793-62.192h161.767c-14.205 39.746 6.5 83.483 46.247 97.688 39.746 14.205 83.483-6.5 97.688-46.246 5.944-16.632 5.944-34.81 0-51.442h4.458c14.07 0 25.475-11.406 25.475-25.475s-11.406-25.475-25.475-25.475h-410.531c-13.494-.008-24.635-10.547-25.394-24.019l-.082-1.456h351.048c37.413.134 69.386-26.918 75.45-63.837zm-66.916 140.262c14.07 0 25.475 11.406 25.475 25.475s-11.406 25.475-25.475 25.475-25.475-11.406-25.475-25.475c.016-14.062 11.412-25.458 25.475-25.475zm-305.702 0c14.07 0 25.475 11.406 25.475 25.475s-11.406 25.475-25.475 25.475-25.475-11.406-25.475-25.475c.016-14.062 11.412-25.458 25.475-25.475zm-56.865-127.375-14.958-254.751h403c14.05.011 25.43 11.41 25.419 25.46-.001 1.41-.119 2.817-.354 4.207l-.013.037-33.882 203.814c-2.039 12.301-12.711 21.3-25.18 21.234h-354.032z"
+      />
+      <path
+        d="m484.199 331.186v-152.85c0-14.07-11.406-25.475-25.475-25.475s-25.475 11.406-25.475 25.475v152.851c0 14.07 11.406 25.475 25.475 25.475s25.475-11.406 25.475-25.476z"
+      />
+      <path
+        d="m369.561 331.186v-152.85c0-14.07-11.406-25.475-25.475-25.475s-25.475 11.406-25.475 25.475v152.851c0 14.07 11.406 25.475 25.475 25.475s25.475-11.406 25.475-25.476z"
+      />
+      <path
+        d="m254.923 331.186v-152.85c0-14.07-11.406-25.475-25.475-25.475-14.07 0-25.475 11.406-25.475 25.475v152.851c0 14.07 11.406 25.475 25.475 25.475 14.069-.001 25.475-11.406 25.475-25.476z"
+      />
+    </g>
   </svg>
-  <span>Shop</span></a
+  <span>Shop</span>
+  <div
+    class="d-none cart-number absolute inline-flex items-center justify-center w-6 h-6 text-xs font-bold text-white bg-red-500 border-2 border-white rounded-full -top-2 -end-2 dark:border-gray-900"
+  >
+    0
+  </div>
+</a>
+
+<div
+  data-popover
+  id="popover-cart"
+  role="tooltip"
+  class="d-none absolute z-50 invisible inline-block text-sm text-gray-500 transition-opacity duration-300 bg-white border border-gray-200 rounded-lg shadow-sm opacity-0 w-80"
 >
+  <div class="px-4 py-2">
+    <div class="cart-items"></div>
+    <button class="btn btn-primary w-full my-2">Checkout</button>
+    <div data-popper-arrow></div>
+  </div>
+</div>

@@ -11,8 +11,7 @@ $EM_CONF[$_EXTKEY] = [
         'depends' => [
             'bootstrap_package' => '13.0.0-14.9.99',
         ],
-        'conflicts' => [
-        ],
+        'conflicts' => [],
     ],
     'autoload' => [
         'psr-4' => [
@@ -23,8 +22,8 @@ $EM_CONF[$_EXTKEY] = [
     'uploadfolder' => 0,
     'createDirs' => '',
     'clearCacheOnLoad' => 1,
-    'author' => 'Bita Sadeghi',
-    'author_email' => 'bita.s9170@gmail.com',
+    'author' => 'Sadegh Saedi Nia',
+    'author_email' => 's.saedinia@gmail.com',
     'author_company' => 'Romminger',
     'version' => '1.0.0',
 ];
