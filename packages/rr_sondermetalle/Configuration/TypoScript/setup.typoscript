@@ -48,8 +48,8 @@ page {
 
 plugin.tx_rrsondermetalle {
     persistence {
-        storagePid = 
-        respectStoragePage = 0
+        storagePid = 0
+        recursive = 250
     }
     view {
         templateRootPaths.0 = EXT:rr_sondermetalle/Resources/Private/Templates/

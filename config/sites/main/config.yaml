@@ -28,6 +28,7 @@ languages:
     flag: gb
     languageId: 1
 rootPageId: 1
+websiteTitle: RR-Sondermetalle
 routeEnhancers:
   MaterialPlugin:
     type: Extbase
@@ -59,7 +60,6 @@ routeEnhancers:
         type: PersistedAliasMapper
         tableName: tx_romminger_products
         routeFieldName: name
-websiteTitle: RR-Sondermetalle
 
 imports:
   - { resource: "EXT:nnrestapi/Configuration/Yaml/default.yaml" }
