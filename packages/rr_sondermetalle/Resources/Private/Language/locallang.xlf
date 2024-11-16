@@ -14,6 +14,24 @@
             <trans-unit id="frontend.number_of_product">
                 <source>Number of products</source>
             </trans-unit>
+            <trans-unit id="frontend.product_details">
+                <source>Product Details</source>
+            </trans-unit>
+            <trans-unit id="frontend.quantity">
+                <source>Quantity</source>
+            </trans-unit>
+            <trans-unit id="frontend.total">
+                <source>Total</source>
+            </trans-unit>
+            <trans-unit id="frontend.add_to_cart">
+                <source>Add To Cart</source>
+            </trans-unit>
+            <trans-unit id="frontend.checkout">
+                <source>Checkout</source>
+            </trans-unit>
+            <trans-unit id="frontend.empty_cart">
+                <source>Empty Cart</source>
+            </trans-unit>
         </body>
     </file>
 </xliff>

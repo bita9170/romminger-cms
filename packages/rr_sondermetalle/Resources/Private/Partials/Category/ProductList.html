@@ -7,7 +7,10 @@
         >
           <div class="col-span-12 md:col-span-7">
             <p class="font-normal text-lg leading-8 text-gray-400">
-              Product Details
+              <f:translate
+                key="frontend.product_details"
+                extensionName="rr_sondermetalle"
+              />
             </p>
           </div>
           <div class="col-span-12 md:col-span-5">
@@ -16,14 +19,20 @@
                 <p
                   class="font-normal text-lg leading-8 text-gray-400 text-center"
                 >
-                  Quantity
+                  <f:translate
+                    key="frontend.quantity"
+                    extensionName="rr_sondermetalle"
+                  />
                 </p>
               </div>
               <div class="col-span-2">
                 <p
                   class="font-normal text-lg leading-8 text-gray-400 text-right"
                 >
-                  Total
+                  <f:translate
+                    key="frontend.total"
+                    extensionName="rr_sondermetalle"
+                  />
                 </p>
               </div>
             </div>
@@ -154,7 +163,10 @@
                           d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2"
                         />
                       </svg>
-                      Add to cart
+                      <f:translate
+                        key="frontend.add_to_cart"
+                        extensionName="rr_sondermetalle"
+                      />
                     </div>
                   </button>
                 </div>
@@ -176,7 +188,12 @@
         </f:for>
 
         <div class="flex items-center justify-end mt-8">
-          <button class="btn btn-primary fs-4">Checkout</button>
+          <a href="/shop/checkout" class="btn btn-primary fs-4">
+            <f:translate
+              key="frontend.checkout"
+              extensionName="rr_sondermetalle"
+            />
+          </a>
         </div>
       </div>
     </div>

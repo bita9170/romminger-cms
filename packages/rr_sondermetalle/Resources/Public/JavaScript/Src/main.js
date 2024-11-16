@@ -114,6 +114,7 @@ function getCart() {
 function clearCart() {
   setCookie("cart", "", -1);
   renderCartPopover([]);
+  updateCart([]);
 }
 
 function setCookie(name, value, days) {
@@ -161,7 +162,7 @@ const formatPrice = (price) => {
 
 const renderCartPopover = (cart) => {
   const cartItemsContainer = document.querySelector(".cart-items");
-  cartItemsContainer.innerHTML = ""; // خالی کردن محتوای قبلی
+  cartItemsContainer.innerHTML = "";
 
   cart.forEach((item) => {
     const itemElement = document.createElement("div");
@@ -174,11 +175,12 @@ const renderCartPopover = (cart) => {
 
     itemElement.innerHTML = `    
       <div class="flex flex-row items-center gap-2 py-2 group">
-          <div class="w-full md:max-w-[62px]">
+          <div class="w-full md:max-w-[62px]" style="max-width:62px">
             <img
               src="${item.product_image}"
               alt="${item.product_name}"
               class="mx-auto rounded-xl object-cover h-[60px] w-[60px]"
+              style="width:60px;height:60px"
             />
           </div>
           <div class="grid grid-cols-4 w-full">
@@ -187,29 +189,27 @@ const renderCartPopover = (cart) => {
                 <div class="font-semibold text-sm text-black">${
                   item.product_name
                 }</div>
-                <div class="font-medium text-sm text-gray-600">${formatPrice(
-                  item.price
-                )}</div>
-                <div class="font-normal text-sm text-gray-500">Quantity: ${
+                <div class="font-medium text-sm text-gray-600">${
                   item.quantity
-                }</div>
+                } x ${formatPrice(item.price)}</div>
+                <div class="font-bold text-sm text-gray-600 total-price">${formatPrice(
+                  item.total_price
+                )}</div>
               </div>
             </div>
             <div class="col-span-2">
               <div class="flex items-center justify-end h-full">
-                <p class="font-bold text-sm text-gray-600 text-center total-price">
-                  ${formatPrice(item.total_price)}              
-                </p>
+               <button
+                  class="text-primary-500 hover:text-red-800 text-3xl text-center remove-item"
+                  data-uid="${item.product_uid}"
+                >
+                  &times;
+                </button>
               </div>
             </div>
           </div>
         </div>
-        <button
-          class="absolute bottom-2 right-1 z-50 text-red-600 hover:text-red-800 remove-item"
-          data-uid="${item.product_uid}"
-        >
-          &times;
-        </button>
+        
       `;
     cartItemsContainer.appendChild(itemElement);
   });

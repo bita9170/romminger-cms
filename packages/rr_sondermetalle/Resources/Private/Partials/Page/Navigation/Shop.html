@@ -41,7 +41,18 @@
 >
   <div class="px-4 py-2">
     <div class="cart-items"></div>
-    <button class="btn btn-primary w-full my-2">Checkout</button>
+    <div class="space-y-2">
+      <f:link.page pageUid="56" class="btn btn-primary w-full"
+        ><f:translate key="frontend.checkout" extensionName="rr_sondermetalle"
+      /></f:link.page>
+
+      <button class="btn btn-outline-danger w-full" onclick="clearCart()">
+        <f:translate
+          key="frontend.empty_cart"
+          extensionName="rr_sondermetalle"
+        />
+      </button>
+    </div>
     <div data-popper-arrow></div>
   </div>
 </div>
