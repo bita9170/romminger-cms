@@ -35,12 +35,7 @@ page {
     10 {
         variables {
             shopLink = TEXT
-            shopLink {
-                value = /shop
-                override = /en/shop
-                override.if.equals = 1
-                override.if.value.data = FIELD:sys_language_uid
-            }
+            shopLink.value = 42            
         }
     }
 }

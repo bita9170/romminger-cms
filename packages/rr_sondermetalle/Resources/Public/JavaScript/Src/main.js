@@ -140,15 +140,19 @@ function getCookie(name) {
 }
 
 function updateCart(cart) {
-  const numberCart = document.querySelector(".cart-number");
+  const numberCart = document.querySelectorAll(".cart-number");
   const popoverCart = document.getElementById("popover-cart");
 
   if (cart.length > 0) {
-    numberCart.innerHTML = cart.length;
-    numberCart.classList.remove("d-none");
+    numberCart.forEach((el) => {
+      el.innerHTML = cart.length;
+      el.classList.remove("d-none");
+    });
     popoverCart.classList.remove("d-none");
   } else {
-    numberCart.classList.add("d-none");
+    numberCart.forEach((el) => {
+      el.classList.add("d-none");
+    });
     popoverCart.classList.add("d-none");
   }
 }
