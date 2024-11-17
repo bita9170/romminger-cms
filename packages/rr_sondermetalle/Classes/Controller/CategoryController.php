@@ -75,7 +75,8 @@ class CategoryController extends ActionController
             'wallThicknesses' => $result['wallThicknesses'],
             'lengths' => $result['lengths'],
             'filter' => $filter,
-            'allMaterials' => $allMaterials
+            'allMaterials' => $allMaterials,
+            'pageName' => 'Shop'
         ]);
 
         return $this->htmlResponse();

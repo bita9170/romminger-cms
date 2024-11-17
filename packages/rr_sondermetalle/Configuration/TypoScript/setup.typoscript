@@ -50,7 +50,7 @@ page {
 
 plugin.tx_rrsondermetalle {
     persistence {
-        storagePid = 0
+        storagePid = 31
         recursive = 250
     }
     view {

@@ -1,55 +1,58 @@
-<div class="container shop-page px-0">
-  <div class="row">
-    <div class="col-md-3">
-      <div class="bg-light py-2 h-100">
-        <ul class="list-group level-0">
-          <f:for each="{categories}" as="category">
-            <f:render
-              partial="Category/TreeCategory"
-              arguments="{category: category, activeCategory: activeCategory, level: 1}"
-            />
-          </f:for>
-        </ul>
+<f:layout name="Profile" />
+<f:section name="Main">
+  <div class="container shop-page px-0">
+    <div class="row">
+      <div class="col-md-3">
+        <div class="bg-light py-2 h-100">
+          <ul class="list-group level-0">
+            <f:for each="{categories}" as="category">
+              <f:render
+                partial="Category/TreeCategory"
+                arguments="{category: category, activeCategory: activeCategory, level: 1}"
+              />
+            </f:for>
+          </ul>
+        </div>
+      </div>
+      <div class="col-md-9 py-4 px-10 md:px-0">
+        <f:if condition="{activeCategory.parentCategory}">
+          <f:then>
+            <f:render partial="Category/ProductFilter" arguments="{_all}" />
+
+            <div class="number-of-product font-bold mt-4 mb-2">
+              <span
+                ><f:translate key="frontend.number_of_product" />:
+                <f:count subject="{products}"
+              /></span>
+            </div>
+
+            <f:render partial="Category/ProductList" arguments="{_all}" />
+          </f:then>
+          <f:else>
+            <h3>Home</h3>
+            <p>
+              Explore our range of high-quality metal products designed for
+              various industrial applications. We offer custom fabrication
+              services and technical support to meet your specific needs.
+            </p>
+
+            <div class="row g-4 mt-2">
+              <f:for each="{categories}" as="category">
+                <f:if
+                  condition="{category.subCategories -> f:count()} && {!activeCategory.parentCategory}"
+                >
+                  <f:for each="{category.subCategories}" as="subCategory">
+                    <f:render
+                      partial="Category/CardProduct"
+                      arguments="{subCategory: subCategory}"
+                    />
+                  </f:for>
+                </f:if>
+              </f:for>
+            </div>
+          </f:else>
+        </f:if>
       </div>
     </div>
-    <div class="col-md-9">
-      <f:if condition="{activeCategory.parentCategory}">
-        <f:then>
-          <f:render partial="Category/ProductFilter" arguments="{_all}" />
-
-          <div class="number-of-product font-bold mt-4 mb-2">
-            <span
-              ><f:translate key="frontend.number_of_product" />:
-              <f:count subject="{products}"
-            /></span>
-          </div>
-
-          <f:render partial="Category/ProductList" arguments="{_all}" />
-        </f:then>
-        <f:else>
-          <h3>Home</h3>
-          <p>
-            Explore our range of high-quality metal products designed for
-            various industrial applications. We offer custom fabrication
-            services and technical support to meet your specific needs.
-          </p>
-
-          <div class="row g-4 mt-2">
-            <f:for each="{categories}" as="category">
-              <f:if
-                condition="{category.subCategories -> f:count()} && {!activeCategory.parentCategory}"
-              >
-                <f:for each="{category.subCategories}" as="subCategory">
-                  <f:render
-                    partial="Category/CardProduct"
-                    arguments="{subCategory: subCategory}"
-                  />
-                </f:for>
-              </f:if>
-            </f:for>
-          </div>
-        </f:else>
-      </f:if>
-    </div>
   </div>
-</div>
+</f:section>
