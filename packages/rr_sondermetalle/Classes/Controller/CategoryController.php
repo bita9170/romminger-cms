@@ -7,6 +7,7 @@ use Romminger\RrSondermetalle\Domain\Model\Category;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
 use Romminger\RrSondermetalle\Domain\Repository\ProductRepository;
 use Romminger\RrSondermetalle\Domain\Repository\CategoryRepository;
+use Romminger\RrSondermetalle\Domain\Repository\CustomerRepository;
 use Romminger\RrSondermetalle\Domain\Repository\MaterialRepository;
 
 class CategoryController extends ActionController
@@ -26,6 +27,11 @@ class CategoryController extends ActionController
      */
     protected $materialRepository;
 
+    /**
+     * @var CustomerRepository
+     */
+    protected $customerRepository;
+
     public function injectCategoryRepository(CategoryRepository $categoryRepository): void
     {
         $this->categoryRepository = $categoryRepository;
@@ -39,6 +45,11 @@ class CategoryController extends ActionController
     public function injectMaterialRepository(MaterialRepository $materialRepository): void
     {
         $this->materialRepository = $materialRepository;
+    }
+
+    public function injectCutsomerRepository(CustomerRepository $customerRepository): void
+    {
+        $this->customerRepository = $customerRepository;
     }
 
     public function listAction(array $filter = []): ResponseInterface
@@ -63,6 +74,11 @@ class CategoryController extends ActionController
         $result = $this->productRepository->findByFilters($filter);
         $allMaterials = $this->materialRepository->findAll();
 
+        if ($GLOBALS['TSFE']->fe_user) {
+            $loggedUserUid = $GLOBALS['TSFE']->fe_user->user['uid'];
+            $frontendUser = $this->customerRepository->findByUid($loggedUserUid);
+        }
+
         $this->view->assignMultiple([
             'categories' => $categories,
             'activeCategory' => $activeCategory,
@@ -76,8 +92,10 @@ class CategoryController extends ActionController
             'lengths' => $result['lengths'],
             'filter' => $filter,
             'allMaterials' => $allMaterials,
-            'pageName' => 'Shop'
+            'pageName' => 'Shop',
+            'user' => $frontendUser
         ]);
+
 
         return $this->htmlResponse();
     }

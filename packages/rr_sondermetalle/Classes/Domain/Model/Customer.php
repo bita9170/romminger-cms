@@ -273,32 +273,4 @@ class Customer extends AbstractEntity
     {
         return $this->mobilephone;
     }
-
-    public function isGtc(): bool
-    {
-        return $this->gtc;
-    }
-
-
-    public function getStatus(): int
-    {
-        return $this->status;
-    }
-
-    public function isByInvitation(): bool
-    {
-        return $this->byInvitation;
-    }
-
-
-    public function getComments(): string
-    {
-        return $this->comments;
-    }
-
-
-    public function isModuleSysDmailNewsletter(): bool
-    {
-        return $this->moduleSysDmailNewsletter;
-    }
 }

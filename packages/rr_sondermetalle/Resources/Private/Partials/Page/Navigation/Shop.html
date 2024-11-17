@@ -1,11 +1,11 @@
 <div
   data-popover-target="popover-cart"
-  class="fixed bottom-10 left-5 z-50 md:relative md:bottom-auto md:left-auto bg-orange-400 text-primary-500 font-bold rounded-lg shadow text-lg mr-2 flex hover:bg-orange-400/85"
+  class="fixed bottom-10 left-5 z-50 md:relative md:bottom-auto md:left-auto font-bold shadow text-lg mr-2 flex space-x-2"
 >
   <f:link.page
     pageUid="{shopLink}"
     type="button"
-    class="hidden md:flex space-x-2 items-center px-4 py-2 uppercase"
+    class="hidden md:flex space-x-2 items-center px-4 py-2 uppercase rounded-lg bg-orange-400 text-primary-500 hover:bg-orange-400/85"
   >
     <svg
       class="w-6 h-6 fill-current"
@@ -37,12 +37,18 @@
   </f:link.page>
 
   <!-- Mobile Layout Cart -->
+  <f:link.page
+    pageUid="{shopLink}"
+    class="md:hidden flex items-center p-2 uppercase rounded-lg bg-orange-400 text-primary-500 hover:bg-orange-400/85"
+  >
+    <span>Shop</span>
+  </f:link.page>
   <button
     type="button"
-    class="flex flex-col items-center md:hidden px-2 py-2 uppercase"
+    class="flex flex-col items-center md:hidden p-2 uppercase rounded-lg bg-orange-400 text-primary-500 hover:bg-orange-400/85"
   >
     <svg
-      class="w-10 h-10 fill-current"
+      class="w-8 h-8 fill-current"
       enable-background="new 0 0 611.736 611.736"
       viewBox="0 0 611.736 611.736"
       xmlns="http://www.w3.org/2000/svg"
