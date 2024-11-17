@@ -16,7 +16,6 @@
   "require": {
     "evoweb/sf-register": "^12.0",
     "friendsoftypo3/content-blocks": "^0.7.18",
-    "friendsoftypo3/fontawesome-provider": "^1.0",
     "helhum/typo3-console": "^8.1",
     "nng/nnrestapi": "^2.0",
     "romminger/rr-sondermetalle": "^1.0",

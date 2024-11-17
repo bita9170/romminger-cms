@@ -11,7 +11,9 @@
   ],
   "version": "1.0.0",
   "require": {
-    "bk2k/bootstrap-package": "^13.0 || ^14.0"
+    "bk2k/bootstrap-package": "^13.0 || ^14.0",
+    "friendsoftypo3/content-blocks": "*",
+    "evoweb/sf-register": "*"
   },
   "autoload": {
     "psr-4": {

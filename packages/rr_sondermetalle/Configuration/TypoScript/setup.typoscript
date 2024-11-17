@@ -35,11 +35,18 @@ page {
     10 {
         variables {
             shopLink = TEXT
-            shopLink.value = 42            
+            shopLink.value = 42
+            
+            checkout = TEXT
+            checkout {
+                value = /shop/checkout
+                override = /en/shop/checkout
+                override.if.equals = 1
+                override.if.value.data = FIELD:sys_language_uid
+            }
         }
     }
 }
-
 
 plugin.tx_rrsondermetalle {
     persistence {

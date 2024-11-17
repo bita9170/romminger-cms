@@ -1,45 +1,49 @@
 base: /
 errorHandling:
-  - errorCode: 403
+  -
+    errorCode: 403
     errorHandler: Page
-    errorContentSource: "t3://page?uid=1"
-  - errorCode: 404
+    errorContentSource: 't3://page?uid=35'
+  -
+    errorCode: 404
     errorHandler: Page
-    errorContentSource: "t3://page?uid=46"
+    errorContentSource: 't3://page?uid=46'
 languages:
-  - title: German
+  -
+    title: German
     enabled: true
     languageId: 0
     base: /
     locale: de_DE.UTF-8
     navigationTitle: Deutsch
     flag: de
-    hreflang: ""
-    websiteTitle: ""
-  - title: English
+    hreflang: ''
+    websiteTitle: ''
+  -
+    title: English
     enabled: true
     locale: en_US
-    hreflang: ""
+    hreflang: ''
     base: /en/
-    websiteTitle: ""
+    websiteTitle: ''
     navigationTitle: English
     fallbackType: strict
-    fallbacks: ""
+    fallbacks: ''
     flag: gb
     languageId: 1
 rootPageId: 1
-websiteTitle: RR-Sondermetalle
 routeEnhancers:
   MaterialPlugin:
     type: Extbase
     extension: RrSondermetalle
     plugin: Material
     routes:
-      - routePath: "/{material_name}"
-        _controller: "Material::show"
+      -
+        routePath: '/{material_name}'
+        _controller: 'Material::show'
         _arguments:
           material_name: material
-    defaultController: "Material::list"
+    defaultController: 'Material::list'
     aspects:
       material_name:
         type: PersistedAliasMapper
@@ -50,16 +54,18 @@ routeEnhancers:
     extension: RrSondermetalle
     plugin: Product
     routes:
-      - routePath: "/{product_name}"
-        _controller: "Product::show"
+      -
+        routePath: '/{product_name}'
+        _controller: 'Product::show'
         _arguments:
           product_name: product
-    defaultController: "product::list"
+    defaultController: 'product::list'
     aspects:
       product_name:
         type: PersistedAliasMapper
         tableName: tx_romminger_products
         routeFieldName: name
-
+websiteTitle: RR-Sondermetalle
 imports:
-  - { resource: "EXT:nnrestapi/Configuration/Yaml/default.yaml" }
+  -
+    resource: 'EXT:nnrestapi/Configuration/Yaml/default.yaml'

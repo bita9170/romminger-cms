@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c2704da68b2f117e2de0e7885982fae3",
+    "content-hash": "9eaf85e758e58825b6736016726fb35c",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -1176,69 +1176,6 @@
                 "source": "https://github.com/typo3/typo3"
             },
             "time": "2024-10-15T08:55:48+00:00"
-        },
-        {
-            "name": "friendsoftypo3/fontawesome-provider",
-            "version": "v1.0.3",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/FriendsOfTYPO3/fontawesome-provider.git",
-                "reference": "4b269a4c719d4d18e80340e5317c4959a83c7abc"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/FriendsOfTYPO3/fontawesome-provider/zipball/4b269a4c719d4d18e80340e5317c4959a83c7abc",
-                "reference": "4b269a4c719d4d18e80340e5317c4959a83c7abc",
-                "shasum": ""
-            },
-            "require": {
-                "ext-simplexml": "*",
-                "typo3/cms-backend": "^11.5 || ^12.0 || 12.*.*@dev",
-                "typo3/cms-core": "^11.5 || ^12.0 || 12.*.*@dev"
-            },
-            "require-dev": {
-                "friendsofphp/php-cs-fixer": "^3.14",
-                "phpstan/phpstan": "^1.9",
-                "phpstan/phpstan-phpunit": "^1.3",
-                "phpunit/phpunit": "^10.0"
-            },
-            "type": "typo3-cms-extension",
-            "extra": {
-                "typo3/class-alias-loader": {
-                    "class-alias-maps": [
-                        "Migrations/Code/ClassAliasMap.php"
-                    ]
-                },
-                "typo3/cms": {
-                    "Package": {
-                        "serviceProvider": "FriendsOfTYPO3\\FontawesomeProvider\\ServiceProvider"
-                    },
-                    "app-dir": ".build",
-                    "extension-key": "fontawesome_provider",
-                    "web-dir": ".build/public"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "FriendsOfTYPO3\\FontawesomeProvider\\": "Classes/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "GPL-2.0+"
-            ],
-            "authors": [
-                {
-                    "name": "Andreas Fernandez",
-                    "email": "a.fernandez@scripting-base.de"
-                }
-            ],
-            "description": "Integrates legacy FontawesomeIconProvider and FontAwesome 4.7",
-            "support": {
-                "issues": "https://github.com/FriendsOfTYPO3/fontawesome-provider/issues",
-                "source": "https://github.com/FriendsOfTYPO3/fontawesome-provider/tree/v1.0.3"
-            },
-            "time": "2023-04-25T06:35:56+00:00"
         },
         {
             "name": "guzzlehttp/guzzle",
@@ -2850,10 +2787,12 @@
             "dist": {
                 "type": "path",
                 "url": "packages/rr_sondermetalle",
-                "reference": "c0347827e87d470de48ecdf69a722d7c714ce821"
+                "reference": "8d7c9c1b85b0b7cdb59a14ec2d7c6d9e95871522"
             },
             "require": {
-                "bk2k/bootstrap-package": "^13.0 || ^14.0"
+                "bk2k/bootstrap-package": "^13.0 || ^14.0",
+                "evoweb/sf-register": "*",
+                "friendsoftypo3/content-blocks": "*"
             },
             "type": "typo3-cms-extension",
             "extra": {

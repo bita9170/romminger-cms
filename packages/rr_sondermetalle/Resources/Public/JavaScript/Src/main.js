@@ -181,7 +181,7 @@ const renderCartPopover = (cart) => {
       <div class="flex flex-row items-center gap-2 py-2 group">
           <div class="w-full md:max-w-[62px]" style="max-width:62px">
             <img
-              src="${item.product_image}"
+              src="${window.location.origin}/${item.product_image}"
               alt="${item.product_name}"
               class="mx-auto rounded-xl object-cover h-[60px] w-[60px]"
               style="width:60px;height:60px"

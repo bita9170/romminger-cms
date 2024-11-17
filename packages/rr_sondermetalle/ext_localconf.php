@@ -1,6 +1,7 @@
 <?php
 
 use Romminger\RrSondermetalle\Controller\CategoryController;
+use Romminger\RrSondermetalle\Controller\CheckoutController;
 use Romminger\RrSondermetalle\Controller\ProductController;
 use Romminger\RrSondermetalle\Controller\MaterialController;
 
@@ -41,5 +42,16 @@ $GLOBALS['TYPO3_CONF_VARS']['RTE']['Presets']['rr_sondermetalle'] = 'EXT:rr_sond
     ],
     [
         CategoryController::class => 'list',
+    ],
+);
+
+\TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
+    'RrSondermetalle',
+    'Checkout',
+    [
+        CheckoutController::class => 'list',
+    ],
+    [
+        CheckoutController::class => 'list',
     ],
 );
