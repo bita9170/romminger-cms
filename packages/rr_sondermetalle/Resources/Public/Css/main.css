@@ -636,20 +636,12 @@ video {
   bottom: 2.5rem;
 }
 
-.left-0 {
-  left: 0px;
-}
-
 .left-5 {
   left: 1.25rem;
 }
 
 .right-3 {
   right: 0.75rem;
-}
-
-.right-auto {
-  right: auto;
 }
 
 .start-0 {
@@ -676,10 +668,6 @@ video {
   z-index: 50;
 }
 
-.z-\[1000\] {
-  z-index: 1000;
-}
-
 .col-span-12 {
   grid-column: span 12 / span 12;
 }
@@ -690,14 +678,6 @@ video {
 
 .col-span-3 {
   grid-column: span 3 / span 3;
-}
-
-.float-left {
-  float: left;
-}
-
-.m-0 {
-  margin: 0px;
 }
 
 .m-2 {
@@ -749,10 +729,6 @@ video {
 
 .ms-2\.5 {
   margin-inline-start: 0.625rem;
-}
-
-.ms-3 {
-  margin-inline-start: 0.75rem;
 }
 
 .ms-4 {
@@ -909,10 +885,6 @@ video {
 
 .w-full {
   width: 100%;
-}
-
-.min-w-\[10rem\] {
-  min-width: 10rem;
 }
 
 .min-w-\[50px\] {
@@ -1220,10 +1192,6 @@ video {
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
-.bg-clip-padding {
-  background-clip: padding-box;
-}
-
 .fill-black {
   fill: #000;
 }
@@ -1369,16 +1337,8 @@ video {
   padding-right: 2.5rem;
 }
 
-.ps-1 {
-  padding-inline-start: 0.25rem;
-}
-
 .pt-2\.5 {
   padding-top: 0.625rem;
-}
-
-.text-left {
-  text-align: left;
 }
 
 .text-center {
@@ -1387,6 +1347,10 @@ video {
 
 .text-right {
   text-align: right;
+}
+
+.text-start {
+  text-align: start;
 }
 
 .align-middle {
@@ -1490,10 +1454,6 @@ video {
   color: rgb(0 0 0 / var(--tw-text-opacity));
 }
 
-.text-black\/60 {
-  color: rgb(0 0 0 / 0.6);
-}
-
 .text-gray-400 {
   --tw-text-opacity: 1;
   color: rgb(156 163 175 / var(--tw-text-opacity));
@@ -1517,11 +1477,6 @@ video {
 .text-gray-900 {
   --tw-text-opacity: 1;
   color: rgb(17 24 39 / var(--tw-text-opacity));
-}
-
-.text-neutral-700 {
-  --tw-text-opacity: 1;
-  color: rgb(64 64 64 / var(--tw-text-opacity));
 }
 
 .text-primary-500 {
@@ -2091,10 +2046,6 @@ header {
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
-.hover\:bg-zinc-200\/60:hover {
-  background-color: rgb(228 228 231 / 0.6);
-}
-
 .hover\:\!text-gray-700:hover {
   --tw-text-opacity: 1 !important;
   color: rgb(55 65 81 / var(--tw-text-opacity)) !important;
@@ -2133,10 +2084,6 @@ header {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.focus\:bg-zinc-200\/60:focus {
-  background-color: rgb(228 228 231 / 0.6);
-}
-
 .focus\:text-black\/80:focus {
   color: rgb(0 0 0 / 0.8);
 }
@@ -2173,10 +2120,6 @@ header {
   background-color: rgb(30 42 71 / var(--tw-bg-opacity));
 }
 
-.active\:bg-zinc-200\/60:active {
-  background-color: rgb(228 228 231 / 0.6);
-}
-
 .active\:text-black\/80:active {
   color: rgb(0 0 0 / 0.8);
 }
@@ -2186,10 +2129,6 @@ header {
   color: rgb(26 33 62 / var(--tw-text-opacity));
 }
 
-.active\:no-underline:active {
-  text-decoration-line: none;
-}
-
 .group:hover .group-hover\:stroke-black {
   stroke: #000;
 }
@@ -2197,10 +2136,6 @@ header {
 .group:hover .group-hover\:text-indigo-600 {
   --tw-text-opacity: 1;
   color: rgb(79 70 229 / var(--tw-text-opacity));
-}
-
-.data-\[twe-dropdown-show\]\:block[data-twe-dropdown-show] {
-  display: block;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -2224,22 +2159,14 @@ header {
   background-color: rgb(55 65 81 / var(--tw-bg-opacity));
 }
 
-.dark\:text-white:is(.dark *) {
-  --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity));
-}
-
-.dark\:text-white\/60:is(.dark *) {
-  color: rgb(255 255 255 / 0.6);
-}
-
 .dark\:text-gray-200:is(.dark *) {
   --tw-text-opacity: 1;
   color: rgb(229 231 235 / var(--tw-text-opacity));
 }
 
-.dark\:hover\:bg-neutral-800\/25:hover:is(.dark *) {
-  background-color: rgb(38 38 38 / 0.25);
+.dark\:text-white:is(.dark *) {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
 .dark\:hover\:bg-gray-600:hover:is(.dark *) {
@@ -2247,29 +2174,9 @@ header {
   background-color: rgb(75 85 99 / var(--tw-bg-opacity));
 }
 
-.dark\:hover\:text-white\/80:hover:is(.dark *) {
-  color: rgb(255 255 255 / 0.8);
-}
-
 .dark\:hover\:text-white:hover:is(.dark *) {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
-}
-
-.dark\:focus\:bg-neutral-800\/25:focus:is(.dark *) {
-  background-color: rgb(38 38 38 / 0.25);
-}
-
-.dark\:focus\:text-white\/80:focus:is(.dark *) {
-  color: rgb(255 255 255 / 0.8);
-}
-
-.dark\:active\:bg-neutral-800\/25:active:is(.dark *) {
-  background-color: rgb(38 38 38 / 0.25);
-}
-
-.dark\:active\:text-white\/80:active:is(.dark *) {
-  color: rgb(255 255 255 / 0.8);
 }
 
 @media not all and (min-width: 1280px) {
@@ -2558,8 +2465,4 @@ header {
 
 .rtl\:space-x-reverse:where([dir="rtl"], [dir="rtl"] *) > :not([hidden]) ~ :not([hidden]) {
   --tw-space-x-reverse: 1;
-}
-
-.\[\&\>svg\]\:w-5>svg {
-  width: 1.25rem;
 }

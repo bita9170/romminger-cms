@@ -33,17 +33,6 @@ return [
         ],
     ],
     'EXTENSIONS' => [
-        'additional_tca' => [
-            'extension' => [
-                'suggestions' => [
-                    'active' => '1',
-                ],
-                'updateService' => [
-                    'active' => '1',
-                    'email' => 'typo3@coding.ms',
-                ],
-            ],
-        ],
         'backend' => [
             'backendFavicon' => '',
             'backendLogo' => '',
@@ -67,18 +56,6 @@ return [
             'automaticInstallation' => '1',
             'offlineMode' => '0',
         ],
-        'modules' => [
-            'loglevel' => 'ERROR',
-            'module' => [
-                'backendUser' => [
-                    'disable' => '1',
-                ],
-                'frontendUser' => [
-                    'allowNonAdminUsersToLoginAsFrontendUser' => '0',
-                    'disable' => '0',
-                ],
-            ],
-        ],
         'nnhelpers' => [
             'autoCreateFilemounts' => '1',
             'clearAllCaches' => '0',
@@ -96,25 +73,6 @@ return [
             'disablePreCheck' => '0',
             'fileEncryptionKey' => '',
             'maxSessionLifetime' => '3600',
-        ],
-        'shop' => [
-            'emailBcc' => '',
-            'extension' => [
-                'updateService' => [
-                    'active' => '1',
-                    'email' => 'typo3@coding.ms',
-                ],
-            ],
-            'listFilterIncludeVariants' => '0',
-            'listPluginCache' => '0',
-            'loglevel' => 'ERROR',
-            'sorting' => [
-                'orderingForColor' => 'title',
-                'orderingForSize' => 'title',
-            ],
-        ],
-        'static_info_tables' => [
-            'enableManager' => '0',
         ],
     ],
     'FE' => [

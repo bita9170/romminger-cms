@@ -46,6 +46,11 @@ page {
             }
         }
     }
+
+    meta {
+        keywords= {$page.meta.keywords}
+        description= {$page.meta.description}
+    }
 }
 
 plugin.tx_rrsondermetalle {

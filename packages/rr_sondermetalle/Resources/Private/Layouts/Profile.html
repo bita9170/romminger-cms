@@ -64,12 +64,22 @@
                 </li>
               </ul>
               <div class="py-1">
-                <f:link.typolink
-                  parameter="/?logintype=logout"
-                  class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
+                <f:form
+                  action="login"
+                  controller="Login"
+                  actionUri="/login"
+                  target="_top"
+                  fieldNamePrefix=""
                 >
-                  Sign out
-                </f:link.typolink>
+                  <f:form.submit
+                    value="Logout"
+                    name="submit"
+                    id="tx-felogin-input-logout"
+                    class="w-full text-start block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                  />
+
+                  <f:form.hidden name="logintype" value="logout" />
+                </f:form>
               </div>
             </div>
           </f:then>
