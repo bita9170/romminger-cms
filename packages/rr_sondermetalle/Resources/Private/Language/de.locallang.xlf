@@ -1,6 +1,7 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <xliff version="1.0">
-    <file source-language="en" datatype="plaintext" original="messages" date="2024-08-29UTC10:40:330">
+    <file source-language="en" datatype="plaintext" original="messages"
+        date="2024-08-29UTC10:40:330">
         <body>
             <trans-unit id="frontend.materials">
                 <target>Werkstoffe</target>
@@ -32,6 +33,29 @@
             <trans-unit id="frontend.empty_cart">
                 <target>Warenkorb leeren</target>
             </trans-unit>
+
+            <trans-unit id="login">
+                <target>Anmelden</target>
+            </trans-unit>
+            <trans-unit id="frontend.register_prompt_part1">
+                <target>Haben Sie noch keinen Account? Bitte</target>
+            </trans-unit>
+            <trans-unit id="frontend.register_prompt_link">
+                <target>registrieren</target>
+            </trans-unit>
+
+            <trans-unit id="forgot_header">
+                <target>Passwort vergessen?</target>
+            </trans-unit>
+
+            <trans-unit id="login.credentials.prompt">
+                <target>Geben Sie Ihre Anmeldedaten ein</target>
+            </trans-unit>
+
+            <trans-unit id="register.subtitle">
+                <target>Starten Sie noch heute!</target>
+            </trans-unit>
+
         </body>
     </file>
 </xliff>
