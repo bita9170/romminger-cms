@@ -6,14 +6,20 @@
 
   <f:section name="Main">
     <p class="text-2xl lg:text-3xl mb-2 text-center">
-      Register
-      <p class="text-sm font-semibold text-center mb-6">Get started today!</p>
+      <f:translate
+        key="frontend.register_prompt_link"
+        extensionName="rr_sondermetalle"
+      />
     </p>
+    <p class="text-sm font-semibold text-center mb-6">
+      <f:translate key="register.subtitle" extensionName="rr_sondermetalle" />
+    </p>
+
     <f:form
       action="preview"
       name="user"
       id="sfrForm"
-      class=""
+      class="w-full max-w-md px-4 mx-auto"
       object="{user}"
       enctype="multipart/form-data"
     >
@@ -37,6 +43,17 @@
         </f:for>
       </div>
     </f:form>
+
+    <!-- Register prompt with partial link -->
+    <p class="text-sm text-gray-500 text-center">
+      <f:translate
+        key="frontend.login_prompt_part1"
+        extensionName="rr_sondermetalle"
+      />
+      <a href="{f:uri.page(pageUid: 35)}" class="text-blue-500 underline">
+        <f:translate key="login" extensionName="rr_sondermetalle" />
+      </a>
+    </p>
 
     <!-- <div class="mandatory">
       <f:format.raw><f:translate id="info_mandatory_fields" /></f:format.raw>

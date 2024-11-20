@@ -1120,10 +1120,6 @@ video {
   border-bottom-width: 1px;
 }
 
-.\!border-none {
-  border-style: none !important;
-}
-
 .border-none {
   border-style: none;
 }
@@ -1151,11 +1147,6 @@ video {
 .border-white {
   --tw-border-opacity: 1;
   border-color: rgb(255 255 255 / var(--tw-border-opacity));
-}
-
-.\!bg-primary-500 {
-  --tw-bg-opacity: 1 !important;
-  background-color: rgb(23 37 84 / var(--tw-bg-opacity)) !important;
 }
 
 .bg-gray-50 {
@@ -1397,10 +1388,6 @@ video {
   line-height: 1rem;
 }
 
-.\!font-bold {
-  font-weight: 700 !important;
-}
-
 .font-bold {
   font-weight: 700;
 }
@@ -1494,6 +1481,15 @@ video {
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
+.text-blue-500 {
+  --tw-text-opacity: 1;
+  color: rgb(59 130 246 / var(--tw-text-opacity));
+}
+
+.underline {
+  text-decoration-line: underline;
+}
+
 .opacity-0 {
   opacity: 0;
 }
@@ -1578,10 +1574,11 @@ video {
 
 .btn {
   display: inline-block;
-  padding-left: 1rem;
-  padding-right: 1rem;
-  padding-top: 0.625rem;
-  padding-bottom: 0.625rem;
+  padding-left: 1rem !important;
+  padding-right: 1rem !important;
+  padding-top: 0.625rem !important;
+  padding-bottom: 0.625rem !important;
+  font-weight: 700 !important;
   &.btn-primary {
     border-style: none;
   }
@@ -1694,8 +1691,8 @@ h3 {
   padding-left: 0px;
   padding-right: 0px;
   &.frame-container-default {
-    @media screen and (min-width: 1400px) {
-      max-width: 1536px;
+    @media screen and (min-inline-size: 1400px) {
+      max-inline-size: 1536px;
 
       padding-inline: 1.5rem;
     }
