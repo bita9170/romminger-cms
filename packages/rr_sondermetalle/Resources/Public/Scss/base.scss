@@ -1,5 +1,5 @@
 .btn {
-  @apply inline-block px-4 py-2.5;
+  @apply inline-block !px-4 !py-2.5 !font-bold;
 
   &.btn-primary {
     @apply bg-primary-500 text-white hover:bg-primary-500/80 border-none;
@@ -23,8 +23,8 @@ h3 {
   @apply px-0;
 
   &.frame-container-default {
-    @media screen and (min-width: 1400px) {
-      max-width: 1536px;
+    @media screen and (min-inline-size: 1400px) {
+      max-inline-size: 1536px;
       padding-inline: 1.5rem;
     }
   }
