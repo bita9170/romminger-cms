@@ -33,30 +33,27 @@
             <trans-unit id="frontend.empty_cart">
                 <source>Empty Cart</source>
             </trans-unit>
-
             <trans-unit id="login">
                 <source>Login</source>
             </trans-unit>
             <trans-unit id="frontend.register_prompt_part1">
                 <source>Don't have an account? Please</source>
             </trans-unit>
-            <trans-unit id="frontend.register_prompt_link">
-                <source>register</source>
+            <trans-unit id="frontend.login_prompt_part1">
+                <source>Do you have an account? Please</source>
             </trans-unit>
-
+            <trans-unit id="frontend.register_prompt_link">
+                <source>Register</source>
+            </trans-unit>
             <trans-unit id="forgot_header">
                 <source>Forgot your password?</source>
             </trans-unit>
-
             <trans-unit id="login.credentials.prompt">
                 <source>Enter your login credentials</source>
             </trans-unit>
-
             <trans-unit id="register.subtitle">
                 <source>Get started today!</source>
             </trans-unit>
-
-
         </body>
     </file>
 </xliff>

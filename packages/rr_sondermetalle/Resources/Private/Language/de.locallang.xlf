@@ -33,29 +33,27 @@
             <trans-unit id="frontend.empty_cart">
                 <target>Warenkorb leeren</target>
             </trans-unit>
-
             <trans-unit id="login">
                 <target>Anmelden</target>
             </trans-unit>
             <trans-unit id="frontend.register_prompt_part1">
                 <target>Haben Sie noch keinen Account? Bitte</target>
             </trans-unit>
-            <trans-unit id="frontend.register_prompt_link">
-                <target>registrieren</target>
+            <trans-unit id="frontend.login_prompt_part1">
+                <target>Haben Sie einen Account? Bitte</target>
             </trans-unit>
-
+            <trans-unit id="frontend.register_prompt_link">
+                <target>Registrieren</target>
+            </trans-unit>
             <trans-unit id="forgot_header">
                 <target>Passwort vergessen?</target>
             </trans-unit>
-
             <trans-unit id="login.credentials.prompt">
                 <target>Geben Sie Ihre Anmeldedaten ein</target>
             </trans-unit>
-
             <trans-unit id="register.subtitle">
                 <target>Starten Sie noch heute!</target>
             </trans-unit>
-
         </body>
     </file>
 </xliff>
