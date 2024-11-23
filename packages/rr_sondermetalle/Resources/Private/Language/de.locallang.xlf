@@ -54,6 +54,95 @@
             <trans-unit id="register.subtitle">
                 <target>Starten Sie noch heute!</target>
             </trans-unit>
+            
+            <!-- Frontend checkout -->
+            <trans-unit id="frontend.checkout.cart">
+                <target>Warenkorb</target>
+            </trans-unit>
+            <trans-unit id="frontend.checkout.checkout">
+                <target>Kasse</target>
+            </trans-unit>
+            <trans-unit id="frontend.checkout.payment">
+                <target>Zahlung</target>
+            </trans-unit>
+            <trans-unit id="frontend.checkout.deliveryAddress">
+                <target>Lieferadresse</target>
+            </trans-unit>
+            <trans-unit id="frontend.checkout.fullname">
+                <target>Vor- und Nachname</target>
+            </trans-unit>
+            <trans-unit id="frontend.checkout.email">
+                <target>E-Mail</target>
+            </trans-unit>
+            <trans-unit id="frontend.checkout.company">
+                <target>Firmenname</target>
+            </trans-unit>
+            <trans-unit id="frontend.checkout.country">
+                <target>Land</target>
+            </trans-unit>
+            <trans-unit id="frontend.checkout.telephone">
+                <target>Telefonnummer</target>
+            </trans-unit>
+            <trans-unit id="frontend.checkout.street">
+                <target>Straße</target>
+            </trans-unit>
+            <trans-unit id="frontend.checkout.zip">
+                <target>PLZ</target>
+            </trans-unit>
+            <trans-unit id="frontend.checkout.city">
+                <target>Stadt</target>
+            </trans-unit>
+             <trans-unit id="frontend.checkout.paymentMethod">
+                <target>Zahlungsmethod</target>
+            </trans-unit>
+            <trans-unit id="frontend.checkout.creditCard">
+                <target>Kreditkarte</target>
+            </trans-unit>
+            <trans-unit id="frontend.checkout.creditCardText">
+                <target>Bezahlen Sie mit Ihrer Kreditkarte</target>
+            </trans-unit>
+            <trans-unit id="frontend.checkout.klarna">
+                <target>Klarna</target>
+            </trans-unit>
+            <trans-unit id="frontend.checkout.klarnaText">
+                <target>Bezahlen mit Klarna</target>
+            </trans-unit>
+            <trans-unit id="frontend.checkout.paypal">
+                <target>Paypal-Konto</target>
+            </trans-unit>
+            <trans-unit id="frontend.checkout.paypalText">
+                <target>Verbinden Sie sich mit Ihrem Konto</target>
+            </trans-unit>
+            <trans-unit id="frontend.checkout.invoice">
+                <target>Rechnung</target>
+            </trans-unit>
+            <trans-unit id="frontend.checkout.invoiceText">
+                <target>Bezahlen per Rechnung</target>
+            </trans-unit>
+            <trans-unit id="frontend.checkout.order">
+                <target>Ihre Bestellung</target>
+            </trans-unit>
+            <trans-unit id="frontend.checkout.article">
+                <target>Artikel</target>
+            </trans-unit>
+            <trans-unit id="frontend.checkout.vat">
+                <target>MwSt. 19%</target>
+            </trans-unit>
+            <trans-unit id="frontend.checkout.discount">
+                <target>Rabatt</target>
+            </trans-unit>
+            <trans-unit id="frontend.checkout.shipping">
+                <target>Versand</target>
+            </trans-unit>
+            <trans-unit id="frontend.checkout.total">
+                <target>Gesamtbetrag</target>
+            </trans-unit>
+            <trans-unit id="frontend.checkout.btnCheckout">
+                <target>Weiter zur Kasse</target>
+            </trans-unit>
+            <trans-unit id="frontend.checkout.btnPayment">
+                <target>Weiter zur Zahlung</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>
