@@ -33,6 +33,7 @@
             <trans-unit id="frontend.empty_cart">
                 <source>Empty Cart</source>
             </trans-unit>
+
             <trans-unit id="login">
                 <source>Login</source>
             </trans-unit>
@@ -53,6 +54,23 @@
             </trans-unit>
             <trans-unit id="register.subtitle">
                 <source>Get started today!</source>
+            </trans-unit>
+
+            <!-- materials -->
+            <trans-unit id="material.molybdaen">
+                <source>Molybdenum</source>
+            </trans-unit>
+            <trans-unit id="material.tantal">
+                <source>Tantalum</source>
+            </trans-unit>
+            <trans-unit id="material.titan">
+                <source>Titanium</source>
+            </trans-unit>
+            <trans-unit id="material.niobium">
+                <source>Niobium</source>
+            </trans-unit>
+            <trans-unit id="material.wolfram">
+                <source>Tungsten</source>
             </trans-unit>
 
             <!-- Frontend checkout -->

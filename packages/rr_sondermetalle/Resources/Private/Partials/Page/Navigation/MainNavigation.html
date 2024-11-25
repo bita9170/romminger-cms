@@ -15,7 +15,7 @@
             </f:then>
             <f:else>
               <li>
-                <f:if condition="{item.children}">
+                <f:if condition="{item.children} || {item.data.uid} == 5">
                   <f:then>
                     <button
                       id="dropdownNavbarLink"
@@ -42,12 +42,23 @@
                     <!-- Dropdown menu -->
                     <div
                       id="dropdownNavbar-{item.data.uid}"
-                      class="z-50 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44"
+                      class="z-50 hidden p-0 bg-transparent"
+                      style="inline-size: auto; min-inline-size: auto"
                     >
-                      <f:render
-                        partial="Navigation/MainNavigationDropDown"
-                        arguments="{data: data, page: item, items: item.children, theme: theme}"
-                      />
+                      <f:if condition="{item.children} ">
+                        <f:then>
+                          <f:render
+                            partial="Navigation/MainNavigationDropDown"
+                            arguments="{data: data, page: item, items: item.children, theme: theme}"
+                          />
+                        </f:then>
+                        <f:else>
+                          <f:render
+                            partial="Navigation/MaterialDropdown"
+                            arguments="{materials: materials}"
+                          />
+                        </f:else>
+                      </f:if>
                     </div>
                   </f:then>
                   <f:else>

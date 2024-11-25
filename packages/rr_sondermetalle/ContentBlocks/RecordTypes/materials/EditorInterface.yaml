@@ -17,6 +17,21 @@ fields:
   - identifier: abstract
     type: Textarea
 
+  - identifier: atomic_number
+    type: Number
+    size: 10
+    label: Atomic Number
+
+  - identifier: atomic_weight
+    type: Text
+    label: Atomic Weight
+    placeholder: "Enter a decimal value (e.g., 95.950)"
+
+  - identifier: symbol
+    type: Text
+    size: 5
+    label: Symbol
+
   - identifier: description
     type: Textarea
     enableRichtext: true
