@@ -5,6 +5,7 @@
 
 @import 'EXT:rr_sondermetalle/Configuration/TypoScript/Setup/*.typoscript'
 
+
 ##############
 #### PAGE ####
 ##############
@@ -33,6 +34,17 @@ page {
     }
 
     10 {
+        dataProcessing {
+            1732282631 = TYPO3\CMS\Frontend\DataProcessing\DatabaseQueryProcessor
+            1732282631 {
+                table = tx_romminger_materials
+                pidInList = 41
+                where = hidden = 0 AND deleted = 0
+                orderBy = uid ASC
+                as = materials
+            }
+        }
+
         variables {
             shopLink = TEXT
             shopLink.value = 42

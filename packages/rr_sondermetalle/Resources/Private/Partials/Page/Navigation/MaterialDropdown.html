@@ -1,0 +1,26 @@
+<ul
+  class="flex overflow-x-auto gap-4 bg-white rounded-lg shadow-lg p-4"
+  aria-labelledby="dropdownLargeButton"
+>
+  <f:for each="{materials}" as="material">
+    <li
+      class="flex flex-col items-center min-w-[120px] border rounded-lg p-4 shadow hover:bg-blue-200 hover:shadow-md transition"
+    >
+      <div
+        class="flex justify-between w-full text-xs font-medium text-primary-700"
+      >
+        <span class="mr-2">{material.data.atomicNumber}</span>
+        <span class="ml-2">{material.data.atomicWeight}</span>
+      </div>
+      <div class="mt-2 text-center text-lg font-bold text-primary-800">
+        {material.data.symbol}
+      </div>
+      <a
+        href="/material/{material.data.name}"
+        class="mt-1 text-center text-xs font-medium text-primary-700"
+      >
+        {material.data.name}
+      </a>
+    </li>
+  </f:for>
+</ul>
