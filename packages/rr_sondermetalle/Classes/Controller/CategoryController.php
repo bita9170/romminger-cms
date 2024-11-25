@@ -93,7 +93,8 @@ class CategoryController extends ActionController
             'filter' => $filter,
             'allMaterials' => $allMaterials,
             'pageName' => 'Shop',
-            'user' => $frontendUser
+            'user' => $frontendUser,
+            'avatar' => $frontendUser->getFirstName()[0] . $frontendUser->getLastName()[0]
         ]);
 
 

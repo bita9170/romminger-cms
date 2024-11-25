@@ -18,16 +18,29 @@
       <div class="flex items-center space-x-2">
         <f:if condition="{user}">
           <f:then>
-            <f:image
-              image="{user.image.0}"
-              id="avatarButton"
-              type="button"
-              data-dropdown-toggle="userDropdown"
-              data-dropdown-placement="bottom-start"
-              class="w-10 h-10 rounded-full cursor-pointer"
-              alt="User dropdown"
-            />
-
+            <f:if condition="{user.image}">
+              <f:then>
+                <f:image
+                  image="{user.image.0}"
+                  id="avatarButton"
+                  type="button"
+                  data-dropdown-toggle="userDropdown"
+                  data-dropdown-placement="bottom-start"
+                  class="w-10 h-10 rounded-full cursor-pointer"
+                  alt="User dropdown"
+                />
+              </f:then>
+              <f:else>
+                <div
+                  type="button"
+                  data-dropdown-toggle="userDropdown"
+                  data-dropdown-placement="bottom-start"
+                  class="relative inline-flex items-center justify-center w-10 h-10 overflow-hidden bg-primary rounded-full"
+                >
+                  <span class="font-medium text-white">{avatar}</span>
+                </div></f:else
+              >
+            </f:if>
             <!-- Avatar Dropdown menu -->
             <div
               id="userDropdown"
