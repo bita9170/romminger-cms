@@ -56,8 +56,9 @@ class CheckoutController extends ActionController
             'carts' => $this->carts,
             'pageName' => 'Cart',
             'user' => $this->frontendUser,
+            'avatar' => $this->frontendUser->getFirstName()[0] . $this->frontendUser->getLastName()[0],
             'siteUrl' => $this->siteUrl,
-            'allCountries' => $this->countryProvider->getAll()
+            'allCountries' => $this->countryProvider->getAll(),
         ]);
         return $this->htmlResponse();
     }
@@ -78,6 +79,7 @@ class CheckoutController extends ActionController
             'carts' => $this->carts,
             'pageName' => 'Checkout',
             'user' => $this->frontendUser,
+            'avatar' => $this->frontendUser->getFirstName()[0] . $this->frontendUser->getLastName()[0],
             'siteUrl' => $this->siteUrl
         ]);
         return $this->htmlResponse();
