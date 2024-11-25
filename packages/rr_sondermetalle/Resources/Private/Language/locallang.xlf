@@ -73,6 +73,94 @@
                 <source>Tungsten</source>
             </trans-unit>
 
+            <!-- Frontend checkout -->
+            <trans-unit id="frontend.checkout.cart">
+                <source>Cart</source>
+            </trans-unit>
+            <trans-unit id="frontend.checkout.checkout">
+                <source>Checkout</source>
+            </trans-unit>
+            <trans-unit id="frontend.checkout.payment">
+                <source>Payment</source>
+            </trans-unit>
+            <trans-unit id="frontend.checkout.deliveryAddress">
+                <source>Delivery Address</source>
+            </trans-unit>
+            <trans-unit id="frontend.checkout.fullname">
+                <source>Fullname</source>
+            </trans-unit>
+            <trans-unit id="frontend.checkout.email">
+                <source>Email</source>
+            </trans-unit>
+            <trans-unit id="frontend.checkout.company">
+                <source>Company</source>
+            </trans-unit>
+            <trans-unit id="frontend.checkout.country">
+                <source>Country</source>
+            </trans-unit>
+            <trans-unit id="frontend.checkout.telephone">
+                <source>Telephone Number</source>
+            </trans-unit>
+            <trans-unit id="frontend.checkout.street">
+                <source>Street</source>
+            </trans-unit>
+            <trans-unit id="frontend.checkout.zip">
+                <source>Zip code</source>
+            </trans-unit>
+            <trans-unit id="frontend.checkout.city">
+                <source>City</source>
+            </trans-unit>
+            <trans-unit id="frontend.checkout.paymentMethod">
+                <source>Payment Method</source>
+            </trans-unit>
+            <trans-unit id="frontend.checkout.creditCard">
+                <source>Credit Card</source>
+            </trans-unit>
+            <trans-unit id="frontend.checkout.creditCardText">
+                <source>Pay with your credit card</source>
+            </trans-unit>
+            <trans-unit id="frontend.checkout.klarna">
+                <source>Klarna</source>
+            </trans-unit>
+            <trans-unit id="frontend.checkout.klarnaText">
+                <source>Pay with klarna</source>
+            </trans-unit>
+            <trans-unit id="frontend.checkout.paypal">
+                <source>Paypal account</source>
+            </trans-unit>
+            <trans-unit id="frontend.checkout.paypalText">
+                <source>Connect to your account</source>
+            </trans-unit>
+            <trans-unit id="frontend.checkout.invoice">
+                <source>Invoice</source>
+            </trans-unit>
+            <trans-unit id="frontend.checkout.invoiceText">
+                <source>Pay via invoice</source>
+            </trans-unit>
+            <trans-unit id="frontend.checkout.order">
+                <source>Your order</source>
+            </trans-unit>
+            <trans-unit id="frontend.checkout.article">
+                <source>Article</source>
+            </trans-unit>
+            <trans-unit id="frontend.checkout.vat">
+                <source>VAT 19%</source>
+            </trans-unit>
+            <trans-unit id="frontend.checkout.discount">
+                <source>Discount</source>
+            </trans-unit>
+            <trans-unit id="frontend.checkout.shipping">
+                <source>Shipping</source>
+            </trans-unit>
+            <trans-unit id="frontend.checkout.total">
+                <source>Total</source>
+            </trans-unit>
+            <trans-unit id="frontend.checkout.btnCheckout">
+                <source>Continue to checkout</source>
+            </trans-unit>
+            <trans-unit id="frontend.checkout.btnPayment">
+                <source>Continue to payment</source>
+            </trans-unit>
         </body>
     </file>
 </xliff>
