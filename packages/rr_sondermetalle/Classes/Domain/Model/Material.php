@@ -12,6 +12,9 @@ class Material extends AbstractEntity
     protected string $id = '';
     protected string $name = '';
     protected string $abstract = '';
+    protected int $atomicNumber = 0;
+    protected string $atomicWeight = '';
+    protected string $symbol = '';
     protected string $description = '';
 
     /**
@@ -54,6 +57,36 @@ class Material extends AbstractEntity
     public function setAbstract(string $abstract): void
     {
         $this->abstract = $abstract;
+    }
+
+    public function getAtomicNumber(): int
+    {
+        return $this->atomicNumber;
+    }
+
+    public function setAtomicNumber(int $atomicNumber): void
+    {
+        $this->atomicNumber = $atomicNumber;
+    }
+
+    public function getAtomicWeight(): string
+    {
+        return $this->atomicWeight;
+    }
+
+    public function setAtomicWeight(string $atomicWeight): void
+    {
+        $this->atomicWeight = $atomicWeight;
+    }
+
+    public function getSymbol(): string
+    {
+        return $this->symbol;
+    }
+
+    public function setSymbol(string $symbol): void
+    {
+        $this->symbol = $symbol;
     }
 
     public function getDescription(): string

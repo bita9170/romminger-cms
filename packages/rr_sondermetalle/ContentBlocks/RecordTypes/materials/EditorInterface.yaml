@@ -17,12 +17,12 @@ fields:
   - identifier: abstract
     type: Textarea
 
-  - identifier: atomicNumber
+  - identifier: atomic_number
     type: Number
     size: 10
     label: Atomic Number
 
-  - identifier: atomicWeight
+  - identifier: atomic_weight
     type: Text
     label: Atomic Weight
     placeholder: "Enter a decimal value (e.g., 95.950)"
