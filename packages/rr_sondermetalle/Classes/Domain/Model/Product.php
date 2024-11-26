@@ -36,6 +36,16 @@ class Product extends AbstractEntity
     protected ObjectStorage $images;
 
     /**
+     * @var Material
+     */
+    protected $material;
+
+    /**
+     * @var Category
+     */
+    protected $category;
+
+    /**
      * @var string
      */
     protected $salesUnitType;
@@ -46,39 +56,49 @@ class Product extends AbstractEntity
     protected $unitPrice;
 
     /**
-     * @var int
+     * @var float|null
      */
-    protected $stockQuantity;
+    protected $thickness;
 
     /**
-     * @var float
+     * @var float|null
      */
-    protected $weight;
+    protected $width;
 
     /**
-     * @var float
+     * @var float|null
+     */
+    protected $diameter;
+
+    /**
+     * @var float|null
+     */
+    protected $outerDiameter;
+
+    /**
+     * @var float|null
+     */
+    protected $wallThickness;
+
+    /**
+     * @var float|null
      */
     protected $length;
 
     /**
-     * @var int
+     * @var int|null
      */
     protected $minOrderQuantity;
 
     /**
-     * @var float
+     * @var float|null
      */
     protected $priceBasedOnWeight;
 
     /**
-     * @var float
+     * @var float|null
      */
     protected $priceBasedOnLength;
-
-    /**
-     * @var Material
-     */
-    protected $material;
 
     /**
      * @var string
@@ -147,6 +167,26 @@ class Product extends AbstractEntity
         $this->images = $images;
     }
 
+    public function getMaterial(): Material
+    {
+        return $this->material;
+    }
+
+    public function setMaterial(Material $material): void
+    {
+        $this->material = $material;
+    }
+
+    public function getCategory(): Category
+    {
+        return $this->category;
+    }
+
+    public function setCategory(Category $category): void
+    {
+        $this->category = $category;
+    }
+
     public function getSalesUnitType(): string
     {
         return $this->salesUnitType;
@@ -167,74 +207,94 @@ class Product extends AbstractEntity
         $this->unitPrice = $unitPrice;
     }
 
-    public function getStockQuantity(): int
+    public function getThickness(): ?float
     {
-        return $this->stockQuantity;
+        return $this->thickness;
     }
 
-    public function setStockQuantity(int $stockQuantity): void
+    public function setThickness(?float $thickness): void
     {
-        $this->stockQuantity = $stockQuantity;
+        $this->thickness = $thickness;
     }
 
-    public function getWeight(): float
+    public function getWidth(): ?float
     {
-        return $this->weight;
+        return $this->width;
     }
 
-    public function setWeight(float $weight): void
+    public function setWidth(?float $width): void
     {
-        $this->weight = $weight;
+        $this->width = $width;
     }
 
-    public function getLength(): float
+    public function getDiameter(): ?float
+    {
+        return $this->diameter;
+    }
+
+    public function setDiameter(?float $diameter): void
+    {
+        $this->diameter = $diameter;
+    }
+
+    public function getOuterDiameter(): ?float
+    {
+        return $this->outerDiameter;
+    }
+
+    public function setOuterDiameter(?float $outerDiameter): void
+    {
+        $this->outerDiameter = $outerDiameter;
+    }
+
+    public function getWallThickness(): ?float
+    {
+        return $this->wallThickness;
+    }
+
+    public function setWallThickness(?float $wallThickness): void
+    {
+        $this->wallThickness = $wallThickness;
+    }
+
+    public function getLength(): ?float
     {
         return $this->length;
     }
 
-    public function setLength(float $length): void
+    public function setLength(?float $length): void
     {
         $this->length = $length;
     }
 
-    public function getMinOrderQuantity(): int
+    public function getMinOrderQuantity(): ?int
     {
         return $this->minOrderQuantity;
     }
 
-    public function setMinOrderQuantity(int $minOrderQuantity): void
+    public function setMinOrderQuantity(?int $minOrderQuantity): void
     {
         $this->minOrderQuantity = $minOrderQuantity;
     }
 
-    public function getPriceBasedOnWeight(): float
+    public function getPriceBasedOnWeight(): ?float
     {
         return $this->priceBasedOnWeight;
     }
 
-    public function setPriceBasedOnWeight(float $priceBasedOnWeight): void
+    public function setPriceBasedOnWeight(?float $priceBasedOnWeight): void
     {
         $this->priceBasedOnWeight = $priceBasedOnWeight;
     }
 
-    public function getPriceBasedOnLength(): float
+    public function getPriceBasedOnLength(): ?float
     {
         return $this->priceBasedOnLength;
     }
 
-    public function setPriceBasedOnLength(float $priceBasedOnLength): void
+    public function setPriceBasedOnLength(?float $priceBasedOnLength): void
     {
         $this->priceBasedOnLength = $priceBasedOnLength;
-    }
-
-    public function getMaterial(): Material
-    {
-        return $this->material;
-    }
-
-    public function setMaterial(Material $material): void
-    {
-        $this->material = $material;
     }
 
     public function getStatus(): string

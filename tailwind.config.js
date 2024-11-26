@@ -2,6 +2,7 @@
 module.exports = {
   content: [
     "./packages/*/Resources/Private/**/*.html",
+    "./packages/*/Resources/Public/**/*.js",
     "./packages/*/ContentBlocks/**/*.html",
   ],
   darkMode: "class",

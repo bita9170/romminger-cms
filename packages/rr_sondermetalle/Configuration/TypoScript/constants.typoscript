@@ -48,6 +48,12 @@ page {
             text = Copyright © 2024-All right reserved
         }        
     }
+    meta {        
+         # cat=rr-sondermetalle; type=string; label=SEO - Keywords
+         keywords =
+        # cat=rr-sondermetalle; type=string; label=SEO - Description
+         description =
+    }
 }
 
 
@@ -100,4 +106,8 @@ plugin.bootstrap_package_contentelements {
 plugin.bootstrap_package.settings.scss {
     primary = #172554
     secondary = #d7dde4
+}
+
+config {
+    headerComment = 
 }

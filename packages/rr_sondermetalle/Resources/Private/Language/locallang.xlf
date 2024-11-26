@@ -1,13 +1,165 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <xliff version="1.0">
-    <file source-language="en" datatype="plaintext" original="messages" date="2024-08-29UTC10:40:330">
-        <header>
-            <authorName>Bita Sadeghi</authorName>
-            <authorEmail>bita.s9170@gmail.com</authorEmail>
-        </header>
+    <file source-language="en" datatype="plaintext" original="messages"
+        date="2024-08-29UTC10:40:330">
         <body>
-         <trans-unit id="frontend.material">
+            <trans-unit id="frontend.materials">
                 <source>Material</source>
+            </trans-unit>
+            <trans-unit id="frontend.material">
+                <source>Material</source>
+            </trans-unit>
+            <trans-unit id="frontend.apply_filters">
+                <source>Apply Filters</source>
+            </trans-unit>
+            <trans-unit id="frontend.number_of_product">
+                <source>Number of products</source>
+            </trans-unit>
+            <trans-unit id="frontend.product_details">
+                <source>Product Details</source>
+            </trans-unit>
+            <trans-unit id="frontend.quantity">
+                <source>Quantity</source>
+            </trans-unit>
+            <trans-unit id="frontend.total">
+                <source>Total</source>
+            </trans-unit>
+            <trans-unit id="frontend.add_to_cart">
+                <source>Add To Cart</source>
+            </trans-unit>
+            <trans-unit id="frontend.checkout">
+                <source>Checkout</source>
+            </trans-unit>
+            <trans-unit id="frontend.empty_cart">
+                <source>Empty Cart</source>
+            </trans-unit>
+
+            <trans-unit id="login">
+                <source>Login</source>
+            </trans-unit>
+            <trans-unit id="frontend.register_prompt_part1">
+                <source>Don't have an account? Please</source>
+            </trans-unit>
+            <trans-unit id="frontend.login_prompt_part1">
+                <source>Do you have an account? Please</source>
+            </trans-unit>
+            <trans-unit id="frontend.register_prompt_link">
+                <source>Register</source>
+            </trans-unit>
+            <trans-unit id="forgot_header">
+                <source>Forgot your password?</source>
+            </trans-unit>
+            <trans-unit id="login.credentials.prompt">
+                <source>Enter your login credentials</source>
+            </trans-unit>
+            <trans-unit id="register.subtitle">
+                <source>Get started today!</source>
+            </trans-unit>
+
+            <!-- materials -->
+            <trans-unit id="material.molybdaen">
+                <source>Molybdenum</source>
+            </trans-unit>
+            <trans-unit id="material.tantal">
+                <source>Tantalum</source>
+            </trans-unit>
+            <trans-unit id="material.titan">
+                <source>Titanium</source>
+            </trans-unit>
+            <trans-unit id="material.niobium">
+                <source>Niobium</source>
+            </trans-unit>
+            <trans-unit id="material.wolfram">
+                <source>Tungsten</source>
+            </trans-unit>
+
+            <!-- Frontend checkout -->
+            <trans-unit id="frontend.checkout.cart">
+                <source>Cart</source>
+            </trans-unit>
+            <trans-unit id="frontend.checkout.checkout">
+                <source>Checkout</source>
+            </trans-unit>
+            <trans-unit id="frontend.checkout.payment">
+                <source>Payment</source>
+            </trans-unit>
+            <trans-unit id="frontend.checkout.deliveryAddress">
+                <source>Delivery Address</source>
+            </trans-unit>
+            <trans-unit id="frontend.checkout.fullname">
+                <source>Fullname</source>
+            </trans-unit>
+            <trans-unit id="frontend.checkout.email">
+                <source>Email</source>
+            </trans-unit>
+            <trans-unit id="frontend.checkout.company">
+                <source>Company</source>
+            </trans-unit>
+            <trans-unit id="frontend.checkout.country">
+                <source>Country</source>
+            </trans-unit>
+            <trans-unit id="frontend.checkout.telephone">
+                <source>Telephone Number</source>
+            </trans-unit>
+            <trans-unit id="frontend.checkout.street">
+                <source>Street</source>
+            </trans-unit>
+            <trans-unit id="frontend.checkout.zip">
+                <source>Zip code</source>
+            </trans-unit>
+            <trans-unit id="frontend.checkout.city">
+                <source>City</source>
+            </trans-unit>
+            <trans-unit id="frontend.checkout.paymentMethod">
+                <source>Payment Method</source>
+            </trans-unit>
+            <trans-unit id="frontend.checkout.creditCard">
+                <source>Credit Card</source>
+            </trans-unit>
+            <trans-unit id="frontend.checkout.creditCardText">
+                <source>Pay with your credit card</source>
+            </trans-unit>
+            <trans-unit id="frontend.checkout.klarna">
+                <source>Klarna</source>
+            </trans-unit>
+            <trans-unit id="frontend.checkout.klarnaText">
+                <source>Pay with klarna</source>
+            </trans-unit>
+            <trans-unit id="frontend.checkout.paypal">
+                <source>Paypal account</source>
+            </trans-unit>
+            <trans-unit id="frontend.checkout.paypalText">
+                <source>Connect to your account</source>
+            </trans-unit>
+            <trans-unit id="frontend.checkout.invoice">
+                <source>Invoice</source>
+            </trans-unit>
+            <trans-unit id="frontend.checkout.invoiceText">
+                <source>Pay via invoice</source>
+            </trans-unit>
+            <trans-unit id="frontend.checkout.order">
+                <source>Your order</source>
+            </trans-unit>
+            <trans-unit id="frontend.checkout.article">
+                <source>Article</source>
+            </trans-unit>
+            <trans-unit id="frontend.checkout.vat">
+                <source>VAT 19%</source>
+            </trans-unit>
+            <trans-unit id="frontend.checkout.discount">
+                <source>Discount</source>
+            </trans-unit>
+            <trans-unit id="frontend.checkout.shipping">
+                <source>Shipping</source>
+            </trans-unit>
+            <trans-unit id="frontend.checkout.total">
+                <source>Total</source>
+            </trans-unit>
+            <trans-unit id="frontend.checkout.btnCheckout">
+                <source>Continue to checkout</source>
+            </trans-unit>
+            <trans-unit id="frontend.checkout.btnPayment">
+                <source>Continue to payment</source>
             </trans-unit>
         </body>
     </file>

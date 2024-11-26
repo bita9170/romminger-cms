@@ -1,23 +1,10 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
     <file source-language="en" datatype="plaintext" original="messages" date="2024-08-29UTC10:40:330">
-        <header>
-            <authorName>Bita Sadeghi</authorName>
-            <authorEmail>bita.s9170@gmail.com</authorEmail>
-        </header>
         <body>
-            <trans-unit id="backend_layout.account">
-                <source>Account</source>
-            </trans-unit>
-            <trans-unit id="backend_layout.profile">
-                <source>Profile</source>
-            </trans-unit>
-            <trans-unit id="backend_layout.column.normal">
-                <source>Normal</source>
-            </trans-unit>
-            <trans-unit id="backend_layout.column.above-header">
-                <source>Above Header</source>
-            </trans-unit>
+            <trans-unit id="mlang_tabs_tab" xml:space="preserve">
+				<source>Orders</source>
+			</trans-unit>
         </body>
     </file>
 </xliff>

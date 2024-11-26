@@ -56,6 +56,24 @@ return [
             'automaticInstallation' => '1',
             'offlineMode' => '0',
         ],
+        'nnhelpers' => [
+            'autoCreateFilemounts' => '1',
+            'clearAllCaches' => '0',
+            'deeplApiKey' => '',
+            'deeplApiUrl' => 'https://api-free.deepl.com/v2/translate',
+            'devModeEnabled' => '0',
+            'googleGeoApiKey' => '',
+            'saltingKey' => 'WyJKMGI5bXBRNzBlQlRvZlIya3Y3YU5TWDVldjFFNzMwaUc4Q2R2N3ZFVUFJPSIsImgxam1MY2J1cjc0UjlveVwvOTRJK2NlXC9iNmpIOW16dmhLcjZGVVAwdGdHVzg3R1JkXC92VHpZMysrQlpPanc5YXgyRkdvV3ZcL0VBWHkwTVVGT2tjRm5OZz09Il0=',
+            'showMod' => '1',
+        ],
+        'nnrestapi' => [
+            'apiKeys' => 'examplefeUserName:exampleApiKey',
+            'disableDefaultEndpoints' => '0',
+            'disableDonationWarning' => '0',
+            'disablePreCheck' => '0',
+            'fileEncryptionKey' => '',
+            'maxSessionLifetime' => '3600',
+        ],
     ],
     'FE' => [
         'debug' => false,
@@ -125,7 +143,7 @@ return [
         'displayErrors' => 0,
         'encryptionKey' => '8f39725fe15ff49ca23a32723ba454ce26282730600c8cdcd8ba3bee35eb0c0383ad22d9e2ee10c3574faf19627257ab',
         'exceptionalErrors' => 4096,
-        'sitename' => 'New TYPO3 Project',
+        'sitename' => 'RR-Sondermetalle',
         'systemMaintainers' => [
             1,
         ],

@@ -12,11 +12,47 @@
 			<trans-unit id="name.label" resname="name.label">
 				<target>Name</target>
 			</trans-unit>
-            <trans-unit id="images.label" resname="images.label">
-				<target>Bilder</target>
+			<trans-unit id="abstract.label" resname="abstract.label">
+				<target>Zusammenfassung</target>
 			</trans-unit>
             <trans-unit id="description.label" resname="description.label">
 				<target>Beschreibung</target>
+			</trans-unit>
+            <trans-unit id="images.label" resname="images.label">
+				<target>Bilder</target>
+			</trans-unit>
+			<trans-unit id="material.label" resname="material.label">
+				<target>Werkstoff</target>
+			</trans-unit>
+			<trans-unit id="category.label" resname="category.label">
+				<target>Kategorie</target>
+			</trans-unit>
+			<trans-unit id="salesUnitType.label" resname="salesUnitType.label">
+				<target>Verkaufseinheitstyp</target>
+			</trans-unit>
+			<trans-unit id="unitPrice.label" resname="unitPrice.label">
+				<target>Stückpreis</target>
+			</trans-unit>
+			<trans-unit id="thickness.label" resname="thickness.label">
+				<target>Stärke (mm)</target>
+			</trans-unit>
+			<trans-unit id="width.label" resname="width.label">
+				<target>Breite (mm)</target>
+			</trans-unit>
+			<trans-unit id="diameter.label" resname="diameter.label">
+				<target>Durchmesser (mm)</target>
+			</trans-unit>
+			<trans-unit id="outerDiameter.label" resname="outerDiameter.label">
+				<target>Außendurchmesser (mm)</target>
+			</trans-unit>
+			<trans-unit id="wallThickness.label" resname="wallThickness.label">
+				<target>Wandstärke (mm)</target>
+			</trans-unit>
+			<trans-unit id="length.label" resname="length.label">
+				<target>Länge (mm)</target>
+			</trans-unit>
+			<trans-unit id="status.label" resname="status.label">
+				<target>Produktstatus</target>
 			</trans-unit>
 		</body>
 	</file>

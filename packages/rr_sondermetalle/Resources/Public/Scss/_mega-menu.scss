@@ -1,0 +1,19 @@
+.mega-menu {
+  @apply bg-white shadow-lg rounded-lg p-4 mt-1 grid grid-cols-5 gap-2;
+
+  .card {
+    @apply flex flex-col items-center bg-white border rounded-lg p-2 shadow hover:bg-blue-100;
+
+    .header {
+      @apply flex justify-between w-full text-[10px] text-gray-500;
+    }
+
+    .symbol {
+      @apply mt-2 text-center text-lg font-bold text-gray-900;
+    }
+
+    .name {
+      @apply mt-1 text-center text-xs text-gray-600;
+    }
+  }
+}

@@ -17,7 +17,10 @@
         arguments="{key: '{messageKey}_message'}"
       />
       <p class="text-sm font-semibold text-center mb-6">
-        Enter your login credentials
+        <f:translate
+          key="login.credentials.prompt"
+          extensionName="rr_sondermetalle"
+        />
       </p>
     </p>
   </f:if>
@@ -31,15 +34,6 @@
   >
     <f:render section="content" arguments="{_all}" />
   </f:form>
-
-  <f:if condition="{settings.showForgotPassword}">
-    <f:link.action action="recovery" controller="PasswordRecovery">
-      <f:render
-        partial="RenderLabelOrMessage"
-        arguments="{key: 'forgot_header'}"
-      />
-    </f:link.action>
-  </f:if>
 
   <f:section name="content">
     <fieldset>
@@ -123,13 +117,52 @@
             </div>
           </f:if>
 
-          <!-- Login button-->
-          <div class="mb-4">
+          <!-- Login button -->
+          <div class="flex flex-col space-y-2">
             <f:form.submit
               value="{f:translate(key: 'login')}"
               name="submit"
-              class="w-full !bg-primary-500 text-white !font-bold py-3 rounded text-lg !border-none"
+              class="w-full btn btn-primary"
             />
+
+            <!-- Register prompt with partial link -->
+            <p class="text-sm text-gray-500 text-center">
+              <f:translate
+                key="frontend.register_prompt_part1"
+                extensionName="rr_sondermetalle"
+              />
+              <a
+                href="{f:uri.page(pageUid: 37)}"
+                class="text-blue-500 underline"
+              >
+                <f:translate
+                  key="frontend.register_prompt_link"
+                  extensionName="rr_sondermetalle"
+                />
+              </a>
+            </p>
+
+            <!-- Register -->
+            <f:link.page pageUid="37" class="w-full btn btn-link">
+              <f:translate
+                key="frontend.register"
+                extensionName="rr_sondermetalle"
+              />
+            </f:link.page>
+
+            <!-- Forgot password -->
+            <f:if condition="{settings.showForgotPassword}">
+              <f:link.action
+                action="recovery"
+                controller="PasswordRecovery"
+                class="text-primary-500 underline text-center"
+              >
+                <f:render
+                  partial="RenderLabelOrMessage"
+                  arguments="{key: 'forgot_header'}"
+                />
+              </f:link.action>
+            </f:if>
           </div>
 
           <div class="felogin-hidden">

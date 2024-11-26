@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<xliff version="1.0">
+    <file source-language="en" datatype="plaintext" original="messages"
+        date="2024-08-29UTC10:40:330">
+        <body>
+            <trans-unit id="frontend.materials">
+                <target>Werkstoffe</target>
+            </trans-unit>
+            <trans-unit id="frontend.material">
+                <target>Werkstoff</target>
+            </trans-unit>
+            <trans-unit id="frontend.apply_filters">
+                <target>Filter anwenden</target>
+            </trans-unit>
+            <trans-unit id="frontend.number_of_product">
+                <target>Anzahl Produkte</target>
+            </trans-unit>
+            <trans-unit id="frontend.product_details">
+                <target>Produktdetails</target>
+            </trans-unit>
+            <trans-unit id="frontend.quantity">
+                <target>Menge</target>
+            </trans-unit>
+            <trans-unit id="frontend.total">
+                <target>Gesamt</target>
+            </trans-unit>
+            <trans-unit id="frontend.add_to_cart">
+                <target>In den Warenkorb</target>
+            </trans-unit>
+            <trans-unit id="frontend.checkout">
+                <target>Zur Kasse</target>
+            </trans-unit>
+            <trans-unit id="frontend.empty_cart">
+                <target>Warenkorb leeren</target>
+            </trans-unit>
+            
+            <trans-unit id="login">
+                <target>Anmelden</target>
+            </trans-unit>
+            <trans-unit id="frontend.register_prompt_part1">
+                <target>Haben Sie noch keinen Account? Bitte</target>
+            </trans-unit>
+            <trans-unit id="frontend.login_prompt_part1">
+                <target>Haben Sie einen Account? Bitte</target>
+            </trans-unit>
+            <trans-unit id="frontend.register_prompt_link">
+                <target>Registrieren</target>
+            </trans-unit>
+            <trans-unit id="forgot_header">
+                <target>Passwort vergessen?</target>
+            </trans-unit>
+            <trans-unit id="login.credentials.prompt">
+                <target>Geben Sie Ihre Anmeldedaten ein</target>
+            </trans-unit>
+            <trans-unit id="register.subtitle">
+                <target>Starten Sie noch heute!</target>
+            </trans-unit>
+
+            <!-- materials -->
+            <trans-unit id="material.molybdaen">
+                <target>Molybdän</target>
+            </trans-unit>
+            <trans-unit id="material.tantal">
+                <target>Tantal</target>
+            </trans-unit>
+            <trans-unit id="material.titan">
+                <target>Titan</target>
+            </trans-unit>
+            <trans-unit id="material.niobium">
+                <target>Niobium</target>
+            </trans-unit>
+            <trans-unit id="material.wolfram">
+                <target>Wolfram</target>
+            </trans-unit>
+
+            
+            <!-- Frontend checkout -->
+            <trans-unit id="frontend.checkout.cart">
+                <target>Warenkorb</target>
+            </trans-unit>
+            <trans-unit id="frontend.checkout.checkout">
+                <target>Kasse</target>
+            </trans-unit>
+            <trans-unit id="frontend.checkout.payment">
+                <target>Zahlung</target>
+            </trans-unit>
+            <trans-unit id="frontend.checkout.deliveryAddress">
+                <target>Lieferadresse</target>
+            </trans-unit>
+            <trans-unit id="frontend.checkout.fullname">
+                <target>Vor- und Nachname</target>
+            </trans-unit>
+            <trans-unit id="frontend.checkout.email">
+                <target>E-Mail</target>
+            </trans-unit>
+            <trans-unit id="frontend.checkout.company">
+                <target>Firmenname</target>
+            </trans-unit>
+            <trans-unit id="frontend.checkout.country">
+                <target>Land</target>
+            </trans-unit>
+            <trans-unit id="frontend.checkout.telephone">
+                <target>Telefonnummer</target>
+            </trans-unit>
+            <trans-unit id="frontend.checkout.street">
+                <target>Straße</target>
+            </trans-unit>
+            <trans-unit id="frontend.checkout.zip">
+                <target>PLZ</target>
+            </trans-unit>
+            <trans-unit id="frontend.checkout.city">
+                <target>Stadt</target>
+            </trans-unit>
+             <trans-unit id="frontend.checkout.paymentMethod">
+                <target>Zahlungsmethod</target>
+            </trans-unit>
+            <trans-unit id="frontend.checkout.creditCard">
+                <target>Kreditkarte</target>
+            </trans-unit>
+            <trans-unit id="frontend.checkout.creditCardText">
+                <target>Bezahlen Sie mit Ihrer Kreditkarte</target>
+            </trans-unit>
+            <trans-unit id="frontend.checkout.klarna">
+                <target>Klarna</target>
+            </trans-unit>
+            <trans-unit id="frontend.checkout.klarnaText">
+                <target>Bezahlen mit Klarna</target>
+            </trans-unit>
+            <trans-unit id="frontend.checkout.paypal">
+                <target>Paypal-Konto</target>
+            </trans-unit>
+            <trans-unit id="frontend.checkout.paypalText">
+                <target>Verbinden Sie sich mit Ihrem Konto</target>
+            </trans-unit>
+            <trans-unit id="frontend.checkout.invoice">
+                <target>Rechnung</target>
+            </trans-unit>
+            <trans-unit id="frontend.checkout.invoiceText">
+                <target>Bezahlen per Rechnung</target>
+            </trans-unit>
+            <trans-unit id="frontend.checkout.order">
+                <target>Ihre Bestellung</target>
+            </trans-unit>
+            <trans-unit id="frontend.checkout.article">
+                <target>Artikel</target>
+            </trans-unit>
+            <trans-unit id="frontend.checkout.vat">
+                <target>MwSt. 19%</target>
+            </trans-unit>
+            <trans-unit id="frontend.checkout.discount">
+                <target>Rabatt</target>
+            </trans-unit>
+            <trans-unit id="frontend.checkout.shipping">
+                <target>Versand</target>
+            </trans-unit>
+            <trans-unit id="frontend.checkout.total">
+                <target>Gesamtbetrag</target>
+            </trans-unit>
+            <trans-unit id="frontend.checkout.btnCheckout">
+                <target>Weiter zur Kasse</target>
+            </trans-unit>
+            <trans-unit id="frontend.checkout.btnPayment">
+                <target>Weiter zur Zahlung</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

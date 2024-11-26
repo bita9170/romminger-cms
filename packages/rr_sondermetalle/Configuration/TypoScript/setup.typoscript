@@ -5,6 +5,7 @@
 
 @import 'EXT:rr_sondermetalle/Configuration/TypoScript/Setup/*.typoscript'
 
+
 ##############
 #### PAGE ####
 ##############
@@ -31,16 +32,64 @@ page {
         flowbitejs = https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js
         rr_sondermetalle_scripts = EXT:rr_sondermetalle/Resources/Public/JavaScript/Src/main.js
     }
-}
 
+    10 {
+        dataProcessing {
+            1732282631 = TYPO3\CMS\Frontend\DataProcessing\DatabaseQueryProcessor
+            1732282631 {
+                table = tx_romminger_materials
+                pidInList = 41
+                where = hidden = 0 AND deleted = 0
+                orderBy = uid ASC
+                as = materials
+            }
+        }
+
+        variables {
+            shopLink = TEXT
+            shopLink.value = 42
+            
+            checkout = TEXT
+            checkout {
+                value = /shop/checkout
+                override = /en/shop/checkout
+                override.if.equals = 1
+                override.if.value.data = FIELD:sys_language_uid
+            }
+        }
+    }
+
+    meta {
+        keywords= {$page.meta.keywords}
+        description= {$page.meta.description}
+    }
+}
 
 plugin.tx_rrsondermetalle {
     persistence {
-        storagePid = 41, 32
+        storagePid = 31
+        recursive = 250
     }
     view {
         templateRootPaths.0 = EXT:rr_sondermetalle/Resources/Private/Templates/
         partialRootPaths.0 = EXT:rr_sondermetalle/Resources/Private/Partials/
         layoutRootPaths.0 = EXT:rr_sondermetalle/Resources/Private/Layouts/
+    }
+    settings {
+        no_cache = 1
+    }
+}
+
+plugin.tx_sfregister.settings {
+    validation.create {
+        address = "Evoweb.SfRegister:Required"
+        zip = "Evoweb.SfRegister:Required"
+        city = "Evoweb.SfRegister:Required"
+        mobilephone = "Evoweb.SfRegister:Required"
+        staticInfoCountry = "Evoweb.SfRegister:Required"
+    }
+
+    fields.configuration {
+        staticInfoCountry.partial = Textfield
     }
 }

@@ -30,13 +30,9 @@ jobs:
         run: |
           rsync -avz --exclude='.git' ./ ${{ secrets.LIVE_SSH_USER }}@${{ secrets.LIVE_HOST }}:${{ secrets.LIVE_FOLDER }}
 
-      - name: Deploy with DDEV
-        run: |
-          ssh ${{ secrets.LIVE_SSH_USER }}@${{ secrets.LIVE_HOST }} "cd ${{ secrets.LIVE_FOLDER }} && ddev start"
-      
       - name: Config DDEV
         run: |
-          ssh ${{ secrets.LIVE_SSH_USER }}@${{ secrets.LIVE_HOST }} "cd ${{ secrets.LIVE_FOLDER }} && ddev config --additional-fqdns ${{ secrets.LIVE_DOMAIN }} && ddev restart"
+          ssh ${{ secrets.LIVE_SSH_USER }}@${{ secrets.LIVE_HOST }} "cd ${{ secrets.LIVE_FOLDER }} && ddev config --additional-fqdns ${{ secrets.LIVE_DOMAIN }} && ddev start"
 
       - name: Install Composer Dependencies
         run: |
@@ -44,4 +40,4 @@ jobs:
 
       - name: Import Database
         run: |
-          ssh ${{ secrets.LIVE_SSH_USER }}@${{ secrets.LIVE_HOST }} "cd ${{ secrets.LIVE_FOLDER }} && ddev import-db --src=${{ secrets.LIVE_DATABASE }}"
+          ssh ${{ secrets.LIVE_SSH_USER }}@${{ secrets.LIVE_HOST }} "cd ${{ secrets.LIVE_FOLDER }} && ddev import-db --src=${{ secrets.LIVE_DATABASE }} && ddev typo3 cache:flush"
