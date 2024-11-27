@@ -21,6 +21,16 @@ class OrderProduct extends AbstractEntity
      */
     protected $quantity;
 
+    /**
+     * @var int
+     */
+    protected $price;
+
+    /**
+     * @var int
+     */
+    protected $totalPrice;
+
     public function getOrder(): Order
     {
         return $this->order;
@@ -49,5 +59,25 @@ class OrderProduct extends AbstractEntity
     public function setQuantity(int $quantity): void
     {
         $this->quantity = $quantity;
+    }
+
+    public function getPrice(): int
+    {
+        return $this->price;
+    }
+
+    public function setPrice(int $price): void
+    {
+        $this->price = $price;
+    }
+
+    public function getTotalPrice(): int
+    {
+        return $this->totalPrice;
+    }
+
+    public function setTotalPrice(int $totalPrice): void
+    {
+        $this->totalPrice = $totalPrice;
     }
 }

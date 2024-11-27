@@ -5,11 +5,22 @@ namespace Romminger\RrSondermetalle\Controller;
 use Psr\Http\Message\ResponseInterface;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Core\Country\CountryProvider;
-use Romminger\RrSondermetalle\Domain\Model\Customer;
+use Psr\Http\Message\ServerRequestInterface;
 
+use TYPO3\CMS\Core\Site\Entity\SiteLanguage;
+use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
+use Romminger\RrSondermetalle\Domain\Model\Order;
+use Romminger\RrSondermetalle\Domain\Model\Payment;
+use Romminger\RrSondermetalle\Domain\Model\Product;
+use Romminger\RrSondermetalle\Domain\Model\Customer;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
+use Romminger\RrSondermetalle\Domain\Model\OrderProduct;
+use TYPO3\CMS\Extbase\Persistence\Generic\PersistenceManager;
 use Romminger\RrSondermetalle\Domain\Repository\OrderRepository;
+use Romminger\RrSondermetalle\Domain\Repository\ProductRepository;
 use Romminger\RrSondermetalle\Domain\Repository\CustomerRepository;
+use Romminger\RrSondermetalle\Domain\Repository\OrderProductRepository;
+use Romminger\RrSondermetalle\Domain\Repository\PaymentRepository;
 
 class CheckoutController extends ActionController
 {
@@ -28,7 +39,7 @@ class CheckoutController extends ActionController
      */
     protected $siteUrl;
 
-    public function __construct(private readonly CustomerRepository $customerRepository, private readonly OrderRepository $orderRepository, private readonly CountryProvider $countryProvider,)
+    public function __construct(private readonly CustomerRepository $customerRepository, private readonly ProductRepository $productRepository, private readonly OrderRepository $orderRepository, private readonly OrderProductRepository $orderProductRepository, private readonly PaymentRepository $paymentRepository, private readonly CountryProvider $countryProvider,)
     {
         if ($GLOBALS['TSFE']->fe_user) {
             $loggedUserUid = $GLOBALS['TSFE']->fe_user->user['uid'];
@@ -37,7 +48,7 @@ class CheckoutController extends ActionController
 
         $cartCookie = $_COOKIE['cart'] ?? null;
         $this->carts = $cartCookie ? json_decode($cartCookie, true) : [];
-        $this->siteUrl = GeneralUtility::getIndpEnv('TYPO3_SITE_URL');
+        $this->siteUrl =  rtrim(GeneralUtility::getIndpEnv('TYPO3_SITE_URL'), '/');
     }
 
     public function cartAction(): ResponseInterface
@@ -101,53 +112,57 @@ class CheckoutController extends ActionController
             return $this->redirect('invoice');
         }
 
+        /** @var SiteLanguage $currentLanguage */
+        $currentLanguage = $GLOBALS['TYPO3_REQUEST']->getAttribute('language');
+        $locale = $currentLanguage->getLocale()->getLanguageCode();
+
         $stripe = new \Stripe\StripeClient($_ENV['STRIPE_PK']);
 
-        $siteUrl = GeneralUtility::getIndpEnv('TYPO3_SITE_URL');
-        $successUrl = $this->uriBuilder
-            ->reset()
-            ->setTargetPageUid(56)
-            ->setCreateAbsoluteUri(TRUE)
-            ->uriFor(
-                'success'
-            );
-        $cancelUrl = $this->uriBuilder
-            ->reset()
-            ->setTargetPageUid(56)
-            ->setCreateAbsoluteUri(TRUE)
-            ->uriFor(
-                'cancel'
-            );
+        $successUrl = "/shop/checkout/success?session_id={CHECKOUT_SESSION_ID}";
+        $cancelUrl = "/shop/checkout/checkout";
 
-        $customer_session = $stripe->customers->create([
-            'name' => $this->frontendUser->getName(),
-            'email' => $this->frontendUser->getEmail(),
+        $taxRate = $stripe->taxRates->create([
+            'display_name' => $locale == 'de' ? 'MwSt.' : 'VAT',
+            'description' => $locale == 'de' ? 'Mehrwertsteuer (19%)' : 'VAT (19%)',
+            'jurisdiction' => 'Germany',
+            'percentage' => 19.0,
+            'inclusive' => false,
         ]);
 
         $lineItems = [];
 
         foreach ($this->carts as $cartItem) {
-            $lineItems[] = [
-                'price_data' => [
-                    'currency' => 'eur',
-                    'product_data' => [
-                        'name' => $cartItem['product_name'],
-                    ],
-                    'unit_amount' => intval(($cartItem['price'] *  1.19)  * 100),
+            $product = $stripe->products->create([
+                'name' => $cartItem['product_name'],
+                'metadata' => [
+                    'product_uid' => $cartItem['product_uid'],
+                    'product_image' => $cartItem['product_image'],
                 ],
+            ]);
+
+            $price = $stripe->prices->create([
+                'unit_amount' => intval($cartItem['price'] * 100),
+                'currency' => 'eur',
+                'product' => $product->id,
+            ]);
+
+            $lineItems[] = [
+                'price' => $price->id,
                 'quantity' => $cartItem['quantity'],
+                'tax_rates' => [$taxRate->id],
             ];
         }
 
-        $checkout_session =  $stripe->checkout->sessions->create([
-            'line_items' =>  $lineItems,
+        $checkout_session = $stripe->checkout->sessions->create([
+            'line_items' => $lineItems,
             'mode' => 'payment',
-            "customer" => $customer_session->id,
-            'success_url' => $siteUrl . $successUrl,
-            'cancel_url' =>  $siteUrl . $cancelUrl,
+            "customer_email" => $this->frontendUser->getEmail(),
+            'success_url' => $this->siteUrl . $successUrl,
+            'cancel_url' => $this->siteUrl . $cancelUrl,
             'payment_method_types' => [
                 $checkout['payment-method']
             ],
+            'locale' => $locale,
             'metadata' => [
                 'address_line1' => $checkout['address'],
                 'address_city' => $checkout['city'],
@@ -162,16 +177,91 @@ class CheckoutController extends ActionController
 
     public function successAction(): ResponseInterface
     {
-        return $this->htmlResponse();
-    }
 
-    public function cancelAction(): ResponseInterface
-    {
-        return $this->htmlResponse();
-    }
+        header('Cache-Control: no-store, no-cache, must-revalidate, max-age=0');
+        header('Pragma: no-cache');
+        header('Expires: Thu, 01 Jan 1970 00:00:00 GMT');
 
-    public function invoiceAction(): ResponseInterface
-    {
-        return $this->htmlResponse();
+        $sessionId = $GLOBALS['TYPO3_REQUEST']->getQueryParams()['session_id'] ?? null;
+        if (!$sessionId) {
+            return $this->htmlResponse('No session ID provided.');
+        }
+        $stripe = new \Stripe\StripeClient($_ENV['STRIPE_PK']);
+
+        try {
+            $existingOrder = $this->orderRepository->findBySessionId($sessionId);
+            if ($existingOrder->count() > 0) {
+                return $this->htmlResponse('Order already exists.');
+            }
+
+            $session = $stripe->checkout->sessions->retrieve($sessionId);
+            $paymentIntent = $stripe->paymentIntents->retrieve($session->payment_intent);
+            $lineItems = $stripe->checkout->sessions->allLineItems($sessionId);
+
+            $payment = new Payment();
+            $payment->setTransactionId($paymentIntent->id);
+            $payment->setMethod($session->payment_method_types[0]);
+            $payment->setStatus($paymentIntent->status);
+            $payment->setAmount($session->amount_total / 100);
+            $payment->setDate((new \DateTime())->setTimestamp($paymentIntent->created));
+
+            $order = new Order();
+            $order->setCustomer($this->frontendUser);
+            $order->setDate(new \DateTime());
+            $order->setStatus('completed');
+            $order->setTotalAmount($session->amount_total / 100);
+            $order->setPid(53);
+            $order->setSessionId($sessionId);
+
+            $payment->setOrder($order);
+            $order->setPayment($payment);
+
+            foreach ($lineItems->data as $item) {
+                $item->product = $stripe->products->retrieve($item->price->product);
+
+                $productUid = $item->product->metadata->product_uid ?? null;
+                if (!$productUid) {
+                    throw new \Exception('Product UID not found in metadata.');
+                }
+
+                $product = $this->productRepository->findByUid($productUid);
+                if (!$product) {
+                    throw new \Exception("Product with UID {$productUid} not found in the database.");
+                }
+
+                $orderProduct = new OrderProduct();
+                $orderProduct->setProduct($product);
+                $orderProduct->setQuantity($item->quantity);
+                $orderProduct->setPrice($item->price->unit_amount / 100);
+                $orderProduct->setTotalPrice(($item->price->unit_amount / 100) * $item->quantity);
+                $orderProduct->setOrder($order);
+
+                $this->orderProductRepository->add($orderProduct);
+            }
+
+            /** @var PersistenceManager $persistenceManager */
+            $persistenceManager = GeneralUtility::makeInstance(PersistenceManager::class);
+            $persistenceManager->persistAll();
+
+            $this->orderRepository->add($order);
+            $this->paymentRepository->add($payment);
+            $persistenceManager->persistAll();
+
+            setcookie('cart', '', time() - 3600, '/');
+
+            $this->view->assignMultiple([
+                'pageName' => 'Order Summary',
+                'user' => $this->frontendUser,
+                'avatar' => $this->frontendUser->getFirstName()[0] . $this->frontendUser->getLastName()[0],
+                'siteUrl' => $this->siteUrl,
+                'session' => $session,
+                'lineItems' => $lineItems,
+                'paymentIntent' => $paymentIntent
+            ]);
+
+            return $this->htmlResponse();
+        } catch (\Exception $e) {
+            return $this->htmlResponse('Error: ' . $e->getMessage());
+        }
     }
 }

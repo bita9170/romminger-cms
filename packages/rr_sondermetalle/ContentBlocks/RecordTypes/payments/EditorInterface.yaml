@@ -23,15 +23,17 @@ fields:
     renderType: selectSingle
     minitems: 1
     items:
-      - ["Available", "available"]
-      - ["Out of Stock", "out_of_stock"]
+      - ["Credit Card", "card"]
+      - ["Klarna", "klarna"]
+      - ["Paypal", "paypal"]
+      - ["Invoice", "invoice"]
   - identifier: status
     type: Select
     renderType: selectSingle
     minitems: 1
     items:
-      - ["Available", "available"]
-      - ["Out of Stock", "out_of_stock"]
+      - ["Succeeded", "succeeded"]
+      - ["Not pay", "not_pay"]
   - identifier: transaction_id
     type: Text
     readOnly: false

@@ -49,6 +49,9 @@ $GLOBALS['TYPO3_CONF_VARS']['RTE']['Presets']['rr_sondermetalle'] = 'EXT:rr_sond
     'RrSondermetalle',
     'Checkout',
     [
-        CheckoutController::class => 'cart, checkout, payment, success, cancel, invoice',
+        CheckoutController::class => 'cart, checkout, payment, success',
+    ],
+    [
+        CheckoutController::class => 'cart, checkout, payment, success',
     ]
 );

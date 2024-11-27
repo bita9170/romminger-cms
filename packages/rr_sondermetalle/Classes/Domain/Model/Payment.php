@@ -61,7 +61,7 @@ class Payment extends AbstractEntity
         return $this->date;
     }
 
-    public function setDate(string $date): void
+    public function setDate(\Datetime $date): void
     {
         $this->date = $date;
     }
