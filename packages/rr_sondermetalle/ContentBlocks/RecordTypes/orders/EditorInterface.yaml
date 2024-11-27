@@ -1,7 +1,7 @@
 name: romminger/orders
 table: tx_romminger_orders
 prefixFields: false
-labelField: customer
+labelField: [customer, date, status]
 security:
   ignorePageTypeRestriction: true
 fields:
@@ -11,20 +11,23 @@ fields:
     minitems: 1
     maxitems: 1
     foreign_table: fe_users
+    readOnly: true
   - identifier: date
     type: DateTime
     format: datetime
     dbType: datetime
+    readOnly: true
   - identifier: total_amount
     type: Number
     format: decimal
+    readOnly: true
   - identifier: status
     type: Select
     renderType: selectSingle
     items:
-      - ["Available", "available"]
-      - ["Out of Stock", "out_of_stock"]
-
+      - ["Completed", "completed"]
+      - ["Not Completed", "not_completed"]
+    readOnly: true
   - identifier: products
     type: Collection
     foreign_table: tx_romminger_ordersproducts
@@ -36,6 +39,7 @@ fields:
       enabledControls:
         new: false
         delete: false
+    readOnly: true
   - identifier: payment
     type: Collection
     foreign_table: tx_romminger_payments
@@ -44,3 +48,10 @@ fields:
     appearance:
       collapseAll: true
       expandSingle: true
+      enabledControls:
+        new: false
+        delete: false
+    readOnly: true
+  - identifier: session_id
+    type: Text
+    readOnly: true

@@ -3,7 +3,6 @@
 namespace Romminger\RrSondermetalle\Domain\Model;
 
 use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
-use TYPO3\CMS\Extbase\Domain\Model\FileReference;
 use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 use Romminger\RrSondermetalle\Domain\Model\Payment;
 use Romminger\RrSondermetalle\Domain\Model\Customer;
@@ -33,6 +32,8 @@ class Order extends AbstractEntity
      * @var Payment|null
      */
     protected $payment;
+
+    protected string $sessionId;
 
     public function getCustomer(): Customer
     {
@@ -98,5 +99,15 @@ class Order extends AbstractEntity
     public function setPayment(?Payment $payment): void
     {
         $this->payment = $payment;
+    }
+
+    public function getSessionId(): string
+    {
+        return $this->sessionId;
+    }
+
+    public function setSessionId(string $sessionId): void
+    {
+        $this->sessionId = $sessionId;
     }
 }

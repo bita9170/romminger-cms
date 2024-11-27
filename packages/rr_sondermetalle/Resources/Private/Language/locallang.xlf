@@ -113,10 +113,10 @@
             <trans-unit id="frontend.checkout.paymentMethod">
                 <source>Payment Method</source>
             </trans-unit>
-            <trans-unit id="frontend.checkout.creditCard">
+            <trans-unit id="frontend.checkout.card">
                 <source>Credit Card</source>
             </trans-unit>
-            <trans-unit id="frontend.checkout.creditCardText">
+            <trans-unit id="frontend.checkout.cardText">
                 <source>Pay with your credit card</source>
             </trans-unit>
             <trans-unit id="frontend.checkout.klarna">
@@ -161,6 +161,16 @@
             <trans-unit id="frontend.checkout.btnPayment">
                 <source>Continue to payment</source>
             </trans-unit>
+            <trans-unit id="frontend.checkout.continueShopping">
+                <source>Continue Shopping</source>
+            </trans-unit>
+            <trans-unit id="frontend.checkout.success">
+                <source>Thanks for your order!</source>
+            </trans-unit>
+            <trans-unit id="frontend.checkout.transactionDate">
+                <source>Transaction Date</source>
+            </trans-unit>
+
         </body>
     </file>
 </xliff>

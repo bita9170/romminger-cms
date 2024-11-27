@@ -114,10 +114,10 @@
              <trans-unit id="frontend.checkout.paymentMethod">
                 <target>Zahlungsmethod</target>
             </trans-unit>
-            <trans-unit id="frontend.checkout.creditCard">
+            <trans-unit id="frontend.checkout.card">
                 <target>Kreditkarte</target>
             </trans-unit>
-            <trans-unit id="frontend.checkout.creditCardText">
+            <trans-unit id="frontend.checkout.cardText">
                 <target>Bezahlen Sie mit Ihrer Kreditkarte</target>
             </trans-unit>
             <trans-unit id="frontend.checkout.klarna">
@@ -161,6 +161,15 @@
             </trans-unit>
             <trans-unit id="frontend.checkout.btnPayment">
                 <target>Weiter zur Zahlung</target>
+            </trans-unit>
+            <trans-unit id="frontend.checkout.continueShopping">
+                <target>Weiter einkaufen</target>
+            </trans-unit>
+            <trans-unit id="frontend.checkout.success">
+                <target>Vielen Dank für Ihre Bestellung!</target>
+            </trans-unit>
+            <trans-unit id="frontend.checkout.transactionDate">
+                <target>Transaktionsdatum</target>
             </trans-unit>
         </body>
     </file>

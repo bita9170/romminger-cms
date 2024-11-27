@@ -76,7 +76,7 @@ plugin.tx_rrsondermetalle {
         layoutRootPaths.0 = EXT:rr_sondermetalle/Resources/Private/Layouts/
     }
     settings {
-        no_cache = 1
+        noCache = 1
     }
 }
 
@@ -93,3 +93,12 @@ plugin.tx_sfregister.settings {
         staticInfoCountry.partial = Textfield
     }
 }
+
+plugin.tx_felogin_pi1 {
+    redirectMode = login
+    redirectFirstMethod = 1
+}
+
+[globalVar = TSFE:id = 56]
+    config.no_cache = 1
+[global]
