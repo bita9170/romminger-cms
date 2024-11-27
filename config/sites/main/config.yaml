@@ -70,6 +70,8 @@ routeEnhancers:
         _controller: "Checkout::checkout"
       - routePath: "/success"
         _controller: "Checkout::success"
+      - routePath: "/invoice"
+        _controller: "Checkout::invoice"
     defaultController: "checkout::cart"
 websiteTitle: RR-Sondermetalle
 imports:

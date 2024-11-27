@@ -5,13 +5,9 @@ namespace Romminger\RrSondermetalle\Controller;
 use Psr\Http\Message\ResponseInterface;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Core\Country\CountryProvider;
-use Psr\Http\Message\ServerRequestInterface;
-
 use TYPO3\CMS\Core\Site\Entity\SiteLanguage;
-use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
 use Romminger\RrSondermetalle\Domain\Model\Order;
 use Romminger\RrSondermetalle\Domain\Model\Payment;
-use Romminger\RrSondermetalle\Domain\Model\Product;
 use Romminger\RrSondermetalle\Domain\Model\Customer;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
 use Romminger\RrSondermetalle\Domain\Model\OrderProduct;
@@ -65,7 +61,7 @@ class CheckoutController extends ActionController
 
         $this->view->assignMultiple([
             'carts' => $this->carts,
-            'pageName' => 'Cart',
+            'pageName' => 'frontend.checkout.cart',
             'user' => $this->frontendUser,
             'avatar' => $this->frontendUser->getFirstName()[0] . $this->frontendUser->getLastName()[0],
             'siteUrl' => $this->siteUrl,
@@ -88,7 +84,7 @@ class CheckoutController extends ActionController
 
         $this->view->assignMultiple([
             'carts' => $this->carts,
-            'pageName' => 'Checkout',
+            'pageName' => 'frontend.checkout.checkout',
             'user' => $this->frontendUser,
             'avatar' => $this->frontendUser->getFirstName()[0] . $this->frontendUser->getLastName()[0],
             'siteUrl' => $this->siteUrl
@@ -184,14 +180,29 @@ class CheckoutController extends ActionController
 
         $sessionId = $GLOBALS['TYPO3_REQUEST']->getQueryParams()['session_id'] ?? null;
         if (!$sessionId) {
-            return $this->htmlResponse('No session ID provided.');
+            $this->view->assignMultiple([
+                'pageName' => 'frontend.checkout.summary',
+                'user' => $this->frontendUser,
+                'avatar' => $this->frontendUser->getFirstName()[0] . $this->frontendUser->getLastName()[0],
+                'siteUrl' => $this->siteUrl,
+                'flashMessage' => 'errorSessionId',
+            ]);
+
+            return $this->htmlResponse();
         }
         $stripe = new \Stripe\StripeClient($_ENV['STRIPE_PK']);
 
         try {
             $existingOrder = $this->orderRepository->findBySessionId($sessionId);
             if ($existingOrder->count() > 0) {
-                return $this->htmlResponse('Order already exists.');
+                $this->view->assignMultiple([
+                    'pageName' => 'frontend.checkout.summary',
+                    'user' => $this->frontendUser,
+                    'avatar' => $this->frontendUser->getFirstName()[0] . $this->frontendUser->getLastName()[0],
+                    'siteUrl' => $this->siteUrl,
+                    'flashMessage' => 'errorAlready',
+                ]);
+                return $this->htmlResponse();
             }
 
             $session = $stripe->checkout->sessions->retrieve($sessionId);
@@ -250,7 +261,7 @@ class CheckoutController extends ActionController
             setcookie('cart', '', time() - 3600, '/');
 
             $this->view->assignMultiple([
-                'pageName' => 'Order Summary',
+                'pageName' => 'frontend.checkout.summary',
                 'user' => $this->frontendUser,
                 'avatar' => $this->frontendUser->getFirstName()[0] . $this->frontendUser->getLastName()[0],
                 'siteUrl' => $this->siteUrl,
@@ -263,5 +274,17 @@ class CheckoutController extends ActionController
         } catch (\Exception $e) {
             return $this->htmlResponse('Error: ' . $e->getMessage());
         }
+    }
+
+    public function invoiceAction(): ResponseInterface
+    {
+        $this->view->assignMultiple([
+            'pageName' => 'frontend.checkout.invoice',
+            'user' => $this->frontendUser,
+            'avatar' => $this->frontendUser->getFirstName()[0] . $this->frontendUser->getLastName()[0],
+            'siteUrl' => $this->siteUrl,
+        ]);
+
+        return $this->htmlResponse();
     }
 }

@@ -73,6 +73,11 @@
                 <source>Tungsten</source>
             </trans-unit>
 
+            <!-- Frontend shop -->
+            <trans-unit id="frontend.shop">
+                <source>Shop</source>
+            </trans-unit>
+
             <!-- Frontend checkout -->
             <trans-unit id="frontend.checkout.cart">
                 <source>Cart</source>
@@ -167,10 +172,18 @@
             <trans-unit id="frontend.checkout.success">
                 <source>Thanks for your order!</source>
             </trans-unit>
+            <trans-unit id="frontend.checkout.errorAlready">
+                <source>Order already exists.</source>
+            </trans-unit>
+            <trans-unit id="frontend.checkout.errorSessionId">
+                <source>No session ID provided.</source>
+            </trans-unit>
             <trans-unit id="frontend.checkout.transactionDate">
                 <source>Transaction Date</source>
             </trans-unit>
-
+            <trans-unit id="frontend.checkout.summary">
+                <source>Order summary</source>
+            </trans-unit>
         </body>
     </file>
 </xliff>
