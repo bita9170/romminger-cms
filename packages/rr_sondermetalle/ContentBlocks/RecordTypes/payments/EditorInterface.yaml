@@ -33,7 +33,7 @@ fields:
     minitems: 1
     items:
       - ["Succeeded", "succeeded"]
-      - ["Failed", "failed"]
+      - ["Canceled", "canceled"]
   - identifier: transaction_id
     type: Text
     readOnly: false

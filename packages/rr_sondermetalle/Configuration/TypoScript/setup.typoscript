@@ -103,7 +103,3 @@ plugin.tx_felogin_pi1 {
     redirectMode = login
     redirectFirstMethod = 1
 }
-
-[globalVar = TSFE:id = 56]
-    config.no_cache = 1
-[global]

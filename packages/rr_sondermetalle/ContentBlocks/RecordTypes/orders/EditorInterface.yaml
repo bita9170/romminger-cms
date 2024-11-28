@@ -1,10 +1,13 @@
 name: romminger/orders
 table: tx_romminger_orders
 prefixFields: false
-labelField: [customer, date, status]
+labelField: [order_id, date, status]
 security:
   ignorePageTypeRestriction: true
 fields:
+  - identifier: order_id
+    type: Text
+    readOnly: true
   - identifier: customer
     type: Select
     renderType: selectSingle
@@ -25,9 +28,9 @@ fields:
     type: Select
     renderType: selectSingle
     items:
-      - ["Completed", "completed"]
-      - ["Not Completed", "not_completed"]
-    readOnly: true
+      - ["Bezahlt", "paid"]
+      - ["Versendet", "shipped"]
+      - ["Zugestellt", "delivered"]
   - identifier: products
     type: Collection
     foreign_table: tx_romminger_ordersproducts

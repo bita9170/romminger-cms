@@ -182,7 +182,36 @@
                 <target>Transaktionsdatum</target>
             </trans-unit>
             <trans-unit id="frontend.checkout.summary">
-                <source>Bestellübersicht</source>
+                <target>Bestellübersicht</target>
+            </trans-unit>
+
+            <!-- Frontend order -->
+            <trans-unit id="frontend.orders">
+                <target>Bestellungen</target>
+            </trans-unit>           
+            <trans-unit id="frontend.order">
+                <target>Bestellung</target>
+            </trans-unit>
+            <trans-unit id="frontend.order.paid">
+                <target>Bezahlt</target>
+            </trans-unit>
+            <trans-unit id="frontend.order.shipped">
+                <target>Versendet</target>
+            </trans-unit>
+            <trans-unit id="frontend.order.delivered">
+                <target>Zugestellt</target>
+            </trans-unit>
+            <trans-unit id="frontend.order.status">
+                <target>Status</target>
+            </trans-unit>
+            <trans-unit id="frontend.order.viewOrderDetails">
+                <target>Bestelldetails anzeigen</target>
+            </trans-unit>
+            <trans-unit id="frontend.order.buyAgain">
+                <target>Nochmals kaufen</target>
+            </trans-unit>
+            <trans-unit id="frontend.order.orderOverview">
+                <target>Bestellübersicht</target>
             </trans-unit>
         </body>
     </file>

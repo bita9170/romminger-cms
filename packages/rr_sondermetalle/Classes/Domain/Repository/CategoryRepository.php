@@ -23,7 +23,10 @@ class CategoryRepository extends Repository
     public function findRootCategoriesWithSubCategories()
     {
         $query = $this->createQuery();
-        $query->matching($query->equals('parentCategory', 0));
+        $query->matching($query->logicalOr(
+            $query->equals('parentCategory', 0),
+            $query->equals('parentCategory', null)
+        ));
         $rootCategories = $query->execute();
 
         foreach ($rootCategories as $category) {
@@ -38,8 +41,12 @@ class CategoryRepository extends Repository
      *
      * @param \Romminger\RrSondermetalle\Domain\Model\Category $category
      */
-    private function loadSubCategories($category): void
+    private function loadSubCategories($category, int $depth = 3, int $currentLevel = 1): void
     {
+        if ($currentLevel > $depth) {
+            return;
+        }
+
         $query = $this->createQuery();
         $query->matching($query->equals('parentCategory', $category->getUid()));
         $subCategoriesResult = $query->execute();
@@ -52,7 +59,7 @@ class CategoryRepository extends Repository
         $category->setSubCategories($subCategories);
 
         foreach ($subCategories as $subCategory) {
-            $this->loadSubCategories($subCategory); // Recursive call
+            $this->loadSubCategories($subCategory, $depth, $currentLevel + 1);
         }
     }
 
@@ -69,7 +76,7 @@ class CategoryRepository extends Repository
         return $allSubCategories;
     }
 
-    private function fetchSubCategoriesRecursive($category, &$allSubCategories): void
+    private function fetchSubCategoriesRecursive(Category $category, array &$allSubCategories): void
     {
         $query = $this->createQuery();
         $query->matching($query->equals('parentCategory', $category->getUid()));
