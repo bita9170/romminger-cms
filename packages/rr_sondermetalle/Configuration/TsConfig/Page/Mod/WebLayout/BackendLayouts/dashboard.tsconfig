@@ -4,7 +4,7 @@
 mod {
     web_layout {
         BackendLayouts {
-            profile {
+            dashboard {
                 title = LLL:EXT:rr_sondermetalle/Resources/Private/Language/locallang_be.xlf:backend_layout.profile
                 config {
                     backend_layout {
