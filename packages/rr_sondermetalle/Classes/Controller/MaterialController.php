@@ -5,9 +5,7 @@ namespace Romminger\RrSondermetalle\Controller;
 use Psr\Http\Message\ResponseInterface;
 use Romminger\RrSondermetalle\Domain\Model\Material;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
-use TYPO3\CMS\Extensionmanager\Controller\AbstractController;
 use Romminger\RrSondermetalle\Domain\Repository\MaterialRepository;
-use TYPO3\CMS\Backend\Attribute\Controller;
 
 class MaterialController extends ActionController
 {

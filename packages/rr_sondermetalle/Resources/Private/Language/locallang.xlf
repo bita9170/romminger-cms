@@ -184,6 +184,35 @@
             <trans-unit id="frontend.checkout.summary">
                 <source>Order summary</source>
             </trans-unit>
+
+             <!-- Frontend order -->
+            <trans-unit id="frontend.orders">
+                <source>Orders</source>
+            </trans-unit>
+            <trans-unit id="frontend.order">
+                <source>Order</source>
+            </trans-unit>
+            <trans-unit id="frontend.order.paid">
+                <source>Paid</source>
+            </trans-unit>
+            <trans-unit id="frontend.order.shipped">
+                <source>Shipped</source>
+            </trans-unit>
+            <trans-unit id="frontend.order.delivered">
+                <source>Delivered</source>
+            </trans-unit>
+            <trans-unit id="frontend.order.status">
+                <source>Status</source>
+            </trans-unit>
+            <trans-unit id="frontend.order.viewOrderDetails">
+                <source>View order details</source>
+            </trans-unit>
+            <trans-unit id="frontend.order.buyAgain">
+                <source>Buy again</source>
+            </trans-unit>
+            <trans-unit id="frontend.order.orderOverview">
+                <source>Order overview</source>
+            </trans-unit>
         </body>
     </file>
 </xliff>

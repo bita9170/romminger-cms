@@ -4,6 +4,7 @@ use Romminger\RrSondermetalle\Controller\CategoryController;
 use Romminger\RrSondermetalle\Controller\CheckoutController;
 use Romminger\RrSondermetalle\Controller\ProductController;
 use Romminger\RrSondermetalle\Controller\MaterialController;
+use Romminger\RrSondermetalle\Controller\OrderController;
 
 defined('TYPO3') or die('Access denied.');
 /***************
@@ -53,5 +54,13 @@ $GLOBALS['TYPO3_CONF_VARS']['RTE']['Presets']['rr_sondermetalle'] = 'EXT:rr_sond
     ],
     [
         CheckoutController::class => 'cart, checkout, payment, success, invoice',
+    ]
+);
+
+\TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
+    'RrSondermetalle',
+    'Order',
+    [
+        OrderController::class => 'list, show',
     ]
 );

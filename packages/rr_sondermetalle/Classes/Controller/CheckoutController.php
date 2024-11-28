@@ -223,6 +223,8 @@ class CheckoutController extends ActionController
             $order->setTotalAmount($session->amount_total / 100);
             $order->setPid(53);
             $order->setSessionId($sessionId);
+            $order->setOrderId($this->generateOrderId());
+            $order->setSysLanguageUid(-1);
 
             $payment->setOrder($order);
             $order->setPayment($payment);
@@ -267,7 +269,8 @@ class CheckoutController extends ActionController
                 'siteUrl' => $this->siteUrl,
                 'session' => $session,
                 'lineItems' => $lineItems,
-                'paymentIntent' => $paymentIntent
+                'paymentIntent' => $paymentIntent,
+                'order' => $order
             ]);
 
             return $this->htmlResponse();
@@ -286,5 +289,22 @@ class CheckoutController extends ActionController
         ]);
 
         return $this->htmlResponse();
+    }
+
+    private function generateOrderId(): string
+    {
+        $characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+        $length = 7;
+
+        do {
+            $orderId = '';
+            for ($i = 0; $i < $length; $i++) {
+                $orderId .= $characters[random_int(0, strlen($characters) - 1)];
+            }
+
+            $existingOrder = $this->orderRepository->findByOrderId($orderId);
+        } while ($existingOrder !== null);
+
+        return $orderId;
     }
 }

@@ -1,0 +1,126 @@
+<section class="container bg-white py-4 antialiased md:py-8 px-0">
+  <div class="px-4 md:px-0">
+    <div
+      class="min-w-0 flex flex-col max-w-2xl flex-1 gap-8 mx-auto border border-gray-200 p-4 rounded shadow-sm divide-y-2 divide-gray-200 divide-dashed"
+    >
+      <div class="grid grid-col-1 md:grid-cols-3">
+        <div class="delivery-address">
+          <div class="text-xl font-semibold text-gray-900">
+            <f:translate key="frontend.order" />:
+          </div>
+          <div class="font-bold">{order.orderId}</div>
+          <div>
+            <f:format.date format="%d. %B %Y">{order.date}</f:format.date>
+          </div>
+        </div>
+
+        <div class="delivery-address">
+          <div class="text-xl font-semibold text-gray-900">
+            <f:translate key="frontend.checkout.deliveryAddress" />:
+          </div>
+          <div>{metadata.customer_name}</div>
+          <div>{metadata.address_line1}</div>
+          <div>{metadata.address_zip} {metadata.address_city}</div>
+          <div><f:translate key="{metadata.country}" /></div>
+        </div>
+
+        <div class="payment-method">
+          <div class="text-xl font-semibold text-gray-900">
+            <f:translate key="frontend.checkout.paymentMethod" />:
+          </div>
+          <div>
+            <f:translate key="frontend.checkout.{order.payment.method}" />
+          </div>
+          <div>
+            <f:translate key="frontend.order.status" />:
+            <f:translate key="frontend.order.{order.status}" />
+          </div>
+        </div>
+      </div>
+      <div class="orders-article pt-4 flex flex-col space-y-4">
+        <div class="text-xl font-semibold text-gray-900">
+          <f:translate key="frontend.checkout.article" />:
+        </div>
+        <f:for each="{order.products}" as="product">
+          <div
+            class="flex items-center justify-between bg-gray-100 p-4 rounded-md"
+          >
+            <a href="/shop/product/{product.product.name}">
+              <f:image
+                image="{product.product.images.0}"
+                alt="{product.product.name}"
+                class="w-20 h-20 object-cover rounded"
+                loading="lazy"
+              />
+            </a>
+            <div class="flex-1 ml-4">
+              <p class="text-gray-800 font-bold">
+                <a href="/shop/product/{product.product.name}">
+                  {product.product.name}
+                </a>
+              </p>
+              <p class="text-gray-600 text-sm font-semibold">
+                {product.quantity} x
+                <f:format.currency currencySign="€"
+                  >{product.price}</f:format.currency
+                >
+              </p>
+            </div>
+            <p class="font-bold text-gray-800">
+              <f:format.currency currencySign="€"
+                >{product.totalPrice}</f:format.currency
+              >
+            </p>
+          </div>
+        </f:for>
+      </div>
+
+      <div class="order-summary pt-4">
+        <div class="text-xl font-semibold text-gray-900">
+          <f:translate key="frontend.order.orderOverview" />:
+        </div>
+        <dl class="flex items-center justify-between gap-4">
+          <dt class="text-base font-normal text-gray-500">
+            <f:translate key="frontend.checkout.article" />
+          </dt>
+          <dd class="text-base font-medium text-gray-900">
+            <f:format.currency currencySign="€"
+              >{totalPriceSum}</f:format.currency
+            >
+          </dd>
+        </dl>
+
+        <dl class="flex items-center justify-between gap-4">
+          <dt class="text-base font-normal text-gray-500 dark:text-gray-400">
+            <f:translate key="frontend.checkout.vat" />
+          </dt>
+          <dd class="text-base font-medium text-gray-900 dark:text-white">
+            <f:format.currency currencySign="€"
+              >{order.totalAmount - totalPriceSum}</f:format.currency
+            >
+          </dd>
+        </dl>
+
+        <dl class="flex items-center justify-between gap-4">
+          <dt class="text-base font-normal text-gray-500 dark:text-gray-400">
+            <f:translate key="frontend.checkout.shipping" />
+          </dt>
+          <dd class="text-base font-medium text-gray-900 dark:text-white">
+            <f:format.currency currencySign="€">0</f:format.currency>
+          </dd>
+        </dl>
+
+        <dl class="flex items-center justify-between gap-4">
+          <dt class="text-base font-bold text-gray-900">
+            <f:translate key="frontend.checkout.total" />
+          </dt>
+          <dd class="text-base font-bold text-gray-900">
+            <f:format.currency currencySign="€"
+              >{order.totalAmount}</f:format.currency
+            >
+          </dd>
+        </dl>
+      </div>
+    </div>
+  </div>
+</section>
