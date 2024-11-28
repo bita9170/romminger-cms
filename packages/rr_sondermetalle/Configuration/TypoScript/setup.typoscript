@@ -91,6 +91,10 @@ plugin.tx_sfregister.settings {
 
     fields.configuration {
         staticInfoCountry.partial = Textfield
+
+        email {
+            placeholder = youremail@example.com
+        }
     }
 }
 
