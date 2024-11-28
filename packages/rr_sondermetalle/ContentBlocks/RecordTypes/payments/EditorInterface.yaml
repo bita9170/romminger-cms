@@ -1,7 +1,7 @@
 name: romminger/payments
 table: tx_romminger_payments
 prefixFields: false
-labelField: transaction_id
+labelField: [method, transaction_id]
 security:
   ignorePageTypeRestriction: true
 fields:
@@ -33,7 +33,7 @@ fields:
     minitems: 1
     items:
       - ["Succeeded", "succeeded"]
-      - ["Not pay", "not_pay"]
+      - ["Failed", "failed"]
   - identifier: transaction_id
     type: Text
     readOnly: false

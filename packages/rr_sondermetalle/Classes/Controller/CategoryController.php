@@ -79,6 +79,10 @@ class CategoryController extends ActionController
             $frontendUser = $this->customerRepository->findByUid($loggedUserUid);
         }
 
+        if ($$frontendUser) {
+            $avatar = $frontendUser->getFirstName()[0] . $frontendUser->getLastName()[0];
+        }
+
         $this->view->assignMultiple([
             'categories' => $categories,
             'activeCategory' => $activeCategory,
@@ -92,9 +96,9 @@ class CategoryController extends ActionController
             'lengths' => $result['lengths'],
             'filter' => $filter,
             'allMaterials' => $allMaterials,
-            'pageName' => 'Shop',
+            'pageName' => 'frontend.shop',
             'user' => $frontendUser,
-            'avatar' => $frontendUser->getFirstName()[0] . $frontendUser->getLastName()[0]
+            'avatar' => $avatar ? $avatar : '',
         ]);
 
 

@@ -73,6 +73,10 @@
                 <target>Wolfram</target>
             </trans-unit>
 
+            <!-- Frontend shop -->
+            <trans-unit id="frontend.shop">
+                <target>Shop</target>
+            </trans-unit>
             
             <!-- Frontend checkout -->
             <trans-unit id="frontend.checkout.cart">
@@ -168,8 +172,17 @@
             <trans-unit id="frontend.checkout.success">
                 <target>Vielen Dank für Ihre Bestellung!</target>
             </trans-unit>
+            <trans-unit id="frontend.checkout.errorAlready">
+                <target>Bestellung existiert bereits.</target>
+            </trans-unit>
+            <trans-unit id="frontend.checkout.errorSessionId">
+                <target>Keine Session-ID angegeben.</target>
+            </trans-unit>
             <trans-unit id="frontend.checkout.transactionDate">
                 <target>Transaktionsdatum</target>
+            </trans-unit>
+            <trans-unit id="frontend.checkout.summary">
+                <source>Bestellübersicht</source>
             </trans-unit>
         </body>
     </file>
