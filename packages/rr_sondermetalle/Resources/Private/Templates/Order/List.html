@@ -1,0 +1,56 @@
+<section class="container bg-white py-4 antialiased md:py-8 px-0">
+  <div class="px-4 md:px-0">
+    <div
+      class="min-w-0 flex flex-col flex-1 max-w-2xl gap-8 mx-auto border border-gray-200 p-4 rounded shadow-sm divide-y-2 divide-gray-200 divide-dashed"
+    >
+      <div class="space-y-4 divide-y divide-gray-200">
+        <f:for each="{orders}" as="order">
+          <div class="pt-4 first:!pt-0">
+            <div class="flex flex-col md:flex-row justify-between">
+              <div>
+                <div class="text-lg font-semibold text-gray-900">
+                  <f:translate key="frontend.order" />:
+                  <f:link.action
+                    action="show"
+                    controller="Order"
+                    arguments="{orderId : order.orderId}"
+                    type="button"
+                    >{order.orderId}</f:link.action
+                  >
+                </div>
+                <div class="order-status">
+                  <f:translate key="frontend.order.status" />:
+                  <f:translate key="frontend.order.{order.status}" />
+                </div>
+              </div>
+              <div class="text-sm">
+                <f:format.date format="%d. %B %Y">{order.date}</f:format.date>
+              </div>
+            </div>
+
+            <div
+              class="order-footer flex flex-col md:flex-row justify-between mt-4"
+            >
+              <f:link.action
+                action="show"
+                type="button"
+                arguments="{orderId : order.orderId}"
+                class="btn btn-primary"
+              >
+                <f:translate key="frontend.order.viewOrderDetails" />
+              </f:link.action>
+
+              <f:link.action
+                action="list"
+                controller="Category"
+                class="btn btn-secondary"
+              >
+                <f:translate key="frontend.order.buyAgain" />
+              </f:link.action>
+            </div>
+          </div>
+        </f:for>
+      </div>
+    </div>
+  </div>
+</section>
