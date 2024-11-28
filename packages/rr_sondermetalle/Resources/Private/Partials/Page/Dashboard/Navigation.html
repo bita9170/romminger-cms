@@ -1,0 +1,142 @@
+<nav
+  class="relative flex w-full flex-wrap items-center justify-between bg-secondary shadow-dark-mild"
+  data-twe-navbar-ref
+>
+  <div class="container w-full px-2 md:px-0">
+    <div class="visible items-center flex justify-between h-16">
+      <ul>
+        <li>
+          <div
+            class="px-2 md:px-0 font-bold text-xl text-primary transition duration-200 hover:text-black/80 hover:ease-in-out focus:text-black/80 active:text-black/80 motion-reduce:transition-none lg:px-2 uppercase cursor-default"
+          >
+            {pageTitle}
+          </div>
+        </li>
+      </ul>
+
+      <div class="flex items-center space-x-2">
+        <f:if condition="{user}">
+          <f:then>
+            <f:if condition="{user.avatar}">
+              <f:then>
+                <f:image
+                  image="{user.avatar}"
+                  id="avatarButton"
+                  type="button"
+                  data-dropdown-toggle="userDropdown"
+                  data-dropdown-placement="bottom-start"
+                  class="w-10 h-10 rounded-full cursor-pointer"
+                  alt="User dropdown"
+                />
+              </f:then>
+              <f:else>
+                <div
+                  type="button"
+                  data-dropdown-toggle="userDropdown"
+                  data-dropdown-placement="bottom-start"
+                  class="relative inline-flex items-center justify-center w-10 h-10 overflow-hidden bg-primary rounded-full"
+                >
+                  <span class="font-medium text-white"
+                    >{user.avatarFallback}</span
+                  >
+                </div></f:else
+              >
+            </f:if>
+            <!-- Avatar Dropdown menu -->
+            <div
+              id="userDropdown"
+              class="z-50 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-52"
+            >
+              <div class="px-4 py-3 text-sm text-gray-900 dark:text-white">
+                <div>{user.first_name} {user.last_name}</div>
+                <div class="font-medium truncate">{user.email}</div>
+              </div>
+              <ul
+                class="py-2 text-sm text-gray-700 dark:text-gray-200"
+                aria-labelledby="avatarButton"
+              >
+                <li>
+                  <a
+                    href="/dashboard"
+                    class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                    >Dashboard</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="/profile"
+                    class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                    >Profile</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="/orders"
+                    class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                    >Orders</a
+                  >
+                </li>
+              </ul>
+              <div class="py-1">
+                <form method="post" target="_top" action="/login">
+                  <input
+                    type="hidden"
+                    name="__referrer[@extension]"
+                    value="Felogin"
+                  />
+                  <input
+                    type="hidden"
+                    name="__referrer[@controller]"
+                    value="Login"
+                  />
+                  <input
+                    type="hidden"
+                    name="__referrer[@action]"
+                    value="logout"
+                  />
+                  <input
+                    type="hidden"
+                    name="__referrer[arguments]"
+                    value="YToxOntzOjE4OiJyZWRpcmVjdFBhZ2VMb2dvdXQiO3M6MjoiMzUiO30=f2ec9f9f422b7103a9ae078d5c9e65faccee91c2"
+                  />
+                  <input
+                    type="hidden"
+                    name="__referrer[@request]"
+                    value='{"@extension":"Felogin","@controller":"Login","@action":"logout"}817b9e2f7ed6b6d47ad014d41bf3ad26d1f816ab'
+                  />
+                  <input
+                    type="hidden"
+                    name="__trustedProperties"
+                    value='{"submit":1,"logintype":1}1b7068f9c2a74083d33e397412a2cec55fe581ac'
+                  />
+
+                  <input
+                    id="tx-felogin-input-logout"
+                    type="submit"
+                    value="{f:translate(key: 'logout', extensionName:'Felogin')}"
+                    name="submit"
+                    class="w-full text-start block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                  />
+
+                  <input type="hidden" name="logintype" value="logout" />
+                </form>
+              </div>
+            </div>
+          </f:then>
+          <f:else>
+            <f:link.page
+              pageUid="35"
+              class="inline-block rounded bg-primary px-6 pb-2 pt-2.5 font-semibold uppercase leading-normal text-white shadow-primary-3 transition duration-150 ease-in-out hover:bg-primary-accent-300 hover:shadow-primary-2 focus:bg-primary-accent-300 focus:shadow-primary-2 focus:outline-none focus:ring-0 active:bg-primary-600 active:shadow-primary-2 motion-reduce:transition-none"
+              >Login</f:link.page
+            >
+            <f:link.page
+              pageUid="37"
+              class="hidden md:inline-block rounded px-6 pb-2 pt-2.5 font-semibold uppercase leading-normal text-primary bg-white hover:text-primary-600 focus:text-primary-600 focus:outline-none focus:ring-0 active:text-primary-700"
+              >Sign up for free</f:link.page
+            >
+          </f:else>
+        </f:if>
+      </div>
+    </div>
+  </div>
+</nav>
