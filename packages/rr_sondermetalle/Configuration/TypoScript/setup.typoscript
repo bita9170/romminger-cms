@@ -43,6 +43,11 @@ page {
                 orderBy = uid ASC
                 as = materials
             }
+
+            1732778476 = Romminger\RrSondermetalle\DataProcessing\UserDataProcessor
+            1732778476 {
+                as = user
+            }
         }
 
         variables {
