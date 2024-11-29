@@ -9,33 +9,59 @@
       action="preview"
       name="user"
       id="sfrForm"
-      class="px-3 border border-gray-200 rounded p-4 shadow-sm"
+      class="w-full max-w-4xl mx-auto bg-white border border-gray-200 rounded p-6 shadow-sm"
       object="{user}"
       enctype="multipart/form-data"
     >
       <f:render partial="FormErrors" arguments="{for: 'user'}" />
       <f:render partial="FieldError" arguments="{field: 'uid'}" />
 
-      <div class="form-row">
+      <div class="form-row grid grid-cols-1 gap-6 md:grid-cols-2">
         <f:for
           each="{settings.fields.selected}"
           as="fieldName"
           iteration="iteration"
         >
-          <f:alias
-            map="{options: '{settings.fields.configuration.{fieldName}}'}"
-          >
-            <f:render
-              partial="Form/{options.partial}"
-              arguments="{user: user, fieldName: fieldName, options: options, settings: settings, iteration: iteration}"
-            />
-          </f:alias>
+          <f:switch expression="{fieldName}">
+            <f:case value="title">
+              <f:variable name="divClass">md:col-span-2</f:variable>
+            </f:case>
+            <f:case value="email">
+              <f:variable name="divClass">md:col-span-2</f:variable>
+            </f:case>
+            <f:case value="company">
+              <f:variable name="divClass">md:col-span-2</f:variable>
+            </f:case>
+            <f:case value="privacy">
+              <f:variable name="divClass">md:col-span-2</f:variable>
+            </f:case>
+            <f:case value="update">
+              <f:variable name="divClass">md:col-span-2</f:variable>
+            </f:case>
+
+            <f:defaultCase>
+              <f:variable name="divClass"></f:variable>
+            </f:defaultCase>
+          </f:switch>
+
+          <div class="{divClass}">
+            <f:alias
+              map="{options: '{settings.fields.configuration.{fieldName}}'}"
+            >
+              <f:render
+                partial="Form/{options.partial}"
+                arguments="{user: user, fieldName: fieldName, options: options, settings: settings, iteration: iteration}"
+              />
+            </f:alias>
+          </div>
         </f:for>
       </div>
-    </f:form>
 
-    <div class="mandatory">
-      <f:format.raw><f:translate id="info_mandatory_fields" /></f:format.raw>
-    </div>
+      <div class="mt-4 text-sm text-gray-500">
+        <f:format.raw>
+          <f:translate id="info_mandatory_fields" />
+        </f:format.raw>
+      </div>
+    </f:form>
   </f:section>
 </html>
