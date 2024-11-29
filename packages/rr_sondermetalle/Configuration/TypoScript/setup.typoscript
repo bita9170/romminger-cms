@@ -97,6 +97,10 @@ plugin.tx_sfregister.settings {
     fields.configuration {
         staticInfoCountry.partial = Textfield
 
+        username {
+            placeholder = erika.m123
+        }
+
         email {
             placeholder = youremail@example.com
         }
@@ -108,6 +112,36 @@ plugin.tx_sfregister.settings {
         lastName {
             placeholder = Mustermann
         }
+
+        company {
+            placeholder = Muster GmbH
+        }
+
+        address {
+            placeholder = Musterstraße 1
+        }
+
+        zip {
+            placeholder = 12345
+        }
+
+        city {
+            placeholder = Musterstadt
+        }
+
+        mobilephone {
+            placeholder = 0123456789
+        }
+
+        telephone {
+            placeholder = 0123456789
+        }
+
+        staticInfoCountry {
+            placeholder = Deutschland
+        }
+
+       
     }    
 }
 

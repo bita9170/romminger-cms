@@ -4,25 +4,24 @@
 >
   <f:layout name="LoggedOut" />
 
-  <f:section name="Main">    
-    <p class="text-2xl lg:text-3xl mb-2 font-bold text-center">
+  <f:section name="Main">
+    <f:form
+    action="preview"
+    name="user"
+    id="sfrForm"
+    class="w-full max-w-4xl mx-auto bg-white border border-gray-200 rounded p-4 shadow-sm"
+    object="{user}"
+    enctype="multipart/form-data"
+    >
+    <p class="text-2xl lg:text-3xl mb-2 font-bold text-start py-2 pb-4">
       <f:translate
         key="frontend.register_prompt_link"
         extensionName="rr_sondermetalle"
       />
     </p>
-    <p class="text-sm font-semibold text-center mb-6 ml-1">
+    <!-- <p class="text-sm font-semibold text-start mb-6 ml-1">
       <f:translate key="register.subtitle" extensionName="rr_sondermetalle" />
-    </p>
-    <!-- box -->
-    <f:form
-      action="preview"
-      name="user"
-      id="sfrForm"
-      class="w-full max-w-4xl mx-auto bg-white border border-gray-200 rounded p-4 shadow-sm"
-      object="{user}"
-      enctype="multipart/form-data"
-    >
+    </p> -->
       <f:render partial="FormErrors" arguments="{for: 'user'}" />
       <f:render partial="FieldError" arguments="{field: 'uid'}" />
 
@@ -61,8 +60,7 @@
       </div>
     </f:form>
 
-    <!-- Register prompt with partial link -->
-    <p class="text-sm text-gray-500 text-center">
+    <p class="text-sm text-gray-500 text-center mt-2">
       <f:translate
         key="frontend.login_prompt_part1"
         extensionName="rr_sondermetalle"
