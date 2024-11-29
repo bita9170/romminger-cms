@@ -100,7 +100,15 @@ plugin.tx_sfregister.settings {
         email {
             placeholder = youremail@example.com
         }
-    }
+
+        firstName {
+            placeholder = Erika
+        }
+
+        lastName {
+            placeholder = Mustermann
+        }
+    }    
 }
 
 plugin.tx_felogin_pi1 {
