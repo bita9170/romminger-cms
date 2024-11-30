@@ -4,27 +4,6 @@
 >
   <f:flashMessages />
 
-  <f:if condition="{messageKey}">
-    <h3>
-      <f:render
-        partial="RenderLabelOrMessage"
-        arguments="{key: '{messageKey}_header'}"
-      />
-    </h3>
-    <p class="text-2xl lg:text-3xl mb-2 text-center">
-      <f:render
-        partial="RenderLabelOrMessage"
-        arguments="{key: '{messageKey}_message'}"
-      />
-      <p class="text-sm font-semibold text-center mb-6">
-        <f:translate
-          key="login.credentials.prompt"
-          extensionName="rr_sondermetalle"
-        />
-      </p>
-    </p>
-  </f:if>
-
   <f:form
     target="_top"
     fieldNamePrefix=""
@@ -37,51 +16,94 @@
 
   <f:section name="content">
     <fieldset>
-      <div class="flex justify-center py-10">
-        <div class="w-full max-w-md px-4">
-          <div class="mb-4 relative">
-            <label for="tx-felogin-input-username" class="w-full font-bold">
-              <f:translate key="username" />
-              <div class="relative">
-                <f:form.textfield
-                  name="user"
-                  required="true"
-                  additionalAttributes="{autocomplete: 'username'}"
-                  id="tx-felogin-input-username"
-                  class="w-full p-2 pl-10 pr-10 border border-gray-300 rounded-lg focus:outline-none"
-                />
-                <svg
-                  class="auth-icon h-4 w-4 absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400"
-                  viewBox="0 0 512 512"
+      <div class="flex justify-center">
+        <div
+          class="w-full max-w-md px-4 mx-auto bg-white border border-gray-200 rounded p-4 shadow-sm"
+        >
+          <f:if condition="{messageKey}">
+            <h3
+              class="text-xl font-semibold text-gray-900 dark:text-white text-center"
+            >
+              <f:render
+                partial="RenderLabelOrMessage"
+                arguments="{key: '{messageKey}_header'}"
+              />
+            </h3>
+
+            <div>
+              <f:if condition="{messageKey} !== 'welcome'">
+                <div
+                  class="p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50"
+                  role="alert"
                 >
-                  <path
-                    d="M256 288c79.53 0 144-64.47 144-144s-64.47-144-144-144c-79.52 0-144 64.47-144 144S176.5 288 256 288zM351.1 320H160c-88.36 0-160 71.63-160 160c0 17.67 14.33 32 31.1 32H480c17.67 0 31.1-14.33 31.1-32C512 391.6 440.4 320 351.1 320z"
-                  ></path>
-                </svg>
-              </div>
+                  <f:render
+                    partial="RenderLabelOrMessage"
+                    arguments="{key: '{messageKey}_message'}"
+                  />
+                </div>
+              </f:if>
+
+              <p class="text-sm text-center mb-6">
+                <f:translate
+                  key="login.credentials.prompt"
+                  extensionName="rr_sondermetalle"
+                />
+              </p>
+            </div>
+          </f:if>
+
+          <div class="mb-4 relative">
+            <label
+              for="tx-felogin-input-username"
+              class="mb-2 block text-sm font-bold text-gray-900"
+            >
+              <f:translate key="username" />
             </label>
+            <div class="relative">
+              <f:form.textfield
+                name="user"
+                required="true"
+                additionalAttributes="{autocomplete: 'username'}"
+                id="tx-felogin-input-username"
+                class="block w-full rounded-lg border !border-gray-300 !bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-500 focus:ring-primary-500"
+                placeholder="erika.mustermann"
+              />
+              <svg
+                class="auth-icon h-4 w-4 absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400"
+                viewBox="0 0 512 512"
+              >
+                <path
+                  d="M256 288c79.53 0 144-64.47 144-144s-64.47-144-144-144c-79.52 0-144 64.47-144 144S176.5 288 256 288zM351.1 320H160c-88.36 0-160 71.63-160 160c0 17.67 14.33 32 31.1 32H480c17.67 0 31.1-14.33 31.1-32C512 391.6 440.4 320 351.1 320z"
+                ></path>
+              </svg>
+            </div>
           </div>
 
           <div class="mb-4 relative">
-            <label for="tx-felogin-input-password" class="w-full font-bold">
+            <label
+              for="tx-felogin-input-password"
+              class="mb-2 block text-sm font-bold text-gray-900"
+            >
               <f:translate key="password" />
-              <div class="relative">
-                <f:form.password
-                  name="pass"
-                  additionalAttributes="{required: 'required', autocomplete: 'current-password'}"
-                  id="tx-felogin-input-password"
-                  class="w-full p-2 pl-10 pr-10 border border-gray-300 rounded-lg focus:outline-none"
-                />
-                <svg
-                  class="auth-icon h-4 w-4 absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400"
-                  viewBox="0 0 512 512"
-                >
-                  <path
-                    d="M282.3 343.7L248.1 376.1C244.5 381.5 238.4 384 232 384H192V424C192 437.3 181.3 448 168 448H128V488C128 501.3 117.3 512 104 512H24C10.75 512 0 501.3 0 488V408C0 401.6 2.529 395.5 7.029 391L168.3 229.7C162.9 212.8 160 194.7 160 176C160 78.8 238.8 0 336 0C433.2 0 512 78.8 512 176C512 273.2 433.2 352 336 352C317.3 352 299.2 349.1 282.3 343.7zM376 176C398.1 176 416 158.1 416 136C416 113.9 398.1 96 376 96C353.9 96 336 113.9 336 136C336 158.1 353.9 176 376 176z"
-                  ></path>
-                </svg>
-              </div>
             </label>
+
+            <div class="relative">
+              <f:form.password
+                name="pass"
+                additionalAttributes="{required: 'required', autocomplete: 'current-password'}"
+                id="tx-felogin-input-password"
+                class="block w-full rounded-lg border !border-gray-300 !bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-500 focus:ring-primary-500"
+                placeholder="************"
+              />
+              <svg
+                class="auth-icon h-4 w-4 absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400"
+                viewBox="0 0 512 512"
+              >
+                <path
+                  d="M282.3 343.7L248.1 376.1C244.5 381.5 238.4 384 232 384H192V424C192 437.3 181.3 448 168 448H128V488C128 501.3 117.3 512 104 512H24C10.75 512 0 501.3 0 488V408C0 401.6 2.529 395.5 7.029 391L168.3 229.7C162.9 212.8 160 194.7 160 176C160 78.8 238.8 0 336 0C433.2 0 512 78.8 512 176C512 273.2 433.2 352 336 352C317.3 352 299.2 349.1 282.3 343.7zM376 176C398.1 176 416 158.1 416 136C416 113.9 398.1 96 376 96C353.9 96 336 113.9 336 136C336 158.1 353.9 176 376 176z"
+                ></path>
+              </svg>
+            </div>
           </div>
 
           <f:if condition="{permaloginStatus} > -1">

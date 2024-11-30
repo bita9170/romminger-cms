@@ -2,26 +2,23 @@
   xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
   data-namespace-typo3-fluid="true"
 >
-  <f:layout name="LoggedOut" />
+  <f:layout name="LoggedIn" />
 
   <f:section name="Main">
     <f:form
       action="preview"
       name="user"
       id="sfrForm"
-      class="w-full max-w-4xl mx-auto bg-white border border-gray-200 rounded p-4 shadow-sm"
+      class="w-full max-w-4xl mx-auto bg-white border border-gray-200 rounded p-6 shadow-sm"
       object="{user}"
       enctype="multipart/form-data"
     >
       <h3 class="text-xl font-semibold text-gray-900 dark:text-white">
         <f:translate
-          key="frontend.register_prompt_link"
+          key="frontend.editProfile"
           extensionName="rr_sondermetalle"
         />
       </h3>
-      <!-- <p class="text-sm font-semibold text-start mb-6 ml-1">
-      <f:translate key="register.subtitle" extensionName="rr_sondermetalle" />
-    </p> -->
 
       <div
         class="p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50"
@@ -31,22 +28,29 @@
         <f:render partial="FieldError" arguments="{field: 'uid'}" />
       </div>
 
-      <div class="form-row grid grid-col-1 gap-4 md:grid-cols-2">
+      <div class="form-row grid grid-cols-1 gap-6 md:grid-cols-2">
         <f:for
           each="{settings.fields.selected}"
           as="fieldName"
           iteration="iteration"
         >
           <f:switch expression="{fieldName}">
+            <f:case value="title">
+              <f:variable name="divClass">md:col-span-2</f:variable>
+            </f:case>
+            <f:case value="email">
+              <f:variable name="divClass">md:col-span-2</f:variable>
+            </f:case>
             <f:case value="company">
               <f:variable name="divClass">md:col-span-2</f:variable>
             </f:case>
             <f:case value="privacy">
               <f:variable name="divClass">md:col-span-2</f:variable>
             </f:case>
-            <f:case value="submit">
+            <f:case value="update">
               <f:variable name="divClass">md:col-span-2</f:variable>
             </f:case>
+
             <f:defaultCase>
               <f:variable name="divClass"></f:variable>
             </f:defaultCase>
@@ -71,15 +75,5 @@
         </f:format.raw>
       </div>
     </f:form>
-
-    <p class="text-sm text-gray-500 text-center mt-2">
-      <f:translate
-        key="frontend.login_prompt_part1"
-        extensionName="rr_sondermetalle"
-      />
-      <a href="{f:uri.page(pageUid: 35)}" class="text-blue-500 underline">
-        <f:translate key="login" extensionName="rr_sondermetalle" />
-      </a>
-    </p>
   </f:section>
 </html>

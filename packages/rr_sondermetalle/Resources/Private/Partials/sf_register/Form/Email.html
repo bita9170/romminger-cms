@@ -3,22 +3,25 @@
   data-namespace-typo3-fluid="true"
 >
   <div class="mb-4 {fieldName}">
-    <label class="w-full font-bold" for="{fieldName}">
+    <label
+      class="mb-2 block text-sm font-medium text-gray-900 dark:text-white"
+      for="{fieldName}"
+    >
       <f:translate id="{fieldName}" />
       <f:render partial="Required" arguments="{field: fieldName}" />
     </label>
     <f:variable name="for"
       >{f:if(condition: property, then: property, else: 'user')}</f:variable
     >
-    <f:render partial="FieldError" arguments="{for: for, field: fieldName}" />
 
     <f:form.textfield
       property="{fieldName}"
       id="{fieldName}"
       type="email"
       placeholder="{options.placeholder}"
-      class="w-full p-2 pl-10 border border-gray-300 rounded-lg focus:outline-none {options.cssClass}"
+      class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-500 focus:ring-primary-500 {options.cssClass}"
       data="{lpignore: 'true'}"
     />
+    <f:render partial="FieldError" arguments="{for: for, field: fieldName}" />
   </div>
 </html>
