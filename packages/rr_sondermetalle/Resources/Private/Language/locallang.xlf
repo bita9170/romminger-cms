@@ -46,6 +46,9 @@
             <trans-unit id="frontend.register_prompt_link">
                 <source>Register</source>
             </trans-unit>
+            <trans-unit id="frontend.editProfile">
+                <target>Edit profile</target>
+            </trans-unit>
             <trans-unit id="forgot_header">
                 <source>Forgot your password?</source>
             </trans-unit>

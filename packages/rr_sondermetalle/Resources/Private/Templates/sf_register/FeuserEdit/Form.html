@@ -13,8 +13,20 @@
       object="{user}"
       enctype="multipart/form-data"
     >
-      <f:render partial="FormErrors" arguments="{for: 'user'}" />
-      <f:render partial="FieldError" arguments="{field: 'uid'}" />
+      <h3 class="text-xl font-semibold text-gray-900 dark:text-white">
+        <f:translate
+          key="frontend.editProfile"
+          extensionName="rr_sondermetalle"
+        />
+      </h3>
+
+      <div
+        class="p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50"
+        role="alert"
+      >
+        <f:render partial="FormErrors" arguments="{for: 'user'}" />
+        <f:render partial="FieldError" arguments="{field: 'uid'}" />
+      </div>
 
       <div class="form-row grid grid-cols-1 gap-6 md:grid-cols-2">
         <f:for

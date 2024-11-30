@@ -86,12 +86,23 @@ plugin.tx_rrsondermetalle {
 }
 
 plugin.tx_sfregister.settings {
-    validation.create {
-        address = "Evoweb.SfRegister:Required"
-        zip = "Evoweb.SfRegister:Required"
-        city = "Evoweb.SfRegister:Required"
-        mobilephone = "Evoweb.SfRegister:Required"
-        staticInfoCountry = "Evoweb.SfRegister:Required"
+    validation{
+        create {
+            address = "Evoweb.SfRegister:Required"
+            zip = "Evoweb.SfRegister:Required"
+            city = "Evoweb.SfRegister:Required"
+            mobilephone = "Evoweb.SfRegister:Required"
+            staticInfoCountry = "Evoweb.SfRegister:Required"
+        }
+
+        edit {
+            email = "Evoweb.SfRegister:Required"
+            address = "Evoweb.SfRegister:Required"
+            zip = "Evoweb.SfRegister:Required"
+            city = "Evoweb.SfRegister:Required"
+            mobilephone = "Evoweb.SfRegister:Required"
+            staticInfoCountry = "Evoweb.SfRegister:Required"
+        }
     }
 
     fields.configuration {

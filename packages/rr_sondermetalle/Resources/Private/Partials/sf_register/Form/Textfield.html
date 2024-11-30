@@ -10,16 +10,16 @@
       <f:translate id="{fieldName}" />
       <f:render partial="Required" arguments="{field: fieldName}" />
     </label>
-    <f:render
-      partial="FieldError"
-      arguments="{for: 'user', field: fieldName}"
-    />
 
     <f:form.textfield
       property="{fieldName}"
       id="{fieldName}"
       placeholder="{options.placeholder}"
       class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-500 focus:ring-primary-500 {options.cssClass}"
+    />
+    <f:render
+      partial="FieldError"
+      arguments="{for: 'user', field: fieldName}"
     />
   </div>
 </html>
