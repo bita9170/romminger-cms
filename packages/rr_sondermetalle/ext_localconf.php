@@ -5,6 +5,7 @@ use Romminger\RrSondermetalle\Controller\OrderController;
 use Romminger\RrSondermetalle\Controller\ProductController;
 use Romminger\RrSondermetalle\Controller\CategoryController;
 use Romminger\RrSondermetalle\Controller\CheckoutController;
+use Romminger\RrSondermetalle\Controller\DashboardController;
 use Romminger\RrSondermetalle\Controller\MaterialController;
 use Romminger\RrSondermetalle\Controller\LoginControllerExtend;
 
@@ -64,6 +65,14 @@ $GLOBALS['TYPO3_CONF_VARS']['RTE']['Presets']['rr_sondermetalle'] = 'EXT:rr_sond
     'Order',
     [
         OrderController::class => 'list, show',
+    ]
+);
+
+\TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
+    'RrSondermetalle',
+    'Dashboard',
+    [
+        DashboardController::class => 'index',
     ]
 );
 

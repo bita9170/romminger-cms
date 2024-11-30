@@ -23,15 +23,25 @@
     </a>
 
     <f:render partial="Navigation/Main" arguments="{_all}" />
-    <f:render partial="Dashboard/Navigation" arguments="{_all}" />
+
     <f:render section="Border" optional="true" />
     <f:render partial="Navigation/Breadcrumb" arguments="{_all}" />
 
-    <main id="page-content" class="bp-page-content main-section page-default">
-      <!--TYPO3SEARCH_begin-->
-      <f:render section="Main" />
-      <!--TYPO3SEARCH_end-->
-    </main>
+    <div class="container grid md:grid-cols-12 grid-cols-1 px-0 md:px-2">
+      <div class="md:col-span-3">
+        <f:render partial="Dashboard/Navigation" arguments="{_all}" />
+      </div>
+      <div class="md:col-span-9">
+        <main
+          id="page-content"
+          class="bp-page-content main-section page-default"
+        >
+          <!--TYPO3SEARCH_begin-->
+          <f:render section="Main" />
+          <!--TYPO3SEARCH_end-->
+        </main>
+      </div>
+    </div>
 
     <footer id="page-footer" class="bp-page-footer">
       <f:render partial="DropIn/Structure/FooterBefore" arguments="{_all}" />

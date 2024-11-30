@@ -9,4 +9,5 @@ call_user_func(function () {
     ExtensionUtility::registerPlugin('RrSondermetalle', 'Category', 'Category');
     ExtensionUtility::registerPlugin('RrSondermetalle', 'Checkout', 'Checkout');
     ExtensionUtility::registerPlugin('RrSondermetalle', 'Order', 'Order');
+    ExtensionUtility::registerPlugin('RrSondermetalle', 'Dashboard', 'Dashboard');
 });
