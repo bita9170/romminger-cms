@@ -219,12 +219,11 @@ class CheckoutController extends ActionController
             $order = new Order();
             $order->setCustomer($this->frontendUser);
             $order->setDate(new \DateTime());
-            $order->setStatus('completed');
+            $order->setStatus('paid');
             $order->setTotalAmount($session->amount_total / 100);
             $order->setPid(53);
             $order->setSessionId($sessionId);
             $order->setOrderId($this->generateOrderId());
-            $order->setSysLanguageUid(-1);
 
             $payment->setOrder($order);
             $order->setPayment($payment);
@@ -254,7 +253,6 @@ class CheckoutController extends ActionController
 
             /** @var PersistenceManager $persistenceManager */
             $persistenceManager = GeneralUtility::makeInstance(PersistenceManager::class);
-            $persistenceManager->persistAll();
 
             $this->orderRepository->add($order);
             $this->paymentRepository->add($payment);

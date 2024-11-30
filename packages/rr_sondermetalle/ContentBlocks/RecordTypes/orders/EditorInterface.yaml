@@ -2,6 +2,7 @@ name: romminger/orders
 table: tx_romminger_orders
 prefixFields: false
 labelField: [order_id, date, status]
+languageAware: false
 security:
   ignorePageTypeRestriction: true
 fields:

@@ -2,6 +2,7 @@ name: romminger/materials
 table: tx_romminger_materials
 prefixFields: false
 labelField: name
+languageAware: false
 security:
   ignorePageTypeRestriction: true
 fields:

@@ -2,6 +2,7 @@ name: romminger/orders-products
 table: tx_romminger_ordersproducts
 prefixFields: false
 labelField: product
+languageAware: false
 security:
   ignorePageTypeRestriction: true
 fields:

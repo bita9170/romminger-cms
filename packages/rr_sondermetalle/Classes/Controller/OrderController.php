@@ -9,6 +9,7 @@ use Romminger\RrSondermetalle\Domain\Model\Order;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
 use Romminger\RrSondermetalle\Domain\Repository\OrderRepository;
 use Romminger\RrSondermetalle\Domain\Repository\CustomerRepository;
+use TYPO3\CMS\Extbase\Persistence\QueryInterface;
 
 class OrderController extends ActionController
 {
@@ -35,7 +36,7 @@ class OrderController extends ActionController
 
     public function listAction(): ResponseInterface
     {
-        $orders = $this->orderRepository->findBy(['customer' => $this->frontendUser]);
+        $orders = $this->orderRepository->findBy(['customer' => $this->frontendUser], ['uid' => QueryInterface::ORDER_DESCENDING]);
 
         $this->view->assignMultiple([
             'orders' =>  $orders,

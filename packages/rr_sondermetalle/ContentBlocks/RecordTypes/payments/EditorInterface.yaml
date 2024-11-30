@@ -2,6 +2,7 @@ name: romminger/payments
 table: tx_romminger_payments
 prefixFields: false
 labelField: [method, transaction_id]
+languageAware: false
 security:
   ignorePageTypeRestriction: true
 fields:

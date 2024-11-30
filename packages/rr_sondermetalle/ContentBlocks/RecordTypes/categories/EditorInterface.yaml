@@ -2,6 +2,7 @@ name: romminger/categories
 table: tx_romminger_categories
 prefixFields: false
 labelField: name
+languageAware: false
 security:
   ignorePageTypeRestriction: true
 fields:

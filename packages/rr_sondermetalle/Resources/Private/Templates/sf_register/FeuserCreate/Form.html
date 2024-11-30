@@ -23,14 +23,6 @@
       <f:translate key="register.subtitle" extensionName="rr_sondermetalle" />
     </p> -->
 
-      <div
-        class="p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50"
-        role="alert"
-      >
-        <f:render partial="FormErrors" arguments="{for: 'user'}" />
-        <f:render partial="FieldError" arguments="{field: 'uid'}" />
-      </div>
-
       <div class="form-row grid grid-col-1 gap-4 md:grid-cols-2">
         <f:for
           each="{settings.fields.selected}"

@@ -46,7 +46,6 @@ class Order extends AbstractEntity
     protected $payment;
 
     protected string $sessionId;
-    protected int $sysLanguageUid;
 
     public function getCustomer(): Customer
     {
@@ -122,15 +121,5 @@ class Order extends AbstractEntity
     public function setSessionId(string $sessionId): void
     {
         $this->sessionId = $sessionId;
-    }
-
-    public function getSysLanguageUid(): int
-    {
-        return $this->sysLanguageUid;
-    }
-
-    public function setSysLanguageUid(int $sysLanguageUid): void
-    {
-        $this->sysLanguageUid = $sysLanguageUid;
     }
 }
