@@ -219,6 +219,11 @@ class Customer extends AbstractEntity
         return $this->country;
     }
 
+    public function setCountry($country): void
+    {
+        $this->country = $country;
+    }
+
     public function getWww(): string
     {
         return $this->www;
