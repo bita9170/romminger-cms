@@ -1,56 +1,40 @@
 <section class="container bg-white py-4 antialiased md:py-8 px-0">
   <div class="px-4 md:px-0">
-    <div
-      class="min-w-0 flex flex-col flex-1 gap-8 mx-auto border border-gray-200 p-4 rounded shadow-sm divide-y-2 divide-gray-200 divide-dashed"
-    >
-      <div class="space-y-4 divide-y divide-gray-200">
-        <f:for each="{orders}" as="order">
-          <div class="pt-4 first:!pt-0">
-            <div class="flex flex-col md:flex-row justify-between">
-              <div>
-                <div class="text-lg font-semibold text-gray-900">
-                  <f:translate key="frontend.order" />:
-                  <f:link.action
-                    action="show"
-                    controller="Order"
-                    arguments="{orderId : order.orderId}"
-                    type="button"
-                    >{order.orderId}</f:link.action
-                  >
-                </div>
-                <div class="order-status">
-                  <f:translate key="frontend.order.status" />:
-                  <f:translate key="frontend.order.{order.status}" />
-                </div>
-              </div>
-              <div class="text-sm">
-                <f:format.date format="%d. %B %Y">{order.date}</f:format.date>
-              </div>
-            </div>
-
-            <div
-              class="order-footer flex flex-col md:flex-row justify-between mt-4"
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      <f:for each="{orders}" as="order">
+        <div
+          class="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
+        >
+          <h5
+            class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
+          >
+            <f:translate key="frontend.order" />:
+            <f:link.action
+              action="show"
+              controller="Order"
+              arguments="{orderId : order.orderId}"
+              type="button"
+              >{order.orderId}</f:link.action
             >
-              <f:link.action
-                action="show"
-                type="button"
-                arguments="{orderId : order.orderId}"
-                class="btn btn-primary"
-              >
-                <f:translate key="frontend.order.viewOrderDetails" />
-              </f:link.action>
+          </h5>
 
-              <!-- <f:link.action
-                action="list"
-                controller="Category"
-                class="btn btn-secondary disabled"
-              >
-                <f:translate key="frontend.order.buyAgain" />
-              </f:link.action> -->
-            </div>
-          </div>
-        </f:for>
-      </div>
+          <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
+            <f:translate key="frontend.order.status" />:
+            <f:translate key="frontend.order.{order.status}" />
+          </p>
+          <p class="mb-3 font-normal text-sm text-gray-700 dark:text-gray-400">
+            <f:format.date format="%d. %B %Y">{order.date}</f:format.date>
+          </p>
+          <f:link.action
+            action="show"
+            type="button"
+            arguments="{orderId : order.orderId}"
+            class="btn btn-primary"
+          >
+            <f:translate key="frontend.order.viewOrderDetails" />
+          </f:link.action>
+        </div>
+      </f:for>
     </div>
   </div>
 </section>

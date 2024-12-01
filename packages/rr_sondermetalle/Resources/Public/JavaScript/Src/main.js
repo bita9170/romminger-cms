@@ -332,6 +332,26 @@ const renderCartPopover = (cart) => {
 
 const renderCheckout = (cart, cartItemsContainer) => {
   cartItemsContainer.innerHTML = "";
+  const cartItemsheader = document.querySelector(".cart-items-header");
+  const cartEmptyHeader = document.querySelector(".cart-empty-header");
+  const btnCart = document.querySelector(".btn-cart");
+
+  if (cart.length == 0) {
+    cartItemsheader.classList.add("d-none");
+    cartEmptyHeader.classList.remove("d-none");
+
+    if (btnCart) {
+      btnCart.classList.add("d-none");
+    }
+    return;
+  } else {
+    cartItemsheader.classList.remove("d-none");
+    cartEmptyHeader.classList.add("d-none");
+
+    if (btnCart) {
+      btnCart.classList.remove("d-none");
+    }
+  }
 
   cart.forEach((item) => {
     const itemElement = document.createElement("div");

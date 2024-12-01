@@ -1,0 +1,22 @@
+<html
+  xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+  xmlns:register="http://typo3.org/ns/Evoweb/SfRegister/ViewHelpers"
+  data-namespace-typo3-fluid="true"
+>
+  <f:variable name="languageKey"
+    ><register:languageKey type="countries"
+  /></f:variable>
+  <div class="col-md-6 mb-3 country">
+    <label><f:translate id="country" /></label>
+
+    <f:form.countrySelect
+      property="country"
+      id="sfrCountry"
+      name="country"
+      value="{user.country}"
+      disabled="disabled"
+      class="form-control"
+    />
+    <f:form.hidden property="country" />
+  </div>
+</html>

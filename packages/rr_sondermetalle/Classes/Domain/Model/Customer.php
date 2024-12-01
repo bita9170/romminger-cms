@@ -274,6 +274,11 @@ class Customer extends AbstractEntity
         return $this->staticInfoCountry;
     }
 
+    public function setStaticInfoCountry(string $staticInfoCountry): void
+    {
+        $this->staticInfoCountry = $staticInfoCountry;
+    }
+
     public function getMobilephone(): string
     {
         return $this->mobilephone;

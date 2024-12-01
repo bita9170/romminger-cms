@@ -1,13 +1,15 @@
 <?php
 
+use Evoweb\SfRegister\Controller\FeuserEditController;
 use TYPO3\CMS\FrontendLogin\Controller\LoginController;
 use Romminger\RrSondermetalle\Controller\OrderController;
 use Romminger\RrSondermetalle\Controller\ProductController;
 use Romminger\RrSondermetalle\Controller\CategoryController;
 use Romminger\RrSondermetalle\Controller\CheckoutController;
-use Romminger\RrSondermetalle\Controller\DashboardController;
 use Romminger\RrSondermetalle\Controller\MaterialController;
+use Romminger\RrSondermetalle\Controller\DashboardController;
 use Romminger\RrSondermetalle\Controller\LoginControllerExtend;
+use Romminger\RrSondermetalle\Controller\FeuserEditExtendController;
 
 defined('TYPO3') or die('Access denied.');
 /***************
@@ -78,4 +80,8 @@ $GLOBALS['TYPO3_CONF_VARS']['RTE']['Presets']['rr_sondermetalle'] = 'EXT:rr_sond
 
 $GLOBALS['TYPO3_CONF_VARS']['SYS']['Objects'][LoginController::class] = [
     'className' => LoginControllerExtend::class,
+];
+
+$GLOBALS['TYPO3_CONF_VARS']['SYS']['Objects'][FeuserEditController::class] = [
+    'className' => FeuserEditExtendController::class,
 ];

@@ -92,7 +92,7 @@ plugin.tx_sfregister.settings {
             zip = "Evoweb.SfRegister:Required"
             city = "Evoweb.SfRegister:Required"
             mobilephone = "Evoweb.SfRegister:Required"
-            staticInfoCountry = "Evoweb.SfRegister:Required"
+            # staticInfoCountry = "Evoweb.SfRegister:Required"
         }
 
         edit {
@@ -101,12 +101,12 @@ plugin.tx_sfregister.settings {
             zip = "Evoweb.SfRegister:Required"
             city = "Evoweb.SfRegister:Required"
             mobilephone = "Evoweb.SfRegister:Required"
-            staticInfoCountry = "Evoweb.SfRegister:Required"
+            # staticInfoCountry = "Evoweb.SfRegister:Required"
         }
     }
 
     fields.configuration {
-        staticInfoCountry.partial = Textfield
+        # staticInfoCountry.partial = Textfield
 
         username {
             placeholder = erika.mustermann

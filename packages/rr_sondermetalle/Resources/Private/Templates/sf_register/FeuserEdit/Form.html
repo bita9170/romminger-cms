@@ -6,7 +6,7 @@
 
   <f:section name="Main">
     <f:form
-      action="preview"
+      action="save"
       name="user"
       id="sfrForm"
       class="w-full bg-white border border-gray-200 rounded p-6 shadow-sm"
@@ -14,10 +14,7 @@
       enctype="multipart/form-data"
     >
       <h3 class="text-xl font-semibold text-gray-900 dark:text-white">
-        <f:translate
-          key="frontend.editProfile"
-          extensionName="rr_sondermetalle"
-        />
+        <f:translate key="frontend.{header}" extensionName="rr_sondermetalle" />
       </h3>
 
       <div class="form-row grid grid-cols-1 gap-6 md:grid-cols-2">
