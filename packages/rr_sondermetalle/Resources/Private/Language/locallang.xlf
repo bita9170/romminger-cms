@@ -47,7 +47,13 @@
                 <source>Register</source>
             </trans-unit>
             <trans-unit id="frontend.editProfile">
-                <target>Edit profile</target>
+                <source>Edit profile</source>
+            </trans-unit>
+            <trans-unit id="frontend.editAddress">
+                <source>Edit address</source>
+            </trans-unit>
+            <trans-unit id="frontend.editImage">
+                <source>Edit profile picture</source>
             </trans-unit>
             <trans-unit id="forgot_header">
                 <source>Forgot your password?</source>
@@ -186,6 +192,9 @@
             </trans-unit>
             <trans-unit id="frontend.checkout.summary">
                 <source>Order summary</source>
+            </trans-unit>        
+            <trans-unit id="frontend.checkout.cartEmpty">
+                <source>Shopping cart is empty.</source>
             </trans-unit>
 
              <!-- Frontend order -->
@@ -215,6 +224,14 @@
             </trans-unit>
             <trans-unit id="frontend.order.orderOverview">
                 <source>Order overview</source>
+            </trans-unit>
+
+            <!-- Dashboard -->
+            <trans-unit id="frontend.dashboard.currentAddress">
+                <source>My current address</source>
+            </trans-unit>
+            <trans-unit id="frontend.dashboard.editAddress">
+                <source>Edit Address</source>
             </trans-unit>
         </body>
     </file>

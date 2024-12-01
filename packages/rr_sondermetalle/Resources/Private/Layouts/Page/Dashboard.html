@@ -4,7 +4,7 @@
 >
   <div id="top"></div>
   <div
-    class="body-bg{f:if(condition:theme.navigation.type, then:' body-bg-{theme.navigation.type}')}"
+    class="body-bg{f:if(condition:theme.navigation.type, then:' body-bg-{theme.navigation.type}')} flex min-h-screen flex-col"
   >
     <f:render partial="DropIn/Page/PageBefore" arguments="{_all}" />
     <f:render partial="Structure/CookieConsent" arguments="{_all}" />
@@ -21,20 +21,19 @@
         'bootstrap_package')}</span
       >
     </a>
-
-    <f:render partial="Navigation/Main" arguments="{_all}" />
-
-    <f:render section="Border" optional="true" />
-    <f:render partial="Navigation/Breadcrumb" arguments="{_all}" />
-
-    <div class="container grid md:grid-cols-12 grid-cols-1 px-0 md:px-2">
+    <div>
+      <f:render partial="Navigation/Main" arguments="{_all}" />
+      <f:render section="Border" optional="true" />
+      <f:render partial="Navigation/Breadcrumb" arguments="{_all}" />
+    </div>
+    <div class="container grid md:grid-cols-12 grid-cols-1 px-0 md:px-2 flex-1">
       <div class="md:col-span-3">
         <f:render partial="Dashboard/Navigation" arguments="{_all}" />
       </div>
       <div class="md:col-span-9">
         <main
           id="page-content"
-          class="bp-page-content main-section page-default"
+          class="bp-page-content main-section page-default h-100"
         >
           <!--TYPO3SEARCH_begin-->
           <f:render section="Main" />

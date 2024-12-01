@@ -1,0 +1,25 @@
+<html
+  xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+  xmlns:register="http://typo3.org/ns/Evoweb/SfRegister/ViewHelpers"
+  data-namespace-typo3-fluid="true"
+>
+  <div class="mb-3 {country}">
+    <label
+      for="sfrCountry"
+      class="mb-2 block text-sm font-medium text-gray-900"
+    >
+      <f:translate id="{fieldName}" />
+      <f:render partial="Required" arguments="{field: country}" />
+    </label>
+    <f:render partial="FieldError" arguments="{for: 'user', field: country}" />
+
+    <f:form.countrySelect
+      property="country"
+      id="sfrCountry"
+      name="country"
+      value="{f:if(condition: '{user.country}', then: '{user.country}', else: options.defaultValue)}"
+      prioritizedCountries="{0: 'DE', 1: 'AT', 2: 'CH'}"
+      class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-500 focus:ring-primary-500 {options.cssClass}"
+    />
+  </div>
+</html>

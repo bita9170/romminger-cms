@@ -1,4 +1,4 @@
-<div class="grid grid-cols-1 md:grid-cols-9">
+<div class="grid grid-cols-1 md:grid-cols-9 h-100">
   <div class="md:col-span-7">
     <div class="p-4 space-y-4">
       <div
@@ -10,8 +10,12 @@
             extensionName="rr_sondermetalle"
           />
         </h3>
+
+        <div class="cart-empty-header d-none">
+          <f:translate key="frontend.checkout.cartEmpty" />
+        </div>
         <div
-          class="grid grid-cols-12 mt-2 max-md:hidden pb-6 border-b border-gray-200"
+          class="grid grid-cols-12 mt-2 max-md:hidden pb-6 border-b border-gray-200 cart-items-header"
         >
           <div class="col-span-12 md:col-span-7">
             <p class="font-normal text-lg leading-8 text-gray-400">
@@ -47,36 +51,12 @@
           </div>
         </div>
         <div class="cart-items-checkout"></div>
-        <a
-          href="/shop/checkout/checkout"
-          class="btn btn-primary flex items-center justify-center rounded-lg"
+        <f:link.page
+          pagUid="56"
+          class="btn btn-primary flex items-center justify-center rounded-lg btn-cart"
         >
           <f:translate key="frontend.checkout.btnCheckout" />
-        </a>
-      </div>
-
-      <div
-        class="min-w-0 flex flex-col flex-1 gap-8 mx-auto border border-gray-200 p-4 rounded shadow-sm"
-      >
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Id ea deleniti
-        iste numquam eius at maxime, a architecto! Non mollitia asperiores autem
-        quibusdam veniam iusto dolorem reprehenderit reiciendis modi omnis.
-      </div>
-
-      <div
-        class="min-w-0 flex flex-col flex-1 gap-8 mx-auto border border-gray-200 p-4 rounded shadow-sm"
-      >
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Id ea deleniti
-        iste numquam eius at maxime, a architecto! Non mollitia asperiores autem
-        quibusdam veniam iusto dolorem reprehenderit reiciendis modi omnis.
-      </div>
-
-      <div
-        class="min-w-0 flex flex-col flex-1 gap-8 mx-auto border border-gray-200 p-4 rounded shadow-sm"
-      >
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Id ea deleniti
-        iste numquam eius at maxime, a architecto! Non mollitia asperiores autem
-        quibusdam veniam iusto dolorem reprehenderit reiciendis modi omnis.
+        </f:link.page>
       </div>
     </div>
   </div>
@@ -85,13 +65,17 @@
       class="bg-secondary h-100 p-4 flex flex-col divide-y divide-gray-400 space-y-4"
     >
       <div>
-        <h3 class="text-xl font-semibold">My current address</h3>
+        <h3 class="text-xl font-semibold">
+          <f:translate key="frontend.dashboard.currentAddress" />
+        </h3>
         <ul>
           <li>{user.address}</li>
           <li>{user.zip} {user.city}</li>
           <li><f:translate key="{user.country}" /></li>
         </ul>
-        <button class="btn btn-link">Change Address</button>
+        <f:link.page pageUid="69" class="btn btn-link"
+          ><f:translate key="frontend.dashboard.editAddress"
+        /></f:link.page>
       </div>
     </div>
   </div>

@@ -32,8 +32,7 @@
             </trans-unit>
             <trans-unit id="frontend.empty_cart">
                 <target>Warenkorb leeren</target>
-            </trans-unit>
-            
+            </trans-unit>            
             <trans-unit id="login">
                 <target>Anmelden</target>
             </trans-unit>
@@ -48,6 +47,12 @@
             </trans-unit>
             <trans-unit id="frontend.editProfile">
                 <target>Profil bearbeiten</target>
+            </trans-unit>
+            <trans-unit id="frontend.editAddress">
+                <target>Adresse bearbeiten</target>
+            </trans-unit>
+            <trans-unit id="frontend.editImage">
+                <target>Profilbild bearbeiten</target>
             </trans-unit>
             <trans-unit id="forgot_header">
                 <target>Passwort vergessen?</target>
@@ -187,6 +192,9 @@
             <trans-unit id="frontend.checkout.summary">
                 <target>Bestellübersicht</target>
             </trans-unit>
+            <trans-unit id="frontend.checkout.cartEmpty">
+                <target>Ihr Warenkorb ist leer.</target>
+            </trans-unit>
 
             <!-- Frontend order -->
             <trans-unit id="frontend.orders">
@@ -215,6 +223,14 @@
             </trans-unit>
             <trans-unit id="frontend.order.orderOverview">
                 <target>Bestellübersicht</target>
+            </trans-unit>
+
+            <!-- Dashboard -->
+            <trans-unit id="frontend.dashboard.currentAddress">
+                <target>Meine aktuelle Adresse</target>
+            </trans-unit>
+            <trans-unit id="frontend.dashboard.editAddress">
+                <target>Adresse bearbeiten</target>
             </trans-unit>
         </body>
     </file>
