@@ -19,7 +19,6 @@
     "friendsoftypo3/content-blocks": "^0.7.18",
     "helhum/dotenv-connector": "^3.1",
     "helhum/typo3-console": "^8.1",
-    "nng/nnrestapi": "^2.0",
     "romminger/rr-sondermetalle": "^1.0",
     "stripe/stripe-php": "^16.2",
     "typo3/cms-backend": "^12.4.0",

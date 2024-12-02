@@ -74,5 +74,3 @@ routeEnhancers:
         _controller: "Checkout::invoice"
     defaultController: "checkout::cart"
 websiteTitle: RR-Sondermetalle
-imports:
-  - resource: "EXT:nnrestapi/Configuration/Yaml/default.yaml"

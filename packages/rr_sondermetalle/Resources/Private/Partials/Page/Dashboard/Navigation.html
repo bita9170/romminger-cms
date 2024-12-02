@@ -6,7 +6,6 @@
           <f:image
             image="{user.avatar}"
             id="avatarButton"
-            type="button"
             class="rounded-full w-full h-full object-cover"
             alt="{user.first_name} {user.last_name}"
           />
@@ -29,15 +28,32 @@
         </div>
       </f:then>
       <f:else>
-        <div
-          type="button"
-          data-dropdown-toggle="userDropdown"
-          data-dropdown-placement="bottom-start"
-          class="relative inline-flex items-center justify-center w-10 h-10 overflow-hidden bg-primary rounded-full"
-        >
-          <span class="font-medium text-white">{user.avatarFallback}</span>
-        </div></f:else
-      >
+        <div class="relative w-20 h-20">
+          <div
+            class="relative inline-flex items-center justify-center w-full h-full overflow-hidden bg-primary rounded-full"
+          >
+            <span class="font-medium text-white text-3xl"
+              >{user.avatarFallback}</span
+            >
+          </div>
+
+          <f:link.page
+            pageUid="71"
+            class="flex items-center text-xs gap-2 bg-gray-600 rounded-full p-1 absolute top-0 right-0"
+            title="Edit Profile Image"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 512 512"
+              class="w-3 h-3 fill-gray-200 hover:fill-secondary-600 transition duration-300"
+            >
+              <path
+                d="M497.9 142.1l-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8L21.6 362.4 .4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z"
+              />
+            </svg>
+          </f:link.page>
+        </div>
+      </f:else>
     </f:if>
     <div class="flex flex-col flex-1">
       <div class="text-sm font-semibold text-gray-900 dark:text-white">

@@ -10,8 +10,6 @@ $EM_CONF[$_EXTKEY] = [
     'constraints' => [
         'depends' => [
             'bootstrap_package' => '13.0.0-14.9.99',
-            'content-blocks' => '0.0.1-0.9.99',
-            'sf-register' => '12.0.0-12.99.99'
         ],
         'conflicts' => [],
     ],

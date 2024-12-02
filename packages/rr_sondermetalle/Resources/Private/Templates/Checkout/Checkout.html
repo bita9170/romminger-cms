@@ -1,69 +1,14 @@
-<f:layout name="Profile" />
-<f:section name="Main">
-  <section class="container bg-white py-4 antialiased md:py-8 px-0">
-    <div class="px-4 md:px-0">
-      <ol
-        class="items-center flex w-full max-w-2xl text-center text-sm font-medium text-gray-500 sm:text-base"
+<section class="container bg-white py-4 antialiased md:py-8 px-0">
+  <div class="px-4 md:px-0">
+    <ol
+      class="items-center flex w-full max-w-2xl text-center text-sm font-medium text-gray-500 sm:text-base"
+    >
+      <li
+        class="after:border-1 flex items-center text-blue-700 after:mx-6 after:hidden after:h-1 after:w-full after:border-b after:border-gray-200 sm:after:inline-block sm:after:content-[''] md:w-full xl:after:mx-10"
       >
-        <li
-          class="after:border-1 flex items-center text-blue-700 after:mx-6 after:hidden after:h-1 after:w-full after:border-b after:border-gray-200 sm:after:inline-block sm:after:content-[''] md:w-full xl:after:mx-10"
+        <span
+          class="flex items-center after:mx-2 after:text-gray-200 after:content-['/'] dark:after:text-gray-500 sm:after:hidden"
         >
-          <span
-            class="flex items-center after:mx-2 after:text-gray-200 after:content-['/'] dark:after:text-gray-500 sm:after:hidden"
-          >
-            <svg
-              class="me-2 h-4 w-4 sm:h-5 sm:w-5"
-              aria-hidden="true"
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              fill="none"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke="currentColor"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M8.5 11.5 11 14l4-4m6 2a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
-              />
-            </svg>
-            <f:link.action action="cart"
-              ><f:translate key="frontend.checkout.cart"
-            /></f:link.action>
-          </span>
-        </li>
-
-        <li
-          class="after:border-1 flex items-center text-blue-700 after:mx-6 after:hidden after:h-1 after:w-full after:border-b after:border-gray-200 dark:text-primary-500 dark:after:border-gray-700 sm:after:inline-block sm:after:content-[''] md:w-full xl:after:mx-10"
-        >
-          <span
-            class="flex items-center after:mx-2 after:text-gray-200 after:content-['/'] dark:after:text-gray-500 sm:after:hidden"
-          >
-            <svg
-              class="me-2 h-4 w-4 sm:h-5 sm:w-5"
-              aria-hidden="true"
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              fill="none"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke="currentColor"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M8.5 11.5 11 14l4-4m6 2a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
-              />
-            </svg>
-            <f:link.action action="checkout"
-              ><f:translate key="frontend.checkout.checkout"
-            /></f:link.action>
-          </span>
-        </li>
-
-        <li class="flex shrink-0 items-center">
           <svg
             class="me-2 h-4 w-4 sm:h-5 sm:w-5"
             aria-hidden="true"
@@ -81,365 +26,417 @@
               d="M8.5 11.5 11 14l4-4m6 2a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
             />
           </svg>
-          <f:translate key="frontend.checkout.payment" />
-        </li>
-      </ol>
-      <f:form
-        action="payment"
-        name="checkout"
-        controller="Checkout"
-        object="{checkout}"
+          <f:link.action action="cart"
+            ><f:translate key="frontend.checkout.cart"
+          /></f:link.action>
+        </span>
+      </li>
+
+      <li
+        class="after:border-1 flex items-center text-blue-700 after:mx-6 after:hidden after:h-1 after:w-full after:border-b after:border-gray-200 dark:text-primary-500 dark:after:border-gray-700 sm:after:inline-block sm:after:content-[''] md:w-full xl:after:mx-10"
       >
-        <div class="mt-6 sm:mt-8 lg:flex lg:items-start lg:gap-6 xl:gap-10">
-          <div
-            class="min-w-0 flex-1 space-y-8 border border-gray-200 p-4 rounded shadow-sm"
+        <span
+          class="flex items-center after:mx-2 after:text-gray-200 after:content-['/'] dark:after:text-gray-500 sm:after:hidden"
+        >
+          <svg
+            class="me-2 h-4 w-4 sm:h-5 sm:w-5"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            fill="none"
+            viewBox="0 0 24 24"
           >
-            <div class="space-y-4">
-              <h2 class="text-xl font-semibold text-gray-900 dark:text-white">
-                <f:translate key="frontend.checkout.deliveryAddress" />
-              </h2>
+            <path
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M8.5 11.5 11 14l4-4m6 2a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+            />
+          </svg>
+          <f:link.action action="checkout"
+            ><f:translate key="frontend.checkout.checkout"
+          /></f:link.action>
+        </span>
+      </li>
 
-              <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
-                <div>
-                  <label
-                    for="fullname"
-                    class="mb-2 block text-sm font-medium text-gray-900 dark:text-white"
-                  >
-                    <f:translate key="frontend.checkout.fullname" /> *
-                  </label>
-                  <f:form.textfield
-                    property="fullname"
-                    id="fullname"
-                    value="{user.firstName} {user.lastName}"
-                    class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-500 focus:ring-primary-500"
-                    placeholder="Erika Mustermann"
-                    required="true"
-                  />
-                </div>
+      <li class="flex shrink-0 items-center">
+        <svg
+          class="me-2 h-4 w-4 sm:h-5 sm:w-5"
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          fill="none"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M8.5 11.5 11 14l4-4m6 2a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+          />
+        </svg>
+        <f:translate key="frontend.checkout.payment" />
+      </li>
+    </ol>
+    <f:form
+      action="payment"
+      name="checkout"
+      controller="Checkout"
+      object="{checkout}"
+    >
+      <div class="mt-6 sm:mt-8 lg:flex lg:items-start lg:gap-6 xl:gap-10">
+        <div
+          class="min-w-0 flex-1 space-y-8 border border-gray-200 p-4 rounded shadow-sm"
+        >
+          <div class="space-y-4">
+            <h2 class="text-xl font-semibold text-gray-900 dark:text-white">
+              <f:translate key="frontend.checkout.deliveryAddress" />
+            </h2>
 
-                <div>
-                  <label
-                    for="email"
-                    class="mb-2 block text-sm font-medium text-gray-900 dark:text-white"
-                  >
-                    <f:translate key="frontend.checkout.email" /> *
-                  </label>
-                  <f:form.textfield
-                    property="email"
-                    id="email"
-                    value="{user.email}"
-                    class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-500 focus:ring-primary-500"
-                    placeholder="erika-mustermann@domain.de"
-                    required="true"
-                  />
-                </div>
-
-                <div class="col-span-2">
-                  <label
-                    for="company"
-                    class="mb-2 block text-sm font-medium text-gray-900 dark:text-white"
-                  >
-                    <f:translate key="frontend.checkout.company" />
-                  </label>
-                  <f:form.textfield
-                    property="company"
-                    id="company"
-                    value="{user.company}"
-                    class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-500 focus:ring-primary-500"
-                    placeholder="Muster GmbH"
-                  />
-                </div>
-
-                <div>
-                  <div class="mb-2 flex items-center gap-2">
-                    <label
-                      for="select-country-input-3"
-                      class="block text-sm font-medium text-gray-900 dark:text-white"
-                    >
-                      <f:translate key="frontend.checkout.country" /> *
-                    </label>
-                  </div>
-
-                  <f:form.countrySelect
-                    property="country"
-                    value="{defaultCountry}"
-                    class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-500 focus:ring-primary-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder:text-gray-400 dark:focus:border-primary-500 dark:focus:ring-primary-500"
-                    prioritizedCountries="{0: 'DE', 1: 'AT', 2: 'CH'}"
-                    required="true"
-                  />
-                </div>
-
-                <div>
-                  <label
-                    for="telephone"
-                    class="mb-2 block text-sm font-medium text-gray-900 dark:text-white"
-                  >
-                    <f:translate key="frontend.checkout.telephone" /> *
-                  </label>
-
-                  <f:form.textfield
-                    property="telephone"
-                    id="telephone"
-                    value="{user.telephone}"
-                    class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-500 focus:ring-primary-500"
-                    placeholder="+49 123 4567 890"
-                    required="true"
-                  />
-                </div>
-
-                <div class="col-span-2">
-                  <label
-                    for="address"
-                    class="mb-2 block text-sm font-medium text-gray-900 dark:text-white"
-                  >
-                    <f:translate key="frontend.checkout.street" /> *
-                  </label>
-                  <f:form.textfield
-                    property="address"
-                    id="address"
-                    value="{user.address}"
-                    class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-500 focus:ring-primary-500"
-                    placeholder="Heidestraße 17"
-                    required="true"
-                  />
-                </div>
-
-                <div>
-                  <label
-                    for="zip"
-                    class="mb-2 block text-sm font-medium text-gray-900 dark:text-white"
-                  >
-                    <f:translate key="frontend.checkout.zip" /> *
-                  </label>
-                  <f:form.textfield
-                    property="zip"
-                    id="zip"
-                    value="{user.zip}"
-                    class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-500 focus:ring-primary-500"
-                    placeholder="51147"
-                    required="true"
-                  />
-                </div>
-
-                <div>
-                  <label
-                    for="city"
-                    class="mb-2 block text-sm font-medium text-gray-900 dark:text-white"
-                  >
-                    <f:translate key="frontend.checkout.city" /> *
-                  </label>
-                  <f:form.textfield
-                    property="city"
-                    id="city"
-                    value="{user.city}"
-                    class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-500 focus:ring-primary-500"
-                    placeholder="Köln"
-                    required="true"
-                  />
-                </div>
+            <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+              <div>
+                <label
+                  for="fullname"
+                  class="mb-2 block text-sm font-medium text-gray-900 dark:text-white"
+                >
+                  <f:translate key="frontend.checkout.fullname" /> *
+                </label>
+                <f:form.textfield
+                  property="fullname"
+                  id="fullname"
+                  value="{user.firstName} {user.lastName}"
+                  class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-500 focus:ring-primary-500"
+                  placeholder="Erika Mustermann"
+                  required="true"
+                />
               </div>
-            </div>
 
-            <div class="space-y-4">
-              <h3 class="text-xl font-semibold text-gray-900 dark:text-white">
-                <f:translate key="frontend.checkout.paymentMethod" />
-              </h3>
-
-              <div class="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-4">
-                <div
-                  class="rounded-lg border border-gray-200 bg-gray-50 p-4 ps-4 dark:border-gray-700 dark:bg-gray-800"
+              <div>
+                <label
+                  for="email"
+                  class="mb-2 block text-sm font-medium text-gray-900 dark:text-white"
                 >
-                  <div class="flex items-start">
-                    <div class="flex h-5 items-center">
-                      <f:form.radio
-                        id="credit-card"
-                        property="payment-method"
-                        value="card"
-                        aria-describedby="credit-card-text"
-                        required="true"
-                        checked="true"
-                      />
-                    </div>
+                  <f:translate key="frontend.checkout.email" /> *
+                </label>
+                <f:form.textfield
+                  property="email"
+                  id="email"
+                  value="{user.email}"
+                  class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-500 focus:ring-primary-500"
+                  placeholder="erika-mustermann@domain.de"
+                  required="true"
+                />
+              </div>
 
-                    <div class="ms-4 text-sm">
-                      <label
-                        for="credit-card"
-                        class="font-medium leading-none text-gray-900 dark:text-white"
-                      >
-                        <f:translate key="frontend.checkout.card" />
-                      </label>
-                      <p
-                        id="credit-card-text"
-                        class="mt-1 text-xs font-normal text-gray-500 dark:text-gray-400"
-                      >
-                        <f:translate key="frontend.checkout.cardText" />
-                      </p>
-                    </div>
-                  </div>
+              <div class="col-span-2">
+                <label
+                  for="company"
+                  class="mb-2 block text-sm font-medium text-gray-900 dark:text-white"
+                >
+                  <f:translate key="frontend.checkout.company" />
+                </label>
+                <f:form.textfield
+                  property="company"
+                  id="company"
+                  value="{user.company}"
+                  class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-500 focus:ring-primary-500"
+                  placeholder="Muster GmbH"
+                />
+              </div>
+
+              <div>
+                <div class="mb-2 flex items-center gap-2">
+                  <label
+                    for="select-country-input-3"
+                    class="block text-sm font-medium text-gray-900 dark:text-white"
+                  >
+                    <f:translate key="frontend.checkout.country" /> *
+                  </label>
                 </div>
 
-                <div
-                  class="rounded-lg border border-gray-200 bg-gray-50 p-4 ps-4 dark:border-gray-700 dark:bg-gray-800"
+                <f:form.countrySelect
+                  property="country"
+                  value="{defaultCountry}"
+                  class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-500 focus:ring-primary-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder:text-gray-400 dark:focus:border-primary-500 dark:focus:ring-primary-500"
+                  prioritizedCountries="{0: 'DE', 1: 'AT', 2: 'CH'}"
+                  required="true"
+                />
+              </div>
+
+              <div>
+                <label
+                  for="telephone"
+                  class="mb-2 block text-sm font-medium text-gray-900 dark:text-white"
                 >
-                  <div class="flex items-start">
-                    <div class="flex h-5 items-center">
-                      <f:form.radio
-                        id="pay-klarna"
-                        property="payment-method"
-                        value="klarna"
-                        aria-describedby="pay-klarna-text"
-                        required="true"
-                      />
-                    </div>
+                  <f:translate key="frontend.checkout.telephone" /> *
+                </label>
 
-                    <div class="ms-4 text-sm">
-                      <label
-                        for="pay-klarna"
-                        class="font-medium leading-none text-gray-900 dark:text-white"
-                      >
-                        <f:translate key="frontend.checkout.klarna" />
-                      </label>
-                      <p
-                        id="pay-klarna-text"
-                        class="mt-1 text-xs font-normal text-gray-500 dark:text-gray-400"
-                      >
-                        <f:translate key="frontend.checkout.klarnaText" />
-                      </p>
-                    </div>
-                  </div>
-                </div>
+                <f:form.textfield
+                  property="telephone"
+                  id="telephone"
+                  value="{user.telephone}"
+                  class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-500 focus:ring-primary-500"
+                  placeholder="+49 123 4567 890"
+                  required="true"
+                />
+              </div>
 
-                <div
-                  class="rounded-lg border border-gray-200 bg-gray-50 p-4 ps-4 dark:border-gray-700 dark:bg-gray-800"
+              <div class="col-span-2">
+                <label
+                  for="address"
+                  class="mb-2 block text-sm font-medium text-gray-900 dark:text-white"
                 >
-                  <div class="flex items-start">
-                    <div class="flex h-5 items-center">
-                      <f:form.radio
-                        id="paypal"
-                        property="payment-method"
-                        value="paypal"
-                        aria-describedby="paypal-text"
-                        required="true"
-                      />
-                    </div>
+                  <f:translate key="frontend.checkout.street" /> *
+                </label>
+                <f:form.textfield
+                  property="address"
+                  id="address"
+                  value="{user.address}"
+                  class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-500 focus:ring-primary-500"
+                  placeholder="Heidestraße 17"
+                  required="true"
+                />
+              </div>
 
-                    <div class="ms-4 text-sm">
-                      <label
-                        for="paypal"
-                        class="font-medium leading-none text-gray-900 dark:text-white"
-                      >
-                        <f:translate key="frontend.checkout.paypal" />
-                      </label>
-                      <p
-                        id="paypal-text"
-                        class="mt-1 text-xs font-normal text-gray-500 dark:text-gray-400"
-                      >
-                        <f:translate key="frontend.checkout.paypalText" />
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                <div
-                  class="rounded-lg border border-gray-200 bg-gray-50 p-4 ps-4 dark:border-gray-700 dark:bg-gray-800"
+              <div>
+                <label
+                  for="zip"
+                  class="mb-2 block text-sm font-medium text-gray-900 dark:text-white"
                 >
-                  <div class="flex items-start">
-                    <div class="flex h-5 items-center">
-                      <f:form.radio
-                        id="invoice"
-                        property="payment-method"
-                        value="invoice"
-                        aria-describedby="invoice-text"
-                        required="true"
-                      />
-                    </div>
-                    <div class="ms-4 text-sm">
-                      <label
-                        for="invoice"
-                        class="font-medium leading-none text-gray-900 dark:text-white"
-                      >
-                        <f:translate key="frontend.checkout.invoice" />
-                      </label>
-                      <p
-                        id="invoice-text"
-                        class="mt-1 text-xs font-normal text-gray-500 dark:text-gray-400"
-                      >
-                        <f:translate key="frontend.checkout.invoiceText" />
-                      </p>
-                    </div>
-                  </div>
-                </div>
+                  <f:translate key="frontend.checkout.zip" /> *
+                </label>
+                <f:form.textfield
+                  property="zip"
+                  id="zip"
+                  value="{user.zip}"
+                  class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-500 focus:ring-primary-500"
+                  placeholder="51147"
+                  required="true"
+                />
+              </div>
+
+              <div>
+                <label
+                  for="city"
+                  class="mb-2 block text-sm font-medium text-gray-900 dark:text-white"
+                >
+                  <f:translate key="frontend.checkout.city" /> *
+                </label>
+                <f:form.textfield
+                  property="city"
+                  id="city"
+                  value="{user.city}"
+                  class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-500 focus:ring-primary-500"
+                  placeholder="Köln"
+                  required="true"
+                />
               </div>
             </div>
           </div>
 
-          <div
-            class="mt-6 w-full space-y-6 sm:mt-8 lg:mt-0 lg:max-w-xs xl:max-w-md border border-gray-200 p-4 rounded shadow-sm"
-          >
-            <div class="flow-root">
-              <h2 class="text-xl font-semibold text-gray-900">
-                <f:translate key="frontend.checkout.order" />
-              </h2>
+          <div class="space-y-4">
+            <h3 class="text-xl font-semibold text-gray-900 dark:text-white">
+              <f:translate key="frontend.checkout.paymentMethod" />
+            </h3>
 
-              <div class="cart-items"></div>
-              <div class="h-1 bg-gray-600"></div>
+            <div class="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-4">
               <div
-                class="cart-summary my-3 divide-y divide-gray-200 dark:divide-gray-800"
+                class="rounded-lg border border-gray-200 bg-gray-50 p-4 ps-4 dark:border-gray-700 dark:bg-gray-800"
               >
-                <dl class="flex items-center justify-between gap-4 py-3">
-                  <dt
-                    class="text-base font-normal text-gray-500 dark:text-gray-400"
-                  >
-                    <f:translate key="frontend.checkout.article" />
-                  </dt>
-                  <dd
-                    class="total-without-vat text-base font-medium text-gray-900 dark:text-white"
-                  ></dd>
-                </dl>
+                <div class="flex items-start">
+                  <div class="flex h-5 items-center">
+                    <f:form.radio
+                      id="credit-card"
+                      property="payment-method"
+                      value="card"
+                      aria-describedby="credit-card-text"
+                      required="true"
+                      checked="true"
+                    />
+                  </div>
 
-                <dl class="flex items-center justify-between gap-4 py-3">
-                  <dt
-                    class="text-base font-normal text-gray-500 dark:text-gray-400"
-                  >
-                    <f:translate key="frontend.checkout.vat" />
-                  </dt>
-                  <dd
-                    class="price-vat text-base font-medium text-gray-900 dark:text-white"
-                  ></dd>
-                </dl>
-
-                <dl class="flex items-center justify-between gap-4 py-3">
-                  <dt
-                    class="text-base font-normal text-gray-500 dark:text-gray-400"
-                  >
-                    <f:translate key="frontend.checkout.shipping" />
-                  </dt>
-                  <dd
-                    class="shipping-cost text-base font-medium text-gray-900 dark:text-white"
-                  ></dd>
-                </dl>
-
-                <dl class="flex items-center justify-between gap-4 py-3">
-                  <dt class="text-base font-bold text-gray-900 dark:text-white">
-                    <f:translate key="frontend.checkout.total" />
-                  </dt>
-                  <dd
-                    class="total text-base font-bold text-gray-900 dark:text-white"
-                  ></dd>
-                </dl>
+                  <div class="ms-4 text-sm">
+                    <label
+                      for="credit-card"
+                      class="font-medium leading-none text-gray-900 dark:text-white"
+                    >
+                      <f:translate key="frontend.checkout.card" />
+                    </label>
+                    <p
+                      id="credit-card-text"
+                      class="mt-1 text-xs font-normal text-gray-500 dark:text-gray-400"
+                    >
+                      <f:translate key="frontend.checkout.cardText" />
+                    </p>
+                  </div>
+                </div>
               </div>
-            </div>
 
-            <div class="space-y-3">
-              <f:form.button
-                class="btn btn-primary flex w-full items-center justify-center rounded-lg"
+              <div
+                class="rounded-lg border border-gray-200 bg-gray-50 p-4 ps-4 dark:border-gray-700 dark:bg-gray-800"
               >
-                <f:translate key="frontend.checkout.btnPayment" />
-              </f:form.button>
+                <div class="flex items-start">
+                  <div class="flex h-5 items-center">
+                    <f:form.radio
+                      id="pay-klarna"
+                      property="payment-method"
+                      value="klarna"
+                      aria-describedby="pay-klarna-text"
+                      required="true"
+                    />
+                  </div>
+
+                  <div class="ms-4 text-sm">
+                    <label
+                      for="pay-klarna"
+                      class="font-medium leading-none text-gray-900 dark:text-white"
+                    >
+                      <f:translate key="frontend.checkout.klarna" />
+                    </label>
+                    <p
+                      id="pay-klarna-text"
+                      class="mt-1 text-xs font-normal text-gray-500 dark:text-gray-400"
+                    >
+                      <f:translate key="frontend.checkout.klarnaText" />
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="rounded-lg border border-gray-200 bg-gray-50 p-4 ps-4 dark:border-gray-700 dark:bg-gray-800"
+              >
+                <div class="flex items-start">
+                  <div class="flex h-5 items-center">
+                    <f:form.radio
+                      id="paypal"
+                      property="payment-method"
+                      value="paypal"
+                      aria-describedby="paypal-text"
+                      required="true"
+                    />
+                  </div>
+
+                  <div class="ms-4 text-sm">
+                    <label
+                      for="paypal"
+                      class="font-medium leading-none text-gray-900 dark:text-white"
+                    >
+                      <f:translate key="frontend.checkout.paypal" />
+                    </label>
+                    <p
+                      id="paypal-text"
+                      class="mt-1 text-xs font-normal text-gray-500 dark:text-gray-400"
+                    >
+                      <f:translate key="frontend.checkout.paypalText" />
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="rounded-lg border border-gray-200 bg-gray-50 p-4 ps-4 dark:border-gray-700 dark:bg-gray-800"
+              >
+                <div class="flex items-start">
+                  <div class="flex h-5 items-center">
+                    <f:form.radio
+                      id="invoice"
+                      property="payment-method"
+                      value="invoice"
+                      aria-describedby="invoice-text"
+                      required="true"
+                    />
+                  </div>
+                  <div class="ms-4 text-sm">
+                    <label
+                      for="invoice"
+                      class="font-medium leading-none text-gray-900 dark:text-white"
+                    >
+                      <f:translate key="frontend.checkout.invoice" />
+                    </label>
+                    <p
+                      id="invoice-text"
+                      class="mt-1 text-xs font-normal text-gray-500 dark:text-gray-400"
+                    >
+                      <f:translate key="frontend.checkout.invoiceText" />
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-      </f:form>
-    </div>
-  </section>
-</f:section>
+
+        <div
+          class="mt-6 w-full space-y-6 sm:mt-8 lg:mt-0 lg:max-w-xs xl:max-w-md border border-gray-200 p-4 rounded shadow-sm"
+        >
+          <div class="flow-root">
+            <h2 class="text-xl font-semibold text-gray-900">
+              <f:translate key="frontend.checkout.order" />
+            </h2>
+
+            <div class="cart-items"></div>
+            <div class="h-1 bg-gray-600"></div>
+            <div
+              class="cart-summary my-3 divide-y divide-gray-200 dark:divide-gray-800"
+            >
+              <dl class="flex items-center justify-between gap-4 py-3">
+                <dt
+                  class="text-base font-normal text-gray-500 dark:text-gray-400"
+                >
+                  <f:translate key="frontend.checkout.article" />
+                </dt>
+                <dd
+                  class="total-without-vat text-base font-medium text-gray-900 dark:text-white"
+                ></dd>
+              </dl>
+
+              <dl class="flex items-center justify-between gap-4 py-3">
+                <dt
+                  class="text-base font-normal text-gray-500 dark:text-gray-400"
+                >
+                  <f:translate key="frontend.checkout.vat" />
+                </dt>
+                <dd
+                  class="price-vat text-base font-medium text-gray-900 dark:text-white"
+                ></dd>
+              </dl>
+
+              <dl class="flex items-center justify-between gap-4 py-3">
+                <dt
+                  class="text-base font-normal text-gray-500 dark:text-gray-400"
+                >
+                  <f:translate key="frontend.checkout.shipping" />
+                </dt>
+                <dd
+                  class="shipping-cost text-base font-medium text-gray-900 dark:text-white"
+                ></dd>
+              </dl>
+
+              <dl class="flex items-center justify-between gap-4 py-3">
+                <dt class="text-base font-bold text-gray-900 dark:text-white">
+                  <f:translate key="frontend.checkout.total" />
+                </dt>
+                <dd
+                  class="total text-base font-bold text-gray-900 dark:text-white"
+                ></dd>
+              </dl>
+            </div>
+          </div>
+
+          <div class="space-y-3">
+            <f:form.button
+              class="btn btn-primary flex w-full items-center justify-center rounded-lg"
+            >
+              <f:translate key="frontend.checkout.btnPayment" />
+            </f:form.button>
+          </div>
+        </div>
+      </div>
+    </f:form>
+  </div>
+</section>

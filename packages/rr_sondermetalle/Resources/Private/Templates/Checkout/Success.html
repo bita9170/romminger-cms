@@ -1,141 +1,136 @@
-<f:layout name="Profile" />
-<f:section name="Main">
-  <section class="container bg-white py-4 antialiased md:py-8 px-0">
-    <div class="px-4 md:px-0">
-      <div
-        class="min-w-0 flex flex-col flex-1 max-w-2xl gap-8 mx-auto border border-gray-200 p-4 rounded shadow-sm divide-y-2 divide-gray-200 divide-dashed"
-      >
-        <f:if condition="{flashMessage}">
-          <f:then>
-            <div class="text-center">
-              <div
-                class="text-red-500 border-2 !border-red-500 text-4xl mx-auto mb-4 w-16 h-16 flex items-center justify-center rounded-full"
-              >
-                &times;
-              </div>
-              <h1 class="text-2xl font-semibold mb-2">
-                <f:translate key="frontend.checkout.{flashMessage}" />
-              </h1>
+<section class="container bg-white py-4 antialiased md:py-8 px-0">
+  <div class="px-4 md:px-0">
+    <div
+      class="min-w-0 flex flex-col flex-1 max-w-2xl gap-8 mx-auto border border-gray-200 p-4 rounded shadow-sm divide-y-2 divide-gray-200 divide-dashed"
+    >
+      <f:if condition="{flashMessage}">
+        <f:then>
+          <div class="text-center">
+            <div
+              class="text-red-500 border-2 !border-red-500 text-4xl mx-auto mb-4 w-16 h-16 flex items-center justify-center rounded-full"
+            >
+              &times;
             </div>
+            <h1 class="text-2xl font-semibold mb-2">
+              <f:translate key="frontend.checkout.{flashMessage}" />
+            </h1>
+          </div>
 
-            <div class="text-center pt-4">
-              <f:link.action
-                action="list"
-                class="btn btn-primary"
-                controller="Category"
-                >Continue shopping</f:link.action
-              >
+          <div class="text-center pt-4">
+            <f:link.action
+              action="list"
+              class="btn btn-primary"
+              controller="Category"
+              >Continue shopping</f:link.action
+            >
+          </div>
+        </f:then>
+        <f:else>
+          <div class="text-center">
+            <div
+              class="text-green-500 text-4xl mx-auto mb-4 w-16 h-16 flex items-center justify-center border-2 !border-green-500 rounded-full"
+            >
+              &#10004;
             </div>
-          </f:then>
-          <f:else>
-            <div class="text-center">
-              <div
-                class="text-green-500 text-4xl mx-auto mb-4 w-16 h-16 flex items-center justify-center border-2 !border-green-500 rounded-full"
-              >
-                &#10004;
-              </div>
-              <h1 class="text-2xl font-semibold mb-2">
-                <f:translate key="frontend.checkout.success" />
-              </h1>
-              <!-- <p class="text-gray-400">
+            <h1 class="text-2xl font-semibold mb-2">
+              <f:translate key="frontend.checkout.success" />
+            </h1>
+            <!-- <p class="text-gray-400">
                 The order confirmation has been sent to
                 <span class="font-semibold">example@gmail.com</span>.
               </p> -->
-            </div>
+          </div>
 
-            <div class="pt-4 space-y-2">
-              <p>
-                <strong
-                  ><f:translate key="frontend.checkout.transactionDate" />:
-                </strong>
-                <f:format.date format="%d. %B %Y"
-                  >{paymentIntent.created}</f:format.date
-                >
-              </p>
-              <p>
-                <strong
-                  ><f:translate key="frontend.checkout.paymentMethod" />:
-                </strong>
+          <div class="pt-4 space-y-2">
+            <p>
+              <strong
+                ><f:translate key="frontend.checkout.transactionDate" />:
+              </strong>
+              <f:format.date format="%d. %B %Y"
+                >{paymentIntent.created}</f:format.date
+              >
+            </p>
+            <p>
+              <strong
+                ><f:translate key="frontend.checkout.paymentMethod" />:
+              </strong>
 
-                <f:translate
-                  key="frontend.checkout.{session.payment_method_types.0}"
+              <f:translate
+                key="frontend.checkout.{session.payment_method_types.0}"
+              />
+            </p>
+          </div>
+
+          <div class="pt-4">
+            <h2 class="text-xl font-semibold mb-4">
+              <f:translate key="frontend.checkout.order" />
+            </h2>
+            <f:for each="{lineItems.data}" as="item">
+              <div
+                class="flex items-center justify-between bg-gray-50 p-4 rounded-md mb-4"
+              >
+                <img
+                  src="{siteUrl}/{item.product.metadata.product_image}"
+                  alt="{item.product.name}"
+                  class="w-16 h-16 object-cover rounded"
                 />
-              </p>
-            </div>
-
-            <div class="pt-4">
-              <h2 class="text-xl font-semibold mb-4">
-                <f:translate key="frontend.checkout.order" />
-              </h2>
-              <f:for each="{lineItems.data}" as="item">
-                <div
-                  class="flex items-center justify-between bg-gray-50 p-4 rounded-md mb-4"
-                >
-                  <img
-                    src="{siteUrl}/{item.product.metadata.product_image}"
-                    alt="{item.product.name}"
-                    class="w-16 h-16 object-cover rounded"
-                  />
-                  <div class="flex-1 ml-4">
-                    <p class="text-gray-800 font-medium">{item.product.name}</p>
-                    <p class="text-gray-600 text-sm">x{item.quantity}</p>
-                  </div>
-                  <p class="font-medium text-gray-800">
-                    <f:format.currency currencySign="€"
-                      >{item.price.unit_amount_decimal / 100}</f:format.currency
-                    >
-                  </p>
+                <div class="flex-1 ml-4">
+                  <p class="text-gray-800 font-medium">{item.product.name}</p>
+                  <p class="text-gray-600 text-sm">x{item.quantity}</p>
                 </div>
-              </f:for>
-            </div>
-
-            <div class="pt-4">
-              <div class="flex justify-between text-sm">
-                <span><f:translate key="frontend.checkout.article" />: </span>
-                <span
-                  ><f:format.currency currencySign="€"
-                    >{session.amount_subtotal / 100}</f:format.currency
-                  ></span
-                >
-              </div>
-              <div class="flex justify-between text-sm">
-                <span><f:translate key="frontend.checkout.vat" />: </span>
-                <span>
+                <p class="font-medium text-gray-800">
                   <f:format.currency currencySign="€"
-                    >{session.total_details.amount_tax / 100}</f:format.currency
+                    >{item.price.unit_amount_decimal / 100}</f:format.currency
                   >
-                </span>
+                </p>
               </div>
-              <div class="flex justify-between text-sm">
-                <span><f:translate key="frontend.checkout.shipping" />: </span>
-                <span
-                  ><f:format.currency currencySign="€"
-                    >0</f:format.currency
-                  ></span
-                >
-              </div>
+            </f:for>
+          </div>
 
-              <div class="flex justify-between font-semibold mt-4">
-                <span><f:translate key="frontend.checkout.total" />: </span>
-                <span>
-                  <f:format.currency currencySign="€"
-                    >{session.amount_total / 100}</f:format.currency
-                  >
-                </span>
-              </div>
-            </div>
-
-            <div class="text-center pt-4">
-              <f:link.action
-                action="list"
-                class="btn btn-primary"
-                controller="Category"
-                >Continue shopping</f:link.action
+          <div class="pt-4">
+            <div class="flex justify-between text-sm">
+              <span><f:translate key="frontend.checkout.article" />: </span>
+              <span
+                ><f:format.currency currencySign="€"
+                  >{session.amount_subtotal / 100}</f:format.currency
+                ></span
               >
             </div>
-          </f:else>
-        </f:if>
-      </div>
+            <div class="flex justify-between text-sm">
+              <span><f:translate key="frontend.checkout.vat" />: </span>
+              <span>
+                <f:format.currency currencySign="€"
+                  >{session.total_details.amount_tax / 100}</f:format.currency
+                >
+              </span>
+            </div>
+            <div class="flex justify-between text-sm">
+              <span><f:translate key="frontend.checkout.shipping" />: </span>
+              <span
+                ><f:format.currency currencySign="€">0</f:format.currency></span
+              >
+            </div>
+
+            <div class="flex justify-between font-semibold mt-4">
+              <span><f:translate key="frontend.checkout.total" />: </span>
+              <span>
+                <f:format.currency currencySign="€"
+                  >{session.amount_total / 100}</f:format.currency
+                >
+              </span>
+            </div>
+          </div>
+
+          <div class="text-center pt-4">
+            <f:link.action
+              action="list"
+              class="btn btn-primary"
+              controller="Category"
+              >Continue shopping</f:link.action
+            >
+          </div>
+        </f:else>
+      </f:if>
     </div>
-  </section>
-</f:section>
+  </div>
+</section>

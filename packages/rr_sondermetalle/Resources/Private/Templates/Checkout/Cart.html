@@ -1,69 +1,14 @@
-<f:layout name="Profile" />
-<f:section name="Main">
-  <section class="container bg-white py-4 antialiased md:py-8 px-0">
-    <div class="px-4 md:px-0">
-      <ol
-        class="items-center flex w-full max-w-2xl text-center text-sm font-medium text-gray-500 sm:text-base"
+<section class="container bg-white py-4 antialiased md:py-8 px-0">
+  <div class="px-4 md:px-0">
+    <ol
+      class="items-center flex w-full max-w-2xl text-center text-sm font-medium text-gray-500 sm:text-base"
+    >
+      <li
+        class="after:border-1 flex items-center text-blue-700 after:mx-6 after:hidden after:h-1 after:w-full after:border-b after:border-gray-200 sm:after:inline-block sm:after:content-[''] md:w-full xl:after:mx-10"
       >
-        <li
-          class="after:border-1 flex items-center text-blue-700 after:mx-6 after:hidden after:h-1 after:w-full after:border-b after:border-gray-200 sm:after:inline-block sm:after:content-[''] md:w-full xl:after:mx-10"
+        <span
+          class="flex items-center after:mx-2 after:text-gray-200 after:content-['/'] dark:after:text-gray-500 sm:after:hidden"
         >
-          <span
-            class="flex items-center after:mx-2 after:text-gray-200 after:content-['/'] dark:after:text-gray-500 sm:after:hidden"
-          >
-            <svg
-              class="me-2 h-4 w-4 sm:h-5 sm:w-5"
-              aria-hidden="true"
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              fill="none"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke="currentColor"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M8.5 11.5 11 14l4-4m6 2a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
-              />
-            </svg>
-            <f:link.action action="cart"
-              ><f:translate key="frontend.checkout.cart"
-            /></f:link.action>
-          </span>
-        </li>
-
-        <li
-          class="after:border-1 flex items-center after:mx-6 after:hidden after:h-1 after:w-full after:border-b after:border-gray-200 dark:text-primary-500 dark:after:border-gray-700 sm:after:inline-block sm:after:content-[''] md:w-full xl:after:mx-10"
-        >
-          <span
-            class="flex items-center after:mx-2 after:text-gray-200 after:content-['/'] dark:after:text-gray-500 sm:after:hidden"
-          >
-            <svg
-              class="me-2 h-4 w-4 sm:h-5 sm:w-5"
-              aria-hidden="true"
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              fill="none"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke="currentColor"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M8.5 11.5 11 14l4-4m6 2a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
-              />
-            </svg>
-            <f:link.action action="checkout"
-              ><f:translate key="frontend.checkout.checkout"
-            /></f:link.action>
-          </span>
-        </li>
-
-        <li class="flex shrink-0 items-center">
           <svg
             class="me-2 h-4 w-4 sm:h-5 sm:w-5"
             aria-hidden="true"
@@ -81,116 +26,168 @@
               d="M8.5 11.5 11 14l4-4m6 2a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
             />
           </svg>
-          <f:translate key="frontend.checkout.payment" />
-        </li>
-      </ol>
+          <f:link.action action="cart"
+            ><f:translate key="frontend.checkout.cart"
+          /></f:link.action>
+        </span>
+      </li>
 
-      <div class="mt-6 sm:mt-8 lg:flex lg:items-start lg:gap-6 xl:gap-10">
-        <div
-          class="min-w-0 flex-1 space-y-8 border border-gray-200 p-4 rounded shadow-sm"
+      <li
+        class="after:border-1 flex items-center after:mx-6 after:hidden after:h-1 after:w-full after:border-b after:border-gray-200 dark:text-primary-500 dark:after:border-gray-700 sm:after:inline-block sm:after:content-[''] md:w-full xl:after:mx-10"
+      >
+        <span
+          class="flex items-center after:mx-2 after:text-gray-200 after:content-['/'] dark:after:text-gray-500 sm:after:hidden"
         >
-          <div class="cart-empty-header d-none">
-            <f:translate key="frontend.checkout.cartEmpty" />
-          </div>
-          <div
-            class="grid grid-cols-12 mt-2 max-md:hidden pb-6 border-b border-gray-200 cart-items-header"
+          <svg
+            class="me-2 h-4 w-4 sm:h-5 sm:w-5"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            fill="none"
+            viewBox="0 0 24 24"
           >
-            <div class="col-span-12 md:col-span-7">
-              <p class="font-normal text-lg leading-8 text-gray-400">
-                <f:translate
-                  key="frontend.product_details"
-                  extensionName="rr_sondermetalle"
-                />
-              </p>
-            </div>
-            <div class="col-span-12 md:col-span-5">
-              <div class="grid grid-cols-5">
-                <div class="col-span-3">
-                  <p
-                    class="font-normal text-lg leading-8 text-gray-400 text-center"
-                  >
-                    <f:translate
-                      key="frontend.quantity"
-                      extensionName="rr_sondermetalle"
-                    />
-                  </p>
-                </div>
-                <div class="col-span-2">
-                  <p
-                    class="font-normal text-lg leading-8 text-gray-400 text-right"
-                  >
-                    <f:translate
-                      key="frontend.total"
-                      extensionName="rr_sondermetalle"
-                    />
-                  </p>
-                </div>
+            <path
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M8.5 11.5 11 14l4-4m6 2a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+            />
+          </svg>
+          <f:link.action action="checkout"
+            ><f:translate key="frontend.checkout.checkout"
+          /></f:link.action>
+        </span>
+      </li>
+
+      <li class="flex shrink-0 items-center">
+        <svg
+          class="me-2 h-4 w-4 sm:h-5 sm:w-5"
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          fill="none"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M8.5 11.5 11 14l4-4m6 2a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+          />
+        </svg>
+        <f:translate key="frontend.checkout.payment" />
+      </li>
+    </ol>
+
+    <div class="mt-6 sm:mt-8 lg:flex lg:items-start lg:gap-6 xl:gap-10">
+      <div
+        class="min-w-0 flex-1 space-y-8 border border-gray-200 p-4 rounded shadow-sm"
+      >
+        <div class="cart-empty-header d-none">
+          <f:translate key="frontend.checkout.cartEmpty" />
+        </div>
+        <div
+          class="grid grid-cols-12 mt-2 max-md:hidden pb-6 border-b border-gray-200 cart-items-header"
+        >
+          <div class="col-span-12 md:col-span-7">
+            <p class="font-normal text-lg leading-8 text-gray-400">
+              <f:translate
+                key="frontend.product_details"
+                extensionName="rr_sondermetalle"
+              />
+            </p>
+          </div>
+          <div class="col-span-12 md:col-span-5">
+            <div class="grid grid-cols-5">
+              <div class="col-span-3">
+                <p
+                  class="font-normal text-lg leading-8 text-gray-400 text-center"
+                >
+                  <f:translate
+                    key="frontend.quantity"
+                    extensionName="rr_sondermetalle"
+                  />
+                </p>
+              </div>
+              <div class="col-span-2">
+                <p
+                  class="font-normal text-lg leading-8 text-gray-400 text-right"
+                >
+                  <f:translate
+                    key="frontend.total"
+                    extensionName="rr_sondermetalle"
+                  />
+                </p>
               </div>
             </div>
           </div>
-          <div class="cart-items-checkout"></div>
+        </div>
+        <div class="cart-items-checkout"></div>
+      </div>
+
+      <div
+        class="mt-6 w-full space-y-6 sm:mt-8 lg:mt-0 lg:max-w-xs xl:max-w-md border border-gray-200 p-4 rounded shadow-sm"
+      >
+        <div class="flow-root">
+          <div
+            class="cart-summary my-3 divide-y divide-gray-200 dark:divide-gray-800"
+          >
+            <dl class="flex items-center justify-between gap-4 py-3">
+              <dt
+                class="text-base font-normal text-gray-500 dark:text-gray-400"
+              >
+                <f:translate key="frontend.checkout.article" />
+              </dt>
+              <dd
+                class="total-without-vat text-base font-medium text-gray-900 dark:text-white"
+              ></dd>
+            </dl>
+
+            <dl class="flex items-center justify-between gap-4 py-3">
+              <dt
+                class="text-base font-normal text-gray-500 dark:text-gray-400"
+              >
+                <f:translate key="frontend.checkout.vat" />
+              </dt>
+              <dd
+                class="price-vat text-base font-medium text-gray-900 dark:text-white"
+              ></dd>
+            </dl>
+
+            <dl class="flex items-center justify-between gap-4 py-3">
+              <dt
+                class="text-base font-normal text-gray-500 dark:text-gray-400"
+              >
+                <f:translate key="frontend.checkout.shipping" />
+              </dt>
+              <dd
+                class="shipping-cost text-base font-medium text-gray-900 dark:text-white"
+              ></dd>
+            </dl>
+
+            <dl class="flex items-center justify-between gap-4 py-3">
+              <dt class="text-base font-bold text-gray-900 dark:text-white">
+                <f:translate key="frontend.checkout.total" />
+              </dt>
+              <dd
+                class="total text-base font-bold text-gray-900 dark:text-white"
+              ></dd>
+            </dl>
+          </div>
         </div>
 
-        <div
-          class="mt-6 w-full space-y-6 sm:mt-8 lg:mt-0 lg:max-w-xs xl:max-w-md border border-gray-200 p-4 rounded shadow-sm"
-        >
-          <div class="flow-root">
-            <div
-              class="cart-summary my-3 divide-y divide-gray-200 dark:divide-gray-800"
-            >
-              <dl class="flex items-center justify-between gap-4 py-3">
-                <dt
-                  class="text-base font-normal text-gray-500 dark:text-gray-400"
-                >
-                  <f:translate key="frontend.checkout.article" />
-                </dt>
-                <dd
-                  class="total-without-vat text-base font-medium text-gray-900 dark:text-white"
-                ></dd>
-              </dl>
-
-              <dl class="flex items-center justify-between gap-4 py-3">
-                <dt
-                  class="text-base font-normal text-gray-500 dark:text-gray-400"
-                >
-                  <f:translate key="frontend.checkout.vat" />
-                </dt>
-                <dd
-                  class="price-vat text-base font-medium text-gray-900 dark:text-white"
-                ></dd>
-              </dl>
-
-              <dl class="flex items-center justify-between gap-4 py-3">
-                <dt
-                  class="text-base font-normal text-gray-500 dark:text-gray-400"
-                >
-                  <f:translate key="frontend.checkout.shipping" />
-                </dt>
-                <dd
-                  class="shipping-cost text-base font-medium text-gray-900 dark:text-white"
-                ></dd>
-              </dl>
-
-              <dl class="flex items-center justify-between gap-4 py-3">
-                <dt class="text-base font-bold text-gray-900 dark:text-white">
-                  <f:translate key="frontend.checkout.total" />
-                </dt>
-                <dd
-                  class="total text-base font-bold text-gray-900 dark:text-white"
-                ></dd>
-              </dl>
-            </div>
-          </div>
-
-          <div class="space-y-3">
-            <f:link.action
-              action="checkout"
-              class="btn btn-primary flex w-full items-center justify-center rounded-lg"
-              ><f:translate key="frontend.checkout.btnCheckout"
-            /></f:link.action>
-          </div>
+        <div class="space-y-3">
+          <f:link.action
+            action="checkout"
+            class="btn btn-primary flex w-full items-center justify-center rounded-lg"
+            ><f:translate key="frontend.checkout.btnCheckout"
+          /></f:link.action>
         </div>
       </div>
     </div>
-  </section>
-</f:section>
+  </div>
+</section>

@@ -3,7 +3,7 @@
     <f:then>
       <f:if condition="{user.avatar}">
         <f:then>
-          <div class="relative w-8 h-8">
+          <div class="relative w-10 h-10">
             <f:image
               image="{user.avatar}"
               id="avatarButton"
@@ -20,9 +20,11 @@
             type="button"
             data-dropdown-toggle="userDropdown"
             data-dropdown-placement="bottom-start"
-            class="relative inline-flex items-center justify-center w-10 h-10 overflow-hidden bg-primary rounded-full"
+            class="relative inline-flex items-center justify-center w-10 h-10 overflow-hidden bg-secondary-500 rounded-full"
           >
-            <span class="font-medium text-white">{user.avatarFallback}</span>
+            <span class="font-medium text-primary-500"
+              >{user.avatarFallback}</span
+            >
           </div></f:else
         >
       </f:if>
@@ -108,7 +110,7 @@
       </div>
     </f:then>
     <f:else>
-      <f:link.page pageUid="35" class="w-8 h-8">
+      <f:link.page pageUid="35" class="w-10 h-10">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 512 512"
