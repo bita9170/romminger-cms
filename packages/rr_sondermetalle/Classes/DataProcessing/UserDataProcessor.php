@@ -21,7 +21,7 @@ class UserDataProcessor implements DataProcessorInterface
         if (!empty($GLOBALS['TSFE']->fe_user->user)) {
             $user = $GLOBALS['TSFE']->fe_user->user;
 
-            if (!empty($user['image'])) {
+            if ($user['image'] != '0') {
                 $fileRepository = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\TYPO3\CMS\Core\Resource\FileRepository::class);
                 $fileObjects = $fileRepository->findByRelation('fe_users', 'image', $user['uid']);
 
@@ -29,9 +29,9 @@ class UserDataProcessor implements DataProcessorInterface
                     /** @var FileReference $fileObject */
                     $fileObject = reset($fileObjects);
                     $user['avatar'] = $fileObject;
-                } else {
-                    $user['avatarFallback'] = $user['first_name'][0] . $user['last_name'][0];
                 }
+            } else {
+                $user['avatarFallback'] = $user['first_name'][0] . $user['last_name'][0];
             }
 
             $processedData['user'] = $user;

@@ -3,9 +3,13 @@
   aria-labelledby="dropdownLargeButton"
 >
   <f:for each="{materials}" as="material">
+    <f:variable name="language"></f:variable>
+    <f:if condition="{material.data.sys_language_uid} == 1">
+      <f:variable name="language">/en</f:variable>
+    </f:if>
     <li>
       <a
-        href="/material/{material.data.name}"
+        href="{language}/material/{material.data.name}"
         class="flex flex-col items-center justify-between w-24 h-24 mx-auto border rounded-md p-2 md:p-4 shadow-md hover:bg-blue-200 hover:shadow-lg transition text-xs md:text-base"
       >
         <div
