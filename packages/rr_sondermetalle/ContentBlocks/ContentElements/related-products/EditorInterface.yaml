@@ -15,10 +15,12 @@ fields:
     onChange: reload
     label: Item Type
     items:
-      - label: "Products"
-        value: products
+      - label: "Category"
+        value: category
       - label: "Materials"
         value: materials
+      - label: "Products"
+        value: products
     minitems: 1
   - identifier: view_count
     type: Select

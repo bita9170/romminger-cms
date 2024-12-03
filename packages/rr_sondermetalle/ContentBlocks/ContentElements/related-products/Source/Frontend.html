@@ -36,41 +36,77 @@
       <div
         class="row row-cols-1 row-cols-lg-{data.view_count} row-cols-md-2 g-4"
       >
-        <f:for each="{relatedProducts}" as="item">
-          <div class="col">
-            <div class="card bg-white shadow-md h-full">
-              <!-- Card Image -->
-              <div class="p-3">
-                <f:image
-                  image="{item.images.0}"
-                  alt="{item.name}"
-                  class="object-cover rounded w-full h-[250px]"
-                />
-              </div>
-              <!-- Card Content -->
-              <div class="card-body">
-                <h3 class="card-title text-primary-500">{item.name}</h3>
-                <p class="mt-2 text-gray-500">{item.abstract}</p>
-                <f:if condition="{data.show_price}">
-                  <span class="text-primary-500 block">{item.unitPrice}</span>
-                </f:if>
-              </div>
-              <!-- Card Footer with Button -->
-              <div class="card-footer bg-white">
-                <f:variable name="itemName"
-                  ><f:format.case mode="lower"
-                    >{item.name}</f:format.case
-                  ></f:variable
-                >
-                <a
-                  href="/shop/product/{item.name}"
-                  class="btn btn-primary w-full"
-                  >Details</a
-                >
+        <f:if condition="{data.item_type} == product">
+          <f:for each="{relatedProducts}" as="item">
+            <div class="col">
+              <div class="card bg-white shadow-md h-full">
+                <!-- Card Image -->
+                <div class="p-3">
+                  <f:image
+                    image="{item.images.0}"
+                    alt="{item.name}"
+                    class="object-cover rounded w-full h-[250px]"
+                  />
+                </div>
+                <!-- Card Content -->
+                <div class="card-body">
+                  <h3 class="card-title text-primary-500">{item.name}</h3>
+                  <p class="mt-2 text-gray-500">{item.abstract}</p>
+                  <f:if condition="{data.show_price}">
+                    <span class="text-primary-500 block">{item.unitPrice}</span>
+                  </f:if>
+                </div>
+                <!-- Card Footer with Button -->
+                <div class="card-footer bg-white">
+                  <f:variable name="itemName"
+                    ><f:format.case mode="lower"
+                      >{item.name}</f:format.case
+                    ></f:variable
+                  >
+                  <a
+                    href="/shop/product/{item.name}"
+                    class="btn btn-primary w-full"
+                    >Details</a
+                  >
+                </div>
               </div>
             </div>
-          </div>
-        </f:for>
+          </f:for>
+        </f:if>
+
+        <f:if condition="{data.item_type} == category">
+          <f:for each="{categories}" as="category">
+            <f:if
+              condition="{category.subCategories -> f:count()} && {!activeCategory.parentCategory}"
+            >
+              <f:for each="{category.subCategories}" as="subCategory">
+                <div class="col">
+                  <div class="card bg-white shadow-md h-full">
+                    <!-- Card Image -->
+                    <div class="p-3">
+                      <f:image
+                        image="{subCategory.images.0}"
+                        alt="{subCategory.name}"
+                        class="object-cover rounded w-full h-[250px]"
+                      />
+                    </div>
+                    <!-- Card Content -->
+                    <div class="card-body">
+                      <h3 class="card-title text-primary-500">
+                        <f:link.page pageUid="42">
+                          {subCategory.name}
+                        </f:link.page>
+                      </h3>
+                      <p class="mt-2 text-gray-500">
+                        {subCategory.description}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </f:for>
+            </f:if>
+          </f:for>
+        </f:if>
       </div>
     </div>
   </bk2k:frame>

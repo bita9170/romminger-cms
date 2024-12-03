@@ -5,6 +5,7 @@ namespace Romminger\RrSondermetalle\Controller;
 use Psr\Http\Message\ResponseInterface;
 use Romminger\RrSondermetalle\Domain\Model\Material;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
+use Romminger\RrSondermetalle\Domain\Repository\CategoryRepository;
 use Romminger\RrSondermetalle\Domain\Repository\MaterialRepository;
 
 class MaterialController extends ActionController
@@ -14,9 +15,20 @@ class MaterialController extends ActionController
      */
     protected $materialRepository;
 
+    /**
+     * @var CategoryRepository
+     */
+    protected $categoryRepository;
+
+
     public function injectMaterialRepository(MaterialRepository $materialRepository): void
     {
         $this->materialRepository = $materialRepository;
+    }
+
+    public function injectCategoryRepository(CategoryRepository $categoryRepository): void
+    {
+        $this->categoryRepository = $categoryRepository;
     }
 
     public function listAction(): ResponseInterface
@@ -27,7 +39,12 @@ class MaterialController extends ActionController
 
     public function showAction(Material $material): ResponseInterface
     {
-        $this->view->assign('material', $material);
+        $categories = $this->categoryRepository->findRootCategoriesWithSubCategories();
+
+        $this->view->assignMultiple([
+            'material' => $material,
+            'categories' => $categories,
+        ]);
         return $this->htmlResponse();
     }
 }

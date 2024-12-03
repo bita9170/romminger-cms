@@ -2,6 +2,7 @@
 
 namespace Romminger\RrSondermetalle\Controller;
 
+use TYPO3\CMS\Core\Context\Context;
 use Psr\Http\Message\ResponseInterface;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Core\Country\CountryProvider;
@@ -13,10 +14,10 @@ use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
 use Romminger\RrSondermetalle\Domain\Model\OrderProduct;
 use TYPO3\CMS\Extbase\Persistence\Generic\PersistenceManager;
 use Romminger\RrSondermetalle\Domain\Repository\OrderRepository;
+use Romminger\RrSondermetalle\Domain\Repository\PaymentRepository;
 use Romminger\RrSondermetalle\Domain\Repository\ProductRepository;
 use Romminger\RrSondermetalle\Domain\Repository\CustomerRepository;
 use Romminger\RrSondermetalle\Domain\Repository\OrderProductRepository;
-use Romminger\RrSondermetalle\Domain\Repository\PaymentRepository;
 
 class CheckoutController extends ActionController
 {
@@ -35,12 +36,28 @@ class CheckoutController extends ActionController
      */
     protected $siteUrl;
 
-    public function __construct(private readonly CustomerRepository $customerRepository, private readonly ProductRepository $productRepository, private readonly OrderRepository $orderRepository, private readonly OrderProductRepository $orderProductRepository, private readonly PaymentRepository $paymentRepository, private readonly CountryProvider $countryProvider,)
-    {
-        if ($GLOBALS['TSFE']->fe_user) {
-            $loggedUserUid = $GLOBALS['TSFE']->fe_user->user['uid'];
-            $this->frontendUser = $this->customerRepository->findByUid($loggedUserUid);
+    public function __construct(
+        protected Context $context,
+        private readonly CustomerRepository $customerRepository,
+        private readonly ProductRepository $productRepository,
+        private readonly OrderRepository $orderRepository,
+        private readonly OrderProductRepository $orderProductRepository,
+        private readonly PaymentRepository $paymentRepository,
+        private readonly CountryProvider $countryProvider,
+    ) {
+        $userId = $this->context->getAspect('frontend.user')->get('id');
+        if ($this->userIsLoggedIn()) {
+            if ($this->frontendUser == null) {
+                /** @var Customer $frontendUser */
+                $this->frontendUser = $this->customerRepository->findByUid($userId);
+            }
+
+            if ($this->frontendUser->getCountry()) {
+
+                $this->frontendUser->setCountry($this->countryProvider->getByIsoCode($this->frontendUser->getCountry())->getLocalizedNameLabel());
+            }
         }
+
 
         $cartCookie = $_COOKIE['cart'] ?? null;
         $this->carts = $cartCookie ? json_decode($cartCookie, true) : [];
@@ -304,5 +321,17 @@ class CheckoutController extends ActionController
         } while ($existingOrder !== null);
 
         return $orderId;
+    }
+
+    protected function userIsLoggedIn(): bool
+    {
+        $result = false;
+        try {
+            /** @var UserAspect $userAspect */
+            $userAspect = $this->context->getAspect('frontend.user');
+            $result = $userAspect->isLoggedIn();
+        } catch (\Exception) {
+        }
+        return $result;
     }
 }

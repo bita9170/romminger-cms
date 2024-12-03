@@ -2,38 +2,13 @@
 
 namespace Romminger\RrSondermetalle\Controller;
 
+
 use Psr\Http\Message\ResponseInterface;
-use TYPO3\CMS\Core\Utility\GeneralUtility;
-use TYPO3\CMS\Core\Country\CountryProvider;
 use Romminger\RrSondermetalle\Domain\Model\Order;
-use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
-use Romminger\RrSondermetalle\Domain\Repository\OrderRepository;
-use Romminger\RrSondermetalle\Domain\Repository\CustomerRepository;
 use TYPO3\CMS\Extbase\Persistence\QueryInterface;
 
-class OrderController extends ActionController
+class OrderController extends BaseController
 {
-
-    /**
-     * @var Customer|null
-     */
-    protected $frontendUser = null;
-
-    /**
-     * @var string
-     */
-    protected $siteUrl;
-
-    public function __construct(private readonly CustomerRepository $customerRepository, private readonly OrderRepository $orderRepository, private readonly CountryProvider $countryProvider,)
-    {
-        if ($GLOBALS['TSFE']->fe_user) {
-            $loggedUserUid = $GLOBALS['TSFE']->fe_user->user['uid'];
-            $this->frontendUser = $this->customerRepository->findByUid($loggedUserUid);
-        }
-
-        $this->siteUrl =  rtrim(GeneralUtility::getIndpEnv('TYPO3_SITE_URL'), '/');
-    }
-
     public function listAction(): ResponseInterface
     {
         $orders = $this->orderRepository->findBy(['customer' => $this->frontendUser], ['uid' => QueryInterface::ORDER_DESCENDING]);

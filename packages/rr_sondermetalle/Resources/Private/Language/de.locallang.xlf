@@ -32,7 +32,10 @@
             </trans-unit>
             <trans-unit id="frontend.empty_cart">
                 <target>Warenkorb leeren</target>
-            </trans-unit>            
+            </trans-unit>         
+            <trans-unit id="frontend.filterAttention">
+                <target>Wenn Sie die Produkte aus bestimmten Materialien sehen möchten, können Sie die Materialien auswählen und auf „Filter anwenden“ klicken</target>
+            </trans-unit>   
             <trans-unit id="login">
                 <target>Anmelden</target>
             </trans-unit>

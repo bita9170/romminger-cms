@@ -33,7 +33,9 @@
             <trans-unit id="frontend.empty_cart">
                 <source>Empty Cart</source>
             </trans-unit>
-
+            <trans-unit id="frontend.filterAttention">
+                <source>If you want to see the products made of specific materials, you can select the materials and click "Apply Filter"</source>
+            </trans-unit>
             <trans-unit id="login">
                 <source>Login</source>
             </trans-unit>
