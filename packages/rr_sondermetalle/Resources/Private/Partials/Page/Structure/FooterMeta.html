@@ -7,26 +7,14 @@
   >
     <section class="section footer-section footer-section-meta bg-primary-500">
       <div
-        class="frame frame-background-none frame-space-before-none frame-space-after-none"
+        class="frame frame-background-none frame-space-before-none frame-space-after-none py-4"
       >
         <div class="frame-group-container">
           <div class="frame-group-inner">
             <div class="frame-container frame-container-default">
               <div class="frame-inner">
-                <f:if
-                  condition="{theme.footernavigation.enable} || {theme.contact.enable}"
-                >
-                  <div
-                    class="footer-menu-section{f:if(condition: theme.footernavigation.enable, then: ' footer-menu-section-has-navigation')}{f:if(condition: theme.contact.enable, then: ' footer-menu-section-has-contact')}"
-                  >
-                    <f:if condition="{theme.footernavigation.enable}">
-                      <div class="footer-navigation">
-                        <f:render
-                          partial="Navigation/Footer"
-                          arguments="{_all}"
-                        />
-                      </div>
-                    </f:if>
+                <f:if condition=" {theme.contact.enable}">
+                  <div class="footer-menu-section">
                     <f:if condition="{theme.contact.enable}">
                       <div class="footer-contact">
                         <f:render
@@ -37,34 +25,17 @@
                     </f:if>
                   </div>
                 </f:if>
-                <f:if
-                  condition="{theme.language.enable} || {theme.socialmedia.enable}"
-                >
-                  <div class="footer-info-section">
-                    <f:comment
-                      ><f:if condition="{theme.language.enable}">
-                        <div class="footer-language">
-                          <f:render
-                            partial="Navigation/Language"
-                            arguments="{_all}"
-                          />
-                        </div>
-                      </f:if>
-                    </f:comment>
-                    <f:if condition="{theme.socialmedia.enable}">
-                      <div class="footer-sociallinks">
-                        <f:render
-                          partial="Structure/SocialLinks"
-                          arguments="{_all}"
-                        />
-                      </div>
-                    </f:if>
-                  </div>
-                </f:if>
               </div>
             </div>
           </div>
         </div>
+        <f:if condition="{theme.footernavigation.enable}">
+          <div
+            class="footer-navigation text-white text-center flex items-center justify-center py-4 font-normal"
+          >
+            <f:render partial="Navigation/Footer" arguments="{_all}" />
+          </div>
+        </f:if>
       </div>
     </section>
   </f:if>

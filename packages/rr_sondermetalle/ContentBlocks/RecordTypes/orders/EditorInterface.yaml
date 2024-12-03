@@ -29,6 +29,7 @@ fields:
     type: Select
     renderType: selectSingle
     items:
+      - ["Rechnung", "Invoice"]
       - ["Bezahlt", "paid"]
       - ["Versendet", "shipped"]
       - ["Zugestellt", "delivered"]

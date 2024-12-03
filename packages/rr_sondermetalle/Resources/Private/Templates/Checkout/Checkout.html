@@ -253,25 +253,18 @@
                       id="credit-card"
                       property="payment-method"
                       value="card"
-                      aria-describedby="credit-card-text"
                       required="true"
                       checked="true"
                     />
                   </div>
 
-                  <div class="ms-4 text-sm">
+                  <div class="ms-2 text-sm">
                     <label
                       for="credit-card"
                       class="font-medium leading-none text-gray-900 dark:text-white"
                     >
-                      <f:translate key="frontend.checkout.card" />
+                      <f:render partial="Checkout/CreditCards" />
                     </label>
-                    <p
-                      id="credit-card-text"
-                      class="mt-1 text-xs font-normal text-gray-500 dark:text-gray-400"
-                    >
-                      <f:translate key="frontend.checkout.cardText" />
-                    </p>
                   </div>
                 </div>
               </div>
@@ -285,24 +278,17 @@
                       id="pay-klarna"
                       property="payment-method"
                       value="klarna"
-                      aria-describedby="pay-klarna-text"
                       required="true"
                     />
                   </div>
 
-                  <div class="ms-4 text-sm">
+                  <div class="ms-2 text-sm">
                     <label
                       for="pay-klarna"
                       class="font-medium leading-none text-gray-900 dark:text-white"
                     >
-                      <f:translate key="frontend.checkout.klarna" />
+                      <f:render partial="Checkout/Klarna" />
                     </label>
-                    <p
-                      id="pay-klarna-text"
-                      class="mt-1 text-xs font-normal text-gray-500 dark:text-gray-400"
-                    >
-                      <f:translate key="frontend.checkout.klarnaText" />
-                    </p>
                   </div>
                 </div>
               </div>
@@ -316,24 +302,45 @@
                       id="paypal"
                       property="payment-method"
                       value="paypal"
-                      aria-describedby="paypal-text"
                       required="true"
                     />
                   </div>
 
-                  <div class="ms-4 text-sm">
+                  <div class="ms-2 text-sm">
                     <label
                       for="paypal"
                       class="font-medium leading-none text-gray-900 dark:text-white"
                     >
-                      <f:translate key="frontend.checkout.paypal" />
+                      <f:render partial="Checkout/Paypal" />
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="rounded-lg border border-gray-200 bg-gray-50 p-4 ps-4 dark:border-gray-700 dark:bg-gray-800"
+              >
+                <div class="flex items-start">
+                  <div class="flex h-5 items-center">
+                    <f:form.radio
+                      id="sofort"
+                      property="payment-method"
+                      value="sofort"
+                      aria-describedby="sofort-text"
+                      required="true"
+                    />
+                  </div>
+                  <div class="ms-2 text-sm">
+                    <label
+                      for="sofort"
+                      class="font-medium leading-none text-gray-900 dark:text-white"
+                    >
+                      <f:render partial="Checkout/Sofort" />
                     </label>
                     <p
-                      id="paypal-text"
+                      id="sofort-text"
                       class="mt-1 text-xs font-normal text-gray-500 dark:text-gray-400"
-                    >
-                      <f:translate key="frontend.checkout.paypalText" />
-                    </p>
+                    ></p>
                   </div>
                 </div>
               </div>
@@ -351,19 +358,13 @@
                       required="true"
                     />
                   </div>
-                  <div class="ms-4 text-sm">
+                  <div class="ms-2 text-sm">
                     <label
                       for="invoice"
                       class="font-medium leading-none text-gray-900 dark:text-white"
                     >
-                      <f:translate key="frontend.checkout.invoice" />
+                      <f:render partial="Checkout/Invoice" />
                     </label>
-                    <p
-                      id="invoice-text"
-                      class="mt-1 text-xs font-normal text-gray-500 dark:text-gray-400"
-                    >
-                      <f:translate key="frontend.checkout.invoiceText" />
-                    </p>
                   </div>
                 </div>
               </div>

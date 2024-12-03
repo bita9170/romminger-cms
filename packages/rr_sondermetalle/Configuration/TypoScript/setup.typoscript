@@ -35,6 +35,15 @@ page {
 
     10 {
         dataProcessing {
+            1629126321 {
+                special = directory
+                special.value = 77
+                levels = 1
+                if {
+                    isTrue = true
+                }
+            }
+
             1732282631 = TYPO3\CMS\Frontend\DataProcessing\DatabaseQueryProcessor
             1732282631 {
                 table = tx_romminger_materials

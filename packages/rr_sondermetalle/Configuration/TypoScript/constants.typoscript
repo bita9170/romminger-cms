@@ -46,7 +46,10 @@ page {
         copyright {
             enable = 1
             text = Copyright © 2024-All right reserved
-        }        
+        }   
+        footernavigation {
+            enable = 1
+        }     
     }
     meta {        
          # cat=rr-sondermetalle; type=string; label=SEO - Keywords

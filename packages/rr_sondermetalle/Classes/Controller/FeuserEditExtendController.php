@@ -17,9 +17,11 @@ class FeuserEditExtendController extends FeuserEditController
 
         switch ($this->request->getUri()->getPath()) {
             case '/address':
+            case '/en/address':
                 $header = 'editAddress';
                 break;
             case '/image':
+            case '/en/image':
                 $header = 'editImage';
                 break;
             default:

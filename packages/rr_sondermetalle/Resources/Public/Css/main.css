@@ -760,6 +760,10 @@ video {
   margin-right: 0.5rem;
 }
 
+.ms-2 {
+  margin-inline-start: 0.5rem;
+}
+
 .ms-2\.5 {
   margin-inline-start: 0.625rem;
 }
