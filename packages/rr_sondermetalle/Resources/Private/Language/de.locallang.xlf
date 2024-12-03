@@ -232,6 +232,11 @@
             <trans-unit id="frontend.dashboard.editAddress">
                 <target>Adresse bearbeiten</target>
             </trans-unit>
+
+            <!-- Preview -->
+            <trans-unit id="frontend.preview.title">
+                <target>Vorschau</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>

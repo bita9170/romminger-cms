@@ -233,6 +233,11 @@
             <trans-unit id="frontend.dashboard.editAddress">
                 <source>Edit Address</source>
             </trans-unit>
+
+            <!-- Preview -->
+            <trans-unit id="frontend.preview.title">
+                <source>Preview</source>
+            </trans-unit>
         </body>
     </file>
 </xliff>
