@@ -33,22 +33,26 @@
             <h1>{data.header}</h1>
             <p class="">{data.subheader}</p>
 
-            <div class="button-section">
-              <if
+            <div class="button-section mt-4">
+              <f:if
                 condition="{data.btn_primary_text} && {data.btn_primary_link}"
               >
-                <a href="{data.btn_primary_link}" class="btn btn-primary"
-                  >{data.btn_primary_text}</a
-                >
-              </if>
+                <f:then>
+                  <a href="{data.btn_primary_link}" class="btn btn-primary"
+                    >{data.btn_primary_text}</a
+                  >
+                </f:then>
+              </f:if>
 
-              <if
+              <f:if
                 condition="{data.btn_secondary_text} && {data.btn_secondary_link}"
               >
-                <a href="{data.btn_secondary_link}" class="btn btn-secondary"
-                  >{data.btn_secondary_text}</a
-                >
-              </if>
+                <f:then>
+                  <a href="{data.btn_secondary_link}" class="btn btn-secondary"
+                    >{data.btn_secondary_text}</a
+                  >
+                </f:then>
+              </f:if>
             </div>
           </div>
 
