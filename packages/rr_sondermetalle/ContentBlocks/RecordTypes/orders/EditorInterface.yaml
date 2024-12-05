@@ -60,3 +60,5 @@ fields:
   - identifier: session_id
     type: Text
     readOnly: true
+  - identifier: metadata
+    type: Json

@@ -51,11 +51,6 @@ class CheckoutController extends ActionController
                 /** @var Customer $frontendUser */
                 $this->frontendUser = $this->customerRepository->findByUid($userId);
             }
-
-            // if ($this->frontendUser->getCountry()) {
-
-            //     $this->frontendUser->setCountry($this->countryProvider->getByIsoCode($this->frontendUser->getCountry())->getLocalizedNameLabel());
-            // }
         }
 
 
@@ -298,6 +293,7 @@ class CheckoutController extends ActionController
     {
         try {
             if (count($this->carts) > 0) {
+
                 $payment = new Payment();
                 $payment->setTransactionId('');
                 $payment->setMethod('invoice');
@@ -305,14 +301,24 @@ class CheckoutController extends ActionController
                 $payment->setAmount((float) $checkout['total-price']);
                 $payment->setDate(new \DateTime());
 
+
+                $metadata = [
+                    'address_line1' => $checkout['address'],
+                    'address_city' => $checkout['city'],
+                    'address_zip' => $checkout['zip'],
+                    'address_country' => $checkout['country'],
+                    'customer_name' => $checkout['fullname']
+                ];
+
                 $order = new Order();
                 $order->setCustomer($this->frontendUser);
                 $order->setDate(new \DateTime());
                 $order->setStatus('invoice');
                 $order->setTotalAmount((float) $checkout['total-price']);
                 $order->setPid(53);
-                $order->setSessionId('$sessionId');
+                $order->setSessionId('');
                 $order->setOrderId($this->generateOrderId());
+                $order->setMetadata(json_encode($metadata));
 
                 $payment->setOrder($order);
                 $order->setPayment($payment);
@@ -332,7 +338,7 @@ class CheckoutController extends ActionController
                     $orderProduct->setProduct($product);
                     $orderProduct->setQuantity($item['quantity']);
                     $orderProduct->setPrice($item['price']);
-                    $orderProduct->setTotalPrice(($item['total_price']) * $item['quantity']);
+                    $orderProduct->setTotalPrice($item['total_price']);
                     $orderProduct->setOrder($order);
 
                     $this->orderProductRepository->add($orderProduct);

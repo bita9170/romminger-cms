@@ -18,10 +18,12 @@
           <div class="text-xl font-semibold text-gray-900">
             <f:translate key="frontend.checkout.deliveryAddress" />:
           </div>
-          <div>{metadata.customer_name}</div>
-          <div>{metadata.address_line1}</div>
-          <div>{metadata.address_zip} {metadata.address_city}</div>
-          <div><f:translate key="{metadata.country}" /></div>
+          <f:if condition="{metadata}">
+            <div>{metadata.customer_name}</div>
+            <div>{metadata.address_line1}</div>
+            <div>{metadata.address_zip} {metadata.address_city}</div>
+            <div><f:translate key="{metadata.country}" /></div>
+          </f:if>
         </div>
 
         <div class="payment-method">

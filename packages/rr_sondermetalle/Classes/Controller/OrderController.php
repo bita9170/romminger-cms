@@ -27,20 +27,30 @@ class OrderController extends BaseController
          */
         $order = $this->orderRepository->findOneBy(['orderId' => $orderId]);
 
-        $stripe = new \Stripe\StripeClient($_ENV['STRIPE_PK']);
-        $session = $stripe->checkout->sessions->retrieve($order->getSessionId());
-        $metadata = $session->metadata;
-        $metadata['country'] = $this->countryProvider->getByIsoCode($metadata['address_country'])->getLocalizedNameLabel();
+        if ($order->getSessionId()) {
+            $stripe = new \Stripe\StripeClient($_ENV['STRIPE_PK']);
+            $session = $stripe->checkout->sessions->retrieve($order->getSessionId());
+            $metadata = $session->metadata;
+            $metadata['country'] = $this->countryProvider->getByIsoCode($metadata['address_country'])->getLocalizedNameLabel();
+            $this->view->assign('metadata', $metadata);
+        } else {
+            $metadata = (array) json_decode(json_decode($order->getMetadata()));
+            if ($metadata) {
+                $metadata['country'] = $this->countryProvider->getByIsoCode($metadata['address_country'])->getLocalizedNameLabel();
+                $this->view->assign('metadata',  $metadata);
+            }
+        }
 
         $totalPriceSum = 0;
 
         foreach ($order->getProducts() as $product) {
             $totalPriceSum += $product->getTotalPrice();
         }
+
         $this->view->assignMultiple([
             'order' =>  $order,
             'totalPriceSum' => $totalPriceSum,
-            'metadata' => $metadata
+
         ]);
 
         return $this->htmlResponse();
