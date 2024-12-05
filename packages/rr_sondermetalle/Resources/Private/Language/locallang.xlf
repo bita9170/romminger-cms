@@ -34,7 +34,8 @@
                 <source>Empty Cart</source>
             </trans-unit>
             <trans-unit id="frontend.filterAttention">
-                <source>If you want to see the products made of specific materials, you can select the materials and click "Apply Filter"</source>
+                <source>If you want to see the products made of specific materials, you can select
+                    the materials and click "Apply Filter"</source>
             </trans-unit>
             <trans-unit id="login">
                 <source>Login</source>
@@ -194,12 +195,12 @@
             </trans-unit>
             <trans-unit id="frontend.checkout.summary">
                 <source>Order summary</source>
-            </trans-unit>        
+            </trans-unit>
             <trans-unit id="frontend.checkout.cartEmpty">
                 <source>Shopping cart is empty.</source>
             </trans-unit>
 
-             <!-- Frontend order -->
+            <!-- Frontend order -->
             <trans-unit id="frontend.orders">
                 <source>Orders</source>
             </trans-unit>
@@ -234,6 +235,17 @@
             </trans-unit>
             <trans-unit id="frontend.dashboard.editAddress">
                 <source>Edit Address</source>
+            </trans-unit>
+
+            <!-- Shop Home -->
+
+            <trans-unit id="frontend.shop.intro">
+                <source>
+                    Explore our range of high-quality metal products designed for various industrial
+                    applications.
+                    We offer custom fabrication services and technical support to meet your specific
+                    needs.
+                </source>
             </trans-unit>
         </body>
     </file>

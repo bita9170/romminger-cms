@@ -32,10 +32,11 @@
             </trans-unit>
             <trans-unit id="frontend.empty_cart">
                 <target>Warenkorb leeren</target>
-            </trans-unit>         
+            </trans-unit>
             <trans-unit id="frontend.filterAttention">
-                <target>Wenn Sie die Produkte aus bestimmten Materialien sehen möchten, können Sie die Materialien auswählen und auf „Filter anwenden“ klicken</target>
-            </trans-unit>   
+                <target>Wenn Sie die Produkte aus bestimmten Materialien sehen möchten, können Sie
+                    die Materialien auswählen und auf „Filter anwenden“ klicken</target>
+            </trans-unit>
             <trans-unit id="login">
                 <target>Anmelden</target>
             </trans-unit>
@@ -88,7 +89,7 @@
             <trans-unit id="frontend.shop">
                 <target>Shop</target>
             </trans-unit>
-            
+
             <!-- Frontend checkout -->
             <trans-unit id="frontend.checkout.cart">
                 <target>Warenkorb</target>
@@ -126,7 +127,7 @@
             <trans-unit id="frontend.checkout.city">
                 <target>Stadt</target>
             </trans-unit>
-             <trans-unit id="frontend.checkout.paymentMethod">
+            <trans-unit id="frontend.checkout.paymentMethod">
                 <target>Zahlungsmethod</target>
             </trans-unit>
             <trans-unit id="frontend.checkout.card">
@@ -202,7 +203,7 @@
             <!-- Frontend order -->
             <trans-unit id="frontend.orders">
                 <target>Bestellungen</target>
-            </trans-unit>           
+            </trans-unit>
             <trans-unit id="frontend.order">
                 <target>Bestellung</target>
             </trans-unit>
@@ -234,6 +235,16 @@
             </trans-unit>
             <trans-unit id="frontend.dashboard.editAddress">
                 <target>Adresse bearbeiten</target>
+            </trans-unit>
+
+            <!-- Shop Home -->
+            <trans-unit id="frontend.shop.intro">
+                <target>
+                    Entdecken Sie unser Sortiment an hochwertigen Metallprodukten für verschiedene
+                    industrielle Anwendungen.
+                    Wir bieten maßgeschneiderte Fertigungsdienstleistungen und technischen Support,
+                    um Ihre spezifischen Anforderungen zu erfüllen.
+                </target>
             </trans-unit>
         </body>
     </file>
