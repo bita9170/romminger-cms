@@ -52,10 +52,10 @@ class CheckoutController extends ActionController
                 $this->frontendUser = $this->customerRepository->findByUid($userId);
             }
 
-            if ($this->frontendUser->getCountry()) {
+            // if ($this->frontendUser->getCountry()) {
 
-                $this->frontendUser->setCountry($this->countryProvider->getByIsoCode($this->frontendUser->getCountry())->getLocalizedNameLabel());
-            }
+            //     $this->frontendUser->setCountry($this->countryProvider->getByIsoCode($this->frontendUser->getCountry())->getLocalizedNameLabel());
+            // }
         }
 
 
@@ -122,7 +122,7 @@ class CheckoutController extends ActionController
         }
 
         if ($checkout['payment-method'] == 'invoice') {
-            return $this->redirect('invoice');
+            return $this->redirect('invoice', null, null, ['checkout' => $checkout]);
         }
 
         /** @var SiteLanguage $currentLanguage */
@@ -294,14 +294,81 @@ class CheckoutController extends ActionController
         }
     }
 
-    public function invoiceAction(): ResponseInterface
+    public function invoiceAction(array $checkout = []): ResponseInterface
     {
-        $this->view->assignMultiple([
-            'pageName' => 'frontend.checkout.invoice',
-            'user' => $this->frontendUser,
-            'avatar' => $this->frontendUser->getFirstName()[0] . $this->frontendUser->getLastName()[0],
-            'siteUrl' => $this->siteUrl,
-        ]);
+        try {
+            if (count($this->carts) > 0) {
+                $payment = new Payment();
+                $payment->setTransactionId('');
+                $payment->setMethod('invoice');
+                $payment->setStatus('awaiting');
+                $payment->setAmount((float) $checkout['total-price']);
+                $payment->setDate(new \DateTime());
+
+                $order = new Order();
+                $order->setCustomer($this->frontendUser);
+                $order->setDate(new \DateTime());
+                $order->setStatus('invoice');
+                $order->setTotalAmount((float) $checkout['total-price']);
+                $order->setPid(53);
+                $order->setSessionId('$sessionId');
+                $order->setOrderId($this->generateOrderId());
+
+                $payment->setOrder($order);
+                $order->setPayment($payment);
+
+                foreach ($this->carts as $item) {
+                    $productUid = $item['product_uid'] ?? null;
+                    if (!$productUid) {
+                        throw new \Exception('Product UID not found in metadata.');
+                    }
+
+                    $product = $this->productRepository->findByUid($productUid);
+                    if (!$product) {
+                        throw new \Exception("Product with UID {$productUid} not found in the database.");
+                    }
+
+                    $orderProduct = new OrderProduct();
+                    $orderProduct->setProduct($product);
+                    $orderProduct->setQuantity($item['quantity']);
+                    $orderProduct->setPrice($item['price']);
+                    $orderProduct->setTotalPrice(($item['total_price']) * $item['quantity']);
+                    $orderProduct->setOrder($order);
+
+                    $this->orderProductRepository->add($orderProduct);
+                }
+
+                /** @var PersistenceManager $persistenceManager */
+                $persistenceManager = GeneralUtility::makeInstance(PersistenceManager::class);
+
+                $this->orderRepository->add($order);
+                $this->paymentRepository->add($payment);
+                $persistenceManager->persistAll();
+
+                setcookie('cart', '', time() - 3600, '/');
+
+                $this->view->assignMultiple([
+                    'pageName' => 'frontend.checkout.invoice',
+                    'user' => $this->frontendUser,
+                    'avatar' => $this->frontendUser->getFirstName()[0] . $this->frontendUser->getLastName()[0],
+                    'siteUrl' => $this->siteUrl,
+                    'order' => $order
+                ]);
+
+                return $this->htmlResponse();
+            } else {
+                $this->view->assignMultiple([
+                    'pageName' => 'frontend.checkout.invoice',
+                    'user' => $this->frontendUser,
+                    'avatar' => $this->frontendUser->getFirstName()[0] . $this->frontendUser->getLastName()[0],
+                    'siteUrl' => $this->siteUrl,
+
+                ]);
+            }
+        } catch (\Exception $e) {
+            return $this->htmlResponse('Error: ' . $e->getMessage());
+        }
+
 
         return $this->htmlResponse();
     }
