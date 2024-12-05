@@ -47,6 +47,8 @@ class Order extends AbstractEntity
 
     protected string $sessionId;
 
+    protected string $metadata = '';
+
     public function getCustomer(): Customer
     {
         return $this->customer;
@@ -121,5 +123,15 @@ class Order extends AbstractEntity
     public function setSessionId(string $sessionId): void
     {
         $this->sessionId = $sessionId;
+    }
+
+    public function getMetadata(): string
+    {
+        return $this->metadata;
+    }
+
+    public function setMetadata(string $metadata): void
+    {
+        $this->metadata = $metadata;
     }
 }

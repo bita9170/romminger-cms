@@ -228,6 +228,9 @@
             <trans-unit id="frontend.order.orderOverview">
                 <source>Order overview</source>
             </trans-unit>
+            <trans-unit id="frontend.order.invoice">
+                <source>Invoice</source>
+            </trans-unit>
 
             <!-- Dashboard -->
             <trans-unit id="frontend.dashboard.currentAddress">

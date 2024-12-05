@@ -228,6 +228,9 @@
             <trans-unit id="frontend.order.orderOverview">
                 <target>Bestellübersicht</target>
             </trans-unit>
+            <trans-unit id="frontend.order.invoice">
+                <target>Rechnung</target>
+            </trans-unit>
 
             <!-- Dashboard -->
             <trans-unit id="frontend.dashboard.currentAddress">

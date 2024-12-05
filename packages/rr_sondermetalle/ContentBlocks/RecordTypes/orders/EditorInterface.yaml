@@ -29,7 +29,7 @@ fields:
     type: Select
     renderType: selectSingle
     items:
-      - ["Rechnung", "Invoice"]
+      - ["Rechnung", "invoice"]
       - ["Bezahlt", "paid"]
       - ["Versendet", "shipped"]
       - ["Zugestellt", "delivered"]
@@ -60,3 +60,5 @@ fields:
   - identifier: session_id
     type: Text
     readOnly: true
+  - identifier: metadata
+    type: Json

@@ -595,6 +595,7 @@ function updateCartSummary(cart) {
   const vatElement = document.querySelector(".price-vat");
   const shippingCostElement = document.querySelector(".shipping-cost");
   const totalElement = document.querySelector(".total");
+  const totalPrice = document.getElementById("total-price");
 
   let totalWithoutVat = 0;
   let vatRate = 0.19;
@@ -618,5 +619,8 @@ function updateCartSummary(cart) {
   }
   if (totalElement) {
     totalElement.textContent = formatPrice(total);
+  }
+  if (totalPrice) {
+    totalPrice.value = total;
   }
 }

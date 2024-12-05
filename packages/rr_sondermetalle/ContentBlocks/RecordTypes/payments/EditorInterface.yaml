@@ -33,8 +33,8 @@ fields:
     renderType: selectSingle
     minitems: 1
     items:
-      - ["Succeeded", "succeeded"]
-      - ["Canceled", "canceled"]
+      - ["Erfolgreich", "succeeded"]
+      - ["Warten auf Zahlung", "awaiting"]
+      - ["Abgesagt", "canceled"]
   - identifier: transaction_id
     type: Text
-    readOnly: false

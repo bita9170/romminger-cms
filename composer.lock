@@ -2776,10 +2776,13 @@
             "dist": {
                 "type": "path",
                 "url": "packages/rr_sondermetalle",
-                "reference": "c0347827e87d470de48ecdf69a722d7c714ce821"
+                "reference": "5943c569bbc99f2d7b9bcc9ddcbddca0d19f5f91"
             },
             "require": {
-                "bk2k/bootstrap-package": "^13.0 || ^14.0"
+                "bk2k/bootstrap-package": "^13.0 || ^14.0",
+                "evoweb/sf-register": "12.0.1",
+                "friendsoftypo3/content-blocks": "0.7.19",
+                "stripe/stripe-php": "^16.2"
             },
             "type": "typo3-cms-extension",
             "extra": {
