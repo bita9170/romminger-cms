@@ -89,6 +89,7 @@
             <trans-unit id="frontend.shop">
                 <target>Shop</target>
             </trans-unit>
+
             <!-- Frontend checkout -->
             <trans-unit id="frontend.checkout.cart">
                 <target>Warenkorb</target>
@@ -239,6 +240,15 @@
                 <target>Adresse bearbeiten</target>
             </trans-unit>
 
+            <!-- Shop Home -->
+            <trans-unit id="frontend.shop.intro">
+                <target>
+                    Entdecken Sie unser Sortiment an hochwertigen Metallprodukten für verschiedene
+                    industrielle Anwendungen.
+                    Wir bieten maßgeschneiderte Fertigungsdienstleistungen und technischen Support,
+                    um Ihre spezifischen Anforderungen zu erfüllen.
+                </target>
+            </trans-unit>
             <!-- Payment Details-->
             <trans-unit id="frontend.checkout.quantity">
                 <target>Anzahl</target>

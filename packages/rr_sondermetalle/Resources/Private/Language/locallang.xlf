@@ -240,6 +240,16 @@
                 <source>Edit Address</source>
             </trans-unit>
 
+            <!-- Shop Home -->
+
+            <trans-unit id="frontend.shop.intro">
+                <source>
+                    Explore our range of high-quality metal products designed for various industrial
+                    applications.
+                    We offer custom fabrication services and technical support to meet your specific
+                    needs.
+                </source>
+            </trans-unit>
             <!-- Payment Details -->
             <trans-unit id="frontend.checkout.quantity">
                 <source>Quantity</source>

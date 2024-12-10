@@ -34,13 +34,13 @@
             <p class="">{data.subheader}</p>
 
             <div class="button-section">
-              <f:if
+              <if
                 condition="{data.btn_primary_text} && {data.btn_primary_link}"
               >
                 <a href="{data.btn_primary_link}" class="btn btn-primary"
                   >{data.btn_primary_text}</a
                 >
-              </f:if>
+              </if>
 
               <f:if
                 condition="{data.btn_secondary_text} && {data.btn_secondary_link}"
@@ -48,7 +48,7 @@
                 <a href="{data.btn_secondary_link}" class="btn btn-secondary"
                   >{data.btn_secondary_text}</a
                 >
-              </f:if>
+              </if>
             </div>
           </div>
 
