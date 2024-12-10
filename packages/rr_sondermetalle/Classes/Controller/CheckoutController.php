@@ -323,6 +323,7 @@ class CheckoutController extends ActionController
                 $payment->setOrder($order);
                 $order->setPayment($payment);
                 $orderProducts = [];
+                $totalQuantity = 0; 
                 foreach ($this->carts as $item) {
                     $productUid = $item['product_uid'] ?? null;
                     if (!$productUid) {
@@ -343,6 +344,7 @@ class CheckoutController extends ActionController
 
                     $this->orderProductRepository->add($orderProduct);
                     $orderProducts[] = $orderProduct;
+                    $totalQuantity += $item['quantity'];
                 }
 
                 /** @var PersistenceManager $persistenceManager */
@@ -351,11 +353,9 @@ class CheckoutController extends ActionController
                 $this->orderRepository->add($order);
                 $this->paymentRepository->add($payment);
 
-                // TODO: Bita, you can comment this line
                 $persistenceManager->persistAll();
 
-                // TODO: Bita, you can comment this line    
-                setcookie('cart', '', time() - 3600, '/');
+
 
                 $this->view->assignMultiple([
                     'pageName' => 'frontend.checkout.invoice',
@@ -363,7 +363,8 @@ class CheckoutController extends ActionController
                     'avatar' => $this->frontendUser->getFirstName()[0] . $this->frontendUser->getLastName()[0],
                     'siteUrl' => $this->siteUrl,
                     'order' => $order,
-                    'products' =>  $orderProducts
+                    'products' => $orderProducts,
+                    'totalQuantity' => $totalQuantity
                 ]);
 
                 return $this->htmlResponse();

@@ -1,3 +1,90 @@
-<section class="container bg-white py-4 antialiased md:py-8 px-0">
-  <h3>Rechnung</h3>
+<section class="container bg-white py-4 px-6 antialiased md:py-8">
+  <div class="flex flex-col md:flex-row gap-6">
+    <!-- Left Column: Order Details -->
+    <div class="w-full md:w-2/3 bg-white p-6 rounded-lg shadow-lg">
+      <h1 class="text-4xl font-bold mb-4">
+        <f:format.currency currencySign="€"
+          >{order.totalAmount}</f:format.currency
+        >
+      </h1>
+      <div class="bg-gray-100 p-4 rounded-lg mb-6">
+        <div class="orders-article">
+          <f:for each="{products}" as="product">
+            <div class="flex justify-between items-center py-2">
+              <span class="text-gray-800 font-medium"
+                >{product.product.name}</span
+              >
+              <span class="text-gray-600">
+                <f:format.currency currencySign="€"
+                  >{product.price}</f:format.currency
+                >
+              </span>
+            </div>
+            <div
+              class="flex justify-between items-center text-sm text-gray-500"
+            >
+              <span>Anzahl</span>
+              <span>{product.quantity} x</span>
+            </div>
+            <div class="border-b my-2"></div>
+          </f:for>
+        </div>
+
+        <div class="order-summary mt-4">
+          <dl class="flex justify-between items-center py-2 border-b">
+            <dt class="text-gray-600">Zwischensumme</dt>
+            <dd class="text-gray-800 font-medium">
+              <f:format.currency currencySign="€"
+                >{totalPriceSum}</f:format.currency
+              >
+            </dd>
+          </dl>
+          <dl class="flex justify-between items-center py-2 border-b">
+            <dt class="text-gray-600">MwSt. (19%)</dt>
+            <dd class="text-gray-800 font-medium">
+              <f:format.currency currencySign="€"
+                >{order.totalAmount - totalPriceSum}</f:format.currency
+              >
+            </dd>
+          </dl>
+          <dl class="flex justify-between items-center py-2">
+            <dt class="text-gray-800 font-bold">Fällige Gesamtsumme</dt>
+            <dd class="text-gray-900 font-bold">
+              <f:format.currency currencySign="€"
+                >{order.totalAmount}</f:format.currency
+              >
+            </dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right Column: Payment -->
+    <div class="w-full md:w-1/3 bg-gray-50 p-6 rounded-lg shadow-lg">
+      <h3 class="text-xl font-semibold mb-4">Mit Rechnung zahlen</h3>
+      <div class="bg-gray-100 p-4 rounded-lg mb-6">
+        <label class="text-sm font-medium text-gray-700 mb-1" for="email"
+          >E-Mail</label
+        >
+        <input
+          type="email"
+          id="email"
+          value="{userEmail}"
+          readonly
+          class="w-full px-4 py-2 border border-gray-300 rounded-md bg-gray-50 text-gray-500 focus:outline-none"
+        />
+      </div>
+      <p class="text-m font-medium text-gray-700 mb-6">
+        Ihre Zahlungsdetails werden Ihnen innerhalb der nächsten Stunden per
+        E-Mail zugesandt. <br />
+        Wenn Sie Ihre Bestellung bestätigen und aufgeben möchten, klicken Sie
+        bitte auf die Schaltfläche unten.
+      </p>
+      <button
+        class="w-full bg-blue-600 text-white font-semibold py-2 rounded-md hover:bg-blue-700 focus:outline-none"
+      >
+        bestätigen und aufgeben
+      </button>
+    </div>
+  </div>
 </section>
