@@ -352,7 +352,7 @@ class CheckoutController extends ActionController
                 $this->paymentRepository->add($payment);
 
                 // TODO: Bita, you can comment this line
-                // $persistenceManager->persistAll();
+                $persistenceManager->persistAll();
 
                 // TODO: Bita, you can comment this line    
                 // setcookie('cart', '', time() - 3600, '/');

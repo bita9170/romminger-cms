@@ -27,7 +27,9 @@
             />
           </svg>
           <f:link.action action="cart"
-            ><f:translate key="frontend.checkout.cart"
+            ><f:translate
+              key="frontend.checkout.cart"
+              extensionName="rr_sondermetalle"
           /></f:link.action>
         </span>
       </li>
@@ -56,7 +58,9 @@
             />
           </svg>
           <f:link.action action="checkout"
-            ><f:translate key="frontend.checkout.checkout"
+            ><f:translate
+              key="frontend.checkout.checkout"
+              extensionName="rr_sondermetalle"
           /></f:link.action>
         </span>
       </li>
@@ -79,7 +83,10 @@
             d="M8.5 11.5 11 14l4-4m6 2a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
           />
         </svg>
-        <f:translate key="frontend.checkout.invoice" />
+        <f:translate
+          key="frontend.checkout.invoice"
+          extensionName="rr_sondermetalle"
+        />
       </li>
     </ol>
 
@@ -92,62 +99,51 @@
             {order.orderId}
           </h2>
           <!-- Orders -->
-          <div class="orders-article">
-            <f:for each="{products}" as="product">
-              <div class="order-item mb-4 flex items-start">
-                <div class="w-16 h-16 flex-shrink-0">
-                  <f:image
-                    image="{product.product.images.0}"
-                    alt="{product.product.name}"
-                    class="rounded-lg object-cover"
-                    loading="lazy"
-                  />
-                </div>
-                <div class="ml-4 flex-1">
-                  <div class="flex justify-between items-center">
-                    <span class="text-gray-800 font-medium"
-                      >{product.product.name}</span
-                    >
-                    <span class="text-gray-600">
-                      <f:format.currency currencySign="€">
-                        {product.price}
-                      </f:format.currency>
-                    </span>
-                  </div>
-                  <div class="flex justify-between text-sm text-gray-500 mt-2">
-                    <span>Anzahl:</span>
-                    <span>{product.quantity} x</span>
-                  </div>
-                </div>
-              </div>
-            </f:for>
-            <div class="border-b my-2"></div>
-          </div>
+          <div class="cart-items"></div>
+          <div class="h-1 bg-gray-600"></div>
+          <div
+            class="cart-summary my-3 divide-y divide-gray-200 dark:divide-gray-800"
+          >
+            <dl class="flex items-center justify-between gap-4 py-3">
+              <dt
+                class="text-base font-normal text-gray-500 dark:text-gray-400"
+              >
+                <f:translate key="frontend.checkout.article" />
+              </dt>
+              <dd
+                class="total-without-vat text-base font-medium text-gray-900 dark:text-white"
+              ></dd>
+            </dl>
 
-          <div class="order-summary mt-4">
-            <dl class="flex justify-between items-center py-2 border-b">
-              <dt class="text-gray-600">Zwischensumme</dt>
-              <dd class="text-gray-800 font-medium">
-                <f:format.currency currencySign="€"
-                  >{totalPriceSum}</f:format.currency
-                >
-              </dd>
+            <dl class="flex items-center justify-between gap-4 py-3">
+              <dt
+                class="text-base font-normal text-gray-500 dark:text-gray-400"
+              >
+                <f:translate key="frontend.checkout.vat" />
+              </dt>
+              <dd
+                class="price-vat text-base font-medium text-gray-900 dark:text-white"
+              ></dd>
             </dl>
-            <dl class="flex justify-between items-center py-2 border-b">
-              <dt class="text-gray-600">MwSt. (19%)</dt>
-              <dd class="text-gray-800 font-medium">
-                <f:format.currency currencySign="€"
-                  >{order.totalAmount - totalPriceSum}</f:format.currency
-                >
-              </dd>
+
+            <dl class="flex items-center justify-between gap-4 py-3">
+              <dt
+                class="text-base font-normal text-gray-500 dark:text-gray-400"
+              >
+                <f:translate key="frontend.checkout.shipping" />
+              </dt>
+              <dd
+                class="shipping-cost text-base font-medium text-gray-900 dark:text-white"
+              ></dd>
             </dl>
-            <dl class="flex justify-between items-center py-2">
-              <dt class="text-gray-800 font-bold">Fällige Gesamtsumme</dt>
-              <dd class="text-gray-900 font-bold">
-                <f:format.currency currencySign="€"
-                  >{order.totalAmount}</f:format.currency
-                >
-              </dd>
+
+            <dl class="flex items-center justify-between gap-4 py-3">
+              <dt class="text-base font-bold text-gray-900 dark:text-white">
+                <f:translate key="frontend.checkout.total" />
+              </dt>
+              <dd
+                class="total text-base font-bold text-gray-900 dark:text-white"
+              ></dd>
             </dl>
           </div>
         </div>
@@ -157,40 +153,88 @@
         class="mt-6 w-full space-y-6 sm:mt-8 lg:mt-0 lg:max-w-xs xl:max-w-md border border-gray-200 p-4 rounded shadow-sm"
       >
         <div class="flow-root">
-          <h3 class="text-xl font-semibold mb-4">Mit Rechnung zahlen</h3>
+          <h3 class="text-xl font-semibold mb-4">
+            <f:translate
+              key="frontend.checkout.payByInvoice"
+              extensionName="rr_sondermetalle"
+            />
+          </h3>
           <!-- Message -->
 
           <!-- <p class="text-m font-medium text-gray-700 mb-6">
             Wir werden Sie innerhalb der nächsten Stunden bezüglich Ihrer
             Zahlungsdetails kontaktieren.
           </p> -->
-
           <div class="mt-4">
             <p class="text-gray-600 mb-2">
-              Sie erhalten eine Rechnung per E-Mail. Bitte überweisen Sie den
-              Gesamtbetrag auf das folgende Konto:
+              <f:translate
+                key="frontend.checkout.invoiceEmail"
+                extensionName="rr_sondermetalle"
+              />
             </p>
-            <p class="text-gray-800 font-semibold">Kontoinhaber</p>
-            <p class="text-gray-600">Max Mustermann</p>
 
-            <p class="text-gray-800 font-semibold mt-2">IBAN</p>
+            <!-- Account Holder -->
+            <p class="text-gray-800 font-semibold">
+              <f:translate
+                key="frontend.checkout.accountHolder"
+                extensionName="rr_sondermetalle"
+              />
+            </p>
+            <p class="text-gray-600">Richard Romminger</p>
+
+            <!-- IBAN -->
+            <p class="text-gray-800 font-semibold mt-2">
+              <f:translate
+                key="frontend.checkout.iban"
+                extensionName="rr_sondermetalle"
+              />
+            </p>
             <p class="text-gray-600">DE12 3456 7890 1234 5678 90</p>
 
-            <p class="text-gray-800 font-semibold mt-2">BIC</p>
+            <!-- BIC -->
+            <p class="text-gray-800 font-semibold mt-2">
+              <f:translate
+                key="frontend.checkout.bic"
+                extensionName="rr_sondermetalle"
+              />
+            </p>
             <p class="text-gray-600">GENODEF1M04</p>
 
-            <p class="text-gray-800 font-semibold mt-2">Verwendungszweck</p>
+            <!-- Reference -->
+            <p class="text-gray-800 font-semibold mt-2">
+              <f:translate
+                key="frontend.checkout.reference"
+                extensionName="rr_sondermetalle"
+              />
+            </p>
             <p class="text-gray-600">{order.orderId}</p>
 
-            <p class="text-gray-800 font-semibold mt-2">Betrag</p>
+            <!-- Amount -->
+            <p class="text-gray-800 font-semibold mt-2">
+              <f:translate
+                key="frontend.checkout.amount"
+                extensionName="rr_sondermetalle"
+              />
+            </p>
             <p class="text-gray-600">
-              <f:format.currency currencySign="€"
-                >{order.totalAmount}</f:format.currency
-              >
+              <f:format.currency currencySign="€">
+                {order.totalAmount}
+              </f:format.currency>
             </p>
 
-            <p class="text-gray-800 font-semibold mt-2">Fällig bis</p>
-            <p class="text-gray-600">14 Tage nach Erhalt der Ware</p>
+            <!-- Due Date -->
+            <p class="text-gray-800 font-semibold mt-2">
+              <f:translate
+                key="frontend.checkout.dueBy"
+                extensionName="rr_sondermetalle"
+              />
+            </p>
+            <p class="text-gray-600">
+              <f:translate
+                key="frontend.checkout.dueDateDetails"
+                extensionName="rr_sondermetalle"
+              />
+            </p>
           </div>
         </div>
       </div>
