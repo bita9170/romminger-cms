@@ -34,7 +34,8 @@
                 <source>Empty Cart</source>
             </trans-unit>
             <trans-unit id="frontend.filterAttention">
-                <source>If you want to see the products made of specific materials, you can select the materials and click "Apply Filter"</source>
+                <source>If you want to see the products made of specific materials, you can select
+                    the materials and click "Apply Filter"</source>
             </trans-unit>
             <trans-unit id="login">
                 <source>Login</source>
@@ -194,12 +195,12 @@
             </trans-unit>
             <trans-unit id="frontend.checkout.summary">
                 <source>Order summary</source>
-            </trans-unit>        
+            </trans-unit>
             <trans-unit id="frontend.checkout.cartEmpty">
                 <source>Shopping cart is empty.</source>
             </trans-unit>
 
-             <!-- Frontend order -->
+            <!-- Frontend order -->
             <trans-unit id="frontend.orders">
                 <source>Orders</source>
             </trans-unit>
@@ -238,6 +239,49 @@
             <trans-unit id="frontend.dashboard.editAddress">
                 <source>Edit Address</source>
             </trans-unit>
+
+            <!-- Payment Details -->
+            <trans-unit id="frontend.checkout.quantity">
+                <source>Quantity</source>
+            </trans-unit>
+            <trans-unit id="frontend.checkout.subtotal">
+                <source>Subtotal</source>
+            </trans-unit>
+            <trans-unit id="frontend.checkout.vat">
+                <source>VAT (19%)</source>
+            </trans-unit>
+            <trans-unit id="frontend.checkout.totalAmountDue">
+                <source>Total amount due</source>
+            </trans-unit>
+
+            <!-- Payment  message-->
+            <trans-unit id="frontend.checkout.payByInvoice">
+                <source>Pay by invoice</source>
+            </trans-unit>
+            <trans-unit id="frontend.checkout.invoiceEmail">
+                <source>You will receive an invoice by email. Please transfer the total amount to
+                    the following account:</source>
+            </trans-unit>
+            <trans-unit id="frontend.checkout.accountHolder">
+                <source>Account Holder</source>
+            </trans-unit>
+            <trans-unit id="frontend.checkout.iban">
+                <source>IBAN</source>
+            </trans-unit>
+            <trans-unit id="frontend.checkout.bic">
+                <source>BIC</source>
+            </trans-unit>
+            <trans-unit id="frontend.checkout.reference">
+                <source>Reference</source>
+            </trans-unit>
+            <trans-unit id="frontend.checkout.amount">
+                <source>Amount</source>
+            </trans-unit>
+            <trans-unit id="frontend.checkout.dueDateDetails">
+                <source>14 days after receiving the goods</source>
+            </trans-unit>
+
+
         </body>
     </file>
 </xliff>

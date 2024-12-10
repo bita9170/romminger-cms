@@ -355,7 +355,7 @@ class CheckoutController extends ActionController
                 $persistenceManager->persistAll();
 
                 // TODO: Bita, you can comment this line    
-                setcookie('cart', '', time() - 3600, '/');
+                // setcookie('cart', '', time() - 3600, '/');
 
                 $this->view->assignMultiple([
                     'pageName' => 'frontend.checkout.invoice',
