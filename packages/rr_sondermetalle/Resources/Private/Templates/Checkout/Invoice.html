@@ -1,3 +1,244 @@
 <section class="container bg-white py-4 antialiased md:py-8 px-0">
-  <h3>Rechnung</h3>
+  <div class="px-4 md:px-0">
+    <ol
+      class="items-center flex w-full max-w-2xl text-center text-sm font-medium text-gray-500 sm:text-base"
+    >
+      <li
+        class="after:border-1 flex items-center text-blue-700 after:mx-6 after:hidden after:h-1 after:w-full after:border-b after:border-gray-200 sm:after:inline-block sm:after:content-[''] md:w-full xl:after:mx-10"
+      >
+        <span
+          class="flex items-center after:mx-2 after:text-gray-200 after:content-['/'] dark:after:text-gray-500 sm:after:hidden"
+        >
+          <svg
+            class="me-2 h-4 w-4 sm:h-5 sm:w-5"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            fill="none"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M8.5 11.5 11 14l4-4m6 2a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+            />
+          </svg>
+          <f:link.action action="cart"
+            ><f:translate
+              key="frontend.checkout.cart"
+              extensionName="rr_sondermetalle"
+          /></f:link.action>
+        </span>
+      </li>
+
+      <li
+        class="after:border-1 flex items-center text-blue-700 after:mx-6 after:hidden after:h-1 after:w-full after:border-b after:border-gray-200 dark:text-primary-500 dark:after:border-gray-700 sm:after:inline-block sm:after:content-[''] md:w-full xl:after:mx-10"
+      >
+        <span
+          class="flex items-center after:mx-2 after:text-gray-200 after:content-['/'] dark:after:text-gray-500 sm:after:hidden"
+        >
+          <svg
+            class="me-2 h-4 w-4 sm:h-5 sm:w-5"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            fill="none"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M8.5 11.5 11 14l4-4m6 2a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+            />
+          </svg>
+          <f:link.action action="checkout"
+            ><f:translate
+              key="frontend.checkout.checkout"
+              extensionName="rr_sondermetalle"
+          /></f:link.action>
+        </span>
+      </li>
+
+      <li class="flex shrink-0 items-center text-blue-700">
+        <svg
+          class="me-2 h-4 w-4 sm:h-5 sm:w-5"
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          fill="none"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M8.5 11.5 11 14l4-4m6 2a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+          />
+        </svg>
+        <f:translate
+          key="frontend.checkout.invoice"
+          extensionName="rr_sondermetalle"
+        />
+      </li>
+    </ol>
+
+    <div class="mt-6 sm:mt-8 lg:flex lg:items-start lg:gap-6 xl:gap-10">
+      <div
+        class="min-w-0 flex-1 space-y-8 border border-gray-200 p-4 rounded shadow-sm"
+      >
+        <div class="space-y-4">
+          <h2 class="text-xl font-semibold text-gray-900 dark:text-white">
+            {order.orderId}
+          </h2>
+          <!-- Orders -->
+          <div class="cart-items"></div>
+          <div class="h-1 bg-gray-600"></div>
+          <div
+            class="cart-summary my-3 divide-y divide-gray-200 dark:divide-gray-800"
+          >
+            <dl class="flex items-center justify-between gap-4 py-3">
+              <dt
+                class="text-base font-normal text-gray-500 dark:text-gray-400"
+              >
+                <f:translate key="frontend.checkout.article" />
+              </dt>
+              <dd
+                class="total-without-vat text-base font-medium text-gray-900 dark:text-white"
+              ></dd>
+            </dl>
+
+            <dl class="flex items-center justify-between gap-4 py-3">
+              <dt
+                class="text-base font-normal text-gray-500 dark:text-gray-400"
+              >
+                <f:translate key="frontend.checkout.vat" />
+              </dt>
+              <dd
+                class="price-vat text-base font-medium text-gray-900 dark:text-white"
+              ></dd>
+            </dl>
+
+            <dl class="flex items-center justify-between gap-4 py-3">
+              <dt
+                class="text-base font-normal text-gray-500 dark:text-gray-400"
+              >
+                <f:translate key="frontend.checkout.shipping" />
+              </dt>
+              <dd
+                class="shipping-cost text-base font-medium text-gray-900 dark:text-white"
+              ></dd>
+            </dl>
+
+            <dl class="flex items-center justify-between gap-4 py-3">
+              <dt class="text-base font-bold text-gray-900 dark:text-white">
+                <f:translate key="frontend.checkout.total" />
+              </dt>
+              <dd
+                class="total text-base font-bold text-gray-900 dark:text-white"
+              ></dd>
+            </dl>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="mt-6 w-full space-y-6 sm:mt-8 lg:mt-0 lg:max-w-xs xl:max-w-md border border-gray-200 p-4 rounded shadow-sm"
+      >
+        <div class="flow-root">
+          <h3 class="text-xl font-semibold mb-4">
+            <f:translate
+              key="frontend.checkout.payByInvoice"
+              extensionName="rr_sondermetalle"
+            />
+          </h3>
+          <!-- Message -->
+
+          <!-- <p class="text-m font-medium text-gray-700 mb-6">
+            Wir werden Sie innerhalb der nächsten Stunden bezüglich Ihrer
+            Zahlungsdetails kontaktieren.
+          </p> -->
+          <div class="mt-4">
+            <p class="text-gray-600 mb-2">
+              <f:translate
+                key="frontend.checkout.invoiceEmail"
+                extensionName="rr_sondermetalle"
+              />
+            </p>
+
+            <!-- Account Holder -->
+            <p class="text-gray-800 font-semibold">
+              <f:translate
+                key="frontend.checkout.accountHolder"
+                extensionName="rr_sondermetalle"
+              />
+            </p>
+            <p class="text-gray-600">Richard Romminger</p>
+
+            <!-- IBAN -->
+            <p class="text-gray-800 font-semibold mt-2">
+              <f:translate
+                key="frontend.checkout.iban"
+                extensionName="rr_sondermetalle"
+              />
+            </p>
+            <p class="text-gray-600">DE12 3456 7890 1234 5678 90</p>
+
+            <!-- BIC -->
+            <p class="text-gray-800 font-semibold mt-2">
+              <f:translate
+                key="frontend.checkout.bic"
+                extensionName="rr_sondermetalle"
+              />
+            </p>
+            <p class="text-gray-600">GENODEF1M04</p>
+
+            <!-- Reference -->
+            <p class="text-gray-800 font-semibold mt-2">
+              <f:translate
+                key="frontend.checkout.reference"
+                extensionName="rr_sondermetalle"
+              />
+            </p>
+            <p class="text-gray-600">{order.orderId}</p>
+
+            <!-- Amount -->
+            <p class="text-gray-800 font-semibold mt-2">
+              <f:translate
+                key="frontend.checkout.amount"
+                extensionName="rr_sondermetalle"
+              />
+            </p>
+            <p class="text-gray-600">
+              <f:format.currency currencySign="€">
+                {order.totalAmount}
+              </f:format.currency>
+            </p>
+
+            <!-- Due Date -->
+            <p class="text-gray-800 font-semibold mt-2">
+              <f:translate
+                key="frontend.checkout.dueBy"
+                extensionName="rr_sondermetalle"
+              />
+            </p>
+            <p class="text-gray-600">
+              <f:translate
+                key="frontend.checkout.dueDateDetails"
+                extensionName="rr_sondermetalle"
+              />
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <f:form.hidden property="total-price" id="total-price" />
+  </div>
 </section>

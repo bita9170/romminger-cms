@@ -249,6 +249,49 @@
                     um Ihre spezifischen Anforderungen zu erfüllen.
                 </target>
             </trans-unit>
+            <!-- Payment Details-->
+            <trans-unit id="frontend.checkout.quantity">
+                <target>Anzahl</target>
+            </trans-unit>
+            <trans-unit id="frontend.checkout.subtotal">
+                <target>Zwischensumme</target>
+            </trans-unit>
+            <trans-unit id="frontend.checkout.vat">
+                <target>MwSt. (19%)</target>
+            </trans-unit>
+            <trans-unit id="frontend.checkout.totalAmountDue">
+                <target>Fällige Gesamtsumme</target>
+            </trans-unit>
+            <!-- Payment message -->
+            <trans-unit id="frontend.checkout.payByInvoice">
+                <target>Mit Rechnung zahlen</target>
+            </trans-unit>
+            <trans-unit id="frontend.checkout.invoiceEmail">
+                <target>Sie erhalten eine Rechnung per E-Mail. Bitte überweisen Sie den Gesamtbetrag
+                    auf das folgende Konto:</target>
+            </trans-unit>
+            <trans-unit id="frontend.checkout.accountHolder">
+                <target>Kontoinhaber</target>
+            </trans-unit>
+            <trans-unit id="frontend.checkout.iban">
+                <target>IBAN</target>
+            </trans-unit>
+            <trans-unit id="frontend.checkout.bic">
+                <target>BIC</target>
+            </trans-unit>
+            <trans-unit id="frontend.checkout.reference">
+                <target>Verwendungszweck</target>
+            </trans-unit>
+            <trans-unit id="frontend.checkout.amount">
+                <target>Betrag</target>
+            </trans-unit>
+            <trans-unit id="frontend.checkout.dueBy">
+                <target>Fällig bis:</target>
+            </trans-unit>
+            <trans-unit id="frontend.checkout.dueDateDetails">
+                <target>14 Tage nach Erhalt der Ware</target>
+            </trans-unit>
+
         </body>
     </file>
 </xliff>
