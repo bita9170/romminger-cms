@@ -50,6 +50,7 @@ class RelatedProductsDataProcessor implements DataProcessorInterface
              * @var Material $material
              */
             $material = $this->materialRepository->findByUid($materialUid);
+            $processedData['material'] = $material;
 
             /**
              * @var Product[] $products

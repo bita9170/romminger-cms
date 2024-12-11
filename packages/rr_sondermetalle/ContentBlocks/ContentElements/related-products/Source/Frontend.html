@@ -6,7 +6,6 @@
   identifier="content-block-js-romminger-romminger/related-products"
   file="Frontend.js"
 />
-
 <f:if condition="{relatedProducts}">
   <bk2k:frame
     id="c{data.uid}"
@@ -26,7 +25,7 @@
     <div class="px-4 md:px-0">
       <div class="mx-auto max-w-screen-sm text-center mb-8 lg:mb-16">
         <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900">
-          {data.header}
+          {data.header} {material.name}
         </h2>
         <p class="font-medium text-gray-500 lg:mb-10 sm:text-xl">
           {data.subheader}
