@@ -16,7 +16,6 @@ class CategoryController extends BaseController
     public function listAction(array $filter = []): ResponseInterface
     {
         $categories = $this->categoryRepository->findRootCategoriesWithSubCategories();
-
         $activeCategory = null;
 
         if (!empty($filter['activeCategoryId'])) {

@@ -66,12 +66,17 @@
                     <h6></h6>
                     <h6 class="font-normal text-base text-gray-700">
                       <div>
-                        <span class="font-semibold mr-2">Material:</span>
+                        <span class="font-semibold mr-2"
+                          ><span><f:translate key="frontend.materials" /></span
+                          >:</span
+                        >
                         {product.material.name}
                       </div>
 
                       <div class="flex">
-                        <span class="font-semibold mr-2">Size:</span>
+                        <span class="font-semibold mr-2"
+                          ><f:translate key="frontend.size" />:</span
+                        >
                         <f:if condition="{product.thickness}">
                           <span>t{product.thickness}x</span>
                         </f:if>

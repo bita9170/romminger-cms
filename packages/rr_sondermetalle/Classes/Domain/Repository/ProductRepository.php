@@ -31,11 +31,18 @@ class ProductRepository extends Repository
      */
     public function findByFilters(array $filter)
     {
+
         $query = $this->createQuery();
         $constraints = [];
 
         if (!empty($filter['categories'])) {
-            $constraints[] = $query->in('category', $filter['categories']);
+            $categoryConstraints = [];
+
+            foreach ($filter['categories'] as $category) {
+                $categoryConstraints[] = $query->like('category', "%{$category->getUid()}%");
+            }
+
+            $constraints[] = $query->logicalOr(...$categoryConstraints);
         }
 
         if (!empty($filter['materials'])) {

@@ -2,7 +2,7 @@ name: romminger/products
 table: tx_romminger_products
 prefixFields: false
 labelField: name
-
+languageAware: false
 security:
   ignorePageTypeRestriction: true
 fields:
@@ -37,7 +37,7 @@ fields:
 
   - identifier: category
     type: Select
-    renderType: selectSingle
+    renderType: selectMultipleSideBySide
     foreign_table: "tx_romminger_categories"
     foreign_table_where: "AND {#tx_romminger_categories}.{#parent_category} > 0 ORDER BY uid"
     onChange: reload

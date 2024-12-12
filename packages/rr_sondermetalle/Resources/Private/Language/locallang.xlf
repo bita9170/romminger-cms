@@ -67,7 +67,9 @@
             <trans-unit id="register.subtitle">
                 <source>Get started today!</source>
             </trans-unit>
-
+            <trans-unit id="frontend.size">
+                <source>Size</source>
+            </trans-unit>
             <!-- materials -->
             <trans-unit id="material.molybdaen">
                 <source>Molybdenum</source>

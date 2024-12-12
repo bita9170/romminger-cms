@@ -67,7 +67,9 @@
             <trans-unit id="register.subtitle">
                 <target>Starten Sie noch heute!</target>
             </trans-unit>
-
+            <trans-unit id="frontend.size">
+               <target>Größe</target>
+            </trans-unit>
             <!-- materials -->
             <trans-unit id="material.molybdaen">
                 <target>Molybdän</target>
