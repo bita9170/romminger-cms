@@ -31,12 +31,23 @@ document.addEventListener("DOMContentLoaded", function () {
     const totalPriceElement = control
       .closest(".grid")
       .querySelector(".total-price");
-    const basePrice = parseFloat(totalPriceElement.dataset.basePrice);
+
+    let basePrice = 0;
+    if (totalPriceElement) {
+      basePrice = parseFloat(totalPriceElement.dataset.basePrice);
+    }
 
     const updateTotalPrice = (element, newQuantity) => {
+      const showPrice = Boolean(
+        Number(document.getElementById("page-content").dataset.showPrice)
+      );
+
       const quantity = parseInt(quantityInput.value) || 0;
       const totalPrice = quantity * basePrice;
-      totalPriceElement.textContent = formatPrice(totalPrice);
+
+      if (showPrice) {
+        totalPriceElement.textContent = formatPrice(totalPrice);
+      }
 
       const cartItemsContainer = document.querySelector(".cart-items-checkout");
       if (cartItemsContainer) {
@@ -47,9 +58,12 @@ document.addEventListener("DOMContentLoaded", function () {
           const productName = productElement.dataset.baseName;
           const productImage = productElement.dataset.baseImage;
 
-          const price = parseFloat(
-            productElement.querySelector(".total-price").dataset.basePrice
-          );
+          let price = 0;
+          if (showPrice) {
+            price = parseFloat(
+              productElement.querySelector(".total-price").dataset.basePrice
+            );
+          }
 
           if (quantity > 0) {
             addToCart(
@@ -89,6 +103,9 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   document.querySelectorAll(".cart-button").forEach((addToCartBtn, index) => {
+    const showPrice = Boolean(
+      Number(document.getElementById("page-content").dataset.showPrice)
+    );
     addToCartBtn.addEventListener("click", function () {
       const productElement = addToCartBtn.closest(".grid");
       const productUid = productElement.dataset.baseUid;
@@ -97,9 +114,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
       const quantity =
         parseInt(productElement.querySelector(".quantityInput").value) || 0;
-      const price = parseFloat(
-        productElement.querySelector(".total-price").dataset.basePrice
-      );
+
+      let price = 0;
+
+      if (showPrice) {
+        price = parseFloat(
+          productElement.querySelector(".total-price").dataset.basePrice
+        );
+      }
 
       if (quantity > 0) {
         addToCart(productImage, productName, productUid, quantity, price);
@@ -223,6 +245,10 @@ const formatPrice = (price) => {
 };
 
 const renderCartPopover = (cart) => {
+  const showPrice = Boolean(
+    Number(document.getElementById("page-content").dataset.showPrice)
+  );
+
   const cartItemsContainer = document.querySelectorAll(".cart-items");
   cartItemsContainer.forEach((container) => {
     container.innerHTML = "";
@@ -264,10 +290,12 @@ const renderCartPopover = (cart) => {
                 }</div>
                 <div class="font-medium text-sm text-gray-600">${
                   item.quantity
-                } x ${formatPrice(item.price)}</div>
-                <div class="font-bold text-sm text-gray-600 total-price">${formatPrice(
-                  item.total_price
-                )}</div>
+                }x <span class="${
+      showPrice ? "d-inline" : "d-none"
+    }">${formatPrice(item.price)}</span></div>
+                <div class="font-bold text-sm text-gray-600 total-price ${
+                  showPrice ? "d-inline" : "d-none"
+                }">${formatPrice(item.total_price)}</div>
               </div>
             </div>
             <div class="col-span-2">
@@ -301,16 +329,16 @@ const renderCartPopover = (cart) => {
                 }</div>
                 <div class="font-medium text-sm text-gray-600">${
                   item.quantity
-                } x ${formatPrice(item.price)}</div>
-                <div class="font-bold text-sm text-gray-600 total-price">${formatPrice(
-                  item.total_price
-                )}</div>
+                }x <span class="${
+      showPrice ? "d-inline" : "d-none"
+    }">${formatPrice(item.price)}</span></div>
+                <div class="font-bold text-sm text-gray-600 total-price ${
+                  showPrice ? "d-inline" : "d-none"
+                }">${formatPrice(item.total_price)}</div>
               </div>
-            </div>
-           
+            </div>           
           </div>
-        </div>
-        
+        </div>        
       `;
 
     cartItemsContainer.forEach((container, index) => {
@@ -331,6 +359,10 @@ const renderCartPopover = (cart) => {
 };
 
 const renderCheckout = (cart, cartItemsContainer) => {
+  const showPrice = Boolean(
+    Number(document.getElementById("page-content").dataset.showPrice)
+  );
+
   cartItemsContainer.innerHTML = "";
   const cartItemsheader = document.querySelector(".cart-items-header");
   const cartEmptyHeader = document.querySelector(".cart-empty-header");
@@ -394,7 +426,9 @@ const renderCheckout = (cart, cartItemsContainer) => {
                 </h6>
 
                 <h6
-                  class="font-medium text-base leading-7 text-gray-600 transition-all duration-300 group-hover:text-indigo-600"
+                  class="font-medium text-base leading-7 text-gray-600 transition-all duration-300 group-hover:text-indigo-600 ${
+                    showPrice ? "d-inline" : "d-none"
+                  }"
                 >
                   ${formatPrice(item.price)}
                 </h6>
@@ -488,7 +522,9 @@ const renderCheckout = (cart, cartItemsContainer) => {
               class="flex items-center max-[500px]:justify-center md:justify-end max-md:mt-3 h-full"
             >
               <p
-                class="font-bold text-lg leading-8 text-gray-600 text-center transition-all duration-300 group-hover:text-indigo-600 total-price"
+                class="font-bold text-lg leading-8 text-gray-600 text-center transition-all duration-300 group-hover:text-indigo-600 total-price ${
+                  showPrice ? "d-inline" : "d-none"
+                }"
                 data-base-price="${item.price}"
               >
                  ${formatPrice(item.total_price)}

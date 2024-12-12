@@ -52,10 +52,15 @@ page {
         }     
     }
     meta {        
-         # cat=rr-sondermetalle; type=string; label=SEO - Keywords
-         keywords =
+        # cat=rr-sondermetalle; type=string; label=SEO - Keywords
+        keywords =
         # cat=rr-sondermetalle; type=string; label=SEO - Description
-         description =
+        description =
+    }
+
+    settings {
+        # cat=rr-sondermetalle; type=boolean; label=Show Product Price
+        showPrice = 1
     }
 }
 

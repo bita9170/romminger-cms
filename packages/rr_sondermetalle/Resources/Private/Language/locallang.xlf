@@ -263,6 +263,9 @@
             <trans-unit id="frontend.checkout.totalAmountDue">
                 <source>Total amount due</source>
             </trans-unit>
+            <trans-unit id="frontend.checkout.backToHome">
+                <source>Back to home</source>
+            </trans-unit>
 
             <!-- Payment  message-->
             <trans-unit id="frontend.checkout.payByInvoice">

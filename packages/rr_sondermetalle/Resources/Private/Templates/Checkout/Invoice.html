@@ -98,11 +98,52 @@
           <h2 class="text-xl font-semibold text-gray-900 dark:text-white">
             {order.orderId}
           </h2>
+
           <!-- Orders -->
-          <div class="cart-items"></div>
+          <div class="cart-items-invoice">
+            <div class="p-2 border-b border-gray-200 relative">
+              <f:for each="{products}" as="product">
+                <div class="flex flex-row items-center gap-2 py-2 group">
+                  <div class="w-full md:max-w-[62px]" style="max-width: 62px">
+                    <f:image
+                      image="{product.product.images.0}"
+                      alt="{product.product.name}"
+                      class="mx-auto rounded-xl object-cover h-[60px] w-[60px]"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div class="grid grid-cols-4 w-full">
+                    <div class="col-span-4">
+                      <div class="flex flex-col">
+                        <div class="font-semibold text-sm text-black">
+                          {product.product.name}
+                        </div>
+                        <div class="font-medium text-sm text-gray-600">
+                          {product.quantity}x
+                          <span
+                            class="{f:if(condition:settings.showPrice, then:'d-inline', else:'d-none')}"
+                            ><f:format.currency currencySign="€"
+                              >{product.price}</f:format.currency
+                            ></span
+                          >
+                        </div>
+                        <div
+                          class="font-bold text-sm text-gray-600 total-price {f:if(condition:settings.showPrice, then:'d-inline', else:'d-none')}"
+                        >
+                          <f:format.currency currencySign="€"
+                            >{product.totalPrice}</f:format.currency
+                          >
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </f:for>
+            </div>
+          </div>
           <div class="h-1 bg-gray-600"></div>
           <div
-            class="cart-summary my-3 divide-y divide-gray-200 dark:divide-gray-800"
+            class="cart-summary my-3 divide-y divide-gray-200 dark:divide-gray-800 {f:if(condition:settings.showPrice, then:'', else:'blur-summary')}"
           >
             <dl class="flex items-center justify-between gap-4 py-3">
               <dt
@@ -110,9 +151,11 @@
               >
                 <f:translate key="frontend.checkout.article" />
               </dt>
-              <dd
-                class="total-without-vat text-base font-medium text-gray-900 dark:text-white"
-              ></dd>
+              <dd class="text-base font-medium text-gray-900 dark:text-white">
+                <f:format.currency currencySign="€"
+                  >{totalWithoutVat}</f:format.currency
+                >
+              </dd>
             </dl>
 
             <dl class="flex items-center justify-between gap-4 py-3">
@@ -121,9 +164,9 @@
               >
                 <f:translate key="frontend.checkout.vat" />
               </dt>
-              <dd
-                class="price-vat text-base font-medium text-gray-900 dark:text-white"
-              ></dd>
+              <dd class="text-base font-medium text-gray-900 dark:text-white">
+                <f:format.currency currencySign="€">{vat}</f:format.currency>
+              </dd>
             </dl>
 
             <dl class="flex items-center justify-between gap-4 py-3">
@@ -132,18 +175,18 @@
               >
                 <f:translate key="frontend.checkout.shipping" />
               </dt>
-              <dd
-                class="shipping-cost text-base font-medium text-gray-900 dark:text-white"
-              ></dd>
+              <dd class="text-base font-medium text-gray-900 dark:text-white">
+                <f:format.currency currencySign="€">0</f:format.currency>
+              </dd>
             </dl>
 
             <dl class="flex items-center justify-between gap-4 py-3">
               <dt class="text-base font-bold text-gray-900 dark:text-white">
                 <f:translate key="frontend.checkout.total" />
               </dt>
-              <dd
-                class="total text-base font-bold text-gray-900 dark:text-white"
-              ></dd>
+              <dd class="text-base font-bold text-gray-900 dark:text-white">
+                <f:format.currency currencySign="€">{total}</f:format.currency>
+              </dd>
             </dl>
           </div>
         </div>
@@ -216,7 +259,9 @@
                 extensionName="rr_sondermetalle"
               />
             </p>
-            <p class="text-gray-600">
+            <p
+              class="text-gray-600 {f:if(condition:settings.showPrice, then:'', else:'blur-summary')}"
+            >
               <f:format.currency currencySign="€">
                 {order.totalAmount}
               </f:format.currency>
@@ -236,6 +281,13 @@
               />
             </p>
           </div>
+
+          <f:link.page pageUid="1" class="btn btn-primary w-full mt-4">
+            <f:translate
+              key="frontend.checkout.backToHome"
+              extensionName="rr_sondermetalle"
+            />
+          </f:link.page>
         </div>
       </div>
     </div>
