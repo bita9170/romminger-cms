@@ -134,6 +134,47 @@
                             >{product.totalPrice}</f:format.currency
                           >
                         </div>
+
+                        <h6 class="font-medium text-base text-gray-500">
+                          {product.abstract}
+                        </h6>
+                        <h6 class="font-normal text-base text-gray-700">
+                          <div>
+                            <span class="font-semibold mr-2"
+                              ><span
+                                ><f:translate key="frontend.materials" /></span
+                              >:</span
+                            >
+                            {product.product.material.name}
+                          </div>
+
+                          <div class="flex">
+                            <span class="font-semibold mr-2"
+                              ><f:translate key="frontend.size" />:</span
+                            >
+                            <f:if condition="{product.product.thickness}">
+                              <span>t{product.product.thickness}x</span>
+                            </f:if>
+                            <f:if condition="{product.product.width}">
+                              <span>{product.product.width}x</span>
+                            </f:if>
+                            <f:if condition="{product.product.diameter}">
+                              <span class="relative top-[-3.5px]"
+                                ><span class="font-bold text-xl">⌀</span
+                                >{product.product.diameter}x</span
+                              >
+                            </f:if>
+                            <f:if condition="{product.product.outer_diameter}">
+                              <span>OD{product.product.outer_diameter}x</span>
+                            </f:if>
+                            <f:if condition="{product.product.wall_thickness}">
+                              <span>t{product.product.wall_thickness}x</span>
+                            </f:if>
+                            <f:if condition="{product.product.length}">
+                              <span>{product.product.length}mm</span>
+                            </f:if>
+                          </div>
+                        </h6>
                       </div>
                     </div>
                   </div>
