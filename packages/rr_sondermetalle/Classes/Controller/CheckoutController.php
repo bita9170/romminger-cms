@@ -323,6 +323,8 @@ class CheckoutController extends ActionController
                 $payment->setOrder($order);
                 $order->setPayment($payment);
                 $orderProducts = [];
+                $totalWithoutVat = 0;
+
                 foreach ($this->carts as $item) {
                     $productUid = $item['product_uid'] ?? null;
                     if (!$productUid) {
@@ -343,6 +345,8 @@ class CheckoutController extends ActionController
 
                     $this->orderProductRepository->add($orderProduct);
                     $orderProducts[] = $orderProduct;
+
+                    $totalWithoutVat += $item['total_price'];
                 }
 
                 /** @var PersistenceManager $persistenceManager */
@@ -351,11 +355,9 @@ class CheckoutController extends ActionController
                 $this->orderRepository->add($order);
                 $this->paymentRepository->add($payment);
 
-                // TODO: Bita, you can comment this line
                 $persistenceManager->persistAll();
 
-                // TODO: Bita, you can comment this line    
-                // setcookie('cart', '', time() - 3600, '/');
+                setcookie('cart', '', time() - 3600, '/');
 
                 $this->view->assignMultiple([
                     'pageName' => 'frontend.checkout.invoice',
@@ -363,7 +365,10 @@ class CheckoutController extends ActionController
                     'avatar' => $this->frontendUser->getFirstName()[0] . $this->frontendUser->getLastName()[0],
                     'siteUrl' => $this->siteUrl,
                     'order' => $order,
-                    'products' =>  $orderProducts
+                    'products' =>  $orderProducts,
+                    'totalWithoutVat' => $totalWithoutVat,
+                    'vat' => $totalWithoutVat * 0.19,
+                    'total' => $totalWithoutVat * 1.19,
                 ]);
 
                 return $this->htmlResponse();
@@ -373,8 +378,9 @@ class CheckoutController extends ActionController
                     'user' => $this->frontendUser,
                     'avatar' => $this->frontendUser->getFirstName()[0] . $this->frontendUser->getLastName()[0],
                     'siteUrl' => $this->siteUrl,
-
                 ]);
+
+                return $this->redirectToUri($this->siteUrl);
             }
         } catch (\Exception $e) {
             return $this->htmlResponse('Error: ' . $e->getMessage());

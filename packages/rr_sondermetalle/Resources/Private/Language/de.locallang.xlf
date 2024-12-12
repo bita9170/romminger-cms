@@ -262,6 +262,9 @@
             <trans-unit id="frontend.checkout.totalAmountDue">
                 <target>Fällige Gesamtsumme</target>
             </trans-unit>
+            <trans-unit id="frontend.checkout.backToHome">
+                <target>Zurück zur Startseite</target>
+            </trans-unit>
             <!-- Payment message -->
             <trans-unit id="frontend.checkout.payByInvoice">
                 <target>Mit Rechnung zahlen</target>

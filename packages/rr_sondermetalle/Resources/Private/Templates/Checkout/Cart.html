@@ -113,16 +113,18 @@
                   />
                 </p>
               </div>
-              <div class="col-span-2">
-                <p
-                  class="font-normal text-lg leading-8 text-gray-400 text-right"
-                >
-                  <f:translate
-                    key="frontend.total"
-                    extensionName="rr_sondermetalle"
-                  />
-                </p>
-              </div>
+              <f:if condition="{settings.showPrice}">
+                <div class="col-span-2">
+                  <p
+                    class="font-normal text-lg leading-8 text-gray-400 text-right"
+                  >
+                    <f:translate
+                      key="frontend.total"
+                      extensionName="rr_sondermetalle"
+                    />
+                  </p>
+                </div>
+              </f:if>
             </div>
           </div>
         </div>
@@ -132,52 +134,44 @@
       <div
         class="mt-6 w-full space-y-6 sm:mt-8 lg:mt-0 lg:max-w-xs xl:max-w-md border border-gray-200 p-4 rounded shadow-sm"
       >
-        <div class="flow-root">
-          <div
-            class="cart-summary my-3 divide-y divide-gray-200 dark:divide-gray-800"
-          >
-            <dl class="flex items-center justify-between gap-4 py-3">
-              <dt
-                class="text-base font-normal text-gray-500 dark:text-gray-400"
-              >
-                <f:translate key="frontend.checkout.article" />
-              </dt>
-              <dd
-                class="total-without-vat text-base font-medium text-gray-900 dark:text-white"
-              ></dd>
-            </dl>
+        <div
+          class="cart-summary my-3 divide-y divide-gray-200 dark:divide-gray-800 {f:if(condition:settings.showPrice, then:'', else:'blur-summary')}"
+        >
+          <dl class="flex items-center justify-between gap-4 py-3">
+            <dt class="text-base font-normal text-gray-500 dark:text-gray-400">
+              <f:translate key="frontend.checkout.article" />
+            </dt>
+            <dd
+              class="total-without-vat text-base font-medium text-gray-900 dark:text-white"
+            ></dd>
+          </dl>
 
-            <dl class="flex items-center justify-between gap-4 py-3">
-              <dt
-                class="text-base font-normal text-gray-500 dark:text-gray-400"
-              >
-                <f:translate key="frontend.checkout.vat" />
-              </dt>
-              <dd
-                class="price-vat text-base font-medium text-gray-900 dark:text-white"
-              ></dd>
-            </dl>
+          <dl class="flex items-center justify-between gap-4 py-3">
+            <dt class="text-base font-normal text-gray-500 dark:text-gray-400">
+              <f:translate key="frontend.checkout.vat" />
+            </dt>
+            <dd
+              class="price-vat text-base font-medium text-gray-900 dark:text-white"
+            ></dd>
+          </dl>
 
-            <dl class="flex items-center justify-between gap-4 py-3">
-              <dt
-                class="text-base font-normal text-gray-500 dark:text-gray-400"
-              >
-                <f:translate key="frontend.checkout.shipping" />
-              </dt>
-              <dd
-                class="shipping-cost text-base font-medium text-gray-900 dark:text-white"
-              ></dd>
-            </dl>
+          <dl class="flex items-center justify-between gap-4 py-3">
+            <dt class="text-base font-normal text-gray-500 dark:text-gray-400">
+              <f:translate key="frontend.checkout.shipping" />
+            </dt>
+            <dd
+              class="shipping-cost text-base font-medium text-gray-900 dark:text-white"
+            ></dd>
+          </dl>
 
-            <dl class="flex items-center justify-between gap-4 py-3">
-              <dt class="text-base font-bold text-gray-900 dark:text-white">
-                <f:translate key="frontend.checkout.total" />
-              </dt>
-              <dd
-                class="total text-base font-bold text-gray-900 dark:text-white"
-              ></dd>
-            </dl>
-          </div>
+          <dl class="flex items-center justify-between gap-4 py-3">
+            <dt class="text-base font-bold text-gray-900 dark:text-white">
+              <f:translate key="frontend.checkout.total" />
+            </dt>
+            <dd
+              class="total text-base font-bold text-gray-900 dark:text-white"
+            ></dd>
+          </dl>
         </div>
 
         <div class="space-y-3">

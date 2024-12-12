@@ -244,107 +244,108 @@
             </h3>
 
             <div class="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-4">
-              <div
-                class="rounded-lg border border-gray-200 bg-gray-50 p-4 ps-4 dark:border-gray-700 dark:bg-gray-800"
-              >
-                <div class="flex items-start">
-                  <div class="flex h-5 items-center">
-                    <f:form.radio
-                      id="credit-card"
-                      property="payment-method"
-                      value="card"
-                      required="true"
-                      checked="true"
-                    />
-                  </div>
+              <f:comment>
+                <div
+                  class="rounded-lg border border-gray-200 bg-gray-50 p-4 ps-4 dark:border-gray-700 dark:bg-gray-800"
+                >
+                  <div class="flex items-start">
+                    <div class="flex h-5 items-center">
+                      <f:form.radio
+                        id="credit-card"
+                        property="payment-method"
+                        value="card"
+                        required="true"
+                        checked="true"
+                      />
+                    </div>
 
-                  <div class="ms-2 text-sm">
-                    <label
-                      for="credit-card"
-                      class="font-medium leading-none text-gray-900 dark:text-white"
-                    >
-                      <f:render partial="Checkout/CreditCards" />
-                    </label>
+                    <div class="ms-2 text-sm">
+                      <label
+                        for="credit-card"
+                        class="font-medium leading-none text-gray-900 dark:text-white"
+                      >
+                        <f:render partial="Checkout/CreditCards" />
+                      </label>
+                    </div>
                   </div>
                 </div>
-              </div>
 
-              <div
-                class="rounded-lg border border-gray-200 bg-gray-50 p-4 ps-4 dark:border-gray-700 dark:bg-gray-800"
-              >
-                <div class="flex items-start">
-                  <div class="flex h-5 items-center">
-                    <f:form.radio
-                      id="pay-klarna"
-                      property="payment-method"
-                      value="klarna"
-                      required="true"
-                    />
-                  </div>
+                <div
+                  class="rounded-lg border border-gray-200 bg-gray-50 p-4 ps-4 dark:border-gray-700 dark:bg-gray-800"
+                >
+                  <div class="flex items-start">
+                    <div class="flex h-5 items-center">
+                      <f:form.radio
+                        id="pay-klarna"
+                        property="payment-method"
+                        value="klarna"
+                        required="true"
+                      />
+                    </div>
 
-                  <div class="ms-2 text-sm">
-                    <label
-                      for="pay-klarna"
-                      class="font-medium leading-none text-gray-900 dark:text-white"
-                    >
-                      <f:render partial="Checkout/Klarna" />
-                    </label>
-                  </div>
-                </div>
-              </div>
-
-              <div
-                class="rounded-lg border border-gray-200 bg-gray-50 p-4 ps-4 dark:border-gray-700 dark:bg-gray-800"
-              >
-                <div class="flex items-start">
-                  <div class="flex h-5 items-center">
-                    <f:form.radio
-                      id="paypal"
-                      property="payment-method"
-                      value="paypal"
-                      required="true"
-                    />
-                  </div>
-
-                  <div class="ms-2 text-sm">
-                    <label
-                      for="paypal"
-                      class="font-medium leading-none text-gray-900 dark:text-white"
-                    >
-                      <f:render partial="Checkout/Paypal" />
-                    </label>
+                    <div class="ms-2 text-sm">
+                      <label
+                        for="pay-klarna"
+                        class="font-medium leading-none text-gray-900 dark:text-white"
+                      >
+                        <f:render partial="Checkout/Klarna" />
+                      </label>
+                    </div>
                   </div>
                 </div>
-              </div>
 
-              <div
-                class="rounded-lg border border-gray-200 bg-gray-50 p-4 ps-4 dark:border-gray-700 dark:bg-gray-800"
-              >
-                <div class="flex items-start">
-                  <div class="flex h-5 items-center">
-                    <f:form.radio
-                      id="sofort"
-                      property="payment-method"
-                      value="sofort"
-                      aria-describedby="sofort-text"
-                      required="true"
-                    />
-                  </div>
-                  <div class="ms-2 text-sm">
-                    <label
-                      for="sofort"
-                      class="font-medium leading-none text-gray-900 dark:text-white"
-                    >
-                      <f:render partial="Checkout/Sofort" />
-                    </label>
-                    <p
-                      id="sofort-text"
-                      class="mt-1 text-xs font-normal text-gray-500 dark:text-gray-400"
-                    ></p>
+                <div
+                  class="rounded-lg border border-gray-200 bg-gray-50 p-4 ps-4 dark:border-gray-700 dark:bg-gray-800"
+                >
+                  <div class="flex items-start">
+                    <div class="flex h-5 items-center">
+                      <f:form.radio
+                        id="paypal"
+                        property="payment-method"
+                        value="paypal"
+                        required="true"
+                      />
+                    </div>
+
+                    <div class="ms-2 text-sm">
+                      <label
+                        for="paypal"
+                        class="font-medium leading-none text-gray-900 dark:text-white"
+                      >
+                        <f:render partial="Checkout/Paypal" />
+                      </label>
+                    </div>
                   </div>
                 </div>
-              </div>
 
+                <div
+                  class="rounded-lg border border-gray-200 bg-gray-50 p-4 ps-4 dark:border-gray-700 dark:bg-gray-800"
+                >
+                  <div class="flex items-start">
+                    <div class="flex h-5 items-center">
+                      <f:form.radio
+                        id="sofort"
+                        property="payment-method"
+                        value="sofort"
+                        aria-describedby="sofort-text"
+                        required="true"
+                      />
+                    </div>
+                    <div class="ms-2 text-sm">
+                      <label
+                        for="sofort"
+                        class="font-medium leading-none text-gray-900 dark:text-white"
+                      >
+                        <f:render partial="Checkout/Sofort" />
+                      </label>
+                      <p
+                        id="sofort-text"
+                        class="mt-1 text-xs font-normal text-gray-500 dark:text-gray-400"
+                      ></p>
+                    </div>
+                  </div>
+                </div>
+              </f:comment>
               <div
                 class="rounded-lg border border-gray-200 bg-gray-50 p-4 ps-4 dark:border-gray-700 dark:bg-gray-800"
               >
@@ -356,6 +357,7 @@
                       value="invoice"
                       aria-describedby="invoice-text"
                       required="true"
+                      checked="true"
                     />
                   </div>
                   <div class="ms-2 text-sm">
@@ -383,7 +385,7 @@
             <div class="cart-items"></div>
             <div class="h-1 bg-gray-600"></div>
             <div
-              class="cart-summary my-3 divide-y divide-gray-200 dark:divide-gray-800"
+              class="cart-summary my-3 divide-y divide-gray-200 dark:divide-gray-800 {f:if(condition:settings.showPrice, then:'', else:'blur-summary')}"
             >
               <dl class="flex items-center justify-between gap-4 py-3">
                 <dt

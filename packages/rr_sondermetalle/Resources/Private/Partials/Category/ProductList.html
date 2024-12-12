@@ -16,25 +16,25 @@
           <div class="col-span-12 md:col-span-5">
             <div class="grid grid-cols-5">
               <div class="col-span-3">
-                <p
-                  class="font-normal text-lg leading-8 text-gray-400 text-center"
-                >
+                <p class="font-normal text-lg leading-8 text-gray-400 text-end">
                   <f:translate
                     key="frontend.quantity"
                     extensionName="rr_sondermetalle"
                   />
                 </p>
               </div>
-              <div class="col-span-2">
-                <p
-                  class="font-normal text-lg leading-8 text-gray-400 text-right"
-                >
-                  <f:translate
-                    key="frontend.total"
-                    extensionName="rr_sondermetalle"
-                  />
-                </p>
-              </div>
+              <f:if condition="{settings.showPrice}">
+                <div class="col-span-2">
+                  <p
+                    class="font-normal text-lg leading-8 text-gray-400 text-right"
+                  >
+                    <f:translate
+                      key="frontend.total"
+                      extensionName="rr_sondermetalle"
+                    />
+                  </p>
+                </div>
+              </f:if>
             </div>
           </div>
         </div>
@@ -58,20 +58,53 @@
                 data-base-image="fileadmin{product.images.0.originalResource.originalFile.identifier }"
               >
                 <div class="md:col-span-2">
-                  <div class="flex flex-col max-[500px]:items-center gap-3">
-                    <h6 class="font-semibold text-base leading-7 text-black">
+                  <div class="flex flex-col max-[500px]:items-center gap-1">
+                    <h6 class="font-semibold text-base text-black">
                       {product.name}
                     </h6>
-                    <h6 class="font-normal text-base leading-7 text-gray-500">
-                      Artikel-Nr.: {product.id}
+
+                    <h6></h6>
+                    <h6 class="font-normal text-base text-gray-700">
+                      <div>
+                        <span class="font-semibold mr-2">Material:</span>
+                        {product.material.name}
+                      </div>
+
+                      <div class="flex">
+                        <span class="font-semibold mr-2">Size:</span>
+                        <f:if condition="{product.thickness}">
+                          <span>t{product.thickness}x</span>
+                        </f:if>
+                        <f:if condition="{product.width}">
+                          <span>{product.width}x</span>
+                        </f:if>
+                        <f:if condition="{product.diameter}">
+                          <span class="relative top-[-3.5px]"
+                            ><span class="font-bold text-xl">⌀</span
+                            >{product.diameter}x</span
+                          >
+                        </f:if>
+                        <f:if condition="{product.outer_diameter}">
+                          <span>OD{product.outer_diameter}x</span>
+                        </f:if>
+                        <f:if condition="{product.wall_thickness}">
+                          <span>t{product.wall_thickness}x</span>
+                        </f:if>
+                        <f:if condition="{product.length}">
+                          <span>{product.length}mm</span>
+                        </f:if>
+                      </div>
                     </h6>
-                    <h6
-                      class="font-medium text-base leading-7 text-gray-600 transition-all duration-300 group-hover:text-indigo-600"
-                    >
-                      <f:format.currency currencySign="€"
-                        >{product.unitPrice}</f:format.currency
+
+                    <f:if condition="{settings.showPrice}">
+                      <h6
+                        class="font-medium text-base leading-7 text-gray-600 transition-all duration-300 group-hover:text-indigo-600"
                       >
-                    </h6>
+                        <f:format.currency currencySign="€"
+                          >{product.unitPrice}</f:format.currency
+                        >
+                      </h6>
+                    </f:if>
                   </div>
                 </div>
                 <div
@@ -151,7 +184,7 @@
                       </svg>
                     </button>
                   </div>
-                  <button class="btn btn-primary text-md cart-button">
+                  <button class="btn btn-primary text-md cart-button mt-3">
                     <div class="flex gap-2 items-center">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -170,18 +203,20 @@
                     </div>
                   </button>
                 </div>
-                <div
-                  class="flex items-center max-[500px]:justify-center md:justify-end max-md:mt-3 h-full"
-                >
-                  <p
-                    class="font-bold text-lg leading-8 text-gray-600 text-center transition-all duration-300 group-hover:text-indigo-600 total-price"
-                    data-base-price="{product.unitPrice}"
+                <f:if condition="{settings.showPrice}">
+                  <div
+                    class="flex items-center max-[500px]:justify-center md:justify-end max-md:mt-3 h-full"
                   >
-                    <f:format.currency currencySign="€"
-                      >{product.unitPrice}</f:format.currency
+                    <p
+                      class="font-bold text-lg leading-8 text-gray-600 text-center transition-all duration-300 group-hover:text-indigo-600 total-price"
+                      data-base-price="{product.unitPrice}"
                     >
-                  </p>
-                </div>
+                      <f:format.currency currencySign="€"
+                        >{product.unitPrice}</f:format.currency
+                      >
+                    </p>
+                  </div>
+                </f:if>
               </div>
             </div>
           </div>
