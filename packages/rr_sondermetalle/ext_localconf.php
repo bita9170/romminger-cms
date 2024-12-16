@@ -91,3 +91,23 @@ $GLOBALS['TYPO3_CONF_VARS']['SYS']['Objects'][FeuserEditController::class] = [
 $GLOBALS['TYPO3_CONF_VARS']['SYS']['Objects'][FeuserCreateController::class] = [
     'className' => FeuserCreateExtendController::class,
 ];
+
+// Register custom EXT:form configuration
+if (\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::isLoaded('form')) {
+    \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTypoScriptSetup(trim('
+        module.tx_form {
+            settings {
+                yamlConfigurations {
+                    120 = EXT:rr_sondermetalle/Configuration/Form/Setup.yaml
+                }
+            }
+        }
+        plugin.tx_form {
+            settings {
+                yamlConfigurations {
+                    120 = EXT:rr_sondermetalle/Configuration/Form/Setup.yaml
+                }
+            }
+        }
+    '));
+}

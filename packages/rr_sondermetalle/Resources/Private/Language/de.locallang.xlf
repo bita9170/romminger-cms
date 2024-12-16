@@ -297,6 +297,10 @@
                 <target>14 Tage nach Erhalt der Ware</target>
             </trans-unit>
 
+            <!-- Contact Form -->
+            <trans-unit id="contactformnew.element.mandatory.properties.label">
+                <target>Your personal data DE</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>

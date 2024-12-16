@@ -296,7 +296,10 @@
                 <source>14 days after receiving the goods</source>
             </trans-unit>
 
-
+            <!-- Contact Form -->
+            <trans-unit id="contactformnew.element.mandatory.properties.label">
+                <source>Your personal data</source>
+            </trans-unit>
         </body>
     </file>
 </xliff>

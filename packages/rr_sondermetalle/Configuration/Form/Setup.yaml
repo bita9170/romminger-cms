@@ -1,0 +1,29 @@
+imports:
+  - { resource: "./FormElements/GridColumn.yaml" }
+
+TYPO3:
+  CMS:
+    Form:
+      persistenceManager:
+        allowedExtensionPaths:
+          120: EXT:rr_sondermetalle/Resources/Private/Forms/
+      prototypes:
+        standard:
+          formElementsDefinition:
+            Form:
+              renderingOptions:
+                templateVariant: version2
+                translation:
+                  translationFiles:
+                    120: "EXT:rr_sondermetalle/Resources/Private/Language/locallang.xlf"
+                layoutRootPaths:
+                  30: "EXT:rr_sondermetalle/Resources/Private/Layouts/Form/"
+                templateRootPaths:
+                  30: "EXT:rr_sondermetalle/Resources/Private/Templates/Form/"
+                partialRootPaths:
+                  30: "EXT:rr_sondermetalle/Resources/Private/Partials/Form/"
+            ImageUpload:
+              properties:
+                imageLinkMaxWidth: 1200
+                imageMaxWidth: 200
+                imageMaxHeight: 200
