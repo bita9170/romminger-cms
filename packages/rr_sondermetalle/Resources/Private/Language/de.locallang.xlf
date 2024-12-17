@@ -68,7 +68,7 @@
                 <target>Starten Sie noch heute!</target>
             </trans-unit>
             <trans-unit id="frontend.size">
-               <target>Größe</target>
+                <target>Größe</target>
             </trans-unit>
             <!-- materials -->
             <trans-unit id="material.molybdaen">
@@ -298,8 +298,45 @@
             </trans-unit>
 
             <!-- Contact Form -->
+            <trans-unit id="contactformnew.element.renderingOptions.submitButtonLabel">
+                <target>Senden</target>
+            </trans-unit>
             <trans-unit id="contactformnew.element.mandatory.properties.label">
-                <target>Your personal data DE</target>
+                <target>Deine persönlichen Daten</target>
+            </trans-unit>
+            <trans-unit id="contactformnew.element.mandatory.properties.text">
+                <target>Pflichtfelder sind mit * markiert</target>
+            </trans-unit>
+            <trans-unit id="contactformnew.element.fullname.properties.label">
+                <target>Vor- und Nachname</target>
+            </trans-unit>
+            <trans-unit id="contactformnew.element.fullname.properties.placeholder">
+                <target>Vor- und Nachname</target>
+            </trans-unit>
+            <trans-unit id="contactformnew.element.company.properties.label">
+                <target>Firma</target>
+            </trans-unit>
+            <trans-unit id="contactformnew.element.company.properties.placeholder">
+                <target>Firma</target>
+            </trans-unit>
+            <trans-unit id="contactformnew.element.email.properties.label">
+                <source>Email</source>
+                <target>E-Mail</target>
+            </trans-unit>
+            <trans-unit id="contactformnew.element.email.properties.placeholder">
+                <target>E-Mail</target>
+            </trans-unit>
+            <trans-unit id="contactformnew.element.subject.properties.label">
+                <target>Betreff</target>
+            </trans-unit>
+            <trans-unit id="contactformnew.element.subject.properties.placeholder">
+                <target>Betreff</target>
+            </trans-unit>
+            <trans-unit id="contactformnew.element.message.properties.label">
+                <target>Nachricht</target>
+            </trans-unit>
+            <trans-unit id="contactformnew.element.message.properties.placeholder">
+                <target>Nachricht</target>
             </trans-unit>
         </body>
     </file>

@@ -297,8 +297,44 @@
             </trans-unit>
 
             <!-- Contact Form -->
+            <trans-unit id="contactformnew.element.renderingOptions.submitButtonLabel">
+                <source>Submit</source>
+            </trans-unit>
             <trans-unit id="contactformnew.element.mandatory.properties.label">
                 <source>Your personal data</source>
+            </trans-unit>
+            <trans-unit id="contactformnew.element.mandatory.properties.text">
+                <source>Required fields are marked with *</source>
+            </trans-unit>
+            <trans-unit id="contactformnew.element.fullname.properties.label">
+                <source>Full name and surname</source>
+            </trans-unit>
+            <trans-unit id="contactformnew.element.fullname.properties.placeholder">
+                <source>Full name and surname</source>
+            </trans-unit>
+            <trans-unit id="contactformnew.element.company.properties.label">
+                <source>Company</source>
+            </trans-unit>
+            <trans-unit id="contactformnew.element.company.properties.placeholder">
+                <source>Company</source>
+            </trans-unit>
+            <trans-unit id="contactformnew.element.email.properties.label">
+                <source>Email</source>
+            </trans-unit>
+            <trans-unit id="contactformnew.element.email.properties.placeholder">
+                <source>Email</source>
+            </trans-unit>
+            <trans-unit id="contactformnew.element.subject.properties.label">
+                <source>Subject</source>
+            </trans-unit>
+            <trans-unit id="contactformnew.element.subject.properties.placeholder">
+                <source>Subject</source>
+            </trans-unit>
+            <trans-unit id="contactformnew.element.message.properties.label">
+                <source>Message</source>
+            </trans-unit>
+            <trans-unit id="contactformnew.element.message.properties.placeholder">
+                <source>Message</source>
             </trans-unit>
         </body>
     </file>
