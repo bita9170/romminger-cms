@@ -26,4 +26,34 @@ fields:
         label: "Item Description"
       - identifier: item_link
         type: Link
-        label: "Item Link"
+        label:
+          "Item Link"
+          # Appearance Tab
+  - identifier: appearance
+    type: Tab
+    label: "Appearance"
+  - identifier: content_element_layout
+    type: Palette
+    label: Content Element Layout
+    fields:
+      - identifier: layout
+        useExistingField: true
+      - identifier: frame_class
+        useExistingField: true
+      - identifier: space_before_class
+        useExistingField: true
+      - identifier: space_after_class
+        useExistingField: true
+      - type: Linebreak
+      - identifier: frame_layout
+        useExistingField: true
+      - identifier: frame_options
+        useExistingField: true
+      - type: Linebreak
+      - identifier: background_color_class
+        useExistingField: true
+      - type: Linebreak
+      - identifier: background_image
+        useExistingField: true
+      - identifier: background_image_options
+        useExistingField: true

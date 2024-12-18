@@ -7,7 +7,22 @@
   file="Frontend.js"
 />
 
-<section class="container space-y-8 my-8">
+<bk2k:frame
+    id="c{data.uid}"
+    type="{data.CType}"
+    size="default"
+    layout="{data.frame_layout}"
+    frameClass="{data.frame_class}"
+    frameAttributes="{frameAttributes}"
+    spaceBefore="{data.space_before_class}"
+    spaceAfter="{data.space_after_class}"
+    options="{data.frame_options}"
+    variants="{variants}"
+    backgroundColor="{data.background_color_class}"
+    backgroundImage="{backgroundImage.0}"
+    backgroundImageOptions="{data.background_image_options}"
+  >
+
   <div class="mx-auto max-w-screen-sm text-center mb-8">
     <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900">
       {data.header}
@@ -15,7 +30,7 @@
     <p class="font-light text-gray-500 lg:mb-10 sm:text-xl">{data.subheader}</p>
   </div>
 
-  <div class="grid md:grid-cols-3 gap-8">
+  <div class="grid md:grid-cols-3 gap-8 px-4 md:px-0">
     <f:for each="{data.col_items}" as="item">
       <div
         class="rounded-lg text-center p-6 border-2 border-primary-500 flex flex-col items-center justify-center"
@@ -33,4 +48,5 @@
       </div>
     </f:for>
   </div>
-</section>
+
+</bk2k:frame>
