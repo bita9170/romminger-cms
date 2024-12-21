@@ -302,7 +302,7 @@
                 <target>Senden</target>
             </trans-unit>
             <trans-unit id="contactformnew.element.mandatory.properties.label">
-                <target>Deine persönlichen Daten</target>
+                <target>Ihre persönlichen Daten</target>
             </trans-unit>
             <trans-unit id="contactformnew.element.mandatory.properties.text">
                 <target>Pflichtfelder sind mit * markiert</target>
