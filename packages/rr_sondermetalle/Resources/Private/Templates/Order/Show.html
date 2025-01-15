@@ -63,21 +63,27 @@
               </p>
               <p class="text-gray-600 text-sm font-semibold">
                 {product.quantity} x
-                <f:format.currency currencySign="€"
-                  >{product.price}</f:format.currency
-                >
+                <f:if condition="{settings.showPrice}">
+                  <f:format.currency currencySign="€"
+                    >{product.price}</f:format.currency
+                  >
+                </f:if>
               </p>
             </div>
-            <p class="font-bold text-gray-800">
-              <f:format.currency currencySign="€"
-                >{product.totalPrice}</f:format.currency
-              >
-            </p>
+            <f:if condition="{settings.showPrice}">
+              <p class="font-bold text-gray-800">
+                <f:format.currency currencySign="€"
+                  >{product.totalPrice}</f:format.currency
+                >
+              </p>
+            </f:if>
           </div>
         </f:for>
       </div>
 
-      <div class="order-summary pt-4">
+      <div
+        class="order-summary pt-4 {f:if(condition:settings.showPrice, then:'', else:'blur-summary')}"
+      >
         <div class="text-xl font-semibold text-gray-900">
           <f:translate key="frontend.order.orderOverview" />:
         </div>
