@@ -336,6 +336,11 @@
             <trans-unit id="contactformnew.element.message.properties.placeholder">
                 <source>Message</source>
             </trans-unit>
+            
+            <!-- price on request -->
+            <trans-unit id="frontend.price_on_request">
+                <source>Price on request</source>
+            </trans-unit>
         </body>
     </file>
 </xliff>

@@ -338,6 +338,11 @@
             <trans-unit id="contactformnew.element.message.properties.placeholder">
                 <target>Nachricht</target>
             </trans-unit>
+
+            <!-- price on request -->
+            <trans-unit id="frontend.price_on_request">
+                <target>Preis auf Anfrage</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>
