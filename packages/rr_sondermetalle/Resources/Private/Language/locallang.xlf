@@ -178,7 +178,7 @@
                 <source>Continue to checkout</source>
             </trans-unit>
             <trans-unit id="frontend.checkout.btnPayment">
-                <source>Continue to payment</source>
+                <source>Complete order and pay</source>
             </trans-unit>
             <trans-unit id="frontend.checkout.continueShopping">
                 <source>Continue Shopping</source>
@@ -336,11 +336,20 @@
             <trans-unit id="contactformnew.element.message.properties.placeholder">
                 <source>Message</source>
             </trans-unit>
-            
+
             <!-- price on request -->
             <trans-unit id="frontend.price_on_request">
                 <source>Price on request</source>
             </trans-unit>
+            <trans-unit id="frontend.checkout.contactForFinalPrice">
+                <source>Contact us for the final price</source>
+            </trans-unit>
+
+            <!-- Contact Us -->
+            <trans-unit id="frontend.contactUs">
+                <source>Contact us:</source>
+            </trans-unit>
+
         </body>
     </file>
 </xliff>

@@ -178,7 +178,7 @@
                 <target>Weiter zur Kasse</target>
             </trans-unit>
             <trans-unit id="frontend.checkout.btnPayment">
-                <target>Weiter zur Zahlung</target>
+                <target>Bestellung abschließen und bezahlen</target>
             </trans-unit>
             <trans-unit id="frontend.checkout.continueShopping">
                 <target>Weiter einkaufen</target>
@@ -343,6 +343,15 @@
             <trans-unit id="frontend.price_on_request">
                 <target>Preis auf Anfrage</target>
             </trans-unit>
+            <trans-unit id="frontend.checkout.contactForFinalPrice">
+                <target>Kontaktieren Sie uns für den endgültigen Preis</target>
+            </trans-unit>
+
+            <!-- Contact Us -->
+            <trans-unit id="frontend.contactUs">
+                <target>Kontaktieren Sie uns:</target>
+            </trans-unit>
+
         </body>
     </file>
 </xliff>

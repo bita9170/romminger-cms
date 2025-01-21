@@ -178,8 +178,26 @@
           <f:link.action
             action="checkout"
             class="btn btn-primary flex w-full items-center justify-center rounded-lg"
-            ><f:translate key="frontend.checkout.btnCheckout"
-          /></f:link.action>
+          >
+            <f:translate key="frontend.checkout.btnCheckout" />
+          </f:link.action>
+
+          <f:if condition="{settings.showPrice} == 0">
+            <f:link.action
+              action="show"
+              controller="Kontakt"
+              pageUid="79"
+              class="btn flex w-full items-center justify-center rounded-lg text-black"
+              style="
+                background-color: rgb(251, 146, 60);
+                transition: background-color 0.3s, opacity 0.3s;
+              "
+              onmouseover="this.style.opacity='0.8'"
+              onmouseout="this.style.opacity='1'"
+            >
+              <f:translate key="frontend.checkout.contactForFinalPrice" />
+            </f:link.action>
+          </f:if>
         </div>
       </div>
     </div>

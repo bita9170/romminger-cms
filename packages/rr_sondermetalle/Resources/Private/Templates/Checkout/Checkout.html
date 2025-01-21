@@ -433,7 +433,14 @@
 
           <div class="space-y-3">
             <f:form.button
-              class="btn btn-primary flex w-full items-center justify-center rounded-lg"
+              class="btn flex w-full items-center justify-center rounded-lg text-white"
+              style="
+                background-color: rgb(16, 128, 56) !important;
+                color: white !important;
+                transition: background-color 0.3s, opacity 0.3s;
+              "
+              onmouseover="this.style.backgroundColor='rgb(13, 110, 53)'; this.style.opacity='0.8'"
+              onmouseout="this.style.backgroundColor='rgb(16, 128, 56)'; this.style.opacity='1'"
             >
               <f:translate key="frontend.checkout.btnPayment" />
             </f:form.button>
