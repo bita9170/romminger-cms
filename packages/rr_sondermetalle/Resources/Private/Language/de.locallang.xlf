@@ -130,7 +130,7 @@
                 <target>Stadt</target>
             </trans-unit>
             <trans-unit id="frontend.checkout.paymentMethod">
-                <target>Zahlungsmethod</target>
+                <target>Zahlungsmethode</target>
             </trans-unit>
             <trans-unit id="frontend.checkout.card">
                 <target>Kreditkarte</target>

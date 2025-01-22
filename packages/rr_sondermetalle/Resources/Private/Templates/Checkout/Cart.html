@@ -183,10 +183,8 @@
           </f:link.action>
 
           <f:if condition="{settings.showPrice} == 0">
-            <f:link.action
-              action="show"
-              controller="Kontakt"
-              pageUid="79"
+            <f:link.page
+              pageUid="61"
               class="btn flex w-full items-center justify-center rounded-lg text-black"
               style="
                 background-color: rgb(251, 146, 60);
@@ -196,7 +194,7 @@
               onmouseout="this.style.opacity='1'"
             >
               <f:translate key="frontend.checkout.contactForFinalPrice" />
-            </f:link.action>
+            </f:link.page>
           </f:if>
         </div>
       </div>

@@ -37,17 +37,17 @@
               <f:if
                 condition="{data.btn_primary_text} && {data.btn_primary_link}"
               >
-                <a href="{data.btn_primary_link}" class="btn btn-primary"
-                  >{data.btn_primary_text}</a
-                >
+                <f:link.typolink parameter="{data.btn_primary_link}" class="btn btn-primary">
+                  {data.btn_primary_text}
+                </f:link.typolink>
               </f:if>
 
               <f:if
                 condition="{data.btn_secondary_text} && {data.btn_secondary_link}"
               >
-                <a href="{data.btn_secondary_link}" class="btn btn-secondary"
-                  >{data.btn_secondary_text}</a
-                >
+                <f:link.typolink parameter="{data.btn_secondary_link}" class="btn btn-secondary">
+                  {data.btn_secondary_text}
+                </f:link.typolink>
               </f:if>
             </div>
           </div>
