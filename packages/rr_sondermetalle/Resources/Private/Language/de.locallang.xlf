@@ -352,6 +352,11 @@
                 <target>Kontaktieren Sie uns:</target>
             </trans-unit>
 
+            <!-- about Hermann Hesse -->
+            <trans-unit id="quote.hermannhesse">
+                <target>"Jedem Anfang wohnt ein Zauber inne"</target>
+            </trans-unit>
+
         </body>
     </file>
 </xliff>

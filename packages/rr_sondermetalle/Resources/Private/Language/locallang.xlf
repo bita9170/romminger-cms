@@ -350,6 +350,11 @@
                 <source>Contact us:</source>
             </trans-unit>
 
+            <!-- about Hermann Hesse-->
+            <trans-unit id="quote.hermannhesse">
+                <source>"Every beginning has a magic within it"</source>
+            </trans-unit>
+
         </body>
     </file>
 </xliff>
