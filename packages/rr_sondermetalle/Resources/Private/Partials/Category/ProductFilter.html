@@ -29,17 +29,31 @@
       >
         <f:for each="{allMaterials}" as="material">
           <f:form.checkbox
-            class="btn-check"
+            class="btn-check material-checkbox"
             id="{material.id}"
             property="materialIds"
             value="{material.uid}"
             autocomplete="off"
             multiple="1"
+            onchange="handleMaterialSelection(this)"
           />
-          <label class="btn btn-light" for="{material.id}"
-            >{material.name}</label
-          >
+          <label class="btn btn-light" for="{material.id}">
+            {material.name}
+          </label>
         </f:for>
+
+        <script>
+          function handleMaterialSelection(clickedCheckbox) {
+            document
+              .querySelectorAll(".material-checkbox")
+              .forEach((checkbox) => {
+                if (checkbox !== clickedCheckbox) {
+                  checkbox.checked = false;
+                }
+              });
+            document.forms["filter"].submit();
+          }
+        </script>
       </div>
     </div>
 
@@ -47,8 +61,25 @@
       class="d-flex flex-column align-items-end gap-2"
       style="inline-size: auto"
     >
+      <!-- checkout Button -->
+      <div
+        class="d-flex flex-column align-items-end gap-2"
+        style="inline-size: auto"
+      >
+        <a
+          href="/shop/checkout"
+          class="btn btn-primary d-flex gap-2 align-items-center justify-content-center"
+          style="inline-size: 200px; block-size: 40px"
+        >
+          <f:translate
+            key="frontend.checkout"
+            extensionName="rr_sondermetalle"
+          />
+        </a>
+      </div>
+      
       <!-- Filter Button -->
-      <f:form.button
+      <!-- <f:form.button
         class="btn btn-primary d-flex gap-2 align-items-center justify-content-center"
         style="inline-size: 200px; block-size: 40px"
       >
@@ -65,7 +96,7 @@
           />
         </svg>
         <f:translate key="frontend.apply_filters" />
-      </f:form.button>
+      </f:form.button> -->
 
       <!-- Price on Request Button -->
       <f:if condition="{settings.showPrice} == 0">
@@ -99,17 +130,16 @@
       </f:if>
     </div>
   </div>
-  <p class="py-4 text-xs font-bold flex flex-wrap items-center gap-1">
+  <!-- <p class="py-4 text-xs font-bold flex flex-wrap items-center gap-1">
     <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 512 512"
       class="w-4 h-4"
     >
-      <!--!Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc. -->
       <path
         d="M256 8C119 8 8 119.1 8 256c0 137 111 248 248 248s248-111 248-248C504 119.1 393 8 256 8zm0 110c23.2 0 42 18.8 42 42s-18.8 42-42 42-42-18.8-42-42 18.8-42 42-42zm56 254c0 6.6-5.4 12-12 12h-88c-6.6 0-12-5.4-12-12v-24c0-6.6 5.4-12 12-12h12v-64h-12c-6.6 0-12-5.4-12-12v-24c0-6.6 5.4-12 12-12h64c6.6 0 12-5.4 12 12v100h12c6.6 0 12-5.4 12 12v24z"
       />
     </svg>
     <f:translate key="frontend.filterAttention" />
-  </p>
+  </p> -->
 </f:form>

@@ -18,16 +18,31 @@
           <f:render partial="Category/ProductFilter" arguments="{_all}" />
 
           <div class="number-of-product font-bold mt-4 mb-2">
-            <span
-              ><f:translate key="frontend.number_of_product" />:
-              <f:count subject="{products}"
-            /></span>
+            <f:if condition="{products -> f:count()} > 0">
+              <f:then>
+                <span>
+                  <f:translate key="frontend.number_of_product" />:
+                  <f:count subject="{products}" />
+                </span>
+              </f:then>
+              <f:else>
+                <f:link.page
+                  pageUid="61"
+                  class="text-orange-800 font-bold underline"
+                >
+                  <f:translate
+                    key="frontend.no_products_message"
+                    extensionName="rr_sondermetalle"
+                  />
+                </f:link.page>
+              </f:else>
+            </f:if>
           </div>
 
           <f:render partial="Category/ProductList" arguments="{_all}" />
         </f:then>
         <f:else>
-          <h3>Shop</h3>
+          <h3 class="text-primary-500">Shop</h3>
           <p>
             <f:translate
               key="frontend.shop.intro"

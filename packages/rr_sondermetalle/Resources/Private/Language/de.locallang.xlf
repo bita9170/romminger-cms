@@ -357,6 +357,11 @@
                 <target>"Jedem Anfang wohnt ein Zauber inne"</target>
             </trans-unit>
 
+            <!-- no products message -->
+            <trans-unit id="frontend.no_products_message" extensionName="rr_sondermetalle">
+                <target>Hier klicken für eine spezifische Anfrage</target>
+            </trans-unit>
+
         </body>
     </file>
 </xliff>
