@@ -37,11 +37,16 @@ class ProductRepository extends Repository
 
         if (!empty($filter['categories'])) {
             $categoryConstraints = [];
-
+    
             foreach ($filter['categories'] as $category) {
-                $categoryConstraints[] = $query->like('category', "%{$category->getUid()}%");
+                $categoryConstraints[] = $query->logicalOr(
+                    $query->equals('category', $category->getUid()),
+                    $query->like('category', "%,{$category->getUid()},%"),
+                    $query->like('category', "{$category->getUid()},%"),
+                    $query->like('category', "%,{$category->getUid()}")
+                );
             }
-
+    
             $constraints[] = $query->logicalOr(...$categoryConstraints);
         }
 
