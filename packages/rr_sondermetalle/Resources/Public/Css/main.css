@@ -104,6 +104,7 @@ h5,
 h6 {
   font-size: inherit;
   font-weight: inherit;
+  color: #172554;
 }
 
 /*
@@ -338,6 +339,13 @@ figure,
 p,
 pre {
   margin: 0;
+}
+p{
+  color: #172554;
+}
+
+.footer-content p {
+color: white !important;
 }
 
 fieldset {
