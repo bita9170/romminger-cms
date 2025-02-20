@@ -4,36 +4,56 @@
   data-namespace-typo3-fluid="true"
 >
   <f:layout name="Default" />
-  <f:section name="Header" />
+  <f:section name="Header"></f:section>
   <f:section name="Main">
-    <f:variable name="imageConfig"
-      >{settings.responsiveimages.contentelements.textpic.centered_right}</f:variable
-    >
-    <bk2k:data.imageVariants
-      as="variants"
-      variants="{variants}"
-      multiplier="{imageConfig.multiplier}"
-      gutters="{imageConfig.gutters}"
-      corrections="{imageConfig.corrections}"
+    <f:variable
+      name="imageConfig"
+      value="{settings.responsiveimages.contentelements.textpic.centered_right}"
     />
-    <div class="textpic textpic-centered textpic-right flex flex-col-reverse md:flex-row items-center justify-center border border-gray-200 rounded p-4 shadow-sm">
-    <div class="textpic-item text-primary-700">
-        <f:render partial="Header/All" arguments="{_all}" />
-        <f:format.html>{data.bodytext}</f:format.html>
-        <p class="text-center italic text-primary-700 font-semibold mt-4"></p>
-    </div>
 
-    <div class="textpic-gallery max-w-sm drop-shadow-2xl backdrop-blur-lg">
+    <f:if condition="{variants}">
+      <f:then>
+        <bk2k:data.imageVariants
+          as="variants"
+          variants="{variants}"
+          multiplier="{imageConfig.multiplier}"
+          gutters="{imageConfig.gutters}"
+          corrections="{imageConfig.corrections}"
+        />
+      </f:then>
+    </f:if>
+
+    <div
+      class="textpic textpic-centered textpic-right flex flex-col-reverse md:flex-row items-center justify-center border border-gray-200 rounded p-4 shadow-sm"
+    >
+      <div class="textpic-item text-primary-700">
+        <f:render partial="Header/All" arguments="{_all}" />
+        <f:if condition="{data.bodytext}">
+          <f:format.html>{data.bodytext}</f:format.html>
+        </f:if>
+        <p class="text-center italic text-primary-700 font-semibold mt-4"></p>
+      </div>
+
+      <div class="textpic-gallery max-w-sm drop-shadow-2xl backdrop-blur-lg">
         <div class="opacity-50 mix-blend-overlay">
-            <f:render partial="Media/Gallery" arguments="{_all}" />
+          <f:render partial="Media/Gallery" arguments="{_all}" />
         </div>
-        <div class="mt-4">
-            <p class="text-center italic font-semibold" style="color: #172554 !important;">
-               <f:translate key="quote.hermannhesse" extensionName="rr_sondermetalle"/> <br>
-                    Hermann Hesse
-            </p>
+        <div class="mt-4 text-center">
+          <span class="italic font-semibold" style="color: #172554 !important">
+            <f:translate
+              key="quote.hermannhesse"
+              extensionName="rr_sondermetalle"
+              default="Zitat nicht gefunden"
+            />
+          </span>
+          <br />
+          <span
+            class="italic font-semibold mt-2 block text-sm"
+            style="color: #172554 !important"
+            >Hermann Hesse</span
+          >
         </div>
+      </div>
     </div>
-  </div>
   </f:section>
 </html>

@@ -29,15 +29,14 @@ class ProductRepository extends Repository
      * @param array $filter
      * @return QueryResultInterface
      */
-    public function findByFilters(array $filter)
+    public function findByFilters(array $filter, string $orderBy = 'thickness', string $orderDirection = QueryInterface::ORDER_ASCENDING)
     {
-
         $query = $this->createQuery();
         $constraints = [];
 
         if (!empty($filter['categories'])) {
             $categoryConstraints = [];
-    
+
             foreach ($filter['categories'] as $category) {
                 $categoryConstraints[] = $query->logicalOr(
                     $query->equals('category', $category->getUid()),
@@ -46,7 +45,7 @@ class ProductRepository extends Repository
                     $query->like('category', "%,{$category->getUid()}")
                 );
             }
-    
+
             $constraints[] = $query->logicalOr(...$categoryConstraints);
         }
 
@@ -81,6 +80,8 @@ class ProductRepository extends Repository
         if (!empty($constraints)) {
             $query->matching($query->logicalAnd(...$constraints));
         }
+
+        $query->setOrderings([$orderBy => $orderDirection]);
 
         /** @var QueryResultInterface|Product[] $products */
         $products = $query->execute();

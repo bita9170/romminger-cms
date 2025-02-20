@@ -30,8 +30,36 @@ class CategoryController extends BaseController
             $materialObjects = $this->materialRepository->findByUids($filter['materialIds']);
             $filter['materials'] = $materialObjects;
         }
+        $orderby = '';
+        switch ($filter['activeCategoryId']) {
+            case 22:
+            case 2:
+            case 1:
+            case 24:
+                $orderby = 'thickness';
+                break;
+            case 5:
+                $orderby = 'length';
+                break;
+            case 6:
+            case 3:
+                $orderby = 'diameter';
+                break;
+            case 4:
+                $orderby = 'outerDiameter';
+                break;
+            case 'wallThickness':
+                $orderby = 'wallThickness';
+                break;
+            case 'length':
+                $orderby = 'length';
+                break;
+            default:
+                $orderby = 'thickness';
+                break;
+        }
 
-        $result = $this->productRepository->findByFilters($filter);
+        $result = $this->productRepository->findByFilters($filter, $orderby);
         $allMaterials = $this->materialRepository->findAll();
 
         if ($this->frontendUser) {
