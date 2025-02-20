@@ -362,6 +362,11 @@
                 <target>Hier klicken für eine spezifische Anfrage</target>
             </trans-unit>
 
+            <trans-unit id="frontend.products_available_message" extensionName="rr_sondermetalle">
+                <target>Hier nicht aufgeführte Abmaße sind auf Anfrage erhältlich</target>
+            </trans-unit>
+
+
         </body>
     </file>
 </xliff>

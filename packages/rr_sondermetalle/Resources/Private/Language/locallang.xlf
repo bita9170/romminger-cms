@@ -359,6 +359,11 @@
             <trans-unit id="frontend.no_products_message" extensionName="rr_sondermetalle">
                 <source>Click here for a specific request</source>
             </trans-unit>
+
+            <trans-unit id="frontend.products_available_message" extensionName="rr_sondermetalle">
+                <source>Dimensions not listed here are available upon request</source>
+            </trans-unit>
+
         </body>
     </file>
 </xliff>
