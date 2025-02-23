@@ -2,12 +2,13 @@
 
 namespace Romminger\RrSondermetalle\Domain\Model;
 
-use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
+use JsonSerializable;
 use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
 use TYPO3\CMS\Extbase\Domain\Model\FileReference;
+use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 
 
-class Material extends AbstractEntity
+class Material extends AbstractEntity implements JsonSerializable
 {
     protected string $id = '';
     protected string $name = '';
@@ -113,5 +114,12 @@ class Material extends AbstractEntity
     public function setImages(ObjectStorage $images): void
     {
         $this->images = $images;
+    }
+
+    public function jsonSerialize(): mixed
+    {
+        return [
+            'name' => $this->name,
+        ];
     }
 }

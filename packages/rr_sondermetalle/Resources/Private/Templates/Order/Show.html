@@ -58,9 +58,35 @@
             <div class="flex-1 ml-4">
               <p class="text-gray-800 font-bold">
                 <a href="/shop/product/{product.product.name}">
-                  {product.product.name}
+                  {product.product.name} <small>({product.product.material.name})</small>
                 </a>
               </p>
+              <div class="flex">
+                <span class="mr-2"
+                  ><f:translate key="frontend.size" />:</span
+                >
+                <f:if condition="{product.product.thickness}">
+                  <span>t{product.product.thickness}x</span>
+                </f:if>
+                <f:if condition="{product.product.width}">
+                  <span>{product.product.width}x</span>
+                </f:if>
+                <f:if condition="{product.product.diameter}">
+                  <span class="relative top-[-3.5px]"
+                    ><span class="font-bold text-xl">⌀</span
+                    >{product.product.diameter}x</span
+                  >
+                </f:if>
+                <f:if condition="{product.product.outer_diameter}">
+                  <span>OD{product.product.outer_diameter}x</span>
+                </f:if>
+                <f:if condition="{product.product.wall_thickness}">
+                  <span>t{product.product.wall_thickness}x</span>
+                </f:if>
+                <f:if condition="{product.product.length}">
+                  <span>{product.product.length}mm</span>
+                </f:if>
+              </div>
               <p class="text-gray-600 text-sm font-semibold">
                 {product.quantity} x
                 <f:if condition="{settings.showPrice}">

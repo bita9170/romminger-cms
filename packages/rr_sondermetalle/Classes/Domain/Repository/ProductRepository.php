@@ -83,7 +83,7 @@ class ProductRepository extends Repository
 
         $query->setOrderings([$orderBy => $orderDirection]);
 
-        /** @var QueryResultInterface|Product[] $products */
+        /** @var Product[] $products */
         $products = $query->execute();
 
         $materials = [];
@@ -129,6 +129,10 @@ class ProductRepository extends Repository
             if ($length && !in_array($length, $lengths, true)) {
                 $lengths[] = $length;
             }
+        }
+
+        foreach ($products as $product) {
+            $product->setJson(json_encode($product));
         }
 
         return [

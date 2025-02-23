@@ -57,6 +57,7 @@ document.addEventListener("DOMContentLoaded", function () {
           const productUid = productElement.dataset.baseUid;
           const productName = productElement.dataset.baseName;
           const productImage = productElement.dataset.baseImage;
+          const productJson = productElement.dataset.baseJson;
 
           let price = 0;
           if (showPrice) {
@@ -71,7 +72,8 @@ document.addEventListener("DOMContentLoaded", function () {
               productName,
               productUid,
               newQuantity,
-              price
+              price,
+              productJson
             );
           }
         }
@@ -111,6 +113,7 @@ document.addEventListener("DOMContentLoaded", function () {
       const productUid = productElement.dataset.baseUid;
       const productName = productElement.dataset.baseName;
       const productImage = productElement.dataset.baseImage;
+      const productJson = productElement.dataset.baseJson;
 
       const quantity =
         parseInt(productElement.querySelector(".quantityInput").value) || 0;
@@ -124,7 +127,7 @@ document.addEventListener("DOMContentLoaded", function () {
       }
 
       if (quantity > 0) {
-        addToCart(productImage, productName, productUid, quantity, price);
+        addToCart(productImage, productName, productUid, quantity, price, productJson);
       }
     });
   });
@@ -140,7 +143,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
-function addToCart(product_image, product_name, product_uid, quantity, price) {
+function addToCart(product_image, product_name, product_uid, quantity, price, product_json) {
   let cart = getCart();
   let total_price = price * quantity;
 
@@ -158,7 +161,8 @@ function addToCart(product_image, product_name, product_uid, quantity, price) {
       quantity,
       price,
       total_price,
-    });
+      product_json,
+    });        
   }
 
   setCookie("cart", JSON.stringify(cart), 7);
@@ -257,6 +261,7 @@ const renderCartPopover = (cart) => {
   cart.forEach((item) => {
     const itemElement = document.createElement("div");
     const itemElement2 = document.createElement("div");
+    const json = JSON.parse(item.product_json);
 
     itemElement.classList.add(
       "py-2",
@@ -283,11 +288,11 @@ const renderCartPopover = (cart) => {
             />
           </div>
           <div class="grid grid-cols-4 w-full">
-            <div class="col-span-2">
+            <div class="col-span-3">
               <div class="flex flex-col">
                 <div class="font-semibold text-sm text-black">${
                   item.product_name
-                }</div>
+                } <small>(${json.material.name})</small></div>
                 <div class="font-medium text-sm text-gray-600">${
                   item.quantity
                 }x <span class="${
@@ -296,9 +301,17 @@ const renderCartPopover = (cart) => {
                 <div class="font-bold text-sm text-gray-600 total-price ${
                   showPrice ? "d-inline" : "d-none"
                 }">${formatPrice(item.total_price)}</div>
+                <div class="d-flex">
+                  ${json.thickness > 0 ? '<span>t' + json.thickness + 'x</span>' : ''}
+                  ${json.width > 0 ? '<span>' + json.width +'x</span>' : ''}
+                  ${json.diameter > 0 ? '<span>⌀' + json.diameter +'x</span>' : ''}
+                  ${json.outerDiameter > 0 ? '<span>OD' + json.outerDiameter +'x</span>' : ''}
+                  ${json.wallThickness > 0 ? '<span>t' + json.wallThickness +'x</span>' : ''}
+                  ${json.length > 0 ? '<span>' + json.length +'mm</span>' : ''}
+                </div>
               </div>
             </div>
-            <div class="col-span-2">
+            <div class="col-span-1">
               <div class="flex items-center justify-end h-full">               
                 <button class="remove-item mr-2" type="button" data-uid="${
                   item.product_uid
@@ -326,7 +339,7 @@ const renderCartPopover = (cart) => {
               <div class="flex flex-col">
                 <div class="font-semibold text-sm text-black">${
                   item.product_name
-                }</div>
+                }<small>(${json.material.name})</small></div>
                 <div class="font-medium text-sm text-gray-600">${
                   item.quantity
                 }x <span class="${
@@ -335,6 +348,14 @@ const renderCartPopover = (cart) => {
                 <div class="font-bold text-sm text-gray-600 total-price ${
                   showPrice ? "d-inline" : "d-none"
                 }">${formatPrice(item.total_price)}</div>
+                <div class="d-flex">
+                  ${json.thickness > 0 ? '<span>t' + json.thickness + 'x</span>' : ''}
+                  ${json.width > 0 ? '<span>' + json.width +'x</span>' : ''}
+                  ${json.diameter > 0 ? '<span>⌀' + json.diameter +'x</span>' : ''}
+                  ${json.outerDiameter > 0 ? '<span>OD' + json.outerDiameter +'x</span>' : ''}
+                  ${json.wallThickness > 0 ? '<span>t' + json.wallThickness +'x</span>' : ''}
+                  ${json.length > 0 ? '<span>' + json.length +'mm</span>' : ''}
+                </div>
               </div>
             </div>           
           </div>
@@ -387,6 +408,8 @@ const renderCheckout = (cart, cartItemsContainer) => {
 
   cart.forEach((item) => {
     const itemElement = document.createElement("div");
+    const json = JSON.parse(item.product_json);
+
     itemElement.classList.add(
       "cart-item",
       "border-b",
@@ -422,7 +445,7 @@ const renderCheckout = (cart, cartItemsContainer) => {
                 <h6
                   class="font-semibold text-base leading-7 text-black"
                 >
-                  ${item.product_name}
+                  ${item.product_name} <small>(${json.material.name})</small>
                 </h6>
 
                 <h6
@@ -432,6 +455,14 @@ const renderCheckout = (cart, cartItemsContainer) => {
                 >
                   ${formatPrice(item.price)}
                 </h6>
+                <div class="d-flex">
+                  ${json.thickness > 0 ? '<span>t' + json.thickness + 'x</span>' : ''}
+                  ${json.width > 0 ? '<span>' + json.width +'x</span>' : ''}
+                  ${json.diameter > 0 ? '<span>⌀' + json.diameter +'x</span>' : ''}
+                  ${json.outerDiameter > 0 ? '<span>OD' + json.outerDiameter +'x</span>' : ''}
+                  ${json.wallThickness > 0 ? '<span>t' + json.wallThickness +'x</span>' : ''}
+                  ${json.length > 0 ? '<span>' + json.length +'mm</span>' : ''}
+                </div>
               </div>
             </div>
             <div
@@ -565,6 +596,7 @@ const renderCheckout = (cart, cartItemsContainer) => {
           const productUid = productElement.dataset.baseUid;
           const productName = productElement.dataset.baseName;
           const productImage = productElement.dataset.baseImage;
+          const productJson = productElement.dataset.baseJson;
 
           const price = parseFloat(
             productElement.querySelector(".total-price").dataset.basePrice
@@ -576,7 +608,8 @@ const renderCheckout = (cart, cartItemsContainer) => {
               productName,
               productUid,
               newQuantity,
-              price
+              price,
+              productJson
             );
           }
         }

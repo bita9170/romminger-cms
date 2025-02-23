@@ -2,12 +2,13 @@
 
 namespace Romminger\RrSondermetalle\Domain\Model;
 
+use JsonSerializable;
 use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
+use TYPO3\CMS\Extbase\Domain\Model\FileReference;
 use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 use Romminger\RrSondermetalle\Domain\Model\Material;
-use TYPO3\CMS\Extbase\Domain\Model\FileReference;
 
-class Product extends AbstractEntity
+class Product extends AbstractEntity implements JsonSerializable
 {
     /**
      * @var string
@@ -104,6 +105,11 @@ class Product extends AbstractEntity
      * @var string
      */
     protected $status;
+
+    /**
+     * @var string
+     */
+    protected $json;
 
     public function __construct()
     {
@@ -305,5 +311,28 @@ class Product extends AbstractEntity
     public function setStatus(string $status): void
     {
         $this->status = $status;
+    }
+
+    public function getJson(): string
+    {
+        return $this->json;
+    }
+
+    public function setJson(string $json): void
+    {
+        $this->json = $json;
+    }
+
+    public function jsonSerialize(): mixed
+    {
+        return [            
+            'material' => $this->material,
+            'thickness' => $this->thickness,
+            'width' => $this->width,
+            'diameter' => $this->diameter,
+            'outerDiameter' => $this->outerDiameter,
+            'wallThickness' => $this->wallThickness,
+            'length' => $this->length,
+        ];
     }
 }

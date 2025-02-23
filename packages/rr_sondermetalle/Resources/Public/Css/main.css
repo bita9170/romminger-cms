@@ -104,7 +104,6 @@ h5,
 h6 {
   font-size: inherit;
   font-weight: inherit;
-  color: #172554;
 }
 
 /*
@@ -339,13 +338,6 @@ figure,
 p,
 pre {
   margin: 0;
-}
-p{
-  color: #172554;
-}
-
-.footer-content p {
-color: white !important;
 }
 
 fieldset {
@@ -698,6 +690,10 @@ video {
 
 .col-span-4 {
   grid-column: span 4 / span 4;
+}
+
+.col-span-1 {
+  grid-column: span 1 / span 1;
 }
 
 .m-2 {

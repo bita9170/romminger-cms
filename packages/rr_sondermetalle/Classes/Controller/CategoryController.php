@@ -4,12 +4,7 @@ namespace Romminger\RrSondermetalle\Controller;
 
 use Psr\Http\Message\ResponseInterface;
 use Romminger\RrSondermetalle\Domain\Model\Category;
-use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
 use Romminger\RrSondermetalle\Controller\BaseController;
-use Romminger\RrSondermetalle\Domain\Repository\ProductRepository;
-use Romminger\RrSondermetalle\Domain\Repository\CategoryRepository;
-use Romminger\RrSondermetalle\Domain\Repository\CustomerRepository;
-use Romminger\RrSondermetalle\Domain\Repository\MaterialRepository;
 
 class CategoryController extends BaseController
 {
@@ -47,13 +42,7 @@ class CategoryController extends BaseController
                 break;
             case 4:
                 $orderby = 'outerDiameter';
-                break;
-            case 'wallThickness':
-                $orderby = 'wallThickness';
-                break;
-            case 'length':
-                $orderby = 'length';
-                break;
+                break;           
             default:
                 $orderby = 'thickness';
                 break;
