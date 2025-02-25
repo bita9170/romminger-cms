@@ -366,6 +366,10 @@
                 <target>Hier nicht aufgeführte Abmaße sind auf Anfrage erhältlich</target>
             </trans-unit>
 
+            <!-- For Coil without length -->
+            <trans-unit id="frontend.flex_length" extensionName="rr_sondermetalle">
+                <target>flex.Länge</target>
+            </trans-unit>
 
         </body>
     </file>

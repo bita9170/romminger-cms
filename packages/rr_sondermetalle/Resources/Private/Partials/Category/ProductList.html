@@ -38,7 +38,7 @@
             </div>
           </div>
         </div>
-        <f:for each="{products}" as="product">          
+        <f:for each="{products}" as="product">
           <div class="border-b border-gray-200 pb-4">
             <div
               class="flex flex-col min-[500px]:flex-row min-[500px]:items-center gap-5 py-6 group"
@@ -98,8 +98,18 @@
                         <f:if condition="{product.wallThickness}">
                           <span>t{product.wallThickness}x</span>
                         </f:if>
-                        <f:if condition="{product.length}">
+                        <f:if condition="{product.length} > 0">
                           <span>{product.length}mm</span>
+                        </f:if>
+                        <f:if
+                          condition="({product.length} == 0 || !{product.length}) && {product.category.name} == 'Coil'"
+                        >
+                          <span class="ml-2">
+                            <f:translate
+                              key="frontend.flex_length"
+                              extensionName="rr_sondermetalle"
+                            />
+                          </span>
                         </f:if>
                       </div>
                     </h6>

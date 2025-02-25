@@ -364,6 +364,11 @@
                 <source>Dimensions not listed here are available upon request</source>
             </trans-unit>
 
+            <!-- For Coil without length -->
+            <trans-unit id="frontend.flex_length" extensionName="rr_sondermetalle">
+                <source>flex.length</source>
+            </trans-unit>
+
         </body>
     </file>
 </xliff>
