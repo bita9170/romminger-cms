@@ -371,6 +371,11 @@
                 <target>flex.Länge</target>
             </trans-unit>
 
+            <!-- secondary button for not found page -->
+            <trans-unit id="error.button.contact" extensionName="rr_sondermetalle">
+                <target>Kontakt</target>
+            </trans-unit>
+
         </body>
     </file>
 </xliff>
