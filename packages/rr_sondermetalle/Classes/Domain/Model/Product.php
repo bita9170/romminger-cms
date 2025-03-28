@@ -107,6 +107,12 @@ class Product extends AbstractEntity implements JsonSerializable
     protected $status;
 
     /**
+     * @var string|null
+     */
+    protected $quality = null;
+
+
+    /**
      * @var string
      */
     protected $json;
@@ -312,6 +318,17 @@ class Product extends AbstractEntity implements JsonSerializable
     {
         $this->status = $status;
     }
+
+    public function getQuality(): ?string
+    {
+        return $this->quality;
+    }
+
+    public function setQuality(?string $quality): void
+    {
+        $this->quality = $quality;
+    }
+
 
     public function getJson(): string
     {

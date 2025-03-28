@@ -243,7 +243,6 @@
             </trans-unit>
 
             <!-- Shop Home -->
-
             <trans-unit id="frontend.shop.intro">
                 <source>
                     Explore our range of high-quality metal products designed for various industrial
@@ -252,6 +251,7 @@
                     needs.
                 </source>
             </trans-unit>
+            
             <!-- Payment Details -->
             <trans-unit id="frontend.checkout.quantity">
                 <source>Quantity</source>
@@ -374,7 +374,32 @@
                 <source>Contact</source>
             </trans-unit>
 
+            <!-- Quality for product(molybdenum)-->
+            <trans-unit id="frontend.quality" extensionName="rr_sondermetalle">
+                <source>Quality</source>
+            </trans-unit>
 
+            <trans-unit id="product.quality.empty" extensionName="rr_sondermetalle">
+                <source>Select…</source>
+            </trans-unit>
+            <trans-unit id="product.quality.geschliffen" extensionName="rr_sondermetalle">
+                <source>ground</source>
+            </trans-unit>
+            <trans-unit id="product.quality.gefrostet" extensionName="rr_sondermetalle">
+                <source>frosted</source>
+            </trans-unit>
+            <trans-unit id="product.quality.schwarze_oberflaeche" extensionName="rr_sondermetalle">
+                <source>black surface</source>
+            </trans-unit>
+            <trans-unit id="product.quality.glaenzend" extensionName="rr_sondermetalle">
+                <source>glossy</source>
+            </trans-unit>
+            <trans-unit id="product.quality.gebeizt" extensionName="rr_sondermetalle">
+                <source>pickled</source>
+            </trans-unit>
+            <trans-unit id="product.quality.kaltgewalzt" extensionName="rr_sondermetalle">
+                <source>cold-rolled</source>
+            </trans-unit>
         </body>
     </file>
 </xliff>

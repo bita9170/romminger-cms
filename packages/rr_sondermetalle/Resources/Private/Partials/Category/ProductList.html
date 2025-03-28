@@ -112,6 +112,20 @@
                           </span>
                         </f:if>
                       </div>
+                      <f:if condition="{product.quality}">
+                        <div>
+                          <span class="font-semibold mr-2">
+                            <f:translate
+                              key="frontend.quality"
+                              extensionName="rr_sondermetalle"
+                            />:
+                          </span>
+                          <f:translate
+                            key="product.quality.{product.quality}"
+                            extensionName="rr_sondermetalle"
+                          />
+                        </div>
+                      </f:if>
                     </h6>
 
                     <f:if condition="{settings.showPrice}">

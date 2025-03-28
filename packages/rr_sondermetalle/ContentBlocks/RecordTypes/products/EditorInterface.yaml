@@ -117,6 +117,20 @@ fields:
     label: Price Based on Length (per m)
     displayCond: "FIELD:sales_unit_type:=:meter"
 
+  - identifier: quality
+    type: Select
+    renderType: selectSingle
+    label: Quality
+    items:
+      - ["Select…", ""]
+      - ["ground", "geschliffen"]
+      - ["frosted", "gefrostet"]
+      - ["black surface", "schwarze_oberflaeche"]
+      - ["glossy", "glaenzend"]
+      - ["pickled", "gebeizt"]
+      - ["cold-rolled", "kaltgewalzt"]
+    displayCond: "FIELD:material:=:1"
+
   - identifier: status
     type: Select
     renderType: selectSingle

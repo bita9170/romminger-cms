@@ -376,6 +376,33 @@
                 <target>Kontakt</target>
             </trans-unit>
 
+            <!-- Quality for product(molybdenum)-->
+            <trans-unit id="frontend.quality" extensionName="rr_sondermetalle">
+                <target>Qualität</target>
+            </trans-unit>
+
+            <trans-unit id="product.quality.empty" extensionName="rr_sondermetalle">
+                <target>Bitte wählen…</target>
+            </trans-unit>
+            <trans-unit id="product.quality.geschliffen" extensionName="rr_sondermetalle">
+                <target>geschliffen</target>
+            </trans-unit>
+            <trans-unit id="product.quality.gefrostet" extensionName="rr_sondermetalle">
+                <target>gefrostet</target>
+            </trans-unit>
+            <trans-unit id="product.quality.schwarze_oberflaeche" extensionName="rr_sondermetalle">
+                <target>schwarze Oberfläche</target>
+            </trans-unit>
+            <trans-unit id="product.quality.glaenzend" extensionName="rr_sondermetalle">
+                <target>glänzend</target>
+            </trans-unit>
+            <trans-unit id="product.quality.gebeizt" extensionName="rr_sondermetalle">
+                <target>gebeizt</target>
+            </trans-unit>
+            <trans-unit id="product.quality.kaltgewalzt" extensionName="rr_sondermetalle">
+                <target>kaltgewalzt</target>
+            </trans-unit>
+
         </body>
     </file>
 </xliff>
