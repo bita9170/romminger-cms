@@ -27,9 +27,10 @@ class ProductRepository extends Repository
      * Filter products based on given conditions
      *
      * @param array $filter
-     * @return QueryResultInterface
+     * @param array $orderBy
+     * @return array
      */
-    public function findByFilters(array $filter, string $orderBy = 'thickness', string $orderDirection = QueryInterface::ORDER_ASCENDING)
+    public function findByFilters(array $filter, array $orderBy = ['thickness' => QueryInterface::ORDER_ASCENDING])
     {
         $query = $this->createQuery();
         $constraints = [];
@@ -80,8 +81,8 @@ class ProductRepository extends Repository
         if (!empty($constraints)) {
             $query->matching($query->logicalAnd(...$constraints));
         }
-
-        $query->setOrderings([$orderBy => $orderDirection]);
+        
+        $query->setOrderings($orderBy);
 
         /** @var Product[] $products */
         $products = $query->execute();

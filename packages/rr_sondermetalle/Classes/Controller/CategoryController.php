@@ -3,6 +3,7 @@
 namespace Romminger\RrSondermetalle\Controller;
 
 use Psr\Http\Message\ResponseInterface;
+use TYPO3\CMS\Extbase\Persistence\QueryInterface;
 use Romminger\RrSondermetalle\Domain\Model\Category;
 use Romminger\RrSondermetalle\Controller\BaseController;
 
@@ -31,20 +32,20 @@ class CategoryController extends BaseController
             case 2:
             case 1:
             case 24:
-                $orderby = 'thickness';
+                $orderby = ['thickness'=> QueryInterface::ORDER_ASCENDING, 'width'=> QueryInterface::ORDER_ASCENDING, 'length'=> QueryInterface::ORDER_ASCENDING];
                 break;
             case 5:
-                $orderby = 'length';
+                $orderby = ['length'=> QueryInterface::ORDER_ASCENDING];
                 break;
             case 6:
             case 3:
-                $orderby = 'diameter';
+                $orderby = ['diameter'=> QueryInterface::ORDER_ASCENDING, 'length'=> QueryInterface::ORDER_ASCENDING];
                 break;
             case 4:
-                $orderby = 'outerDiameter';
+                $orderby = ['outerDiameter'=> QueryInterface::ORDER_ASCENDING, 'length'=> QueryInterface::ORDER_ASCENDING];
                 break;           
             default:
-                $orderby = 'thickness';
+                $orderby = ['thickness'=> QueryInterface::ORDER_ASCENDING];
                 break;
         }
 
