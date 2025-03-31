@@ -378,7 +378,7 @@
 
             <!-- Quality for product(molybdenum)-->
             <trans-unit id="frontend.quality" extensionName="rr_sondermetalle">
-                <target>Qualität</target>
+                <target>Oberfläche</target>
             </trans-unit>
 
             <trans-unit id="product.quality.empty" extensionName="rr_sondermetalle">
