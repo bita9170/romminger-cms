@@ -28,24 +28,57 @@ class CategoryController extends BaseController
         }
         $orderby = '';
         switch ($filter['activeCategoryId']) {
-            case 22:
-            case 2:
-            case 1:
-            case 24:
-                $orderby = ['thickness'=> QueryInterface::ORDER_ASCENDING, 'width'=> QueryInterface::ORDER_ASCENDING, 'length'=> QueryInterface::ORDER_ASCENDING];
+            case 1:  # folie de
+            case 2:  # blech de
+            case 5:  # coil de
+            case 22: # platte de
+            case 24: # ring de
+
+            case 21: # foil en
+            case 16: # shett metal en
+            case 19: # coil en
+            case 23: # plate en
+            case 25: # ring en
+                $orderby = [
+                    'thickness' => QueryInterface::ORDER_ASCENDING,
+                    'width' => QueryInterface::ORDER_ASCENDING,
+                    'length' => QueryInterface::ORDER_ASCENDING
+                ];
                 break;
-            case 5:
-                $orderby = ['length'=> QueryInterface::ORDER_ASCENDING];
+
+            case 6:  # rundstab de
+            case 20: # Round Bars en
+                $orderby = [
+                    'diameter' => QueryInterface::ORDER_ASCENDING,
+                    'length' => QueryInterface::ORDER_ASCENDING
+                ];
                 break;
-            case 6:
-            case 3:
-                $orderby = ['diameter'=> QueryInterface::ORDER_ASCENDING, 'length'=> QueryInterface::ORDER_ASCENDING];
+
+            case 4:  # rohr de
+            case 18: # Pipes en
+                $orderby = [
+                    'outerDiameter' => QueryInterface::ORDER_ASCENDING,
+                    'wallThickness' => QueryInterface::ORDER_ASCENDING,
+                    'length' => QueryInterface::ORDER_ASCENDING
+                ];
                 break;
-            case 4:
-                $orderby = ['outerDiameter'=> QueryInterface::ORDER_ASCENDING, 'length'=> QueryInterface::ORDER_ASCENDING];
-                break;           
+
+            case 3:  # draht de
+            case 17: # Wire en
+                $orderby = [
+                    'diameter' => QueryInterface::ORDER_ASCENDING,
+                    'length' => QueryInterface::ORDER_ASCENDING
+                ];
+                break;
+
             default:
-                $orderby = ['thickness'=> QueryInterface::ORDER_ASCENDING];
+                $orderby = [
+                    'thickness' => QueryInterface::ORDER_ASCENDING,
+                    'width' => QueryInterface::ORDER_ASCENDING,
+                    'length' => QueryInterface::ORDER_ASCENDING,
+                    'diameter' => QueryInterface::ORDER_ASCENDING,
+                    'outerDiameter' => QueryInterface::ORDER_ASCENDING
+                ];
                 break;
         }
 
