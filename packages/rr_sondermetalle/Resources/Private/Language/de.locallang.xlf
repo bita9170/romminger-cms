@@ -403,6 +403,11 @@
                 <target>kaltgewalzt</target>
             </trans-unit>
 
+            <trans-unit id="product.quality.tooltip.geschliffen" extensionName="rr_sondermetalle">
+                <target>Geschliffene Oberfläche bietet eine bessere Oberflächenqualität, mehr
+                    Ebenheit und entfernt Unebenheiten.</target>
+            </trans-unit>
+
         </body>
     </file>
 </xliff>

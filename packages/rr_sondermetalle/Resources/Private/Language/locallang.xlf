@@ -383,7 +383,7 @@
                 <source>Select…</source>
             </trans-unit>
             <trans-unit id="product.quality.geschliffen" extensionName="rr_sondermetalle">
-                <source>ground</source>
+                <source>polished</source>
             </trans-unit>
             <trans-unit id="product.quality.gefrostet" extensionName="rr_sondermetalle">
                 <source>frosted</source>
@@ -400,6 +400,12 @@
             <trans-unit id="product.quality.kaltgewalzt" extensionName="rr_sondermetalle">
                 <source>cold-rolled</source>
             </trans-unit>
+
+            <trans-unit id="product.quality.tooltip.geschliffen" extensionName="rr_sondermetalle">
+                <source>Ground surface offers better surface quality, improved flatness, and removes
+                    irregularities.</source>
+            </trans-unit>
+
         </body>
     </file>
 </xliff>
