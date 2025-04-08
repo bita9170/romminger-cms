@@ -205,14 +205,23 @@
                       </h6>
 
                       <f:if condition="{settings.showPrice}">
-                      <h6
-                        class="font-medium text-base leading-7 text-gray-600 transition-all duration-300 group-hover:text-indigo-600"
-                      >
-                        <f:format.currency currencySign="€"
-                          >{product.unitPrice}</f:format.currency
-                        >
-                      </h6>
-                    </f:if>
+                        <f:if condition="{product.unitPrice} > 0">
+                          <h6
+                            class="font-medium text-base leading-7 transition-all duration-300 group-hover:text-indigo-700"
+                            style="color: #4f46e5"
+                          >
+                            <f:format.currency currencySign="€"
+                              >{product.unitPrice}</f:format.currency
+                            >
+                            <span class="text-sm text-gray-500 ml-1">
+                              (<f:translate
+                                key="{product.salesUnitTypeTranslationKey}"
+                                extensionName="rr_sondermetalle"
+                              />)
+                            </span>
+                          </h6>
+                        </f:if>
+                      </f:if>
                     </div>
                   </div>
                   <div
@@ -302,29 +311,37 @@
                     <div
                       class="flex items-center max-[500px]:justify-center md:justify-end max-md:mt-3 h-full"
                     >
-                      <p
-                        class="font-bold text-lg leading-8 text-gray-600 text-center transition-all duration-300 group-hover:text-indigo-600 total-price"
-                        data-base-price="{product.unitPrice}"
-                      >
-                        <f:format.currency currencySign="€"
-                          >{product.unitPrice}</f:format.currency
-                        >
-                      </p>
+                      <f:if condition="{product.unitPrice} > 0">
+                        <f:then>
+                          <p
+                            class="font-bold text-lg leading-8 text-gray-600 text-center transition-all duration-300 group-hover:text-indigo-600 total-price"
+                            data-base-price="{product.unitPrice}"
+                          >
+                            <f:format.currency currencySign="€"
+                              >{product.unitPrice}</f:format.currency
+                            >
+                          </p>
+                        </f:then>
+
+                        <f:else>
+                          <f:link.page
+                            pageUid="61"
+                            class="font-bold underline text-sm text-center"
+                            style="color: rgb(154, 52, 18)"
+                          >
+                            <f:translate
+                              key="frontend.price_on_request"
+                              extensionName="rr_sondermetalle"
+                            />
+                          </f:link.page>
+                        </f:else>
+                      </f:if>
                     </div>
                   </f:if>
                 </div>
               </div>
             </div>
           </f:for>
-          <!-- 
-        <div class="flex items-center justify-end mt-8">
-          <a href="/shop/checkout" class="btn btn-primary fs-4">
-            <f:translate
-              key="frontend.checkout"
-              extensionName="rr_sondermetalle"
-            />
-          </a>
-        </div> -->
         </div>
       </div>
     </div>

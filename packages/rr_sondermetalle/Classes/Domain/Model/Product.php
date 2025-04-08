@@ -342,7 +342,7 @@ class Product extends AbstractEntity implements JsonSerializable
 
     public function jsonSerialize(): mixed
     {
-        return [            
+        return [
             'material' => $this->material,
             'thickness' => $this->thickness,
             'width' => $this->width,
@@ -351,5 +351,9 @@ class Product extends AbstractEntity implements JsonSerializable
             'wallThickness' => $this->wallThickness,
             'length' => $this->length,
         ];
+    }
+    public function getSalesUnitTypeTranslationKey(): string
+    {
+        return 'product.sales_unit_type.' . $this->salesUnitType;
     }
 }

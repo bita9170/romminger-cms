@@ -408,6 +408,17 @@
                     Oberflächenqualität und entfernt Unregelmäßigkeiten</target>
             </trans-unit>
 
+            <!-- sales_unit_type  -->
+            <trans-unit id="product.sales_unit_type.weight" extensionName="rr_sondermetalle">
+                <target>Nach Gewicht</target>
+            </trans-unit>
+            <trans-unit id="product.sales_unit_type.piece" extensionName="rr_sondermetalle">
+                <target>Pro Stück</target>
+            </trans-unit>
+            <trans-unit id="product.sales_unit_type.meter" extensionName="rr_sondermetalle">
+                <target>Nach Meter</target>
+            </trans-unit>
+
         </body>
     </file>
 </xliff>

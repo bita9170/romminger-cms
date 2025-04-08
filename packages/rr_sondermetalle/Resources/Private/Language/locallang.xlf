@@ -406,6 +406,17 @@
                     irregularities.</source>
             </trans-unit>
 
+            <!-- sales_unit_type  -->
+            <trans-unit id="product.sales_unit_type.weight" extensionName="rr_sondermetalle">
+                <source>By Weight</source>
+            </trans-unit>
+            <trans-unit id="product.sales_unit_type.piece" extensionName="rr_sondermetalle">
+                <source>Per Piece</source>
+            </trans-unit>
+            <trans-unit id="product.sales_unit_type.meter" extensionName="rr_sondermetalle">
+                <source>By Meter</source>
+            </trans-unit>
+
         </body>
     </file>
 </xliff>
