@@ -404,8 +404,8 @@
             </trans-unit>
 
             <trans-unit id="product.quality.tooltip.geschliffen" extensionName="rr_sondermetalle">
-                <target>Geschliffene Oberfläche bietet eine bessere Oberflächenqualität, mehr
-                    Ebenheit und entfernt Unebenheiten.</target>
+                <target>Geschliffene Oberfläche bietet eine bessere und gleichmäßige
+                    Oberflächenqualität und entfernt Unregelmäßigkeiten</target>
             </trans-unit>
 
         </body>

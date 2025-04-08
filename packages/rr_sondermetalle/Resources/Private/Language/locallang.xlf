@@ -251,7 +251,7 @@
                     needs.
                 </source>
             </trans-unit>
-            
+
             <!-- Payment Details -->
             <trans-unit id="frontend.checkout.quantity">
                 <source>Quantity</source>
@@ -402,7 +402,7 @@
             </trans-unit>
 
             <trans-unit id="product.quality.tooltip.geschliffen" extensionName="rr_sondermetalle">
-                <source>Ground surface offers better surface quality, improved flatness, and removes
+                <source>Ground surface offers a better and more uniform surface quality and removes
                     irregularities.</source>
             </trans-unit>
 
