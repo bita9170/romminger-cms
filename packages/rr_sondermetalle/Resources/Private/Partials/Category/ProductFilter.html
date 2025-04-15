@@ -28,18 +28,20 @@
         aria-label="Basic checkbox toggle button group"
       >
         <f:for each="{allMaterials}" as="material">
-          <f:form.checkbox
-            class="btn-check material-checkbox"
-            id="{material.id}"
-            property="materialIds"
-            value="{material.uid}"
-            autocomplete="off"
-            multiple="1"
-            onchange="handleMaterialSelection(this)"
-          />
-          <label class="btn btn-light" for="{material.id}">
-            {material.name}
-          </label>
+          <f:if condition="{material.uid} != 20">
+            <f:form.checkbox
+              class="btn-check material-checkbox"
+              id="{material.id}"
+              property="materialIds"
+              value="{material.uid}"
+              autocomplete="off"
+              multiple="1"
+              onchange="handleMaterialSelection(this)"
+            />
+            <label class="btn btn-light" for="{material.id}">
+              {material.name}
+            </label>
+          </f:if>
         </f:for>
 
         <script>
@@ -91,28 +93,7 @@
           />
         </a>
       </div>
-      
-      <!-- Filter Button -->
-      <!-- <f:form.button
-        class="btn btn-primary d-flex gap-2 align-items-center justify-content-center"
-        style="inline-size: 200px; block-size: 40px"
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
-          fill="currentColor"
-          class="bi bi-filter"
-          viewBox="0 0 16 16"
-        >
-          <path
-            d="M6 10.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5m-2-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5m-2-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5"
-          />
-        </svg>
-        <f:translate key="frontend.apply_filters" />
-      </f:form.button> -->
 
-      <!-- Price on Request Button -->
       <f:if condition="{settings.showPrice} == 0">
         <f:link.page
           pageUid="61"
