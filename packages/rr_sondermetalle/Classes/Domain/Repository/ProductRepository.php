@@ -31,6 +31,7 @@ class ProductRepository extends Repository
      */
     public function findByFilters(array $filter, string $orderBy = 'thickness', string $orderDirection = QueryInterface::ORDER_ASCENDING)
     {
+
         $query = $this->createQuery();
         $constraints = [];
 
@@ -48,9 +49,9 @@ class ProductRepository extends Repository
 
             $constraints[] = $query->logicalOr(...$categoryConstraints);
         }
-
-        if (!empty($filter['materials'])) {
-            $constraints[] = $query->in('material', $filter['materials']);
+        
+        if (!empty($filter['materialIds'])) {
+            $constraints[] = $query->in('material', $filter['materialIds']);
         }
 
         if (!empty($filter['thickness'])) {
