@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "22d625aa6804e926e3d14011d4137440",
+    "content-hash": "2988c013974f898f7d205cf9f213d6b7",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -7159,6 +7159,74 @@
             "support": {
                 "chat": "https://typo3.org/help",
                 "docs": "https://docs.typo3.org/c/typo3/cms-recycler/main/en-us/",
+                "issues": "https://forge.typo3.org",
+                "source": "https://github.com/typo3/typo3"
+            },
+            "time": "2025-03-18T14:06:47+00:00"
+        },
+        {
+            "name": "typo3/cms-redirects",
+            "version": "v12.4.28",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/TYPO3-CMS/redirects.git",
+                "reference": "f452549fb5da2f9fcdfbb5c55ce5fc7aea964e26"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/TYPO3-CMS/redirects/zipball/f452549fb5da2f9fcdfbb5c55ce5fc7aea964e26",
+                "reference": "f452549fb5da2f9fcdfbb5c55ce5fc7aea964e26",
+                "shasum": ""
+            },
+            "require": {
+                "doctrine/dbal": "^3.9",
+                "psr/http-message": "^1.1 || ^2.0",
+                "psr/log": "^2.0 || ^3.0",
+                "symfony/console": "^6.4 || ^7.0",
+                "typo3/cms-backend": "12.4.28",
+                "typo3/cms-core": "12.4.28",
+                "typo3fluid/fluid": "^2.15.0"
+            },
+            "conflict": {
+                "typo3/cms": "*"
+            },
+            "suggest": {
+                "typo3/cms-reports": "Get reports of redirects",
+                "typo3/cms-scheduler": "Execute commands to update redirect status"
+            },
+            "type": "typo3-cms-framework",
+            "extra": {
+                "typo3/cms": {
+                    "Package": {
+                        "partOfFactoryDefault": true
+                    },
+                    "extension-key": "redirects"
+                },
+                "branch-alias": {
+                    "dev-main": "12.4.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "TYPO3\\CMS\\Redirects\\": "Classes/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "TYPO3 Core Team",
+                    "email": "typo3cms@typo3.org",
+                    "role": "Developer"
+                }
+            ],
+            "description": "TYPO3 CMS Redirects - Create manual redirects, list existing redirects and automatically createredirects on slug changes.",
+            "homepage": "https://typo3.org",
+            "support": {
+                "chat": "https://typo3.org/help",
+                "docs": "https://docs.typo3.org/c/typo3/cms-redirects/main/en-us/",
                 "issues": "https://forge.typo3.org",
                 "source": "https://github.com/typo3/typo3"
             },
