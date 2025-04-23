@@ -2,54 +2,64 @@
   xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
   data-namespace-typo3-fluid="true"
 >
-  <div id="top"></div>
-  <div
-    class="body-bg{f:if(condition:theme.navigation.type, then:' body-bg-{theme.navigation.type}')} flex min-h-screen flex-col"
-  >
-    <f:render partial="DropIn/Page/PageBefore" arguments="{_all}" />
-    <f:render partial="Structure/CookieConsent" arguments="{_all}" />
+  <head>
+    <f:render section="Header" optional="true" />
+  </head>
 
-    <a class="visually-hidden-focusable page-skip-link" href="#page-content">
-      <span
-        >{f:translate(key: 'skiptomaincontent', extensionName:
-        'bootstrap_package')}</span
-      >
-    </a>
-    <a class="visually-hidden-focusable page-skip-link" href="#page-footer">
-      <span
-        >{f:translate(key: 'skiptopagefooter', extensionName:
-        'bootstrap_package')}</span
-      >
-    </a>
-
-    <div>
-      <f:render partial="Navigation/Main" arguments="{_all}" />
-      <f:render section="Border" optional="true" />
-      <f:render partial="Navigation/Breadcrumb" arguments="{_all}" />
-    </div>
-    <main
-      id="page-content"
-      class="bp-page-content main-section page-default flex-1"
-      data-show-price="{showPrice}"
+  <body>
+    <div id="top"></div>
+    <div
+      class="body-bg{f:if(condition:theme.navigation.type, then:' body-bg-{theme.navigation.type}')} flex min-h-screen flex-col"
     >
-      <!--TYPO3SEARCH_begin-->
-      <f:render section="Main" />
-      <!--TYPO3SEARCH_end-->
-    </main>
+      <f:render partial="DropIn/Page/PageBefore" arguments="{_all}" />
+      <f:render partial="Structure/CookieConsent" arguments="{_all}" />
 
-    <footer id="page-footer" class="bp-page-footer px-2 md:px-0 bg-primary-500">
-      <f:render partial="DropIn/Structure/FooterBefore" arguments="{_all}" />
-      <f:render section="Footer" optional="true" />
-      <f:render partial="Structure/FooterMeta" arguments="{_all}" />
-      <f:render partial="DropIn/Structure/FooterAfter" arguments="{_all}" />
-    </footer>
+      <a class="visually-hidden-focusable page-skip-link" href="#page-content">
+        <span
+          >{f:translate(key: 'skiptomaincontent', extensionName:
+          'bootstrap_package')}</span
+        >
+      </a>
+      <a class="visually-hidden-focusable page-skip-link" href="#page-footer">
+        <span
+          >{f:translate(key: 'skiptopagefooter', extensionName:
+          'bootstrap_package')}</span
+        >
+      </a>
 
-    <f:render partial="Structure/ScrollTop" arguments="{_all}" />
-    <f:render partial="DropIn/Page/PageAfter" arguments="{_all}" />
-  </div>
+      <div>
+        <f:render partial="Navigation/Main" arguments="{_all}" />
+        <f:render section="Border" optional="true" />
+        <f:render partial="Navigation/Breadcrumb" arguments="{_all}" />
+      </div>
 
-  <script
-    src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
-    defer
-  ></script>
+      <main
+        id="page-content"
+        class="bp-page-content main-section page-default flex-1"
+        data-show-price="{showPrice}"
+      >
+        <!--TYPO3SEARCH_begin-->
+        <f:render section="Main" />
+        <!--TYPO3SEARCH_end-->
+      </main>
+
+      <footer
+        id="page-footer"
+        class="bp-page-footer px-2 md:px-0 bg-primary-500"
+      >
+        <f:render partial="DropIn/Structure/FooterBefore" arguments="{_all}" />
+        <f:render section="Footer" optional="true" />
+        <f:render partial="Structure/FooterMeta" arguments="{_all}" />
+        <f:render partial="DropIn/Structure/FooterAfter" arguments="{_all}" />
+      </footer>
+
+      <f:render partial="Structure/ScrollTop" arguments="{_all}" />
+      <f:render partial="DropIn/Page/PageAfter" arguments="{_all}" />
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
+      defer
+    ></script>
+  </body>
 </html>
