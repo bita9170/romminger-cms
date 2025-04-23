@@ -419,6 +419,20 @@
                 <target>Nach Meter</target>
             </trans-unit>
 
+            <!-- card: Fertigprodukte -->
+            <trans-unit id="card.finishedproducts.title" extensionName="rr_sondermetalle">
+                <target>Fertigprodukte nach Ihrer Zeichnung</target>
+            </trans-unit>
+            <trans-unit id="card.finishedproducts.description" extensionName="rr_sondermetalle">
+                <target>Sie benötigen ein individuelles Produkt? Wir fertigen nach Ihrer Zeichnung.</target>
+            </trans-unit>
+            <trans-unit id="card.finishedproducts.button" extensionName="rr_sondermetalle">
+                <target>Details</target>
+            </trans-unit>
+            <trans-unit id="card.finishedproducts.alt" extensionName="rr_sondermetalle">
+                <target>Fertigprodukt mit Messwerkzeug</target>
+            </trans-unit>
+
         </body>
     </file>
 </xliff>

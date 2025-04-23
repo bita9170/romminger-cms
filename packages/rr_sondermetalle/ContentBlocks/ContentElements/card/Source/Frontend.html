@@ -72,6 +72,44 @@
           </div>
         </div>
       </f:for>
+
+      <!-- Static card: Finished products -->
+      <f:if condition="{data.item_type} == 'materials'">
+        <div class="col">
+          <div class="card bg-white shadow-md h-full">
+            <div class="p-3">
+              <f:image
+                src="fileadmin/user_upload/Fertigprodukte.png"
+                alt="{f:translate(key: 'card.finishedproducts.alt', extensionName: 'rr_sondermetalle')}"
+                class="object-cover rounded w-full h-[250px]"
+              />
+            </div>
+            <div class="card-body">
+              <h3 class="card-title text-primary-500">
+                <f:translate
+                  key="card.finishedproducts.title"
+                  extensionName="rr_sondermetalle"
+                />
+              </h3>
+              <p class="mt-2 text-gray-500">
+                <f:translate
+                  key="card.finishedproducts.description"
+                  extensionName="rr_sondermetalle"
+                />
+              </p>
+            </div>
+            <div class="card-footer bg-white">
+              <a href="/finish-products" class="btn btn-primary w-full">
+                <f:translate
+                  key="card.finishedproducts.button"
+                  extensionName="rr_sondermetalle"
+                />
+              </a>
+            </div>
+          </div>
+        </div>
+      </f:if>
+      
     </div>
   </div>
 </bk2k:frame>

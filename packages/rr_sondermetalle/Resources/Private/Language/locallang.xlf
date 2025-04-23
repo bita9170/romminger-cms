@@ -417,6 +417,20 @@
                 <source>By Meter</source>
             </trans-unit>
 
+            <!-- card: Finished products  -->
+            <trans-unit id="card.finishedproducts.title" extensionName="rr_sondermetalle">
+                <source>Custom Finished Products</source>
+            </trans-unit>
+            <trans-unit id="card.finishedproducts.description" extensionName="rr_sondermetalle">
+                <source>Need a custom part? We manufacture based on your drawing.</source>
+            </trans-unit>
+            <trans-unit id="card.finishedproducts.button" extensionName="rr_sondermetalle">
+                <source>Details</source>
+            </trans-unit>
+            <trans-unit id="card.finishedproducts.alt" extensionName="rr_sondermetalle">
+                <source>Finished product with measurement tool</source>
+            </trans-unit>
+
         </body>
     </file>
 </xliff>
