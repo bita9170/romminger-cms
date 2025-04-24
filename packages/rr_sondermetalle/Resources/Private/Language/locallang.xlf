@@ -431,6 +431,31 @@
                 <source>Finished product with measurement tool</source>
             </trans-unit>
 
+            <!-- page: Finished products-->
+            <trans-unit id="finishedproducts.headline" extensionName="rr_sondermetalle">
+                <source>Finished Products Based on Your Drawing</source>
+            </trans-unit>
+            <trans-unit id="finishedproducts.subheadline" extensionName="rr_sondermetalle">
+                <source>Custom-made – exactly to your specifications</source>
+            </trans-unit>
+
+            <trans-unit id="finishedproducts.instructionsTitle" extensionName="rr_sondermetalle">
+                <source>How it works:</source>
+            </trans-unit>
+            <trans-unit id="finishedproducts.step1" extensionName="rr_sondermetalle">
+                <source>Send us your drawing or a description of your desired product.</source>
+            </trans-unit>
+            <trans-unit id="finishedproducts.step2" extensionName="rr_sondermetalle">
+                <source>Select the material – or let us advise you.</source>
+            </trans-unit>
+            <trans-unit id="finishedproducts.step3" extensionName="rr_sondermetalle">
+                <source>We check the feasibility and create a custom offer.</source>
+            </trans-unit>
+            <trans-unit id="finishedproducts.step4" extensionName="rr_sondermetalle">
+                <source>You can upload a file directly or contact us via e-mail.</source>
+            </trans-unit>
+
+
         </body>
     </file>
 </xliff>

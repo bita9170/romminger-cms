@@ -1,0 +1,83 @@
+<html
+  xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+  xmlns:bk2k="http://typo3.org/ns/BK2K/BootstrapPackage/ViewHelpers"
+  data-namespace-typo3-fluid="true"
+>
+  <f:layout name="Default" />
+
+  <f:section name="Main">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <!-- Image Container -->
+      <div class="relative col-span-1">
+        <div class="absolute inset-0">
+          <f:image
+            src="fileadmin/user_upload/Finished Products.png"
+            alt="{f:translate(key: 'card.finishedproducts.alt', extensionName: 'rr_sondermetalle')}"
+            class="object-cover rounded w-full h-full"
+          />
+        </div>
+      </div>
+
+      <!-- Text Container -->
+      <div class="col-span-1 md:col-span-2">
+        <h2 class="text-[2.25rem] font-extrabold leading-snug mb-2">
+          <f:translate
+            key="finishedproducts.headline"
+            extensionName="rr_sondermetalle"
+          />
+        </h2>
+        <h3 class="text-lg mb-4">
+          <f:translate
+            key="finishedproducts.subheadline"
+            extensionName="rr_sondermetalle"
+          />
+        </h3>
+        <div class="prose max-w-none text-base">
+          <f:format.html>{data.bodytext}</f:format.html>
+          <div class="flex items-center gap-2 mt-6 font-semibold text-primary">
+            <span>🔧</span>
+            <span
+              ><f:translate
+                key="finishedproducts.instructionsTitle"
+                extensionName="rr_sondermetalle"
+            /></span>
+          </div>
+          <div class="space-y-2 mt-6 text-primary">
+            <div class="flex items-start gap-2">
+              <span>🛠️</span>
+              <span
+                ><f:translate
+                  key="finishedproducts.step1"
+                  extensionName="rr_sondermetalle"
+              /></span>
+            </div>
+            <div class="flex items-start gap-2">
+              <span>⚙️</span>
+              <span
+                ><f:translate
+                  key="finishedproducts.step2"
+                  extensionName="rr_sondermetalle"
+              /></span>
+            </div>
+            <div class="flex items-start gap-2">
+              <span>👁️</span>
+              <span
+                ><f:translate
+                  key="finishedproducts.step3"
+                  extensionName="rr_sondermetalle"
+              /></span>
+            </div> <br>
+            <div class="flex items-start gap-2 font-semibold text-primary">
+              <span>📎</span>
+              <span
+                ><f:translate
+                  key="finishedproducts.step4"
+                  extensionName="rr_sondermetalle"
+              /></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </f:section>
+</html>

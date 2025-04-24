@@ -433,6 +433,31 @@
                 <target>Fertigprodukt mit Messwerkzeug</target>
             </trans-unit>
 
+            <!-- page: Finished products-->
+            <trans-unit id="finishedproducts.headline" extensionName="rr_sondermetalle">
+                <target>Fertigprodukte nach Ihrer Zeichnung</target>
+            </trans-unit>
+            <trans-unit id="finishedproducts.subheadline" extensionName="rr_sondermetalle">
+                <target>Fertigprodukte nach Maß – ganz nach Ihren Vorstellungen</target>
+            </trans-unit>
+
+            <trans-unit id="finishedproducts.instructionsTitle" extensionName="rr_sondermetalle">
+                <target>So funktioniert es:</target>
+            </trans-unit>
+            <trans-unit id="finishedproducts.step1" extensionName="rr_sondermetalle">
+                <target>Senden Sie uns Ihre Zeichnung oder eine Beschreibung Ihres Wunschprodukts.</target>
+            </trans-unit>
+            <trans-unit id="finishedproducts.step2" extensionName="rr_sondermetalle">
+                <target>Wählen Sie das Material – oder lassen Sie sich von uns beraten.</target>
+            </trans-unit>
+            <trans-unit id="finishedproducts.step3" extensionName="rr_sondermetalle">
+                <target>Wir prüfen die Umsetzbarkeit und erstellen ein individuelles Angebot.</target>
+            </trans-unit>
+            <trans-unit id="finishedproducts.step4" extensionName="rr_sondermetalle">
+                <target>Sie können direkt eine Datei hochladen oder uns per E-Mail kontaktieren.</target>
+            </trans-unit>
+
+
         </body>
     </file>
 </xliff>

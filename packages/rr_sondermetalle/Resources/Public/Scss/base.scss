@@ -42,3 +42,24 @@ h3 {
     var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate)
     var(--tw-sepia) var(--tw-drop-shadow);
 }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  color: #172554;
+}
+
+.footer-content {
+  p,
+  a {
+    color: #ffffff !important;
+  }
+
+  .fill-current {
+    fill: #ffffff !important;
+  }
+}
