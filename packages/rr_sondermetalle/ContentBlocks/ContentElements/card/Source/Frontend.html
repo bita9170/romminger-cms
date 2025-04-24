@@ -41,7 +41,9 @@
     <div class="row row-cols-1 row-cols-lg-{data.view_count} row-cols-md-2 g-4">
       <f:for each="{items}" as="item">
         <div class="col">
-          <div class="card bg-white shadow-md h-full">
+          <div
+            class="card bg-white shadow-md h-full transform transition-transform duration-300 hover:scale-105"
+          >
             <!-- Card Image -->
             <div class="p-3">
               <f:image
@@ -76,7 +78,9 @@
       <!-- Static card: Finished products -->
       <f:if condition="{data.item_type} == 'materials'">
         <div class="col">
-          <div class="card bg-white shadow-md h-full">
+          <div
+            class="card bg-white shadow-md h-full transform transition-transform duration-300 hover:scale-105"
+          >
             <div class="p-3">
               <f:image
                 src="fileadmin/user_upload/Fertigprodukte.png"
@@ -109,7 +113,6 @@
           </div>
         </div>
       </f:if>
-      
     </div>
   </div>
 </bk2k:frame>
