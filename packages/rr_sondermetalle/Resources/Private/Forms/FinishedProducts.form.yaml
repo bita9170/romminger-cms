@@ -4,8 +4,10 @@ label: "Finished Products Inquiry Form"
 prototypeName: standard
 
 renderingOptions:
-  templatePathAndFilename: "EXT:rr_sondermetalle/Resources/Private/Templates/Form/FormFinishedProducts.html"
+  templatePathAndFilename: "EXT:rr_sondermetalle/Resources/Private/Templates/FormFinishedProducts.html"
   templateVariant: version2
+  layoutRootPath:
+    30: "EXT:rr_sondermetalle/Resources/Private/Layouts/FormFramework/"
   partialRootPaths:
     30: "EXT:rr_sondermetalle/Resources/Private/Partials/FormFramework/"
 
@@ -20,10 +22,10 @@ finishers:
       format: html
       attachUploads: true
       recipients:
-        richard@rr-sondermetalle.com: "Richard Romminger"
+        bita.s9170@gmail.com: "Bita Sadeghi"
   - identifier: Redirect
     options:
-      pageUid: ""
+      pageUid: "92"
       additionalParameters: ""
 renderables:
   - type: Page
