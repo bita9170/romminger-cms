@@ -1,0 +1,53 @@
+<html
+  xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+  xmlns:formvh="http://typo3.org/ns/TYPO3/CMS/Form/ViewHelpers"
+  data-namespace-typo3-fluid="true"
+>
+  <f:render
+    partial="Field/Label"
+    arguments="{label: element.label, identifier: element.identifier, icon: element.properties.icon}"
+  />
+
+  <f:form.select
+    property="{element.identifier}"
+    class="rr-form-textarea pr-8 py-2 rounded text-primary-500 border-gray-300 shadow-sm focus:border-primary-400 focus:ring-primary-400 text-sm"
+    additionalAttributes="{element.properties.fluidAdditionalAttributes}"
+    id="{element.identifier}"
+  >
+    <f:form.select.option value="" disabled="1" selected="1">
+      <f:translate
+        key="form.select.placeholder"
+        extensionName="rr_sondermetalle"
+      />
+    </f:form.select.option>
+
+    <f:form.select.option value="Mo">
+      <f:translate key="material.molybdaen" extensionName="rr_sondermetalle" />
+    </f:form.select.option>
+    <f:form.select.option value="Ta">
+      <f:translate key="material.tantal" extensionName="rr_sondermetalle" />
+    </f:form.select.option>
+    <f:form.select.option value="Ti">
+      <f:translate key="material.titan" extensionName="rr_sondermetalle" />
+    </f:form.select.option>
+    <f:form.select.option value="Nb">
+      <f:translate key="material.niobium" extensionName="rr_sondermetalle" />
+    </f:form.select.option>
+    <f:form.select.option value="W">
+      <f:translate key="material.wolfram" extensionName="rr_sondermetalle" />
+    </f:form.select.option>
+    <f:form.select.option value="other">
+      <f:translate key="material.other" extensionName="rr_sondermetalle" />...
+    </f:form.select.option>
+  </f:form.select>
+
+  <f:form.validationResults for="{element.identifier}">
+    <f:if condition="{validationResults.flattenedErrors}">
+      <ul class="text-red-500 text-sm mt-1 list-disc list-inside">
+        <f:for each="{validationResults.errors}" as="error">
+          <li>{error}</li>
+        </f:for>
+      </ul>
+    </f:if>
+  </f:form.validationResults>
+</html>

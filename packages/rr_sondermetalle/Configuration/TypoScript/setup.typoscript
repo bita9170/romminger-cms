@@ -175,3 +175,11 @@ plugin.tx_felogin_pi1 {
     redirectMode = login
     redirectFirstMethod = 1
 }
+
+plugin.tx_form {
+  view {
+    templateRootPaths.10 = EXT:rr_sondermetalle/Resources/Private/Templates/FormFramework/
+    partialRootPaths.10 = EXT:rr_sondermetalle/Resources/Private/Partials/FormFramework/
+    layoutRootPaths.10 = EXT:rr_sondermetalle/Resources/Private/Layouts/FormFramework/
+  }
+}

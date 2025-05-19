@@ -27,3 +27,7 @@ TYPO3:
                 imageLinkMaxWidth: 1200
                 imageMaxWidth: 200
                 imageMaxHeight: 200
+
+            Text:
+              renderingOptions:
+                partialPath: "Field/Text"

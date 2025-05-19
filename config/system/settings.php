@@ -95,6 +95,15 @@ return [
         'transport_smtp_server' => '',
         'transport_smtp_username' => '',
     ],
+
+    'CMS' => [
+        'Form' => [
+            'yamlConfigurations' => [
+                100 => 'EXT:rr_sondermetalle/Configuration/Form/Setup.yaml',
+            ],
+        ],
+    ],
+
     'SYS' => [
         'caching' => [
             'cacheConfigurations' => [

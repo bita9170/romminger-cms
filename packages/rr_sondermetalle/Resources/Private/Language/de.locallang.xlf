@@ -70,6 +70,7 @@
             <trans-unit id="frontend.size">
                 <target>Größe</target>
             </trans-unit>
+
             <!-- materials -->
             <trans-unit id="material.molybdaen">
                 <target>Molybdän</target>
@@ -86,6 +87,32 @@
             <trans-unit id="material.wolfram">
                 <target>Wolfram</target>
             </trans-unit>
+            <trans-unit id="material.other">
+                <target>Sonstiges</target>
+            </trans-unit>
+
+            <!-- Form -->
+            <trans-unit id="material.select.label">
+                <target>Material auswählen</target>
+            </trans-unit>
+            <trans-unit id="form.select.placeholder">
+                <target>Bitte wählen</target>
+            </trans-unit>
+            <trans-unit id="contactformnew.textarea.message" extensionName="rr_sondermetalle">
+                <target>Nachricht / Beschreibung</target>
+            </trans-unit>
+            <trans-unit id="contactformnew.textarea.placeholder" extensionName="rr_sondermetalle">
+                <target>Deine Nachricht...</target>
+            </trans-unit>
+
+            <trans-unit id="contactformnew.upload.label" extensionName="rr_sondermetalle">
+                <target>Datei hochladen (Bild oder PDF)</target>
+            </trans-unit>
+
+            <trans-unit id="form.upload.placeholder" extensionName="rr_sondermetalle">
+                <target>Bis zu 6 Dateien hochladen (Bilder oder PDFs)</target>
+            </trans-unit>
+
 
             <!-- Frontend shop -->
             <trans-unit id="frontend.shop">

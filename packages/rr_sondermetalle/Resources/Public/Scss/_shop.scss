@@ -33,7 +33,7 @@
     cursor: pointer;
     user-select: none;
     display: inline-block;
-    margin-right: 2px;
+    margin-inline-end: 2px;
   }
 
   .caret {
@@ -41,7 +41,7 @@
     transform: rotate(0deg);
     transition: transform 0.3s;
     position: relative;
-    top: 2px;
+    inset-block-start: 2px;
   }
 
   .caret-down {

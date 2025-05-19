@@ -1,0 +1,31 @@
+<html
+  xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+  xmlns:formvh="http://typo3.org/ns/TYPO3/CMS/Form/ViewHelpers"
+  data-namespace-typo3-fluid="true"
+>
+  <div class="mt-4">
+    <f:render
+      partial="Field/Label"
+      arguments="{label: element.label, identifier: element.identifier, icon: element.properties.icon}"
+    />
+
+    <f:form.textarea
+      property="{element.identifier}"
+      id="{element.identifier}"
+      rows="5"
+      class="rr-form-textarea pt-2 rounded border-gray-300 shadow-sm focus:border-primary-400 focus:ring-primary-400 text-sm"
+      placeholder="{f:translate(key: 'contactformnew.textarea.placeholder', extensionName: 'rr_sondermetalle')}"
+      additionalAttributes="{element.properties.fluidAdditionalAttributes}"
+    />
+  </div>
+
+  <f:form.validationResults for="{element.identifier}">
+    <f:if condition="{validationResults.flattenedErrors}">
+      <ul class="text-red-500 text-sm mt-1 list-disc list-inside">
+        <f:for each="{validationResults.errors}" as="error">
+          <li>{error}</li>
+        </f:for>
+      </ul>
+    </f:if>
+  </f:form.validationResults>
+</html>

@@ -1,0 +1,81 @@
+type: Form
+identifier: finishedproductsform
+label: "Finished Products Inquiry Form"
+prototypeName: standard
+
+renderingOptions:
+  templatePathAndFilename: "EXT:rr_sondermetalle/Resources/Private/Templates/Form/FormFinishedProducts.html"
+  templateVariant: version2
+  partialRootPaths:
+    30: "EXT:rr_sondermetalle/Resources/Private/Partials/FormFramework/"
+
+finishers:
+  - identifier: EmailToReceiver
+    options:
+      subject: "Neue Anfrage von der Website"
+      senderAddress: "noreply@rr-sondermetalle.com"
+      senderName: "Webformular RR-Sondermetalle"
+      replyToRecipients:
+        "{email}": ""
+      format: html
+      attachUploads: true
+      recipients:
+        richard@rr-sondermetalle.com: "Richard Romminger"
+  - identifier: Redirect
+    options:
+      pageUid: ""
+      additionalParameters: ""
+renderables:
+  - type: Page
+    identifier: page1
+    label: "Finished Products Form"
+    renderables:
+      - type: Select
+        identifier: material
+        label: material.select.label
+        properties:
+          elementClassAttribute: "form-control block w-full mt-1"
+          fluidAdditionalAttributes:
+          required: required
+          options:
+            10:
+              value: Mo
+              label: material.molybdaen
+            20:
+              value: Ta
+              label: material.tantal
+            30:
+              value: Ti
+              label: material.titan
+            40:
+              value: Nb
+              label: material.niobium
+            50:
+              value: W
+              label: material.wolfram
+            60:
+              value: other
+              label: material.other
+        validators:
+          - identifier: NotEmpty
+
+      - type: Textarea
+        identifier: message
+        label: "contactformnew.textarea.message"
+        properties:
+          elementClassAttribute: "form-control block w-full mt-1"
+          fluidAdditionalAttributes:
+            placeholder: "LLL:EXT:rr_sondermetalle/Resources/Private/Language/locallang.xlf:contactformnew.textarea.placeholder"
+            required: required
+        validators:
+          - identifier: NotEmpty
+
+      - type: FileUpload
+        identifier: upload
+        label: contactformnew.upload.label
+        properties:
+          icon: paperclip
+
+      - type: Submit
+        identifier: submit
+        label: "Anfrage"
