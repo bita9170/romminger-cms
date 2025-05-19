@@ -114,6 +114,10 @@
                 <source>Upload up to 6 files (images or PDFs)</source>
             </trans-unit>
 
+            <trans-unit id="form.button.submit" extensionName="rr_sondermetalle">
+                <source>Request</source>
+            </trans-unit>
+
 
             <!-- Frontend shop -->
             <trans-unit id="frontend.shop">

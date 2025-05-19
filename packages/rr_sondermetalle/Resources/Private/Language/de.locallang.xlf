@@ -113,6 +113,10 @@
                 <target>Bis zu 6 Dateien hochladen (Bilder oder PDFs)</target>
             </trans-unit>
 
+            <trans-unit id="form.button.submit" extensionName="rr_sondermetalle">
+                <target>Anfrage</target>
+            </trans-unit>
+
 
             <!-- Frontend shop -->
             <trans-unit id="frontend.shop">
