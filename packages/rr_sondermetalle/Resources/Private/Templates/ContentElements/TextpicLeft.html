@@ -6,10 +6,12 @@
   <f:layout name="Default" />
 
   <f:section name="Main">
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+    <div
+      class="flex flex-col md:grid md:grid-cols-3 gap-6 items-start px-4 md:px-0"
+    >
       <!-- Image Container -->
       <div class="relative col-span-1">
-        <div class="absolute inset-0">
+        <div class="relative w-full aspect-square md:aspect-auto md:h-[450px]">
           <f:image
             src="fileadmin/user_upload/Finished Products.png"
             alt="{f:translate(key: 'card.finishedproducts.alt', extensionName: 'rr_sondermetalle')}"
@@ -18,7 +20,7 @@
         </div>
       </div>
 
-      <!-- Text Container -->
+      <!-- Text Section -->
       <div class="col-span-1 md:col-span-2 text-primary-500">
         <h2 class="text-[2.25rem] font-extrabold leading-snug mb-2">
           <f:translate
@@ -26,26 +28,34 @@
             extensionName="rr_sondermetalle"
           />
         </h2>
+
         <h3 class="text-lg mb-4">
           <f:translate
             key="finishedproducts.subheadline"
             extensionName="rr_sondermetalle"
           />
         </h3>
+
         <div class="prose max-w-none text-base">
           <f:format.html>{data.bodytext}</f:format.html>
+
+          <!-- Steps title -->
           <div class="flex items-center gap-2 mt-6 font-semibold text-primary">
             <span>🔧</span>
-            <span
-              ><f:translate
+            <span>
+              <f:translate
                 key="finishedproducts.instructionsTitle"
                 extensionName="rr_sondermetalle"
-            /></span>
+              />
+            </span>
           </div>
+
+          <!-- Steps list -->
           <div class="space-y-2 mt-6 text-primary">
+            <!-- Step 1 -->
             <div class="flex items-start gap-2">
-              <span
-                ><svg
+              <span>
+                <svg
                   xmlns="http://www.w3.org/2000/svg"
                   class="w-5 h-5 text-primary-500"
                   fill="none"
@@ -65,9 +75,11 @@
                 />
               </span>
             </div>
+
+            <!-- Step 2 -->
             <div class="flex items-start gap-2">
-              <span
-                ><svg
+              <span>
+                <svg
                   xmlns="http://www.w3.org/2000/svg"
                   class="w-5 h-5 text-primary-500"
                   fill="none"
@@ -95,9 +107,11 @@
                 />
               </span>
             </div>
+
+            <!-- Step 3 -->
             <div class="flex items-start gap-2">
-              <span
-                ><svg
+              <span>
+                <svg
                   xmlns="http://www.w3.org/2000/svg"
                   class="w-5 h-5 text-primary-500"
                   fill="none"
@@ -121,9 +135,8 @@
               </span>
             </div>
 
-            <br />
-
-            <div class="flex items-start gap-2 font-semibold text-primary">
+            <!-- Step 4 -->
+            <div class="flex items-start gap-2 mt-4 font-semibold text-primary">
               <span>📎</span>
               <span>
                 <f:translate
