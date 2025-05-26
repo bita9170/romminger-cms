@@ -21,11 +21,9 @@ finishers:
         info@rr-sondermetalle.com: "RR-Sondermetalle"
   - identifier: FlashMessage
     options:
-      messageTitle: "Merci"
+      messageTitle: "Danke für Ihre Anfrage"
       messageCode: 201905041245
-      messageBody: "Thx for using %s"
-      messageArguments:
-        - "TYPO3"
+      messageBody: "Wir werden uns so schnell wie möglich bei Ihnen melden."
       severity: 0
 renderables:
   - type: Page

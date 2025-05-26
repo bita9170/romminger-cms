@@ -14,6 +14,13 @@ finishers:
       attachUploads: true
       recipients:
         info@rr-sondermetalle.com: "RR-Sondermetalle"
+
+  - identifier: FlashMessage
+    options:
+      messageTitle: "Danke für Ihre Anfrage"
+      messageCode: 201905041245
+      messageBody: "Wir werden uns so schnell wie möglich bei Ihnen melden."
+      severity: 0
   - identifier: Redirect
     options:
       pageUid: ""
