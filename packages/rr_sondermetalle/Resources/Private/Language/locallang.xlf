@@ -93,7 +93,7 @@
 
 
             <!-- Form -->
-            <trans-unit id="material.select.label">
+            <trans-unit id="finishedproductsform.material.select.label" extensionName="rr_sondermetalle">
                 <source>Select material</source>
             </trans-unit>
             <trans-unit id="form.select.placeholder" extensionName="rr_sondermetalle">
@@ -107,11 +107,11 @@
             </trans-unit>
 
             <trans-unit id="contactformnew.upload.label" extensionName="rr_sondermetalle">
-                <source>Upload File (Image or PDF)</source>
+                <source>Upload File (Image, PDF or Zip)</source>
             </trans-unit>
 
             <trans-unit id="form.upload.placeholder" extensionName="rr_sondermetalle">
-                <source>Upload up to 6 files (images or PDFs)</source>
+                <source>Upload File (Image, PDF or Zip)</source>
             </trans-unit>
 
             <trans-unit id="form.button.submit" extensionName="rr_sondermetalle">

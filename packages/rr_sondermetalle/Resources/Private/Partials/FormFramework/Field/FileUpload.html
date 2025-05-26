@@ -26,21 +26,31 @@
       <div id="file-preview" class="flex flex-wrap gap-4 mt-3"></div>
 
       <!-- File input -->
-      <input
-        type="file"
-        name="{element.identifier}[]"
-        id="file-upload-input"
-        multiple
-        accept="image/*,application/pdf"
+
+      <formvh:form.uploadedResource
+        property="{element.identifier}"
+        as="resource"
+        id="{element.uniqueIdentifier}"
+        name="{element.identifier}"
+        errorClass="{element.properties.elementErrorClassAttribute}"
+        additionalAttributes="{formvh:translateElementProperty(element: element, property: 'fluidAdditionalAttributes')}"
         class="hidden"
         onchange="handleFileUpload(event)"
-      />
+        accept="{element.properties.allowedMimeTypes}"
+      >
+        <f:if condition="{resource}">
+          <div id="{element.uniqueIdentifier}-preview">
+            {resource.originalResource.originalFile.name}
+          </div>
+        </f:if>
+      </formvh:form.uploadedResource>
 
       <!-- + Button -->
       <button
         id="file-upload-btn"
         type="button"
-        onclick="triggerFileUpload()"
+        onclick="triggerFileUpload(event)"
+        data-upload-id="{element.uniqueIdentifier}"
         class="upload-btn absolute right-4 top-4 w-7 h-7 flex items-center justify-center bg-primary-500 text-white text-sm rounded-full shadow hover:bg-primary-600"
       >
         <span id="plus-sign">+</span>
@@ -61,12 +71,20 @@
   </div>
 
   <!-- Script -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+
   <script>
     const maxFiles = 6;
     let uploadedFiles = [];
 
-    function triggerFileUpload() {
-      const input = document.getElementById("file-upload-input");
+    function triggerFileUpload(event) {
+      const uploadId = event.currentTarget.getAttribute("data-upload-id");
+      const input = document.getElementById(uploadId);
+      if (!input) {
+        console.error("Input not found with id:", uploadId);
+        return;
+      }
+
       if (uploadedFiles.length >= maxFiles || input.disabled) {
         return;
       }
@@ -148,7 +166,7 @@
       const uploadBtn = document.getElementById("file-upload-btn");
       const plusSign = document.getElementById("plus-sign");
       const blockedIcon = document.getElementById("blocked-icon");
-      const fileInput = document.getElementById("file-upload-input");
+      const fileInput = document.getElementById("{element.uniqueIdentifier}");
 
       const isMaxReached = uploadedFiles.length >= maxFiles;
 

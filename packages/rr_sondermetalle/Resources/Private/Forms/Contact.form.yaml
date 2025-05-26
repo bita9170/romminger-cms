@@ -9,10 +9,11 @@ finishers:
       senderAddress: "{email}"
       senderName: "{fullname}"
       replyToRecipients:
-        "{email}": ""
+        "{email}": "{fullname}"
       format: html
       attachUploads: true
-      recipients: {}
+      recipients:
+        info@rr-sondermetalle.com: "RR-Sondermetalle"
   - identifier: Redirect
     options:
       pageUid: ""

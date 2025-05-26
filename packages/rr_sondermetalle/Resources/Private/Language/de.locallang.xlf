@@ -92,28 +92,28 @@
             </trans-unit>
 
             <!-- Form -->
-            <trans-unit id="material.select.label">
+            <trans-unit id="finishedproductsform.material.select.label">
                 <target>Material auswählen</target>
             </trans-unit>
             <trans-unit id="form.select.placeholder">
                 <target>Bitte wählen</target>
             </trans-unit>
-            <trans-unit id="contactformnew.textarea.message" extensionName="rr_sondermetalle">
+            <trans-unit id="finishedproductsform.textarea.message" extensionName="rr_sondermetalle">
                 <target>Nachricht / Beschreibung</target>
             </trans-unit>
-            <trans-unit id="contactformnew.textarea.placeholder" extensionName="rr_sondermetalle">
+            <trans-unit id="finishedproductsform.textarea.placeholder" extensionName="rr_sondermetalle">
                 <target>Deine Nachricht...</target>
             </trans-unit>
 
-            <trans-unit id="contactformnew.upload.label" extensionName="rr_sondermetalle">
-                <target>Datei hochladen (Bild oder PDF)</target>
+            <trans-unit id="finishedproductsform.upload.label" extensionName="rr_sondermetalle">
+                <target>Datei hochladen (Bild, PDF, Zip)</target>
             </trans-unit>
 
             <trans-unit id="form.upload.placeholder" extensionName="rr_sondermetalle">
-                <target>Bis zu 6 Dateien hochladen (Bilder oder PDFs)</target>
+                <target>Datei hochladen (Bild, PDF, Zip)</target>
             </trans-unit>
 
-            <trans-unit id="form.button.submit" extensionName="rr_sondermetalle">
+            <trans-unit id="form.button.submit">
                 <target>Anfrage</target>
             </trans-unit>
 

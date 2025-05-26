@@ -3,15 +3,11 @@
   xmlns:formvh="http://typo3.org/ns/TYPO3/CMS/Form/ViewHelpers"
   data-namespace-typo3-fluid="true"
 >
-  <f:layout name="Default" />
-
-  <f:section name="main">
-    <formvh:form
-      form="{form}"
-      page="{page}"
-      renderingOptions="{renderingOptions}"
-    >
-      <f:render partial="FormFramework/Page" arguments="{page: page}" />
-    </formvh:form>
-  </f:section>
+  <formvh:form
+    form="{form}"
+    page="{page}"
+    renderingOptions="{renderingOptions}"
+  >
+    <f:render partial="FormFramework/Page" arguments="{page: page}" />
+  </formvh:form>
 </html>
