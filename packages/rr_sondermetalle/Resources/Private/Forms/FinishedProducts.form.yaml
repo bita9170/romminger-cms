@@ -104,6 +104,6 @@ renderables:
           multiple: true
           icon: paperclip
           allowedMimeTypes:
-            - image/*
+            - image/jpeg
+            - image/png
             - application/pdf
-            - application/zip
