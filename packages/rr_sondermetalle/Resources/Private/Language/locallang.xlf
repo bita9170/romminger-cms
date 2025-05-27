@@ -93,7 +93,8 @@
 
 
             <!-- Form -->
-            <trans-unit id="finishedproductsform.material.select.label" extensionName="rr_sondermetalle">
+            <trans-unit id="finishedproductsform.material.select.label"
+                extensionName="rr_sondermetalle">
                 <source>Select material</source>
             </trans-unit>
             <trans-unit id="form.select.placeholder" extensionName="rr_sondermetalle">
@@ -107,15 +108,24 @@
             </trans-unit>
 
             <trans-unit id="contactformnew.upload.label" extensionName="rr_sondermetalle">
-                <source>Upload File (Image, PDF or Zip)</source>
+                <source>Upload File (Image or PDF)</source>
             </trans-unit>
 
             <trans-unit id="form.upload.placeholder" extensionName="rr_sondermetalle">
-                <source>Upload File (Image, PDF or Zip)</source>
+                <source>Upload File (Image or PDF)</source>
             </trans-unit>
 
             <trans-unit id="form.button.submit" extensionName="rr_sondermetalle">
                 <source>Request</source>
+            </trans-unit>
+
+            <!-- alert alert-success -->
+            <trans-unit id="finishedproductsform.flashmessage.title"
+                extensionName="rr_sondermetalle">
+                <source>Thank you for your inquiry</source>
+            </trans-unit>
+            <trans-unit id="finishedproductsform.flashmessage.body" extensionName="rr_sondermetalle">
+                <source>We will get back to you as soon as possible.</source>
             </trans-unit>
 
 

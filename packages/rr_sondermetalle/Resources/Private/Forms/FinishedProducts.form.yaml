@@ -32,22 +32,22 @@ renderables:
     renderables:
       - type: Text
         identifier: fullname
-        label: "Full name and surname"
+        label: "contactformnew.element.fullname.properties.label"
         properties:
           fluidAdditionalAttributes:
-            placeholder: "Full name and surname"
+            placeholder: "LLL:EXT:rr_sondermetalle/Resources/Private/Language/locallang.xlf:contactformnew.element.fullname.properties.placeholder"
             required: required
         validators:
           - identifier: NotEmpty
       - type: Text
         identifier: company
-        label: Company
+        label: "contactformnew.element.company.properties.label"
         properties:
           fluidAdditionalAttributes:
             placeholder: Company
       - type: Text
         identifier: email
-        label: Email
+        label: "contactformnew.element.email.properties.label"
         properties:
           fluidAdditionalAttributes:
             placeholder: Email

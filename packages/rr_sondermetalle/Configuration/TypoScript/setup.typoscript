@@ -183,3 +183,17 @@ plugin.tx_form {
     layoutRootPaths.10 = EXT:rr_sondermetalle/Resources/Private/Layouts/FormFramework/
   }
 }
+
+plugin.tx_form {
+  settings {
+    yamlConfigurations {
+      100 = EXT:rr_sondermetalle/Resources/Private/Forms/FinishedProducts.form.yaml
+    }
+    translation {
+      translationFile {
+        10 = EXT:rr_sondermetalle/Resources/Private/Language/locallang.xlf
+        20 = EXT:rr_sondermetalle/Resources/Private/Language/de.locallang.xlf
+      }
+    }
+  }
+}

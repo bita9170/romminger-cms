@@ -5,17 +5,16 @@
 >
   <formvh:renderRenderable renderable="{element}">
     <f:render
-      partial="Field/Field"
-      arguments="{element: element}"
-      contentAs="elementContent"
-    >
-      <f:form.textfield
-        property="{element.identifier}"
-        id="{element.uniqueIdentifier}"
-        class="rr-form-textarea pt-2 rounded border-gray-300 shadow-sm focus:border-primary-400 focus:ring-primary-400 text-sm"
-        errorClass="{element.properties.elementErrorClassAttribute}"
-        additionalAttributes="{formvh:translateElementProperty(element: element, property: 'fluidAdditionalAttributes')}"
-      />
-    </f:render>
+      partial="Field/Label"
+      arguments="{label: element.label, identifier: element.identifier, icon: element.properties.icon}"
+    />
+
+    <f:form.textfield
+      property="{element.identifier}"
+      id="{element.uniqueIdentifier}"
+      class="rr-form-textarea pt-2 rounded border-gray-300 shadow-sm focus:border-primary-400 focus:ring-primary-400 text-sm"
+      errorClass="{element.properties.elementErrorClassAttribute}"
+      placeholder="{f:translate(key: 'contactformnew.element.{element.identifier}.properties.placeholder', extensionName: 'rr_sondermetalle')}"
+    />
   </formvh:renderRenderable>
 </html>

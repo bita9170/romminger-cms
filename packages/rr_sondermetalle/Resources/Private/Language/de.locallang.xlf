@@ -98,23 +98,31 @@
             <trans-unit id="form.select.placeholder">
                 <target>Bitte wählen</target>
             </trans-unit>
-            <trans-unit id="finishedproductsform.textarea.message" extensionName="rr_sondermetalle">
+            <trans-unit id="contactformnew.textarea.message" extensionName="rr_sondermetalle">
                 <target>Nachricht / Beschreibung</target>
             </trans-unit>
-            <trans-unit id="finishedproductsform.textarea.placeholder" extensionName="rr_sondermetalle">
+            <trans-unit id="contactformnew.textarea.placeholder"
+                extensionName="rr_sondermetalle">
                 <target>Deine Nachricht...</target>
             </trans-unit>
 
-            <trans-unit id="finishedproductsform.upload.label" extensionName="rr_sondermetalle">
-                <target>Datei hochladen (Bild, PDF, Zip)</target>
+            <trans-unit id="contactformnew.upload.label" extensionName="rr_sondermetalle">
+                <target>Datei hochladen (Bild oder PDF)</target>
             </trans-unit>
-
             <trans-unit id="form.upload.placeholder" extensionName="rr_sondermetalle">
-                <target>Datei hochladen (Bild, PDF, Zip)</target>
+                <target>Datei hochladen (Bild oder PDF)</target>
             </trans-unit>
-
             <trans-unit id="form.button.submit">
                 <target>Anfrage</target>
+            </trans-unit>
+
+            <!-- alert alert-success -->
+            <trans-unit id="finishedproductsform.flashmessage.title"
+                extensionName="rr_sondermetalle">
+                <target>Danke für Ihre Anfrage</target>
+            </trans-unit>
+            <trans-unit id="finishedproductsform.flashmessage.body" extensionName="rr_sondermetalle">
+                <target>Wir werden uns so schnell wie möglich bei Ihnen melden.</target>
             </trans-unit>
 
 
