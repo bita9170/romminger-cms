@@ -498,6 +498,16 @@
             </trans-unit>
 
 
+            <!-- cart.empty -->
+            <trans-unit id="frontend.cart.empty" extensionName="rr_sondermetalle">
+                <source>Your cart is empty.</source>
+            </trans-unit>
+
+           <!-- sales box -->
+            <trans-unit id="frontend.sales.box" extensionName="rr_sondermetalle">
+                <source>Treasure Box</source>
+            </trans-unit>
+
         </body>
     </file>
 </xliff>

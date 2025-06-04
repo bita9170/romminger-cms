@@ -496,6 +496,15 @@
                 <target>Sie können direkt eine Datei hochladen oder uns per E-Mail kontaktieren.</target>
             </trans-unit>
 
+            <!-- cart.empty -->
+            <trans-unit id="frontend.cart.empty" extensionName="rr_sondermetalle">
+                <target>Ihr Warenkorb ist leer.</target>
+            </trans-unit>
+
+            <!-- sales box -->
+            <trans-unit id="frontend.sales.box" extensionName="rr_sondermetalle">
+                <target>Schatzkiste</target>
+            </trans-unit>
 
         </body>
     </file>

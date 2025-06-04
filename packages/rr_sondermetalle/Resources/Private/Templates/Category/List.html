@@ -4,10 +4,12 @@
       <div class="bg-light py-2 h-100">
         <ul class="list-group level-0">
           <f:for each="{categories}" as="category">
-            <f:render
-              partial="Category/TreeCategory"
-              arguments="{category: category, activeCategory: activeCategory, level: 1}"
-            />
+            <f:if condition="{category.uid} != 30">
+              <f:render
+                partial="Category/TreeCategory"
+                arguments="{category: category, activeCategory: activeCategory, level: 1}"
+              />
+            </f:if>
           </f:for>
         </ul>
       </div>
@@ -25,15 +27,18 @@
                   <f:count subject="{products}" />
                 </span>
                 <br />
-                <f:link.page
-                  pageUid="61"
-                  class="text-orange-800 font-bold underline"
-                >
-                  <f:translate
-                    key="frontend.products_available_message"
-                    extensionName="rr_sondermetalle"
-                  />
-                </f:link.page>
+
+                <f:if condition="{activeCategory.uid} != 30">
+                  <f:link.page
+                    pageUid="61"
+                    class="text-orange-800 font-bold underline"
+                  >
+                    <f:translate
+                      key="frontend.products_available_message"
+                      extensionName="rr_sondermetalle"
+                    />
+                  </f:link.page>
+                </f:if>
               </f:then>
               <f:else>
                 <f:link.page
@@ -63,7 +68,7 @@
           <div class="row g-4 mt-2">
             <f:for each="{categories}" as="category">
               <f:if
-                condition="{category.subCategories -> f:count()} && {!activeCategory.parentCategory}"
+                condition="{category.subCategories -> f:count()} && {!activeCategory.parentCategory} && {category.uid} != 30"
               >
                 <f:for each="{category.subCategories}" as="subCategory">
                   <f:render
