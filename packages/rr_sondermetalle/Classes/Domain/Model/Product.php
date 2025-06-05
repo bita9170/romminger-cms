@@ -111,6 +111,11 @@ class Product extends AbstractEntity implements JsonSerializable
      */
     protected $quality = null;
 
+    /**
+     * @var int
+     */
+    protected $stockQuantity = 0;
+
 
     /**
      * @var string
@@ -328,6 +333,12 @@ class Product extends AbstractEntity implements JsonSerializable
     {
         $this->quality = $quality;
     }
+
+    public function getStockQuantity(): int
+    {
+        return $this->stockQuantity;
+    }
+
 
 
     public function getJson(): string

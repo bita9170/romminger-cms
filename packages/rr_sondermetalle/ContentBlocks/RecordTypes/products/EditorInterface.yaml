@@ -138,3 +138,9 @@ fields:
     items:
       - ["Available", "available"]
       - ["Out of Stock", "out_of_stock"]
+
+  - identifier: stock_quantity
+    type: Number
+    format: integer
+    label: Available quantity
+    displayCond: "FIELD:category:IN:30"

@@ -98,18 +98,18 @@
             <trans-unit id="form.select.placeholder">
                 <target>Bitte wählen</target>
             </trans-unit>
-            <trans-unit id="contactformnew.textarea.message" extensionName="rr_sondermetalle">
+            <trans-unit id="contactformnew.textarea.message">
                 <target>Nachricht / Beschreibung</target>
             </trans-unit>
             <trans-unit id="contactformnew.textarea.placeholder"
-                extensionName="rr_sondermetalle">
+            >
                 <target>Deine Nachricht...</target>
             </trans-unit>
 
-            <trans-unit id="contactformnew.upload.label" extensionName="rr_sondermetalle">
+            <trans-unit id="contactformnew.upload.label">
                 <target>Datei hochladen (Bild oder PDF)</target>
             </trans-unit>
-            <trans-unit id="form.upload.placeholder" extensionName="rr_sondermetalle">
+            <trans-unit id="form.upload.placeholder">
                 <target>Datei hochladen (Bild oder PDF)</target>
             </trans-unit>
             <trans-unit id="form.button.submit">
@@ -118,10 +118,10 @@
 
             <!-- alert alert-success -->
             <trans-unit id="finishedproductsform.flashmessage.title"
-                extensionName="rr_sondermetalle">
+            >
                 <target>Danke für Ihre Anfrage</target>
             </trans-unit>
-            <trans-unit id="finishedproductsform.flashmessage.body" extensionName="rr_sondermetalle">
+            <trans-unit id="finishedproductsform.flashmessage.body">
                 <target>Wir werden uns so schnell wie möglich bei Ihnen melden.</target>
             </trans-unit>
 
@@ -397,114 +397,130 @@
             </trans-unit>
 
             <!-- no products message -->
-            <trans-unit id="frontend.no_products_message" extensionName="rr_sondermetalle">
+            <trans-unit id="frontend.no_products_message">
                 <target>Hier klicken für eine spezifische Anfrage</target>
             </trans-unit>
 
-            <trans-unit id="frontend.products_available_message" extensionName="rr_sondermetalle">
+            <trans-unit id="frontend.products_available_message">
                 <target>Hier nicht aufgeführte Abmaße sind auf Anfrage erhältlich</target>
             </trans-unit>
 
             <!-- For Coil without length -->
-            <trans-unit id="frontend.flex_length" extensionName="rr_sondermetalle">
+            <trans-unit id="frontend.flex_length">
                 <target>flex.Länge</target>
             </trans-unit>
 
             <!-- secondary button for not found page -->
-            <trans-unit id="error.button.contact" extensionName="rr_sondermetalle">
+            <trans-unit id="error.button.contact">
                 <target>Kontakt</target>
             </trans-unit>
 
             <!-- Quality for product(molybdenum)-->
-            <trans-unit id="frontend.quality" extensionName="rr_sondermetalle">
+            <trans-unit id="frontend.quality">
                 <target>Oberfläche</target>
             </trans-unit>
 
-            <trans-unit id="product.quality.empty" extensionName="rr_sondermetalle">
+            <trans-unit id="product.quality.empty">
                 <target>Bitte wählen…</target>
             </trans-unit>
-            <trans-unit id="product.quality.geschliffen" extensionName="rr_sondermetalle">
+            <trans-unit id="product.quality.geschliffen">
                 <target>geschliffen</target>
             </trans-unit>
-            <trans-unit id="product.quality.gefrostet" extensionName="rr_sondermetalle">
+            <trans-unit id="product.quality.gefrostet">
                 <target>gefrostet</target>
             </trans-unit>
-            <trans-unit id="product.quality.schwarze_oberflaeche" extensionName="rr_sondermetalle">
+            <trans-unit id="product.quality.schwarze_oberflaeche">
                 <target>schwarze Oberfläche</target>
             </trans-unit>
-            <trans-unit id="product.quality.glaenzend" extensionName="rr_sondermetalle">
+            <trans-unit id="product.quality.glaenzend">
                 <target>glänzend</target>
             </trans-unit>
-            <trans-unit id="product.quality.gebeizt" extensionName="rr_sondermetalle">
+            <trans-unit id="product.quality.gebeizt">
                 <target>gebeizt</target>
             </trans-unit>
-            <trans-unit id="product.quality.kaltgewalzt" extensionName="rr_sondermetalle">
+            <trans-unit id="product.quality.kaltgewalzt">
                 <target>kaltgewalzt</target>
             </trans-unit>
 
-            <trans-unit id="product.quality.tooltip.geschliffen" extensionName="rr_sondermetalle">
+            <trans-unit id="product.quality.tooltip.geschliffen">
                 <target>Geschliffene Oberfläche bietet eine bessere und gleichmäßige
                     Oberflächenqualität und entfernt Unregelmäßigkeiten</target>
             </trans-unit>
 
             <!-- sales_unit_type  -->
-            <trans-unit id="product.sales_unit_type.weight" extensionName="rr_sondermetalle">
+            <trans-unit id="product.sales_unit_type.weight">
                 <target>Nach Gewicht</target>
             </trans-unit>
-            <trans-unit id="product.sales_unit_type.piece" extensionName="rr_sondermetalle">
+            <trans-unit id="product.sales_unit_type.piece">
                 <target>Pro Stück</target>
             </trans-unit>
-            <trans-unit id="product.sales_unit_type.meter" extensionName="rr_sondermetalle">
+            <trans-unit id="product.sales_unit_type.meter">
                 <target>Nach Meter</target>
             </trans-unit>
 
             <!-- card: Fertigprodukte -->
-            <trans-unit id="card.finishedproducts.title" extensionName="rr_sondermetalle">
+            <trans-unit id="card.finishedproducts.title">
                 <target>Fertigprodukte nach Ihrer Zeichnung</target>
             </trans-unit>
-            <trans-unit id="card.finishedproducts.description" extensionName="rr_sondermetalle">
+            <trans-unit id="card.finishedproducts.description">
                 <target>Sie benötigen ein individuelles Produkt? Wir fertigen nach Ihrer Zeichnung.</target>
             </trans-unit>
-            <trans-unit id="card.finishedproducts.button" extensionName="rr_sondermetalle">
+            <trans-unit id="card.finishedproducts.button">
                 <target>Details</target>
             </trans-unit>
-            <trans-unit id="card.finishedproducts.alt" extensionName="rr_sondermetalle">
+            <trans-unit id="card.finishedproducts.alt">
                 <target>Fertigprodukt mit Messwerkzeug</target>
             </trans-unit>
 
             <!-- page: Finished products-->
-            <trans-unit id="finishedproducts.headline" extensionName="rr_sondermetalle">
+            <trans-unit id="finishedproducts.headline">
                 <target>Fertigprodukte nach Ihrer Zeichnung</target>
             </trans-unit>
-            <trans-unit id="finishedproducts.subheadline" extensionName="rr_sondermetalle">
+            <trans-unit id="finishedproducts.subheadline">
                 <target>Fertigprodukte nach Maß – ganz nach Ihren Vorstellungen</target>
             </trans-unit>
 
-            <trans-unit id="finishedproducts.instructionsTitle" extensionName="rr_sondermetalle">
+            <trans-unit id="finishedproducts.instructionsTitle">
                 <target>So funktioniert es:</target>
             </trans-unit>
-            <trans-unit id="finishedproducts.step1" extensionName="rr_sondermetalle">
+            <trans-unit id="finishedproducts.step1">
                 <target>Senden Sie uns Ihre Zeichnung oder eine Beschreibung Ihres Wunschprodukts.</target>
             </trans-unit>
-            <trans-unit id="finishedproducts.step2" extensionName="rr_sondermetalle">
+            <trans-unit id="finishedproducts.step2">
                 <target>Wählen Sie das Material – oder lassen Sie sich von uns beraten.</target>
             </trans-unit>
-            <trans-unit id="finishedproducts.step3" extensionName="rr_sondermetalle">
+            <trans-unit id="finishedproducts.step3">
                 <target>Wir prüfen die Umsetzbarkeit und erstellen ein individuelles Angebot.</target>
             </trans-unit>
-            <trans-unit id="finishedproducts.step4" extensionName="rr_sondermetalle">
+            <trans-unit id="finishedproducts.step4">
                 <target>Sie können direkt eine Datei hochladen oder uns per E-Mail kontaktieren.</target>
             </trans-unit>
 
             <!-- cart.empty -->
-            <trans-unit id="frontend.cart.empty" extensionName="rr_sondermetalle">
+            <trans-unit id="frontend.cart.empty">
                 <target>Ihr Warenkorb ist leer.</target>
             </trans-unit>
 
             <!-- sales box -->
-            <trans-unit id="frontend.sales.box" extensionName="rr_sondermetalle">
+            <trans-unit id="frontend.sales.box">
                 <target>Schatzkiste</target>
             </trans-unit>
+
+            <!-- sale.box.message -->
+            <trans-unit id="frontend.sales_box.note">
+                <target>Waren ohne Standardmaße zu Fixpreisen. Kein Nachbestellung möglich.</target>
+            </trans-unit>
+
+            <!-- limited_stock_note -->
+            <trans-unit id="frontend.sales_box.stock_quantity_label"
+            >
+                <target>verfügbar:</target>
+            </trans-unit>
+
+            <trans-unit id="frontend.sales_box.stock_quantity_unit">
+                <target>Stück</target>
+            </trans-unit>
+
 
         </body>
     </file>

@@ -28,6 +28,14 @@
                 </span>
                 <br />
 
+                <f:if condition="{activeCategory.uid} == 30">
+                  <p class="text-orange-800 font-bold">
+                    <f:translate
+                      key="frontend.sales_box.note"
+                      extensionName="rr_sondermetalle"
+                    />
+                  </p>
+                </f:if>
                 <f:if condition="{activeCategory.uid} != 30">
                   <f:link.page
                     pageUid="61"
