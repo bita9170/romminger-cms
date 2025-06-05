@@ -126,17 +126,21 @@
                             </div>
                           </f:if>
 
-                          <p class="text-orange-800 font-bold">
-                            <f:translate
-                              key="frontend.sales_box.stock_quantity_label"
-                              extensionName="rr_sondermetalle"
-                            />
-                            {product.stockQuantity}
-                            <f:translate
-                              key="frontend.sales_box.stock_quantity_unit"
-                              extensionName="rr_sondermetalle"
-                            />
-                          </p>
+                          <f:if
+                            condition="{product.category.uid} == 30 && product.stockQuantity"
+                          >
+                            <p class="text-orange-800 font-medium">
+                              <f:translate
+                                key="frontend.sales_box.stock_quantity_label"
+                                extensionName="rr_sondermetalle"
+                              />
+                              {product.stockQuantity}
+                              <f:translate
+                                key="frontend.sales_box.stock_quantity_unit"
+                                extensionName="rr_sondermetalle"
+                              />
+                            </p>
+                          </f:if>
 
                           <!-- surface -->
                           <f:if condition="{product.quality}">

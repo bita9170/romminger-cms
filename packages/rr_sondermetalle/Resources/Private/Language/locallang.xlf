@@ -509,6 +509,9 @@
             </trans-unit>
 
             <!-- sale.box.message -->
+            <trans-unit id="frontend.sales_box.subheader">
+                <source>Exclusive one-time offers from our stock – limited quantity</source>
+            </trans-unit>
             <trans-unit id="frontend.sales_box.note">
                 <source>Items without standard dimensions at fixed prices. Reordering is not
                     possible.</source>

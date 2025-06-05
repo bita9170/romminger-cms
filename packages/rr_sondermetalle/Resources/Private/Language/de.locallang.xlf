@@ -505,8 +505,11 @@
             <trans-unit id="frontend.sales.box">
                 <target>Schatzkiste</target>
             </trans-unit>
-
+            
             <!-- sale.box.message -->
+            <trans-unit id="frontend.sales_box.subheader">
+                <target>Einmalige Angebote aus unserem Lagerbestand – begrenzte Stückzahl</target>
+            </trans-unit>
             <trans-unit id="frontend.sales_box.note">
                 <target>Waren ohne Standardmaße zu Fixpreisen. Kein Nachbestellung möglich.</target>
             </trans-unit>
