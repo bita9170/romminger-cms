@@ -28,7 +28,7 @@
                 <target>In den Warenkorb</target>
             </trans-unit>
             <trans-unit id="frontend.checkout">
-                <target>Zur Kasse</target>
+                <target>Warenkorb</target>
             </trans-unit>
             <trans-unit id="frontend.empty_cart">
                 <target>Warenkorb leeren</target>
@@ -505,7 +505,7 @@
             <trans-unit id="frontend.sales.box">
                 <target>Schatzkiste</target>
             </trans-unit>
-            
+
             <!-- sale.box.message -->
             <trans-unit id="frontend.sales_box.subheader">
                 <target>Einmalige Angebote aus unserem Lagerbestand – begrenzte Stückzahl</target>

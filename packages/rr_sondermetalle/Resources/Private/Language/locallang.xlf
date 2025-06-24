@@ -28,7 +28,7 @@
                 <source>Add To Cart</source>
             </trans-unit>
             <trans-unit id="frontend.checkout">
-                <source>Checkout</source>
+                <source>View Cart</source>
             </trans-unit>
             <trans-unit id="frontend.empty_cart">
                 <source>Empty Cart</source>
