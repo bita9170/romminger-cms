@@ -126,9 +126,7 @@
                             </div>
                           </f:if>
 
-                          <f:if
-                            condition="{product.category.uid} == 30 && product.stockQuantity"
-                          >
+                          <f:if condition="{product.stockQuantity} > 0">
                             <p class="text-orange-800 font-medium">
                               <f:translate
                                 key="frontend.sales_box.stock_quantity_label"

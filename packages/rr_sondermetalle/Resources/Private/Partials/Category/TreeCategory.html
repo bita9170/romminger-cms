@@ -1,50 +1,28 @@
-<f:if condition="{category.uid} != 30">
-  <f:variable name="nestedClass">nested</f:variable>
-  <f:if condition="{level} == 1">
-    <f:variable name="nestedClass"></f:variable>
-  </f:if>
+<f:variable name="nestedClass">nested</f:variable>
+<f:if condition="{level} == 1">
+  <f:variable name="nestedClass"></f:variable>
+</f:if>
 
-  <f:if condition="{category.parentCategory}">
-    <f:then>
-      <f:if condition="{category.uid} == {activeCategory.uid}">
-        <f:variable name="activeCategoryClass"> active-category</f:variable>
-      </f:if>
-      <li class="list-group-item {activeCategoryClass}">
-        <span class="caret-icon">
-          <i class="caret"></i>
-        </span>
-        <f:link.action
-          action="list"
-          arguments="{filter: {activeCategoryId: category.uid}}"
-        >
-          {category.name}
-        </f:link.action>
-        <f:if condition="{category.subCategories -> f:count()}">
-          <ul class="{nestedClass} list-group m-4 level-{level}">
-            <f:variable name="level">{level + 1}</f:variable>
-            <f:for each="{category.subCategories}" as="subCategory">
-              <f:render
-                partial="Category/TreeCategory"
-                arguments="{category: subCategory, activeCategory: activeCategory, level: level}"
-              />
-            </f:for>
-          </ul>
+<f:if condition="{category.parentCategory}">
+  <f:then>
+    <f:if condition="{category.uid} == {activeCategory.uid}">
+      <f:variable name="activeCategoryClass"> active-category</f:variable>
+    </f:if>
+    <li class="list-group-item {activeCategoryClass}">
+      <span class="caret-icon"><i class="caret"></i></span>
+
+      <f:link.action
+        action="list"
+        arguments="{filter: {activeCategoryId: category.uid}}"
+      >
+        {category.name}
+        <f:if condition="{category.uid} == 30">
+          <span class="cat-icon" aria-hidden="true"> 💎</span>
         </f:if>
-      </li>
-    </f:then>
-    <f:else>
-      <li class="list-group-item">
-        <div class="level-root-header">
-          <f:link.action
-            action="list"
-            arguments="{filter: {activeCategoryId: category.uid}}"
-          >
-            {category.name}
-          </f:link.action>
-        </div>
-      </li>
+      </f:link.action>
+
       <f:if condition="{category.subCategories -> f:count()}">
-        <ul class="{nestedClass} list-group ms-4 level-{level}">
+        <ul class="{nestedClass} list-group m-4 level-{level}">
           <f:variable name="level">{level + 1}</f:variable>
           <f:for each="{category.subCategories}" as="subCategory">
             <f:render
@@ -54,6 +32,34 @@
           </f:for>
         </ul>
       </f:if>
-    </f:else>
-  </f:if>
+    </li>
+  </f:then>
+
+  <f:else>
+    <li class="list-group-item">
+      <div class="level-root-header">
+        <f:link.action
+          action="list"
+          arguments="{filter: {activeCategoryId: category.uid}}"
+        >
+          {category.name}
+          <f:if condition="{category.uid} == 30">
+            <span class="cat-icon" aria-hidden="true"> 💎</span>
+          </f:if>
+        </f:link.action>
+      </div>
+    </li>
+
+    <f:if condition="{category.subCategories -> f:count()}">
+      <ul class="{nestedClass} list-group ms-4 level-{level}">
+        <f:variable name="level">{level + 1}</f:variable>
+        <f:for each="{category.subCategories}" as="subCategory">
+          <f:render
+            partial="Category/TreeCategory"
+            arguments="{category: subCategory, activeCategory: activeCategory, level: level}"
+          />
+        </f:for>
+      </ul>
+    </f:if>
+  </f:else>
 </f:if>
