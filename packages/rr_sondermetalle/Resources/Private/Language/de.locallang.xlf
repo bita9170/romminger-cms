@@ -511,7 +511,8 @@
                 <target>Einmalige Angebote aus unserem Lagerbestand – begrenzte Stückzahl</target>
             </trans-unit>
             <trans-unit id="frontend.sales_box.note">
-                <target>Waren ohne Standardmaße zu Fixpreisen. Kein Nachbestellung möglich.</target>
+                <target>* Fixpreise für Sondermaße, keine Nachbestellung. Versand nur EU, andere
+                    Länder auf Anfrage.</target>
             </trans-unit>
 
             <!-- limited_stock_note -->

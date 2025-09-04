@@ -513,8 +513,8 @@
                 <source>Exclusive one-time offers from our stock – limited quantity</source>
             </trans-unit>
             <trans-unit id="frontend.sales_box.note">
-                <source>Items without standard dimensions at fixed prices. Reordering is not
-                    possible.</source>
+                <source>* Fixed prices for special sizes, no reorders. Shipping to EU countries only,
+                    other countries on request.</source>
             </trans-unit>
 
             <!-- limited_stock_note -->
