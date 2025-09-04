@@ -104,6 +104,7 @@
 
       <a
         href="#"
+        data-checkout-url="/shop/checkout"
         onclick="handleCheckoutClick(event)"
         class="btn btn-primary d-flex gap-2 align-items-center justify-content-center"
         style="inline-size: 200px; block-size: 40px"
@@ -160,32 +161,59 @@
   </div>
 
   <script>
+    function getCartCountFromBadge() {
+      const badge = document.querySelector(".cart-number");
+      if (!badge) return 0;
+      if (badge.classList.contains("d-none")) return 0;
+
+      const txt = (badge.textContent || "").trim();
+      const n = parseInt(txt, 10);
+      return isNaN(n) ? 0 : n;
+    }
+
     function handleCheckoutClick(e) {
       e.preventDefault();
-      const cartItems = JSON.parse(localStorage.getItem("cart")) || [];
+      const count = getCartCountFromBadge();
 
-      if (cartItems.length === 0) {
-        showToast();
+      if (count > 0) {
+        const url =
+          e.currentTarget.getAttribute("data-checkout-url") || "/shop/checkout";
+        window.location.href = url;
       } else {
-        window.location.href = "/shop/checkout";
+        showToast();
       }
     }
 
     function showToast() {
       const toastEl = document.getElementById("cart-toast");
+      if (!toastEl) return;
       toastEl.classList.remove("d-none");
       toastEl.classList.add("show");
-
       setTimeout(() => {
         toastEl.classList.remove("show");
         toastEl.classList.add("d-none");
       }, 3000);
     }
-
     function hideToast() {
       const toastEl = document.getElementById("cart-toast");
+      if (!toastEl) return;
       toastEl.classList.remove("show");
       toastEl.classList.add("d-none");
+    }
+    function formatCartBadges() {
+      const badges = document.querySelectorAll(".cart-number");
+      badges.forEach((badge) => {
+        const raw = (badge.textContent || "").trim();
+        const n = parseInt(raw, 10) || 0;
+
+        if (n <= 0) {
+          badge.classList.add("d-none");
+          badge.textContent = "0";
+        } else {
+          badge.classList.remove("d-none");
+          badge.textContent = n > 99 ? "99+" : String(n);
+        }
+      });
     }
   </script>
 </f:form>
